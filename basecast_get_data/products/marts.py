@@ -13,7 +13,7 @@ from pathlib import Path
 
 FIXTURES = Path(__file__).resolve().parent.parent / "data" / "fixtures"
 
-GROUPS = ("accounts", "explorer", "forecast", "backtest")
+GROUPS = ("accounts", "explorer", "forecast", "backtest", "insights")
 
 MARTS: dict[str, str] = {
     "mart_accounts": "accounts",
@@ -37,6 +37,7 @@ MARTS: dict[str, str] = {
     "mart_backtest_fan": "backtest",
     "mart_official_forecast_errors": "backtest",
     "mart_queue_backtest": "backtest",
+    "mart_insights": "insights",
 }
 
 # `mart_meta` rows (mart, key, value) belong to the group of the mart they describe.

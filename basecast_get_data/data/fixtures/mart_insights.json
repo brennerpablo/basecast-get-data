@@ -1,0 +1,437 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "id": "A1",
+   "grade": "A",
+   "rank": 1,
+   "title": "Large loads promised vs approved (fixture)",
+   "caption": "Fixture caption: large loads promised vs approved; the real line is built from the marts.",
+   "value": 21400.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 27820.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "machine_read_unverified"
+   ],
+   "queue": "large_load",
+   "verified": true,
+   "depends_on": [
+    "R3"
+   ],
+   "source_doc": "docs/analysis/q5_large_load.md §3",
+   "link": "/forecast?tab=large-loads",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "A2",
+   "grade": "A",
+   "rank": 2,
+   "title": "The preliminary forecast vs the peak (fixture)",
+   "caption": "Fixture caption: the preliminary forecast vs the peak; the real line is built from the marts.",
+   "value": 17300.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 22490.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "preliminary_actuals"
+   ],
+   "queue": null,
+   "verified": true,
+   "depends_on": [
+    "R6"
+   ],
+   "source_doc": "docs/analysis/q1_backtest.md §4",
+   "link": "/backtest",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B1",
+   "grade": "B",
+   "rank": 3,
+   "title": "Our model, rebuilt at an earlier date (fixture)",
+   "caption": "Fixture caption: our model, rebuilt at an earlier date; the real line is built from the marts.",
+   "value": 87100.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 113230.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "preliminary_actuals",
+    "band_uncalibrated"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R13",
+    "R3"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §3",
+   "link": "/backtest",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B2",
+   "grade": "B",
+   "rank": 4,
+   "title": "The peak above weather and trend (fixture)",
+   "caption": "Fixture caption: the peak above weather and trend; the real line is built from the marts.",
+   "value": 5200.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 6760.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R5",
+    "R9"
+   ],
+   "source_doc": "docs/analysis/x1_peak_excess.md §1",
+   "link": "/forecast?tab=peak",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B3",
+   "grade": "B",
+   "rank": 5,
+   "title": "The generation queue, adjusted (fixture)",
+   "caption": "Fixture caption: the generation queue, adjusted; the real line is built from the marts.",
+   "value": 31500.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 40950.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "beyond_backtested_window"
+   ],
+   "queue": "generation",
+   "verified": false,
+   "depends_on": [
+    "R4",
+    "R10"
+   ],
+   "source_doc": "docs/analysis/x2_adjusted_queue.md §2",
+   "link": "/explorer?layer=queue",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B4",
+   "grade": "B",
+   "rank": 6,
+   "title": "Filings as submitted vs adjusted (fixture)",
+   "caption": "Fixture caption: filings as submitted vs adjusted; the real line is built from the marts.",
+   "value": 12800.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 16640.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "preliminary_actuals"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R6"
+   ],
+   "source_doc": "docs/analysis/q1_backtest.md §4",
+   "link": "/backtest",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B5",
+   "grade": "B",
+   "rank": 7,
+   "title": "Backtest: our misses vs ERCOT's (fixture)",
+   "caption": "Fixture caption: backtest: our misses vs ercot's; the real line is built from the marts.",
+   "value": 2.9,
+   "unit": "%",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 3.8,
+     "unit": "%"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "preliminary_actuals"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R13",
+    "R3"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §3",
+   "link": "/backtest",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B6",
+   "grade": "B",
+   "rank": 8,
+   "title": "Promised large loads approved on time (fixture)",
+   "caption": "Fixture caption: promised large loads approved on time; the real line is built from the marts.",
+   "value": 0.18,
+   "unit": "ratio",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 0.2,
+     "unit": "ratio"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "machine_read_unverified"
+   ],
+   "queue": "large_load",
+   "verified": false,
+   "depends_on": [
+    "R3"
+   ],
+   "source_doc": "docs/analysis/q5_large_load.md §3",
+   "link": "/forecast?tab=large-loads",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B7",
+   "grade": "B",
+   "rank": 9,
+   "title": "The large-load queue slides (fixture)",
+   "caption": "Fixture caption: the large-load queue slides; the real line is built from the marts.",
+   "value": 11200.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 14560.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "machine_read_unverified"
+   ],
+   "queue": "large_load",
+   "verified": false,
+   "depends_on": [
+    "R3"
+   ],
+   "source_doc": "docs/analysis/q5_large_load.md §3",
+   "link": "/forecast?tab=large-loads",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B8",
+   "grade": "B",
+   "rank": 10,
+   "title": "Promised after the intake (fixture)",
+   "caption": "Fixture caption: promised after the intake; the real line is built from the marts.",
+   "value": 150000.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 195000.0,
+     "unit": "MW"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "machine_read_unverified",
+    "policy_pause_2026"
+   ],
+   "queue": "large_load",
+   "verified": false,
+   "depends_on": [
+    "R3",
+    "R13"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §1",
+   "link": "/forecast?tab=large-loads",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B9",
+   "grade": "B",
+   "rank": 11,
+   "title": "Generation projects reaching COD (fixture)",
+   "caption": "Fixture caption: generation projects reaching cod; the real line is built from the marts.",
+   "value": 0.41,
+   "unit": "share",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 0.5,
+     "unit": "share"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [],
+   "queue": "generation",
+   "verified": false,
+   "depends_on": [
+    "R4"
+   ],
+   "source_doc": "docs/analysis/q6_survival.md §4",
+   "link": "/forecast?tab=queue",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B10",
+   "grade": "B",
+   "rank": 12,
+   "title": "4CP intervals vs the priciest hours (fixture)",
+   "caption": "Fixture caption: 4cp intervals vs the priciest hours; the real line is built from the marts.",
+   "value": 0.0,
+   "unit": "share",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 0.0,
+     "unit": "share"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R11"
+   ],
+   "source_doc": "docs/analysis/x3_four_cp.md Q4",
+   "link": "/forecast?tab=4cp",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B11",
+   "grade": "B",
+   "rank": 13,
+   "title": "A two-hour window catches the 4CP (fixture)",
+   "caption": "Fixture caption: a two-hour window catches the 4cp; the real line is built from the marts.",
+   "value": 0.95,
+   "unit": "share",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 1.2,
+     "unit": "share"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R11"
+   ],
+   "source_doc": "docs/analysis/x3_four_cp.md Q2",
+   "link": "/forecast?tab=4cp",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B12",
+   "grade": "B",
+   "rank": 14,
+   "title": "Dispatch days to catch all four (fixture)",
+   "caption": "Fixture caption: dispatch days to catch all four; the real line is built from the marts.",
+   "value": 51.0,
+   "unit": "days",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 66.3,
+     "unit": "days"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [
+    "optimistic_weather"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R11"
+   ],
+   "source_doc": "docs/analysis/x3_four_cp.md Q2",
+   "link": "/forecast?tab=4cp",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "id": "B13",
+   "grade": "B",
+   "rank": 15,
+   "title": "Why the large-load layer matters (fixture)",
+   "caption": "Fixture caption: why the large-load layer matters; the real line is built from the marts.",
+   "value": 9.4,
+   "unit": "%",
+   "figures": [
+    {
+     "label": "Fixture companion figure",
+     "value": 12.2,
+     "unit": "%"
+    }
+   ],
+   "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+   "caveat_codes": [],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R13"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §3",
+   "link": "/backtest",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  }
+ ]
+}

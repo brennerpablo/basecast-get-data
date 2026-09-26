@@ -61,6 +61,7 @@ def test_every_endpoint_answers_in_marts_mode(client, fake_pg, monkeypatch):
         "/backtest/official-errors",
         "/backtest/queue",
         "/glossary",
+        "/insights",
     ):
         assert client.get(path).status_code == 200, path
 

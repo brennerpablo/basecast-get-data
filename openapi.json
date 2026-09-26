@@ -1384,6 +1384,48 @@
         }
       }
     },
+    "/insights": {
+      "get": {
+        "tags": [
+          "insights"
+        ],
+        "summary": "Insights",
+        "description": "The video's numbers (lines graded A and B), in page order, each with its caveat and a link to the\nscreen that shows the evidence.",
+        "operationId": "insights_insights_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/caveats": {
       "get": {
         "tags": [
@@ -5184,6 +5226,182 @@
           "mw"
         ],
         "title": "InService"
+      },
+      "InsightCard": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The line of video-candidates.md (A1, B3…)"
+          },
+          "grade": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ],
+            "title": "Grade",
+            "description": "A: every number verified; B: the headline is a model result"
+          },
+          "rank": {
+            "type": "integer",
+            "title": "Rank",
+            "description": "Order on the page, 1 first"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "caption": {
+            "type": "string",
+            "title": "Caption",
+            "description": "The line, built from the mart values"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value",
+            "description": "The headline number"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "figures": {
+            "items": {
+              "$ref": "#/components/schemas/InsightFigure"
+            },
+            "type": "array",
+            "title": "Figures",
+            "description": "The line's other numbers"
+          },
+          "caveat": {
+            "type": "string",
+            "title": "Caveat",
+            "description": "The caveat the line requires; always shown with the card"
+          },
+          "caveats": {
+            "items": {
+              "$ref": "#/components/schemas/Caveat"
+            },
+            "type": "array",
+            "title": "Caveats"
+          },
+          "queue": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "generation",
+                  "large_load"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Queue",
+            "description": "Which queue a queue number is about; never null on a queue card"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "description": "Every number re-derived from the raw files (X6)"
+          },
+          "depends_on": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Depends On",
+            "description": "Pending review items (R3, R13…)"
+          },
+          "source_doc": {
+            "type": "string",
+            "title": "Source Doc",
+            "description": "The analysis doc and section behind the numbers"
+          },
+          "link": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Link",
+            "description": "The app screen that shows the evidence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "grade",
+          "rank",
+          "title",
+          "caption",
+          "value",
+          "unit",
+          "caveat",
+          "verified",
+          "source_doc"
+        ],
+        "title": "InsightCard"
+      },
+      "InsightFigure": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "value",
+          "unit"
+        ],
+        "title": "InsightFigure"
+      },
+      "InsightsData": {
+        "properties": {
+          "cards": {
+            "items": {
+              "$ref": "#/components/schemas/InsightCard"
+            },
+            "type": "array",
+            "title": "Cards"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cards"
+        ],
+        "title": "InsightsData"
+      },
+      "InsightsResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/InsightsData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "InsightsResponse"
       },
       "InvalidAsOf": {
         "properties": {

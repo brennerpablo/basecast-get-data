@@ -359,3 +359,18 @@ Eventos:
 
 Regra comum: escrever o log nunca derruba o request nem a execução. Sem banco, a linha continua no
 stdout.
+
+### 8. Insights (P1)
+
+`GET /insights`: os números do vídeo em cards, na ordem da página (`mart_insights`, grupo `insights`).
+
+- Só as linhas de `basecast-airflow/docs/analysis/video-candidates.md` com nota **A** ou **B**.
+- `data.cards[]`: `id` (a linha: `A1`, `B3`…), `grade`, `rank`, `title`, `caption` (a frase, montada pelo build
+  a partir dos valores dos marts), `value` e `unit` (o número principal), `figures[]` (os outros números da
+  linha: `label`, `value`, `unit`), `caveat` (a ressalva obrigatória da linha, sempre mostrada com o card),
+  `caveats[]` (códigos do catálogo, com texto), `queue` (`generation` | `large_load`: todo card de fila diz de
+  qual fila é, porque as duas passam de ~438 GW), `verified` (todos os números re-derivados pelo X6),
+  `depends_on[]` (itens de revisão pendentes), `source_doc` e `link` (a tela do app com a evidência).
+- Nenhum número do card é escrito no app nem no get-data: `value`, `figures`, `caption` e `caveat` saem do
+  build da sessão A, que confere cada valor contra o doc de origem (checks de ouro).
+- `meta.verified` é falso quando algum card carrega o caveat `machine_read_unverified`.

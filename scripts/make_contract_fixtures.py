@@ -1647,6 +1647,219 @@ def make_queue_backtest() -> list[dict[str, Any]]:
     return rows
 
 
+# The insights page: one card per line graded A or B in video-candidates.md, with invented values.
+# (id, grade, title, value, unit, queue, caveat codes, link, source doc, pending review items)
+INSIGHTS = [
+    (
+        "A1",
+        "A",
+        "Large loads promised vs approved",
+        21400.0,
+        "MW",
+        "large_load",
+        ["machine_read_unverified"],
+        "/forecast?tab=large-loads",
+        "q5_large_load.md §3",
+        ["R3"],
+    ),
+    (
+        "A2",
+        "A",
+        "The preliminary forecast vs the peak",
+        17300.0,
+        "MW",
+        None,
+        ["preliminary_actuals"],
+        "/backtest",
+        "q1_backtest.md §4",
+        ["R6"],
+    ),
+    (
+        "B1",
+        "B",
+        "Our model, rebuilt at an earlier date",
+        87100.0,
+        "MW",
+        None,
+        ["preliminary_actuals", "band_uncalibrated"],
+        "/backtest",
+        "x7_peak_forecast.md §3",
+        ["R13", "R3"],
+    ),
+    (
+        "B2",
+        "B",
+        "The peak above weather and trend",
+        5200.0,
+        "MW",
+        None,
+        [],
+        "/forecast?tab=peak",
+        "x1_peak_excess.md §1",
+        ["R5", "R9"],
+    ),
+    (
+        "B3",
+        "B",
+        "The generation queue, adjusted",
+        31500.0,
+        "MW",
+        "generation",
+        ["beyond_backtested_window"],
+        "/explorer?layer=queue",
+        "x2_adjusted_queue.md §2",
+        ["R4", "R10"],
+    ),
+    (
+        "B4",
+        "B",
+        "Filings as submitted vs adjusted",
+        12800.0,
+        "MW",
+        None,
+        ["preliminary_actuals"],
+        "/backtest",
+        "q1_backtest.md §4",
+        ["R6"],
+    ),
+    (
+        "B5",
+        "B",
+        "Backtest: our misses vs ERCOT's",
+        2.9,
+        "%",
+        None,
+        ["preliminary_actuals"],
+        "/backtest",
+        "x7_peak_forecast.md §3",
+        ["R13", "R3"],
+    ),
+    (
+        "B6",
+        "B",
+        "Promised large loads approved on time",
+        0.18,
+        "ratio",
+        "large_load",
+        ["machine_read_unverified"],
+        "/forecast?tab=large-loads",
+        "q5_large_load.md §3",
+        ["R3"],
+    ),
+    (
+        "B7",
+        "B",
+        "The large-load queue slides",
+        11200.0,
+        "MW",
+        "large_load",
+        ["machine_read_unverified"],
+        "/forecast?tab=large-loads",
+        "q5_large_load.md §3",
+        ["R3"],
+    ),
+    (
+        "B8",
+        "B",
+        "Promised after the intake",
+        150000.0,
+        "MW",
+        "large_load",
+        ["machine_read_unverified", "policy_pause_2026"],
+        "/forecast?tab=large-loads",
+        "x7_peak_forecast.md §1",
+        ["R3", "R13"],
+    ),
+    (
+        "B9",
+        "B",
+        "Generation projects reaching COD",
+        0.41,
+        "share",
+        "generation",
+        [],
+        "/forecast?tab=queue",
+        "q6_survival.md §4",
+        ["R4"],
+    ),
+    (
+        "B10",
+        "B",
+        "4CP intervals vs the priciest hours",
+        0.0,
+        "share",
+        None,
+        [],
+        "/forecast?tab=4cp",
+        "x3_four_cp.md Q4",
+        ["R11"],
+    ),
+    (
+        "B11",
+        "B",
+        "A two-hour window catches the 4CP",
+        0.95,
+        "share",
+        None,
+        [],
+        "/forecast?tab=4cp",
+        "x3_four_cp.md Q2",
+        ["R11"],
+    ),
+    (
+        "B12",
+        "B",
+        "Dispatch days to catch all four",
+        51.0,
+        "days",
+        None,
+        ["optimistic_weather"],
+        "/forecast?tab=4cp",
+        "x3_four_cp.md Q2",
+        ["R11"],
+    ),
+    (
+        "B13",
+        "B",
+        "Why the large-load layer matters",
+        9.4,
+        "%",
+        None,
+        [],
+        "/backtest",
+        "x7_peak_forecast.md §3",
+        ["R13"],
+    ),
+]
+
+
+def make_insights() -> list[dict[str, Any]]:
+    return [
+        {
+            "id": card_id,
+            "grade": grade,
+            "rank": rank,
+            "title": f"{title} (fixture)",
+            "caption": f"Fixture caption: {title.lower()}; the real line is built from the marts.",
+            "value": value,
+            "unit": unit,
+            "figures": [{"label": "Fixture companion figure", "value": r1(value * 1.3), "unit": unit}],
+            "caveat": "Fixture caveat: the real card carries the caveat its line requires.",
+            "caveat_codes": codes,
+            "queue": queue,
+            "verified": grade == "A",
+            "depends_on": depends,
+            "source_doc": f"docs/analysis/{doc}",
+            "link": link,
+            "as_of": iso(AS_OF),
+            "model_version": MODEL_VERSION,
+        }
+        for rank, (card_id, grade, title, value, unit, queue, codes, link, doc, depends) in enumerate(
+            INSIGHTS, start=1
+        )
+    ]
+
+
 def main() -> None:
     projects = make_projects()
     queue = county_queue(projects)
@@ -1678,6 +1891,7 @@ def main() -> None:
     write("mart_backtest_fan", make_fan(cells))
     write("mart_official_forecast_errors", make_official_errors())
     write("mart_queue_backtest", make_queue_backtest())
+    write("mart_insights", make_insights())
     write(
         "mart_meta",
         {

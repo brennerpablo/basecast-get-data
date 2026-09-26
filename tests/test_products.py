@@ -284,3 +284,24 @@ def test_product_endpoints_declare_the_503_body():
     for path in ("/accounts", "/geo/counties", "/forecasts/peak", "/backtest/peak"):
         ref = spec["paths"][path]["get"]["responses"]["503"]["content"]["application/json"]["schema"]["$ref"]
         assert ref.endswith("/MartNotBuilt")
+
+
+# --- insights ---------------------------------------------------------------------------------------------
+
+
+def test_insights_are_the_graded_lines_in_page_order_with_their_caveat(client):
+    body = client.get("/insights").json()
+    cards = body["data"]["cards"]
+    assert cards and [c["rank"] for c in cards] == sorted(c["rank"] for c in cards)
+    assert {c["grade"] for c in cards} <= {"A", "B"}
+    assert all(c["caveat"] and c["source_doc"] for c in cards)
+    assert all(k["text"] == CATALOG[k["code"]][1] for c in cards for k in c["caveats"])
+    assert body["meta"]["verified"] is False  # some cards rest on machine-read deck values
+
+
+def test_a_queue_card_always_names_its_queue(client):
+    """video-candidates.md: the two ~438 GW queues are never shown without saying which one."""
+    for card in client.get("/insights").json()["data"]["cards"]:
+        text = f"{card['title']} {card['caption']}".lower()
+        if "queue" in text or card["unit"] == "MW" and "438" in text:
+            assert card["queue"] in ("generation", "large_load"), card["id"]

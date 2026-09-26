@@ -26,6 +26,7 @@ from basecast_get_data.routers import (
     catalogs,
     forecasts,
     geo,
+    insights,
     lake,
     pipeline,
     queue,
@@ -71,7 +72,7 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
     app.add_middleware(GZipMiddleware, minimum_size=2048)
-    for module in (accounts, geo, queue, forecasts, backtest, catalogs, lake, tables, pipeline):
+    for module in (accounts, geo, queue, forecasts, backtest, insights, catalogs, lake, tables, pipeline):
         app.include_router(module.router)
 
     @app.exception_handler(MartNotBuilt)
