@@ -1,0 +1,2993 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "basecast-get-data",
+    "description": "Serves the basecast lake, the processed tables and the pipeline runs to basecast-app. Every route but /health needs `Authorization: Bearer <API_TOKEN>`.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/lake/sources": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake Sources",
+        "operationId": "lake_sources_lake_sources_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SourcesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lake/list": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake List",
+        "operationId": "lake_list_lake_list_get",
+        "parameters": [
+          {
+            "name": "prefix",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Folder to list, ending in '/', or '' for the bucket root",
+              "default": "",
+              "title": "Prefix"
+            },
+            "description": "Folder to list, ending in '/', or '' for the bucket root"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Keep only names containing this text (case-insensitive)",
+              "default": "",
+              "title": "Q"
+            },
+            "description": "Keep only names containing this text (case-insensitive)"
+          },
+          {
+            "name": "recursive",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Under raw/, list every object below the prefix",
+              "default": false,
+              "title": "Recursive"
+            },
+            "description": "Under raw/, list every object below the prefix"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 500,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lake/object": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake Object",
+        "operationId": "lake_object_lake_object_get",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Object key, e.g. raw/source=ercot_gis/dt=2026-08-01/<file>",
+              "title": "Key"
+            },
+            "description": "Object key, e.g. raw/source=ercot_gis/dt=2026-08-01/<file>"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lake/object/structure": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake Structure",
+        "operationId": "lake_structure_lake_object_structure_get",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Key"
+            }
+          },
+          {
+            "name": "member",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Member"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StructureResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lake/object/rows": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake Rows",
+        "operationId": "lake_rows_lake_object_rows_get",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Key"
+            }
+          },
+          {
+            "name": "member",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "A file inside a zip",
+              "title": "Member"
+            },
+            "description": "A file inside a zip"
+          },
+          {
+            "name": "sheet",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Spreadsheet sheet; the first one by default",
+              "title": "Sheet"
+            },
+            "description": "Spreadsheet sheet; the first one by default"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 500,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "with_summary",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Also return the total row count",
+              "default": false,
+              "title": "With Summary"
+            },
+            "description": "Also return the total row count"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RowsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lake/object/text": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake Text",
+        "operationId": "lake_text_lake_object_text_get",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Key"
+            }
+          },
+          {
+            "name": "member",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Member"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TextResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lake/object/url": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake Signed Url",
+        "operationId": "lake_signed_url_lake_object_url_get",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Key"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignedUrlResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lake/object/content": {
+      "get": {
+        "tags": [
+          "lake"
+        ],
+        "summary": "Lake Content",
+        "description": "The file's bytes, with HTTP Range support (pdf.js reads PDFs in ranges).",
+        "operationId": "lake_content_lake_object_content_get",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Key"
+            }
+          },
+          {
+            "name": "member",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Member"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Range"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/octet-stream": {}
+            }
+          },
+          "206": {
+            "description": "Partial content"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tables": {
+      "get": {
+        "tags": [
+          "tables"
+        ],
+        "summary": "List Tables",
+        "operationId": "list_tables_tables_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TablesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tables/{name}": {
+      "get": {
+        "tags": [
+          "tables"
+        ],
+        "summary": "Table Detail",
+        "operationId": "table_detail_tables__name__get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,62}$",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TableResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tables/{name}/rows": {
+      "get": {
+        "tags": [
+          "tables"
+        ],
+        "summary": "Table Rows",
+        "operationId": "table_rows_tables__name__rows_get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,62}$",
+              "title": "Name"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 500,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Column to sort by",
+              "title": "Sort"
+            },
+            "description": "Column to sort by"
+          },
+          {
+            "name": "desc",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Desc"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "column:op:value, repeatable. Ops: eq ne contains starts in gte lte gt lt between null notnull; `in` and `between` join values with U+001F",
+              "default": [],
+              "title": "Filter"
+            },
+            "description": "column:op:value, repeatable. Ops: eq ne contains starts in gte lte gt lt between null notnull; `in` and `between` join values with U+001F"
+          },
+          {
+            "name": "with_summary",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Also return the total (exact when it fits in 6 s)",
+              "default": false,
+              "title": "With Summary"
+            },
+            "description": "Also return the total (exact when it fits in 6 s)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RowsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tables/{name}/lineage": {
+      "get": {
+        "tags": [
+          "tables"
+        ],
+        "summary": "Table Lineage",
+        "description": "The raw files that fed a table (`lake_processed`); SQL datasets have none of their own.",
+        "operationId": "table_lineage_tables__name__lineage_get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,62}$",
+              "title": "Name"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 200,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LineageResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pipeline/runs": {
+      "get": {
+        "tags": [
+          "pipeline"
+        ],
+        "summary": "Runs",
+        "operationId": "runs_pipeline_runs_get",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Source"
+            }
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "raw or process",
+              "title": "Stage"
+            },
+            "description": "raw or process"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "running, success, partial, failed or abandoned",
+              "title": "Status"
+            },
+            "description": "running, success, partial, failed or abandoned"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DatasetRef": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "target": {
+            "type": "string",
+            "enum": [
+              "postgres",
+              "bigquery"
+            ],
+            "title": "Target"
+          },
+          "mode": {
+            "type": "string",
+            "title": "Mode"
+          },
+          "loaded": {
+            "type": "boolean",
+            "title": "Loaded"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "rows_estimated": {
+            "type": "boolean",
+            "title": "Rows Estimated",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "target",
+          "mode",
+          "loaded"
+        ],
+        "title": "DatasetRef"
+      },
+      "FormatCount": {
+        "properties": {
+          "extension": {
+            "type": "string",
+            "title": "Extension"
+          },
+          "files": {
+            "type": "integer",
+            "title": "Files"
+          }
+        },
+        "type": "object",
+        "required": [
+          "extension",
+          "files"
+        ],
+        "title": "FormatCount"
+      },
+      "GridColumn": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "number",
+              "date",
+              "boolean",
+              "json",
+              "geometry"
+            ],
+            "title": "Type"
+          },
+          "source_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "GridColumn"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Health": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "lake": {
+            "type": "string",
+            "title": "Lake"
+          },
+          "database": {
+            "type": "boolean",
+            "title": "Database"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "lake",
+          "database"
+        ],
+        "title": "Health"
+      },
+      "JsonNode": {
+        "properties": {
+          "key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Key"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "object",
+              "array",
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ],
+            "title": "Type"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "length": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Length"
+          },
+          "children": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/JsonNode"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Children"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "JsonNode"
+      },
+      "LakeFolder": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "prefix": {
+            "type": "string",
+            "title": "Prefix"
+          },
+          "files": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Files"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          },
+          "last_fetched_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Fetched At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "prefix"
+        ],
+        "title": "LakeFolder"
+      },
+      "LakeListing": {
+        "properties": {
+          "prefix": {
+            "type": "string",
+            "title": "Prefix"
+          },
+          "folders": {
+            "items": {
+              "$ref": "#/components/schemas/LakeFolder"
+            },
+            "type": "array",
+            "title": "Folders"
+          },
+          "objects": {
+            "items": {
+              "$ref": "#/components/schemas/LakeObject"
+            },
+            "type": "array",
+            "title": "Objects"
+          },
+          "total_objects": {
+            "type": "integer",
+            "title": "Total Objects"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "prefix",
+          "folders",
+          "objects",
+          "total_objects",
+          "offset",
+          "limit"
+        ],
+        "title": "LakeListing"
+      },
+      "LakeObject": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "dt": {
+            "type": "string",
+            "title": "Dt"
+          },
+          "file": {
+            "type": "string",
+            "title": "File"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "sheet",
+              "text",
+              "parquet",
+              "json",
+              "geojson",
+              "zip",
+              "pdf",
+              "slides",
+              "document",
+              "html",
+              "other"
+            ],
+            "title": "Kind"
+          },
+          "bytes": {
+            "type": "integer",
+            "title": "Bytes"
+          },
+          "sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sha256"
+          },
+          "fetched_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fetched At"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          },
+          "source_page": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Page"
+          },
+          "content_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Content Type"
+          },
+          "http_status": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Http Status"
+          },
+          "doc_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doc Id"
+          },
+          "report_type_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Type Id"
+          },
+          "etag": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Etag"
+          },
+          "last_modified": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Modified"
+          },
+          "meta": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Meta",
+            "default": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "key",
+          "source_id",
+          "dt",
+          "file",
+          "kind",
+          "bytes"
+        ],
+        "title": "LakeObject"
+      },
+      "LakeTotals": {
+        "properties": {
+          "sources": {
+            "type": "integer",
+            "title": "Sources"
+          },
+          "files": {
+            "type": "integer",
+            "title": "Files"
+          },
+          "bytes": {
+            "type": "integer",
+            "title": "Bytes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sources",
+          "files",
+          "bytes"
+        ],
+        "title": "LakeTotals"
+      },
+      "LineagePage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/LineageRow"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "offset",
+          "limit"
+        ],
+        "title": "LineagePage"
+      },
+      "LineageResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/LineagePage"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "LineageResponse"
+      },
+      "LineageRow": {
+        "properties": {
+          "raw_key": {
+            "type": "string",
+            "title": "Raw Key"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          },
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "processed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Processed At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "raw_key",
+          "sha256",
+          "version",
+          "processed_at"
+        ],
+        "title": "LineageRow"
+      },
+      "ListingResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/LakeListing"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "ListingResponse"
+      },
+      "Meta": {
+        "properties": {
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "data_as_of": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data As Of"
+          },
+          "model_run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Run Id"
+          },
+          "simulated": {
+            "type": "boolean",
+            "title": "Simulated",
+            "default": false
+          },
+          "sources": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "generated_at"
+        ],
+        "title": "Meta"
+      },
+      "ObjectDetail": {
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/LakeObject"
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceRef"
+          },
+          "viewer": {
+            "type": "string",
+            "title": "Viewer"
+          },
+          "previewable": {
+            "type": "boolean",
+            "title": "Previewable"
+          },
+          "datasets": {
+            "items": {
+              "$ref": "#/components/schemas/DatasetRef"
+            },
+            "type": "array",
+            "title": "Datasets"
+          },
+          "processed": {
+            "items": {
+              "$ref": "#/components/schemas/ProcessedRef"
+            },
+            "type": "array",
+            "title": "Processed"
+          },
+          "other_snapshots": {
+            "items": {
+              "$ref": "#/components/schemas/SnapshotRef"
+            },
+            "type": "array",
+            "title": "Other Snapshots"
+          }
+        },
+        "type": "object",
+        "required": [
+          "object",
+          "source",
+          "viewer",
+          "previewable",
+          "datasets",
+          "processed",
+          "other_snapshots"
+        ],
+        "title": "ObjectDetail"
+      },
+      "ObjectResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ObjectDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "ObjectResponse"
+      },
+      "ObjectStructure": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "sheet",
+              "text",
+              "parquet",
+              "json",
+              "geojson",
+              "zip",
+              "pdf",
+              "slides",
+              "document",
+              "html",
+              "other"
+            ],
+            "title": "Kind"
+          },
+          "viewer": {
+            "type": "string",
+            "title": "Viewer"
+          },
+          "too_large": {
+            "type": "boolean",
+            "title": "Too Large",
+            "default": false
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          },
+          "sheets": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/SheetInfo"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sheets"
+          },
+          "members": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/ZipMember"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Members"
+          },
+          "columns": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/GridColumn"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Columns"
+          },
+          "row_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Row Count"
+          },
+          "delimiter": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Delimiter"
+          },
+          "tabular_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tabular Path"
+          },
+          "json_tree": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/JsonNode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "viewer"
+        ],
+        "title": "ObjectStructure"
+      },
+      "ObjectText": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "sheet",
+              "text",
+              "parquet",
+              "json",
+              "geojson",
+              "zip",
+              "pdf",
+              "slides",
+              "document",
+              "html",
+              "other"
+            ],
+            "title": "Kind"
+          },
+          "blocks": {
+            "items": {
+              "$ref": "#/components/schemas/TextBlock"
+            },
+            "type": "array",
+            "title": "Blocks"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "blocks"
+        ],
+        "title": "ObjectText"
+      },
+      "ProcessedRef": {
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "title": "Dataset"
+          },
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "processed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Processed At"
+          },
+          "current": {
+            "type": "boolean",
+            "title": "Current"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dataset",
+          "version",
+          "processed_at",
+          "current"
+        ],
+        "title": "ProcessedRef"
+      },
+      "RowsPage": {
+        "properties": {
+          "columns": {
+            "items": {
+              "$ref": "#/components/schemas/GridColumn"
+            },
+            "type": "array",
+            "title": "Columns"
+          },
+          "rows": {
+            "items": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Rows"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "total": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total"
+          },
+          "total_estimated": {
+            "type": "boolean",
+            "title": "Total Estimated",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "columns",
+          "rows",
+          "offset",
+          "limit"
+        ],
+        "title": "RowsPage",
+        "description": "One block of rows. `total` comes only when the request asks for it (`with_summary=true`)."
+      },
+      "RowsResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/RowsPage"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "RowsResponse"
+      },
+      "Run": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "dag_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dag Id"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task Id"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "files": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Files"
+          },
+          "files_skipped": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Files Skipped"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "source",
+          "stage",
+          "started_at",
+          "status"
+        ],
+        "title": "Run"
+      },
+      "RunRef": {
+        "properties": {
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stage",
+          "status",
+          "started_at"
+        ],
+        "title": "RunRef"
+      },
+      "RunsPage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Run"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "offset",
+          "limit"
+        ],
+        "title": "RunsPage"
+      },
+      "RunsResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/RunsPage"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "RunsResponse"
+      },
+      "SheetInfo": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "columns": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Columns"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "SheetInfo"
+      },
+      "SignedUrl": {
+        "properties": {
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "title": "SignedUrl"
+      },
+      "SignedUrlResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SignedUrl"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "SignedUrlResponse"
+      },
+      "SnapshotRef": {
+        "properties": {
+          "dt": {
+            "type": "string",
+            "title": "Dt"
+          },
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "file": {
+            "type": "string",
+            "title": "File"
+          },
+          "bytes": {
+            "type": "integer",
+            "title": "Bytes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dt",
+          "key",
+          "file",
+          "bytes"
+        ],
+        "title": "SnapshotRef"
+      },
+      "SourceRef": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "publisher": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publisher"
+          },
+          "upstream_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upstream Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source_id",
+          "name"
+        ],
+        "title": "SourceRef"
+      },
+      "SourceSummary": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "group": {
+            "type": "string",
+            "title": "Group"
+          },
+          "publisher": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publisher"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "upstream_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upstream Url"
+          },
+          "catalog_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Catalog Id"
+          },
+          "schedule": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Schedule"
+          },
+          "schedule_cron": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Schedule Cron"
+          },
+          "files": {
+            "type": "integer",
+            "title": "Files"
+          },
+          "bytes": {
+            "type": "integer",
+            "title": "Bytes"
+          },
+          "snapshots": {
+            "type": "integer",
+            "title": "Snapshots"
+          },
+          "first_dt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Dt"
+          },
+          "last_dt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Dt"
+          },
+          "last_fetched_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Fetched At"
+          },
+          "formats": {
+            "items": {
+              "$ref": "#/components/schemas/FormatCount"
+            },
+            "type": "array",
+            "title": "Formats"
+          },
+          "datasets": {
+            "items": {
+              "$ref": "#/components/schemas/DatasetRef"
+            },
+            "type": "array",
+            "title": "Datasets"
+          },
+          "last_runs": {
+            "items": {
+              "$ref": "#/components/schemas/RunRef"
+            },
+            "type": "array",
+            "title": "Last Runs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source_id",
+          "name",
+          "group",
+          "files",
+          "bytes",
+          "snapshots",
+          "formats",
+          "datasets",
+          "last_runs"
+        ],
+        "title": "SourceSummary"
+      },
+      "SourcesData": {
+        "properties": {
+          "bucket": {
+            "type": "string",
+            "title": "Bucket"
+          },
+          "index_built_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Index Built At"
+          },
+          "totals": {
+            "$ref": "#/components/schemas/LakeTotals"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SourceSummary"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "bucket",
+          "index_built_at",
+          "totals",
+          "items"
+        ],
+        "title": "SourcesData"
+      },
+      "SourcesResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SourcesData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "SourcesResponse"
+      },
+      "StructureResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ObjectStructure"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "StructureResponse"
+      },
+      "TableColumn": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "number",
+              "date",
+              "boolean",
+              "json",
+              "geometry"
+            ],
+            "title": "Type"
+          },
+          "source_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Type"
+          },
+          "position": {
+            "type": "integer",
+            "title": "Position"
+          },
+          "nullable": {
+            "type": "boolean",
+            "title": "Nullable"
+          },
+          "is_key": {
+            "type": "boolean",
+            "title": "Is Key",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "type",
+          "position",
+          "nullable"
+        ],
+        "title": "TableColumn"
+      },
+      "TableDetail": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "engine": {
+            "type": "string",
+            "enum": [
+              "postgres",
+              "bigquery"
+            ],
+            "title": "Engine"
+          },
+          "location": {
+            "type": "string",
+            "title": "Location"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "dataset",
+              "system",
+              "unregistered"
+            ],
+            "title": "Kind"
+          },
+          "sources": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "mode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mode"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "declared": {
+            "type": "boolean",
+            "title": "Declared"
+          },
+          "loaded": {
+            "type": "boolean",
+            "title": "Loaded"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "rows_estimated": {
+            "type": "boolean",
+            "title": "Rows Estimated",
+            "default": false
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          },
+          "columns": {
+            "items": {
+              "$ref": "#/components/schemas/TableColumn"
+            },
+            "type": "array",
+            "title": "Columns"
+          },
+          "key_columns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Key Columns",
+            "default": []
+          },
+          "partition_field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partition Field"
+          },
+          "cluster_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Cluster Fields",
+            "default": []
+          },
+          "derived": {
+            "type": "boolean",
+            "title": "Derived",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "engine",
+          "location",
+          "kind",
+          "sources",
+          "declared",
+          "loaded",
+          "columns"
+        ],
+        "title": "TableDetail"
+      },
+      "TableResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/TableDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "TableResponse"
+      },
+      "TableSummary": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "engine": {
+            "type": "string",
+            "enum": [
+              "postgres",
+              "bigquery"
+            ],
+            "title": "Engine"
+          },
+          "location": {
+            "type": "string",
+            "title": "Location"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "dataset",
+              "system",
+              "unregistered"
+            ],
+            "title": "Kind"
+          },
+          "sources": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "mode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mode"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "declared": {
+            "type": "boolean",
+            "title": "Declared"
+          },
+          "loaded": {
+            "type": "boolean",
+            "title": "Loaded"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "rows_estimated": {
+            "type": "boolean",
+            "title": "Rows Estimated",
+            "default": false
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "engine",
+          "location",
+          "kind",
+          "sources",
+          "declared",
+          "loaded"
+        ],
+        "title": "TableSummary"
+      },
+      "TablesData": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/TableSummary"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "TablesData"
+      },
+      "TablesResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/TablesData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "TablesResponse"
+      },
+      "TextBlock": {
+        "properties": {
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "TextBlock"
+      },
+      "TextResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ObjectText"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "TextResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "ZipMember": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "sheet",
+              "text",
+              "parquet",
+              "json",
+              "geojson",
+              "zip",
+              "pdf",
+              "slides",
+              "document",
+              "html",
+              "other"
+            ],
+            "title": "Kind"
+          },
+          "bytes": {
+            "type": "integer",
+            "title": "Bytes"
+          },
+          "compressed_bytes": {
+            "type": "integer",
+            "title": "Compressed Bytes"
+          },
+          "modified": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Modified"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "kind",
+          "bytes",
+          "compressed_bytes"
+        ],
+        "title": "ZipMember"
+      }
+    }
+  }
+}

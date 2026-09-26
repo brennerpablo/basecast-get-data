@@ -1,0 +1,21 @@
+{
+  "source": "ercot_large_load_decks",
+  "dt": "2026-06-19",
+  "entries": [
+    {
+      "file": "June-19-LLWG-Report.pptx",
+      "url": "https://example.test/June-19-LLWG-Report.pptx",
+      "fetched_at": "2026-09-26T04:29:28.935693+00:00",
+      "sha256": "c29abbdc49782fcfcc81aa1d45cc1c60e7fef7874f88a40d4677634cff078ec7",
+      "bytes": 29264,
+      "http_status": 200,
+      "source_page": null,
+      "doc_id": null,
+      "report_type_id": null,
+      "content_type": null,
+      "etag": null,
+      "last_modified": null,
+      "meta": {}
+    }
+  ]
+}

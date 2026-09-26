@@ -1,0 +1,21 @@
+{
+  "source": "census_bps",
+  "dt": "2026-09-25",
+  "entries": [
+    {
+      "file": "co0001c.txt",
+      "url": "https://example.test/co0001c.txt",
+      "fetched_at": "2026-09-26T04:29:28.935693+00:00",
+      "sha256": "c6de056b5cff340a9aaa8e22938e1e383073483b4d183afa5f273ff81636eee6",
+      "bytes": 1323,
+      "http_status": 200,
+      "source_page": null,
+      "doc_id": null,
+      "report_type_id": null,
+      "content_type": null,
+      "etag": null,
+      "last_modified": null,
+      "meta": {}
+    }
+  ]
+}

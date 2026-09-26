@@ -1,0 +1,12 @@
+Survey,FIPS,FIPS,Region,Division,County,,1-unit,,,2-units,,,3-4 units,,,5+ units,,,1-unit rep,,,2-units rep,,,3-4 units rep,,, 5+units rep
+Date,State,County,Code,Code,Name,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value
+ 
+200001,01,001,3,6,Autauga County                ,13,13,690525,0,0,0,0,0,0,0,0,0,13,13,690525,0,0,0,0,0,0,0,0,0
+200001,01,081,3,6,Lee County                    ,28,28,3392260,1,2,73788,2,6,658488,1,27,1434000,28,28,3392260,1,2,73788,2,6,658488,1,27,1434000
+200001,01,113,3,6,Russell County                ,2,2,253000,1,2,90000,0,0,0,0,0,0,2,2,253000,1,2,90000,0,0,0,0,0,0
+200001,01,125,3,6,Tuscaloosa County             ,52,52,4889075,4,8,464774,0,0,0,0,0,0,52,52,4889075,4,8,464774,0,0,0,0,0,0
+200001,02,013,4,9,Aleutians East Borough        ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+200001,02,016,4,9,Aleutians West Census Area    ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+200001,02,020,4,9,Anchorage Borough             ,39,39,5421230,2,4,353268,0,0,0,0,0,0,39,39,5421230,2,4,353268,0,0,0,0,0,0
+200001,02,050,4,9,Bethel Census Area            ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+200001,02,060,4,9,Bristol Bay Borough           ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

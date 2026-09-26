@@ -1,0 +1,275 @@
+# How the /data page names each raw source. Source ids are basecast-airflow's (SOURCE_MODULES); catalog
+# ids come from its docs/SCRAPING_RUNBOOK.md §1, upstream URLs from each source module, and cron from
+# dags/basecast_dags/config.py (SCHEDULES, America/Chicago), all as of 2026-09-26. A source missing here
+# still shows, under its id.
+groups: [ERCOT, Census, EIA, PUCT, Weather, Texas, Other]
+sources:
+  bls_qcew:
+    name: QCEW, data-center industry
+    group: Other
+    publisher: BLS
+    catalog_id: bls_qcew_county
+    description: County employment and wages for NAICS 518210 (data processing and hosting).
+    upstream_url: https://data.bls.gov/cew/data/api/
+    cron: "0 7 15 1,4,7,10 *"
+  census_acs:
+    name: ACS 5-year units in structure
+    group: Census
+    publisher: Census
+    catalog_id: census_acs_housing
+    description: Table B25032 from the ACS summary file, by county.
+    upstream_url: https://www2.census.gov/programs-surveys/acs/summary_file/
+    cron: "0 8 3 * *"
+  census_bps:
+    name: Building Permits Survey
+    group: Census
+    publisher: Census
+    description: Residential permits by county, monthly and annual.
+    upstream_url: https://www.census.gov/construction/bps/
+    cron: "0 6 20 * *"
+  census_pep:
+    name: County population estimates
+    group: Census
+    publisher: Census
+    catalog_id: census_pep_county
+    description: Four population estimate series by county.
+    upstream_url: https://www2.census.gov/programs-surveys/popest/datasets/
+    cron: "30 8 3 * *"
+  census_tx_counties_geo:
+    name: County boundaries 1:500k
+    group: Census
+    publisher: Census
+    description: Cartographic boundary shapefile, the source of tx_counties.
+    upstream_url: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+    cron: "30 9 3 * *"
+  census_zcta_county:
+    name: ZCTA to county relationship
+    group: Census
+    publisher: Census
+    description: 2020 relationship file that maps ZIPs to counties.
+    upstream_url: https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html
+    cron: null
+  eia_860:
+    name: EIA-860 annual
+    group: EIA
+    publisher: EIA
+    catalog_id: eia_860_annual
+    description: Plants and generators, annual release.
+    upstream_url: https://www.eia.gov/electricity/data/eia860/
+    cron: "30 7 3 * *"
+  eia_860m:
+    name: EIA-860M monthly generators
+    group: EIA
+    publisher: EIA
+    description: Operating, planned and retired generators by month.
+    upstream_url: https://www.eia.gov/electricity/data/eia860m/
+    cron: "0 7 26 * *"
+  eia_861:
+    name: EIA-861 utility data
+    group: EIA
+    publisher: EIA
+    catalog_id: eia_861_utilities
+    description: Sales, customers and service territory by utility.
+    upstream_url: https://www.eia.gov/electricity/data/eia861/
+    cron: "0 7 3 * *"
+  eia_territories:
+    name: Retail service territories
+    group: EIA
+    publisher: HIFLD
+    catalog_id: utility_territories
+    description: Electric retail service territory polygons (ORNL ArcGIS copy).
+    upstream_url: https://www.arcgis.com/sharing/rest/content/items/597555ce8e4a4892a030784a7c657fdd
+    cron: null
+  ercot_cdr:
+    name: Capacity, Demand and Reserves
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: cdr
+    description: CDR reports from 2000 to May 2026.
+    upstream_url: https://www.ercot.com/gridinfo/resource
+    cron: "30 6 2 * *"
+  ercot_demand_energy:
+    name: Demand and Energy report
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: demand_energy_report
+    description: Monthly peaks and energy by region.
+    upstream_url: https://www.ercot.com/news/presentations
+    cron: "30 7 10 * *"
+  ercot_fuel_mix:
+    name: Fuel mix
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: fuel_mix
+    description: Generation by fuel in 15-minute intervals.
+    upstream_url: https://www.ercot.com/gridinfo/generation
+    cron: "0 8 10 * *"
+  ercot_gis:
+    name: GIS interconnection queue
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: gis_report
+    description: Generator Interconnection Status report (PG7-200-ER), one per month.
+    upstream_url: https://www.ercot.com/mp/data-products/data-product-details?id=pg7-200-er
+    cron: "0 7 * * 1"
+  ercot_large_load_decks:
+    name: Large-load status decks
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: large_load_status
+    description: LLWG, TAC and Board decks on large-load interconnection.
+    upstream_url: https://www.ercot.com/committees/tac/llwg
+    cron: "0 8 * * 1"
+  ercot_load_wz_daily:
+    name: Actual load by weather zone
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: actual_load_weather_zone
+    description: Hourly load per weather zone, one file per day (NP6-345-CD).
+    upstream_url: https://www.ercot.com/mp/data-products/data-product-details?id=NP6-345-CD
+    cron: "15 6 * * *"
+  ercot_ltlf:
+    name: Long-Term Load Forecast
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: ltlf
+    description: LTLF workbooks, reports and weather-year scenarios.
+    upstream_url: https://www.ercot.com/gridinfo/load/forecast
+    cron: "0 6 2 * *"
+  ercot_members:
+    name: Corporate members
+    group: ERCOT
+    publisher: ERCOT
+    description: ERCOT members by market segment and year.
+    upstream_url: https://www.ercot.com/about/governance/members
+    cron: "0 7 2 * *"
+  ercot_mora:
+    name: Monthly Outlook for Resource Adequacy
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: mora
+    description: MORA workbooks and reports.
+    upstream_url: https://www.ercot.com/gridinfo/resource
+    cron: "0 7 12 * *"
+  ercot_mp_list:
+    name: Market participants
+    group: ERCOT
+    publisher: ERCOT
+    description: Registered market participants (NP12-215-ER).
+    upstream_url: https://www.ercot.com/mp/data-products/data-product-details?id=NP12-215-ER
+    cron: "30 6 * * *"
+  ercot_native_load:
+    name: Hourly load archives
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: hourly_load_archive
+    description: Native load by weather zone, yearly archives.
+    upstream_url: https://www.ercot.com/gridinfo/load/load_hist
+    cron: "0 7 10 * *"
+  ercot_rtp:
+    name: Regional Transmission Plan
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: ercot_rtp_public
+    description: RTP load tables (PG7-048-M).
+    upstream_url: https://www.ercot.com/mp/data-products/data-product-details?id=pg7-048-m
+    cron: "30 7 2 * *"
+  ercot_settlement_points:
+    name: Settlement points mapping
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: settlement_points_mapping
+    description: Bus, node, hub and load-zone mapping (NP4-160-SG).
+    upstream_url: https://www.ercot.com/mp/data-products/data-product-details?id=NP4-160-SG
+    cron: "30 7 * * 1"
+  ercot_spp_hist:
+    name: Hub and load-zone prices
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: spp_hist_hub_lz
+    description: Real-time and day-ahead settlement point prices (NP6-785-ER, NP4-180-ER).
+    upstream_url: https://www.ercot.com/mp/data-products/data-product-details?id=NP6-785-ER
+    cron: "0 9 10 * *"
+  ercot_tpit:
+    name: Transmission project tracking
+    group: ERCOT
+    publisher: ERCOT
+    description: TPIT workbook and archive.
+    upstream_url: https://www.ercot.com/gridinfo/planning
+    cron: "30 8 12 * *"
+  ercot_ziptozone:
+    name: ZIP to weather zone
+    group: ERCOT
+    publisher: ERCOT
+    catalog_id: geo_ziptozone
+    description: Load Profiling Guide appendix D, ZipToZone sheet.
+    upstream_url: https://www.ercot.com/mktrules/guides/loadprofiling/current
+    cron: "0 8 2 * *"
+  noaa_ghcnh:
+    name: GHCNh hourly observations
+    group: Weather
+    publisher: NOAA
+    description: Hourly station data for 12 Texas airports since 1980.
+    upstream_url: https://www.ncei.noaa.gov/oa/global-historical-climatology-network
+    cron: "0 4 * * 2"
+  open_meteo:
+    name: ERA5 hourly weather
+    group: Weather
+    publisher: Open-Meteo
+    catalog_id: open_meteo_weather
+    description: Hourly temperature and dew point per weather point.
+    upstream_url: https://archive-api.open-meteo.com/v1/archive
+    cron: "0 3 * * 3"
+  ornl_eaglei:
+    name: EAGLE-I side files
+    group: Other
+    publisher: ORNL
+    description: Outage coverage and data quality tables.
+    upstream_url: https://api.figshare.com/v2/articles/24237376
+    cron: null
+  puct_ccn_territories:
+    name: CCN service areas
+    group: PUCT
+    publisher: PUCT
+    catalog_id: puct_ccn_service_areas
+    description: Certificated service areas for co-ops, munis and IOUs.
+    upstream_url: https://www.arcgis.com/sharing/rest/content/items/366445b63acd4dbda6d60f9244e89c23
+    cron: "0 9 3 * *"
+  puct_directories:
+    name: Market directories
+    group: PUCT
+    publisher: PUCT
+    description: Directories of REPs, co-ops, munis, TDUs and generators.
+    upstream_url: https://www.puc.texas.gov/industry/electric/directories/Default.aspx
+    cron: "45 6 * * *"
+  puct_filings:
+    name: Interchange filings
+    group: PUCT
+    publisher: PUCT
+    catalog_id: puct_interchange_filings
+    description: "Dockets 58777, 59772 and 58481: every item and document."
+    upstream_url: https://interchange.puc.texas.gov/search/filings/
+    cron: "0 5 * * 2"
+  pudl:
+    name: PUDL release v2026.9.0
+    group: Other
+    publisher: Catalyst
+    catalog_id: pudl_release
+    description: Eight curated EIA and FERC tables.
+    upstream_url: https://s3.us-west-2.amazonaws.com/pudl.catalyst.coop
+    cron: null
+  tceq_air_permits:
+    name: Air permits (Central Registry)
+    group: Texas
+    publisher: TCEQ
+    catalog_id: tceq_central_registry
+    description: AIRNSR rows from data.texas.gov.
+    upstream_url: https://data.texas.gov
+    cron: "0 5 * * 3"
+  tx_comptroller:
+    name: Comptroller agreements
+    group: Texas
+    publisher: Comptroller
+    description: Ch. 312/380/381 agreements, data-center registry and JETI.
+    upstream_url: https://comptroller.texas.gov/economy/development/search-tools/sb1340/results.php
+    cron: "30 5 * * 3"

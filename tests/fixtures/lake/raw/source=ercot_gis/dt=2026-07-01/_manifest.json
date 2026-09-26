@@ -1,0 +1,23 @@
+{
+  "source": "ercot_gis",
+  "dt": "2026-07-01",
+  "entries": [
+    {
+      "file": "RPT.00015933.0000000000000000.20260803.153950829.GIS_Report_July2026.xlsx",
+      "url": "https://example.test/RPT.00015933.0000000000000000.20260803.153950829.GIS_Report_July2026.xlsx",
+      "fetched_at": "2026-09-26T04:29:28.935693+00:00",
+      "sha256": "b17f14a0591281deeacc352a503070e12df0cc2c52d733930af73574504824e3",
+      "bytes": 8143,
+      "http_status": 200,
+      "source_page": null,
+      "doc_id": null,
+      "report_type_id": null,
+      "content_type": null,
+      "etag": null,
+      "last_modified": null,
+      "meta": {
+        "family": "gis_report"
+      }
+    }
+  ]
+}
