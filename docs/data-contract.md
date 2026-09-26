@@ -87,3 +87,39 @@
 `GET /sources`
 
 - Itens: `source_id`, `catalog_id`, `last_success_at`, `data_start`, `data_end`, `verified`.
+
+### 7. Log operacional (`ops.log`, tela /ops do app)
+Não é endpoint: é a tabela onde app, get-data e airflow escrevem o mesmo formato de log, e que a tela
+`/ops` do app lê direto do Postgres (a tela de monitoramento não pode depender do get-data estar no ar).
+Postgres `basecast`, schema `ops`; o DDL é o model `OpsLog` em `basecast-app/prisma/schema.prisma`
+(aplicado com `prisma db push`), as permissões em `basecast-app/prisma/ops-grants.sql`. Guardada 30 dias.
+
+Uma linha por evento. Colunas:
+
+- `ts` (timestamptz, UTC), `service` (`app` | `get-data` | `airflow`), `env` (`production` |
+  `preview` | `development`), `level` (`info` | `warn` | `error`; `debug` só no stdout).
+- `event`: nome fixo com ponto (lista abaixo); `message`: a frase legível.
+- `request_id`: um clique do app até o get-data; o app manda no header `x-request-id` e o get-data
+  grava o mesmo valor. `run_id`: o `etl_run.run_id`, em toda linha de uma execução de pipeline.
+- `user_id` (id do usuário do app), `method`, `route` (o template da rota, nunca a URL crua nem a query
+  string), `status` (HTTP), `duration_ms`.
+- `error_class`, `error_stack` (até 15 linhas), `fingerprint` (`service:error_class:rota-ou-fonte`,
+  sem ids nem números, para agrupar o mesmo erro).
+- `version` (commit ou revisão), `host` (região do Vercel, instância do Cloud Run ou máquina),
+  `context` (jsonb com o resto, sem segredos: chaves como `password`, `token`, `authorization` e
+  `email` saem como `[redacted]`).
+
+Eventos:
+
+- Todos: `http.request`, uma linha por request (5xx `error`, 4xx `warn`, acima de 1,5 s `warn`,
+  o resto `info`).
+- app: `server.error` (erro não tratado fora de uma rota do BFF), `auth.sign_in`,
+  `auth.sign_in_failed`, `http.upstream` (cada chamada ao get-data).
+- get-data: `mart.load`, `instance.start`.
+- airflow: `etl_run.start`, `etl_run.success`, `etl_run.partial`, `etl_run.failed`,
+  `etl_run.abandoned`, e um `etl.<kind>` por evento do `EtlRun` (`etl.http`, `etl.error`,
+  `etl.dataset`…); as demais linhas `warn`/`error` dos loggers `basecast_pipelines` e `basecast_dags`
+  entram como `log`.
+
+Regra comum: escrever o log nunca derruba o request nem a execução. Sem banco, a linha continua no
+stdout.
