@@ -154,7 +154,8 @@ Eventos:
 - Todos: `http.request`, uma linha por request (5xx `error`, 4xx `warn`, acima de 1,5 s `warn`,
   o resto `info`).
 - app: `server.error` (erro não tratado fora de uma rota do BFF), `auth.sign_in`,
-  `auth.sign_in_failed`, `http.upstream` (cada chamada ao get-data).
+  `auth.sign_in_failed`, `http.upstream` (chamada ao get-data que falhou ou passou de 1,5 s; as
+  outras ficam só no stdout, porque o `http.request` do app e o do get-data já cobrem).
 - get-data: `mart.load`, `instance.start`.
 - airflow: `etl_run.start`, `etl_run.success`, `etl_run.partial`, `etl_run.failed`,
   `etl_run.abandoned`, e um `etl.<kind>` por evento do `EtlRun` (`etl.http`, `etl.error`,
