@@ -17,6 +17,9 @@ and their done criteria (C0–C2) stay only in `docs/KICKOFF.md` §6.
 - Anything not confirmed at the source stays marked "not verified".
 - Log decisions in `docs/decisions.md`, one line each: date, decision, reason. This repo owns the
   contract, so decisions that affect more than one repo are logged here too.
+- Work on `main` only, in all three repos: no feature branches, no worktrees. Small commits pushed straight
+  to `main`. A push to `main` deploys to production (Cloud Run for this repo, once it has a Dockerfile),
+  so the checks pass before every push.
 
 ## Product context (KICKOFF §1)
 
