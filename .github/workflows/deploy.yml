@@ -1,0 +1,76 @@
+name: Deploy to Google Cloud Run
+
+# Adapted from fundsys-analytics-get-data's deploy.yml. The setup it needs (Workload Identity
+# Federation, the deploy service account and these repo secrets: GCP_WORKLOAD_IDENTITY_PROVIDER,
+# GCP_SERVICE_ACCOUNT, GCP_PROJECT_ID, ENV_YAML) is basecast-airflow/deploy/gcp/06-github-actions.sh.
+# ENV_YAML holds the service's environment: API_TOKEN, DATA_MODE, GCP_PROJECT, BQ_DATASET.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Required for Workload Identity Federation
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # The repo has no service yet; until the FastAPI app and its Dockerfile land, pushes skip the
+      # deploy instead of failing.
+      - name: Check for a Dockerfile
+        id: service
+        run: |
+          if [ -f Dockerfile ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::No Dockerfile yet; skipping the Cloud Run deploy."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Authenticate to Google Cloud
+        if: steps.service.outputs.present == 'true'
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          token_format: access_token
+
+      - name: Set up Cloud SDK
+        if: steps.service.outputs.present == 'true'
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Create env.yaml
+        if: steps.service.outputs.present == 'true'
+        env:
+          ENV_YAML: ${{ secrets.ENV_YAML }}
+        run: printf '%s\n' "$ENV_YAML" > env.yaml
+
+      # Minimum instances stay at 0 (docs/decisions.md): the API scales to zero between demos. It runs
+      # as get-data-run, which reads the lake and BigQuery; the API checks API_TOKEN itself, hence
+      # --allow-unauthenticated.
+      - name: Deploy Cloud Run service
+        if: steps.service.outputs.present == 'true'
+        run: |
+          gcloud run deploy basecast-get-data \
+            --source=. \
+            --region=us-central1 \
+            --service-account=get-data-run@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com \
+            --allow-unauthenticated \
+            --timeout=3600s \
+            --cpu=1 \
+            --memory=1Gi \
+            --execution-environment=gen2 \
+            --concurrency=80 \
+            --max-instances=4 \
+            --env-vars-file=env.yaml \
+            --project=${{ secrets.GCP_PROJECT_ID }}
+
+      - name: Cleanup env.yaml
+        if: always()
+        run: rm -f env.yaml
