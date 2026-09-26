@@ -84,8 +84,8 @@ def test_x9_diagnoses_conform_to_the_contract(real, client, account_id):
     assert all(c["label"] for c in d["triggers"]["context_summary"])
     assert all(site["name"] and site["tceq_rn"] for site in d["territory"]["data_centers"])
     events = client.get(f"/accounts/{account_id}/events", params={"limit": 500}).json()["data"]
-    dated = [e for e in SAMPLES["mart_account_events"] if e["account_id"] == account_id and e["event_date"]]
-    assert events["total"] == len(dated) and all(e["title"] for e in events["items"])
+    own = [e for e in SAMPLES["mart_account_events"] if e["account_id"] == account_id]
+    assert events["total"] == len(own) and all(e["title"] and e["event_date"] for e in events["items"])
 
 
 def test_nbu_lead_trigger_is_the_data_center_permit(real, client):

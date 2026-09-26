@@ -221,47 +221,6 @@ def export_accounts(filters: dict[str, Any] = Depends(_filters)) -> CSVResponse:
     )
 
 
-# The detail payload as basecast-airflow wrote its first build; `_conform` maps it to the contract (X9 §4) and
-# does nothing once the mart writes the contract's keys.
-DATA_CENTER_KEYS = {
-    "reg_ent_name": "name",
-    "ref_num_txt": "tceq_rn",
-    "first_affil_begin_dt": "first_permit_date",
-}
-
-
-def _event_title(event: dict[str, Any]) -> dict[str, Any]:
-    """Some sources have no title (TPIT projects without a name): the event's detail stands in."""
-    if event.get("title") is None:
-        return {**event, "title": event.get("detail") or event.get("label") or event.get("trigger")}
-    return event
-
-
-def _trigger_labels() -> dict[str, str]:
-    items = store.mart_meta("glossary").get("items", [])
-    return {i["code"]: i["text"] for i in items if i.get("kind") == "trigger"}
-
-
-def _conform(payload: dict[str, Any]) -> dict[str, Any]:
-    territory = dict(payload.get("territory") or {})
-    sites = []
-    for site in territory.get("data_centers") or []:
-        site = {DATA_CENTER_KEYS.get(k, k): v for k, v in site.items()}
-        if str(site.get("matched_by", "")).lower().startswith("naics"):
-            site["matched_by"] = "naics"
-        sites.append(site)
-    territory["data_centers"] = sites
-    triggers = dict(payload.get("triggers") or {})
-    triggers["active"] = [_event_title(e) for e in triggers.get("active") or []]
-    if any("label" not in c for c in triggers.get("context_summary") or []):
-        labels = _trigger_labels()
-        triggers["context_summary"] = [
-            {"label": labels.get(c["trigger"], c["trigger"]), **c}
-            for c in triggers.get("context_summary") or []
-        ]
-    return {**payload, "territory": territory, "triggers": triggers}
-
-
 def _known(account_id: str) -> dict[str, Any]:
     row = store.frame(ACCOUNTS).filter(pl.col("account_id") == account_id)
     if not row.height:
@@ -277,9 +236,7 @@ def account_detail(account_id: str = ACCOUNT_ID) -> AccountDetailResponse:
     payload = next((r["payload"] for r in store.records(DETAIL) if r["account_id"] == account_id), None)
     if payload is None:
         raise HTTPException(404, "not_found")
-    detail = AccountDetail(
-        **{**_conform(payload), "name": summary["name"], "account_type": summary["account_type"]}
-    )
+    detail = AccountDetail(**{**payload, "name": summary["name"], "account_type": summary["account_type"]})
     facts = [*detail.header, *detail.territory.facts]
     return AccountDetailResponse(
         meta=product_meta(
@@ -303,8 +260,7 @@ def account_events(
 ) -> EventsResponse:
     """The account's full event history, newest first."""
     _known(account_id)
-    # An event without a date (a few expired agreements) has no place on the timeline and is never active.
-    df = store.frame(EVENTS).filter(pl.col("account_id") == account_id, pl.col("event_date").is_not_null())
+    df = store.frame(EVENTS).filter(pl.col("account_id") == account_id)
     if since:
         df = df.filter(pl.col("event_date") >= since)
     if trigger:
@@ -315,7 +271,7 @@ def account_events(
     return EventsResponse(
         meta=product_meta(EVENTS, rows=store.frame(ACCOUNTS), caveats=["by_county_not_point"]),
         data=EventsPage(
-            items=[Event(**_event_title(row)) for row in df.slice(offset, limit).to_dicts()],
+            items=[Event(**row) for row in df.slice(offset, limit).to_dicts()],
             total=df.height,
             offset=offset,
             limit=limit,

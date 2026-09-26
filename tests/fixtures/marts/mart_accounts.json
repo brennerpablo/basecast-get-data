@@ -62,9 +62,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 1,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30053",
@@ -121,9 +121,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 1,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30128",
@@ -186,9 +186,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 2,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30071",
@@ -251,9 +251,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 3,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30162",
@@ -318,9 +318,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 4,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30065",
@@ -383,9 +383,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 2,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30122",
@@ -431,7 +431,7 @@
    "n_context": 2,
    "latest_event_date": "2026-08-12",
    "top_trigger": {
-    "title": "Owens Corning Insulation Systems LLC",
+    "title": "Owens Corning  Insulating Systems LLC",
     "trigger": "dev_agreement",
     "age_days": 45,
     "event_date": "2026-08-12"
@@ -449,9 +449,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 5,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30007",
@@ -516,9 +516,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 6,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30052",
@@ -579,9 +579,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 7,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30134",
@@ -627,7 +627,7 @@
    "n_context": 1,
    "latest_event_date": "2026-05-22",
    "top_trigger": {
-    "title": "SAM HOUSTON ELECTRIC COOP INC registered as TDSP",
+    "title": "SAM HOUSTON ELECTRIC COOP INC registered as LSE",
     "trigger": "market_registration",
     "age_days": 127,
     "event_date": "2026-05-22"
@@ -641,9 +641,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 8,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30011",
@@ -689,7 +689,7 @@
    "n_context": 2,
    "latest_event_date": "2026-07-13",
    "top_trigger": {
-    "title": "LOST PINES GAS RECIP PHASE 2",
+    "title": "Lost Pines Power Park",
     "trigger": "gen_storage_ia",
     "age_days": 274,
     "event_date": "2025-12-26"
@@ -705,9 +705,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 9,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30145",
@@ -770,9 +770,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 10,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30094",
@@ -833,9 +833,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 11,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30175",
@@ -889,9 +889,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 12,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30031",
@@ -952,9 +952,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 3,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30184",
@@ -1011,9 +1011,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 4,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30173",
@@ -1071,9 +1071,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 8,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30083",
@@ -1119,7 +1119,7 @@
    "n_context": 2,
    "latest_event_date": "2026-08-12",
    "top_trigger": {
-    "title": "Owens Corning  Insulating Systems LLC",
+    "title": "Owens Corning Insulation Systems LLC",
     "trigger": "dev_agreement",
     "age_days": 45,
     "event_date": "2026-08-12"
@@ -1137,9 +1137,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 13,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30073",
@@ -1196,9 +1196,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 5,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30029",
@@ -1260,9 +1260,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 14,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30040",
@@ -1318,9 +1318,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 15,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30046",
@@ -1374,9 +1374,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 6,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30012",
@@ -1440,9 +1440,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 7,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30156",
@@ -1507,9 +1507,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 16,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30119",
@@ -1572,9 +1572,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 17,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30118",
@@ -1637,9 +1637,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 18,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30056",
@@ -1695,9 +1695,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 9,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30140",
@@ -1754,9 +1754,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 10,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30006",
@@ -1814,9 +1814,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 11,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30009",
@@ -1881,9 +1881,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 19,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30008",
@@ -1941,9 +1941,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 12,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30136",
@@ -2005,9 +2005,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 20,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30108",
@@ -2065,9 +2065,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 13,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30112",
@@ -2125,9 +2125,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 14,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30116",
@@ -2173,7 +2173,7 @@
    "n_context": 1,
    "latest_event_date": "2026-07-13",
    "top_trigger": {
-    "title": "Val Vista Grid BESS 2",
+    "title": "Val Vista Grid BESS 1",
     "trigger": "gen_storage_ia",
     "age_days": 269,
     "event_date": "2025-12-31"
@@ -2187,9 +2187,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 21,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30144",
@@ -2247,9 +2247,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 15,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30168",
@@ -2304,9 +2304,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 16,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30093",
@@ -2360,9 +2360,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 22,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30129",
@@ -2426,9 +2426,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 23,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30138",
@@ -2485,9 +2485,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 17,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30023",
@@ -2545,9 +2545,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 18,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30107",
@@ -2605,9 +2605,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 19,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30111",
@@ -2662,9 +2662,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 20,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30019",
@@ -2722,9 +2722,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 21,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30039",
@@ -2787,9 +2787,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 24,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30088",
@@ -2851,9 +2851,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 25,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30100",
@@ -2911,9 +2911,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 22,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30079",
@@ -2974,9 +2974,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 26,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30014",
@@ -3032,9 +3032,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 23,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30131",
@@ -3098,9 +3098,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 27,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30059",
@@ -3154,9 +3154,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 24,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30137",
@@ -3218,9 +3218,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 28,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30084",
@@ -3276,9 +3276,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 25,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30120",
@@ -3341,9 +3341,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 29,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30036",
@@ -3405,9 +3405,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 30,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30176",
@@ -3461,9 +3461,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 31,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30072",
@@ -3524,9 +3524,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 32,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30034",
@@ -3583,9 +3583,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 33,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30082",
@@ -3643,9 +3643,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 26,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30070",
@@ -3708,9 +3708,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 27,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30098",
@@ -3770,9 +3770,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 34,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30149",
@@ -3833,9 +3833,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 35,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30022",
@@ -3895,9 +3895,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 28,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30089",
@@ -3951,9 +3951,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 36,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30027",
@@ -4009,9 +4009,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 29,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30104",
@@ -4075,9 +4075,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 37,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30062",
@@ -4135,9 +4135,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 30,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30010",
@@ -4195,9 +4195,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 31,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30061",
@@ -4254,9 +4254,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 38,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30057",
@@ -4311,9 +4311,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 39,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30021",
@@ -4375,9 +4375,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 32,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30187",
@@ -4434,9 +4434,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 33,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30024",
@@ -4499,9 +4499,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 34,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30063",
@@ -4547,7 +4547,7 @@
    "n_context": 0,
    "latest_event_date": "2026-05-21",
    "top_trigger": {
-    "title": "H-E-B,LP",
+    "title": "H-E-B, LP",
     "trigger": "dev_agreement",
     "age_days": 128,
     "event_date": "2026-05-21"
@@ -4563,9 +4563,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 35,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30018",
@@ -4622,9 +4622,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 36,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30126",
@@ -4684,9 +4684,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 40,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30030",
@@ -4742,9 +4742,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 41,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30066",
@@ -4802,9 +4802,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 37,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30067",
@@ -4860,9 +4860,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 38,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30172",
@@ -4924,9 +4924,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 42,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30035",
@@ -4988,9 +4988,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 39,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30113",
@@ -5052,9 +5052,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 43,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30033",
@@ -5110,9 +5110,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 40,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30139",
@@ -5170,9 +5170,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 41,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30058",
@@ -5230,9 +5230,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 42,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30097",
@@ -5290,9 +5290,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 43,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30166",
@@ -5346,9 +5346,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 44,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30102",
@@ -5406,9 +5406,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 44,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30132",
@@ -5466,9 +5466,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 45,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30169",
@@ -5526,9 +5526,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 46,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30117",
@@ -5586,9 +5586,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 47,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30133",
@@ -5648,9 +5648,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 45,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30186",
@@ -5708,9 +5708,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 48,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30068",
@@ -5768,9 +5768,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 49,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30085",
@@ -5830,9 +5830,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 46,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30081",
@@ -5888,9 +5888,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 50,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30177",
@@ -5948,9 +5948,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 51,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30142",
@@ -6008,9 +6008,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 52,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30078",
@@ -6068,9 +6068,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 53,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30143",
@@ -6128,9 +6128,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 54,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30042",
@@ -6188,9 +6188,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 55,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30121",
@@ -6248,9 +6248,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 56,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30015",
@@ -6308,9 +6308,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 57,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30091",
@@ -6362,9 +6362,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 47,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30045",
@@ -6424,9 +6424,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 48,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30069",
@@ -6484,9 +6484,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 58,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   },
   {
    "account_id": "30167",
@@ -6543,9 +6543,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 59,
-   "model_version": "f85bb1f.v1",
+   "model_version": "978eee9.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-26T23:57:27.997511+00:00"
   }
  ]
 }
