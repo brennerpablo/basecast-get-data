@@ -3,7 +3,9 @@ name: Deploy to Google Cloud Run
 # Adapted from fundsys-analytics-get-data's deploy.yml. The setup it needs (Workload Identity
 # Federation, the deploy service account and these repo secrets: GCP_WORKLOAD_IDENTITY_PROVIDER,
 # GCP_SERVICE_ACCOUNT, GCP_PROJECT_ID, ENV_YAML) is basecast-airflow/deploy/gcp/06-github-actions.sh.
-# ENV_YAML holds the service's environment: API_TOKEN, DATA_MODE, GCP_PROJECT, BQ_DATASET.
+# ENV_YAML holds the service's environment: API_TOKEN, DATA_MODE, GCP_PROJECT, BQ_DATASET. The rest of the
+# configuration has production defaults in basecast_get_data/config.py; the Postgres password comes from
+# Secret Manager (--set-secrets) and the instance through Cloud Run's Cloud SQL socket.
 
 on:
   push:
@@ -53,7 +55,7 @@ jobs:
 
       # Minimum instances stay at 0 (docs/decisions.md): the API scales to zero between demos. It runs
       # as get-data-run, which reads the lake and BigQuery; the API checks API_TOKEN itself, hence
-      # --allow-unauthenticated.
+      # --allow-unauthenticated. 2 GiB because spreadsheet previews parse whole sheets in memory.
       - name: Deploy Cloud Run service
         if: steps.service.outputs.present == 'true'
         run: |
@@ -64,11 +66,13 @@ jobs:
             --allow-unauthenticated \
             --timeout=3600s \
             --cpu=1 \
-            --memory=1Gi \
+            --memory=2Gi \
             --execution-environment=gen2 \
             --concurrency=80 \
             --max-instances=4 \
             --env-vars-file=env.yaml \
+            --set-secrets=PG_PASSWORD=pg-basecast-reader-password:latest \
+            --add-cloudsql-instances=${{ secrets.GCP_PROJECT_ID }}:us-central1:basecast-pg \
             --project=${{ secrets.GCP_PROJECT_ID }}
 
       - name: Cleanup env.yaml
