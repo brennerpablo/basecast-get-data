@@ -38,7 +38,7 @@ def product_meta(
 ) -> Meta:
     """`marts` are the ones the response read; `rows` is its main frame, whose `as_of` and `model_version` go
     to the envelope. A response that read any fixture says `simulated` and carries the `fixture` caveat."""
-    codes = list(caveats)
+    codes = list(caveats) + [c for m in marts for c in store.mart_caveats(m)]
     if not verified:
         codes.insert(0, "machine_read_unverified")
     fixture = any(not store.live(m) for m in marts)

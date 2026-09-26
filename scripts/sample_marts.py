@@ -1,0 +1,65 @@
+"""Writes tests/fixtures/marts/: the real marts in Postgres, trimmed, for tests/test_real_marts.py.
+
+    uv run python scripts/sample_marts.py [mart ...]
+
+Reads `public.mart_*` as basecast_reader (the proxy in .env) and keeps every row of a small mart; a mart past
+MAX_ROWS needs a trimming rule in TRIM first, so a sample never grows by accident. The `mart_meta` rows of the
+sampled marts go to mart_meta.json. The account marts hold only the scored universe (the validation lock),
+so a sample of them holds no held-out account either.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from datetime import date, datetime
+from decimal import Decimal
+from pathlib import Path
+from typing import Any
+
+from basecast_get_data.db import pg
+from basecast_get_data.products import marts
+
+OUT = Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "marts"
+MAX_ROWS = 400
+# mart → SQL WHERE clause that trims it (fixed values, never user input).
+TRIM: dict[str, str] = {}
+
+
+def _json(value: Any) -> Any:
+    if isinstance(value, datetime | date):
+        return value.isoformat()
+    if isinstance(value, Decimal):
+        return float(value)
+    raise TypeError(type(value))
+
+
+def sample(name: str) -> int | None:
+    exists = pg.fetch_all("SELECT to_regclass(%s) IS NOT NULL AS present", (f"public.{name}",))[0]["present"]
+    if not exists:
+        return None
+    where = f" WHERE {TRIM[name]}" if name in TRIM else ""
+    rows = pg.fetch_all(f'SELECT * FROM public."{name}"{where}')
+    if len(rows) > MAX_ROWS:
+        raise SystemExit(f"{name}: {len(rows)} rows; add a trimming rule to TRIM first")
+    doc = {"note": f"public.{name}, trimmed by scripts/sample_marts.py", "rows": rows}
+    (OUT / f"{name}.json").write_text(json.dumps(doc, indent=1, default=_json, ensure_ascii=False) + "\n")
+    return len(rows)
+
+
+def main(names: list[str]) -> None:
+    OUT.mkdir(parents=True, exist_ok=True)
+    sampled = []
+    for name in names or [m for m in marts.MARTS if m.startswith("mart_")]:
+        n = sample(name)
+        if n is not None:
+            sampled.append(name)
+            print(f"{name}: {n} rows")
+    keys = [m.removeprefix("mart_") for m in sampled] + ["glossary"]
+    meta = pg.fetch_all("SELECT mart, key, value FROM public.mart_meta WHERE mart = ANY(%s)", (keys,))
+    doc = {"note": "public.mart_meta rows of the sampled marts", "rows": meta}
+    (OUT / "mart_meta.json").write_text(json.dumps(doc, indent=1, default=_json, ensure_ascii=False) + "\n")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

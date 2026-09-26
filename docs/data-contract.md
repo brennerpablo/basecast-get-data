@@ -46,7 +46,8 @@ Toda resposta de recurso traz `meta` e `data` (a exceção é o catálogo `GET /
 - `verified`: falso quando algum valor da resposta foi lido por máquina e não conferido. O detalhe fica em cada
   linha (`verified` por linha).
 - `sources`: os marts que a resposta leu.
-- `caveats`: as ressalvas que valem para a resposta, cada uma com o texto padrão (abaixo). O app mostra
+- `caveats`: as ressalvas que valem para a resposta, cada uma com o texto padrão (abaixo): as do recurso mais
+  as que cada mart lido declara no `mart_meta` (chave `caveats`; um código fora da lista é descartado com log). O app mostra
   `label` como selo e `text` como tooltip, e nunca escreve ressalva por conta própria.
 - Valores de uma tela que não são linhas (quebras da legenda, pesos, datas do backtest, variantes) vão em
   `data`, não em `meta`, para `Meta` ser um tipo só.

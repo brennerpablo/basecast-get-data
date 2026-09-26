@@ -27,6 +27,7 @@ import polars as pl
 from basecast_get_data.config import get_settings
 from basecast_get_data.db import pg
 from basecast_get_data.products import marts
+from basecast_get_data.schemas.caveats import CODES
 
 log = logging.getLogger(__name__)
 
@@ -258,6 +259,22 @@ def frame(name: str) -> pl.DataFrame:
 
 def records(name: str) -> list[dict[str, Any]]:
     return _get(name).rows if live(name) else _fixture(name)["rows"]
+
+
+def mart_caveats(table: str) -> list[str]:
+    """The caveat codes a live mart declares in `mart_meta` (key `caveats`); unknown codes are dropped."""
+    if table not in marts.MARTS or not live(table):
+        return []
+    try:
+        rows = _get(marts.META).rows
+    except MartNotBuilt:
+        return []
+    name = table.removeprefix("mart_")
+    codes = next((r["value"] for r in rows if r["mart"] == name and r["key"] == "caveats"), None) or []
+    unknown = [c for c in codes if c not in CODES]
+    if unknown:
+        log.warning("%s declares caveat codes the contract does not have: %s", table, ", ".join(unknown))
+    return [c for c in codes if c in CODES]
 
 
 def mart_meta(mart: str) -> dict[str, Any]:

@@ -3,12 +3,7 @@ fixtures with Postgres types (dates, numeric as Decimal, jsonb as dicts)."""
 
 from __future__ import annotations
 
-import json
-import re
 from collections import Counter
-from datetime import date
-from decimal import Decimal
-from typing import Any
 
 import polars as pl
 import pytest
@@ -16,73 +11,14 @@ from psycopg import errors as pg_errors
 
 from basecast_get_data import config
 from basecast_get_data.db import pg
-from basecast_get_data.products import marts, store
+from basecast_get_data.products import store
 from basecast_get_data.tables import catalog, registry
-
-ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-NUMERIC = {"score", "meters", "priority", "capacity_mw"}
-
-
-def _typed(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """As Postgres types them: a column of ISO dates is a date column, and numeric is Decimal."""
-    columns = {c for r in rows for c in r}
-    dates = {
-        c
-        for c in columns
-        if (values := [r[c] for r in rows if r.get(c) is not None])
-        and all(isinstance(v, str) and ISO_DATE.match(v) for v in values)
-    }
-
-    def value(column: str, v: Any) -> Any:
-        if v is None:
-            return None
-        if column in dates:
-            return date.fromisoformat(v)
-        if column in NUMERIC and isinstance(v, float):
-            return Decimal(str(v))
-        return v
-
-    return [{k: value(k, v) for k, v in r.items()} for r in rows]
-
-
-def _tables() -> dict[str, list[dict[str, Any]]]:
-    out = {}
-    for name in marts.MARTS:
-        out[name] = _typed(json.loads((marts.FIXTURES / f"{name}.json").read_text())["rows"])
-    meta = json.loads((marts.FIXTURES / "mart_meta.json").read_text())["marts"]
-    out["mart_meta"] = [
-        {"mart": m, "key": k, "value": v} for m, values in meta.items() for k, v in values.items()
-    ]
-    return out
-
-
-class FakePostgres:
-    def __init__(self) -> None:
-        self.tables = _tables()
-        self.full_reads: Counter[str] = Counter()
-
-    def fetch_all(self, query: str, params: Any = None) -> list[dict[str, Any]]:
-        if "information_schema.columns" in query:
-            rows = self.tables.get(params[1])
-            columns = dict.fromkeys(c for r in rows for c in r) if rows is not None else {}
-            return [{"column_name": c} for c in columns]
-        name = re.search(r'FROM public\."(\w+)"', query).group(1)
-        rows = self.tables[name]
-        if query.startswith("SELECT count(*)"):
-            out: dict[str, Any] = {"n": len(rows)}
-            for column in ("built_at", "model_version", "as_of"):
-                if f"max({column})" in query:
-                    out[column] = max(
-                        (str(r[column]) for r in rows if r.get(column) is not None), default=None
-                    )
-            return [out]
-        self.full_reads[name] += 1
-        return [dict(r) for r in rows]
+from tests.fake_pg import FakePostgres, fixture_tables
 
 
 @pytest.fixture
 def fake_pg(monkeypatch):
-    fake = FakePostgres()
+    fake = FakePostgres(fixture_tables())
     monkeypatch.setattr(pg, "fetch_all", fake.fetch_all)
     return fake
 
@@ -177,7 +113,8 @@ def test_health_reports_the_mode(client, fake_pg, monkeypatch):
     client.get("/backtest/queue")
     h = client.get("/health").json()
     assert h["data_mode"] == "fixtures" and h["marts_live"] == ["backtest"]
-    assert h["marts_loaded"] == {"mart_queue_backtest": len(fake_pg.tables["mart_queue_backtest"])}
+    assert h["marts_loaded"]["mart_queue_backtest"] == len(fake_pg.tables["mart_queue_backtest"])
+    assert "mart_peak_backtest" not in h["marts_loaded"]
 
 
 def test_glossary_labels_every_code(client):

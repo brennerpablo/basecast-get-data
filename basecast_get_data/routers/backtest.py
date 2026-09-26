@@ -121,7 +121,8 @@ def peak(
     fan_year = int(fan["target_year"].max()) if fan.height else max(cells["target_year"].to_list(), default=0)
     fan = fan.filter(pl.col("target_year") == fan_year) if fan.height else fan
     actuals = store.frame(ACTUALS).sort("year")
-    preliminary = not bool(actuals["final"].all()) if actuals.height else False
+    # The caveat is about the latest summer; older rows carry their own `final`.
+    preliminary = bool(actuals.height) and not actuals["final"][-1]
     verified = all_verified(cells, fan)
     return PeakBacktestResponse(
         meta=product_meta(
