@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import logging
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 
 from google.api_core import exceptions as gexc
@@ -67,8 +68,10 @@ def tables() -> dict[str, BqTable]:
     out: dict[str, BqTable] = {}
     try:
         client = bq.client()
-        for item in client.list_tables(f"{s.gcp_project}.{s.bq_dataset}"):
-            t = client.get_table(item.reference)
+        refs = [item.reference for item in client.list_tables(f"{s.gcp_project}.{s.bq_dataset}")]
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            fetched = list(pool.map(client.get_table, refs))
+        for t in fetched:
             out[t.table_id] = BqTable(
                 name=t.table_id,
                 rows=int(t.num_rows or 0),
