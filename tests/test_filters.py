@@ -14,7 +14,9 @@ NAMES = {c.name for c in COLS}
 
 
 def test_parse_filters():
-    fs = parse_filters(["point_id:eq:east_tyler", "ts_utc:between:2018-01-01\x1f2018-12-31", "geom:null:"], NAMES)
+    fs = parse_filters(
+        ["point_id:eq:east_tyler", "ts_utc:between:2018-01-01\x1f2018-12-31", "geom:null:"], NAMES
+    )
     assert [(f.column, f.op, f.values) for f in fs] == [
         ("point_id", "eq", ("east_tyler",)),
         ("ts_utc", "between", ("2018-01-01", "2018-12-31")),
@@ -40,7 +42,9 @@ def test_like_pattern_escapes_wildcards():
 
 def test_rows_query_quotes_identifiers_and_binds_values():
     filters = parse_filters(["point_id:starts:east", "temperature_c:gte:30", "point_id:in:a\x1fb"], NAMES)
-    query, params = postgres.rows_query("open_meteo_hourly", COLS, filters, "temperature_c", True, ["point_id", "ts_utc"])
+    query, params = postgres.rows_query(
+        "open_meteo_hourly", COLS, filters, "temperature_c", True, ["point_id", "ts_utc"]
+    )
     text = query.as_string(None)
     assert 'FROM "public"."open_meteo_hourly"' in text
     assert '"point_id"::text ILIKE %s' in text

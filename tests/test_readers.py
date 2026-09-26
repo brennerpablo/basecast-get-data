@@ -110,4 +110,6 @@ def test_pptx_text_per_slide():
 def test_manifest_folder_comes_from_the_key():
     raw = b'{"source":"elsewhere","dt":"1999-01-01","entries":[{"file":"a.csv","bytes":3},{"file":"../x"}]}'
     objs = parse_manifest("raw/source=s1/dt=2026-01-02/_manifest.json", raw)
-    assert [(o.key, o.source_id, o.dt) for o in objs] == [("raw/source=s1/dt=2026-01-02/a.csv", "s1", "2026-01-02")]
+    assert [(o.key, o.source_id, o.dt) for o in objs] == [
+        ("raw/source=s1/dt=2026-01-02/a.csv", "s1", "2026-01-02")
+    ]

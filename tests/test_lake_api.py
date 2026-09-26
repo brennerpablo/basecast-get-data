@@ -20,7 +20,12 @@ def test_sources(client):
     gis = next(s for s in data["items"] if s["source_id"] == "ercot_gis")
     assert gis["name"] == "GIS interconnection queue"
     assert gis["schedule"] == "Mondays 07:00 CT"
-    assert (gis["files"], gis["snapshots"], gis["first_dt"], gis["last_dt"]) == (2, 2, "2026-07-01", "2026-08-01")
+    assert (gis["files"], gis["snapshots"], gis["first_dt"], gis["last_dt"]) == (
+        2,
+        2,
+        "2026-07-01",
+        "2026-08-01",
+    )
     assert gis["formats"] == [{"extension": "xlsx", "files": 2}]
 
 
@@ -34,7 +39,9 @@ def test_root_lists_only_public_layers(client):
 
 def test_private_and_escaping_keys_are_refused(client):
     assert client.get("/lake/object", params={"key": "backups/basecast.dump"}).status_code == 422
-    assert client.get("/lake/object/content", params={"key": "_logs/ercot_gis-20260926.log"}).status_code == 422
+    assert (
+        client.get("/lake/object/content", params={"key": "_logs/ercot_gis-20260926.log"}).status_code == 422
+    )
     assert client.get("/lake/object", params={"key": "raw/../backups/basecast.dump"}).status_code == 422
 
 
@@ -45,7 +52,9 @@ def test_folders_by_level(client):
     assert [f["name"] for f in source["folders"]] == ["dt=2026-08-01", "dt=2026-07-01"]
     files = client.get("/lake/list", params={"prefix": GIS_DIR}).json()["data"]
     assert files["total_objects"] == 1 and files["objects"][0]["kind"] == "sheet"
-    flat = client.get("/lake/list", params={"prefix": "raw/source=ercot_gis/", "recursive": True, "q": "july"})
+    flat = client.get(
+        "/lake/list", params={"prefix": "raw/source=ercot_gis/", "recursive": True, "q": "july"}
+    )
     assert [o["dt"] for o in flat.json()["data"]["objects"]] == ["2026-07-01"]
 
 
@@ -62,7 +71,13 @@ def test_sheet_structure_and_rows(client):
     assert sheets[1] == {"name": "Project Details - Large Gen", "rows": 35, "columns": 12}
     page = client.get(
         "/lake/object/rows",
-        params={"key": GIS, "sheet": "Project Details - Large Gen", "offset": 24, "limit": 2, "with_summary": True},
+        params={
+            "key": GIS,
+            "sheet": "Project Details - Large Gen",
+            "offset": 24,
+            "limit": 2,
+            "with_summary": True,
+        },
     ).json()["data"]
     assert page["total"] == 35 and page["offset"] == 24
     assert page["rows"][0][0] == "INR"
@@ -95,7 +110,10 @@ def test_content_ranges(client):
 
 
 def test_signed_url_is_null_on_local_storage(client):
-    assert client.get("/lake/object/url", params={"key": GIS}).json()["data"] == {"url": None, "expires_at": None}
+    assert client.get("/lake/object/url", params={"key": GIS}).json()["data"] == {
+        "url": None,
+        "expires_at": None,
+    }
 
 
 def test_tables_without_a_database(client):

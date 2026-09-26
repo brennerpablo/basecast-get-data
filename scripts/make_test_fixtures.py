@@ -47,7 +47,9 @@ def write_manifest(folder: Path, source: str, day: str, extra: dict[str, dict]) 
                 "meta": extra.get(f.name, {}).get("meta", {}),
             }
         )
-    (folder / "_manifest.json").write_text(json.dumps({"source": source, "dt": day, "entries": entries}, indent=2))
+    (folder / "_manifest.json").write_text(
+        json.dumps({"source": source, "dt": day, "entries": entries}, indent=2)
+    )
 
 
 def folder(source: str, day: str) -> Path:
@@ -121,7 +123,9 @@ def deck() -> None:
     prs = Presentation()
     for slide in list(real.slides)[:2]:
         title = slide.shapes.title.text if slide.shapes.title is not None else ""
-        body = next((s.text_frame.text for s in slide.shapes if s.has_text_frame and s != slide.shapes.title), "")
+        body = next(
+            (s.text_frame.text for s in slide.shapes if s.has_text_frame and s != slide.shapes.title), ""
+        )
         new = prs.slides.add_slide(prs.slide_layouts[1])
         new.shapes.title.text = title
         new.placeholders[1].text = body[:200]

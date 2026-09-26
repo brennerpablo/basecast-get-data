@@ -418,6 +418,18 @@
               "type": "string",
               "title": "Key"
             }
+          },
+          {
+            "name": "download",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Ask the browser to save the file instead of opening it",
+              "default": false,
+              "title": "Download"
+            },
+            "description": "Ask the browser to save the file instead of opening it"
           }
         ],
         "responses": {

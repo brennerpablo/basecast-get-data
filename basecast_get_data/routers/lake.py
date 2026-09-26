@@ -416,11 +416,14 @@ def lake_text(key: str = Query(...), member: str | None = Query(None)) -> TextRe
 
 
 @router.get("/object/url", response_model=SignedUrlResponse)
-def lake_signed_url(key: str = Query(...)) -> SignedUrlResponse:
+def lake_signed_url(
+    key: str = Query(...),
+    download: bool = Query(False, description="Ask the browser to save the file instead of opening it"),
+) -> SignedUrlResponse:
     lake = get_lake()
     obj = _object(lake, key)
     ttl = timedelta(minutes=10)
-    url = lake.storage.signed_url(obj.key, ttl)
+    url = lake.storage.signed_url(obj.key, ttl, download=download)
     data = SignedUrl(url=url, expires_at=expires_at(ttl) if url else None)
     return SignedUrlResponse(meta=meta(sources=[obj.source_id]), data=data)
 

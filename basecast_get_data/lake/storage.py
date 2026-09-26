@@ -35,7 +35,7 @@ class Storage(Protocol):
     def size(self, key: str) -> int: ...
     def local_path(self, key: str) -> Path: ...
     def iter_range(self, key: str, start: int, end: int) -> Iterator[bytes]: ...
-    def signed_url(self, key: str, expires: timedelta) -> str | None: ...
+    def signed_url(self, key: str, expires: timedelta, download: bool = False) -> str | None: ...
 
 
 # The layers the browser may read. Everything else in the bucket stays out of reach, starting with
@@ -105,7 +105,7 @@ class LocalStorage:
                 left -= len(chunk)
                 yield chunk
 
-    def signed_url(self, key: str, expires: timedelta) -> str | None:
+    def signed_url(self, key: str, expires: timedelta, download: bool = False) -> str | None:
         return None
 
 
@@ -180,7 +180,7 @@ class GcsStorage:
             yield blob.download_as_bytes(start=pos, end=stop)
             pos = stop + 1
 
-    def signed_url(self, key: str, expires: timedelta) -> str | None:
+    def signed_url(self, key: str, expires: timedelta, download: bool = False) -> str | None:
         """V4 signed URL. On Cloud Run the service account signs through IAM (signBlob on itself); with
         user credentials (local development) signing fails and the caller streams the bytes instead."""
         import google.auth
@@ -192,12 +192,15 @@ class GcsStorage:
             email = self.signer_email or getattr(credentials, "service_account_email", "")
             if not email or email == "default":
                 return None
+            name = key.rsplit("/", 1)[-1].replace('"', "")
             return self.bucket.blob(check_key(key)).generate_signed_url(
                 version="v4",
                 expiration=expires,
                 method="GET",
                 service_account_email=email,
                 access_token=credentials.token,
+                # A download link saves the file under its own name instead of opening it.
+                response_disposition=f'attachment; filename="{name}"' if download else None,
             )
         except Exception:
             return None
