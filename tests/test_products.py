@@ -271,20 +271,10 @@ def test_official_errors_and_queue_backtest(client):
 # --- errors -----------------------------------------------------------------------------------------------
 
 
-def test_missing_mart_answers_503_mart_not_built(client, monkeypatch):
-    real = store._document
-
-    def missing(name):
-        if name == "mart_peak_backtest":
-            raise store.MartNotBuilt(name)
-        return real(name)
-
-    monkeypatch.setattr(store, "_document", missing)
-    store.frame.cache_clear()
-    try:
-        r = client.get("/backtest/peak")
-    finally:
-        store.frame.cache_clear()
+def test_missing_fixture_answers_503_mart_not_built(client, monkeypatch):
+    monkeypatch.setattr(store, "FIXTURES", store.FIXTURES / "nowhere")
+    store.reset()
+    r = client.get("/backtest/peak")
     assert r.status_code == 503
     assert r.json() == {"detail": "mart_not_built", "mart": "mart_peak_backtest"}
 

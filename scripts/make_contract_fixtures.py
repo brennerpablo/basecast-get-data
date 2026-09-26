@@ -433,6 +433,55 @@ TRIGGERS = {
 COUNTY_TRIGGERS = ["dc_permit", "gen_storage_ia", "permit_surge", "new_transmission"]
 NAME_TRIGGERS = ["dev_agreement", "market_registration", "rate_increase", "tsp_large_load"]
 ACTION_LABEL = {"call_now": "Call now", "nurture": "Nurture", "watch": "Watch", "hold": "Hold"}
+# The glossary's shape (mart_meta, mart "glossary"); basecast-airflow writes the real one from its config.
+TRIGGER_CHIPS = {
+    "dc_permit": "Data-center permit",
+    "gen_storage_ia": "Gen/storage IA nearby",
+    "dev_agreement": "Dev agreement",
+    "market_registration": "New ERCOT role",
+    "permit_surge": "Permit surge",
+    "new_transmission": "New transmission",
+    "rate_increase": "Rate increase",
+    "tsp_large_load": "G&T large-load requests",
+}
+FLAGS = {
+    "no_exposed_county": (
+        "No exposed county",
+        "Covers no county at 20% or more, so county triggers cannot fire.",
+    ),
+    "apportionment_under": (
+        "Under-counted by area",
+        "Area apportionment reads the territory smaller than its meters.",
+    ),
+    "apportionment_over": (
+        "Over-counted by area",
+        "Area apportionment reads the territory larger than its meters.",
+    ),
+    "short_form": ("EIA short form", "Files the EIA-861 short form: totals only, no residential price."),
+    "eia_break": ("EIA series break", "The EIA customer series jumps between two years."),
+}
+ACTION_TEXT = {
+    "call_now": "Top tiers with an active strong trigger (fixture wording).",
+    "nurture": "An active strong trigger outside the top tiers (fixture wording).",
+    "watch": "Only context triggers are active (fixture wording).",
+    "hold": "No active trigger (fixture wording).",
+}
+
+
+def glossary() -> list[dict[str, Any]]:
+    items = [
+        {"kind": "next_action", "code": code, "label": label, "text": ACTION_TEXT[code], "strength": None}
+        for code, label in ACTION_LABEL.items()
+    ]
+    items += [
+        {"kind": "trigger", "code": code, "label": TRIGGER_CHIPS[code], "text": text, "strength": strength}
+        for code, (text, strength, _, _) in TRIGGERS.items()
+    ]
+    items += [
+        {"kind": "flag", "code": code, "label": label, "text": text, "strength": None}
+        for code, (label, text) in FLAGS.items()
+    ]
+    return items
 
 
 def account_counties(account_id: str, kind: str, zone: str) -> list[dict[str, Any]]:
@@ -1656,6 +1705,7 @@ def main() -> None:
                 "target year "
                 "÷ MW the deck promised beyond its own approved stock (horizons of 6 months or more).",
             },
+            "glossary": {"items": glossary()},
             "peak_backtest": {
                 "eras": [
                     {

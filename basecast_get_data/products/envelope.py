@@ -36,15 +36,15 @@ def product_meta(
     verified: bool = True,
     caveats: Iterable[str] = (),
 ) -> Meta:
-    """`rows` is the main frame of the response: its `as_of` and `model_version` go to the envelope."""
+    """`marts` are the ones the response read; `rows` is its main frame, whose `as_of` and `model_version` go
+    to the envelope. A response that read any fixture says `simulated` and carries the `fixture` caveat."""
     codes = list(caveats)
     if not verified:
         codes.insert(0, "machine_read_unverified")
-    simulated = store.simulated() or bool(
-        rows is not None and "simulated" in rows.columns and rows["simulated"].any()
-    )
-    if store.simulated():
+    fixture = any(not store.live(m) for m in marts)
+    if fixture:
         codes.append("fixture")
+    simulated = fixture or bool(rows is not None and "simulated" in rows.columns and rows["simulated"].any())
     return meta(
         sources=list(marts),
         data_as_of=_latest(rows) if rows is not None else None,

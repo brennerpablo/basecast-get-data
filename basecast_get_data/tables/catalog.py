@@ -51,6 +51,7 @@ def summaries() -> list[TableSummary]:
                 sources=d.sources,
                 mode=d.mode,
                 description=d.description,
+                inputs=d.inputs,
                 declared=True,
                 loaded=loaded,
                 rows=rows,

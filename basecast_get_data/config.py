@@ -16,6 +16,10 @@ from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+# The resource groups production reads from the marts (MARTS_LIVE overrides it). A group goes live here, in
+# code, once its marts are built and passed their checks.
+MARTS_LIVE = ""
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -41,6 +45,13 @@ class Settings:
     cache_max_bytes: int
     # How long the manifest index lives before a background refresh.
     index_ttl_s: int
+    # Where the product resources read their marts: "fixtures" (data/fixtures) or "marts" (public.mart_*).
+    data_mode: str
+    # Resource groups that read the marts even when data_mode is "fixtures" (accounts, explorer, forecast,
+    # backtest): production switches group by group as basecast-airflow publishes checked marts.
+    marts_live: frozenset[str]
+    # How often the loaded marts are checked for a new build (built_at, model_version).
+    mart_ttl_s: int
 
     @property
     def db_configured(self) -> bool:
@@ -74,4 +85,7 @@ def get_settings() -> Settings:
         cache_dir=Path(env("CACHE_DIR", "/tmp/basecast-get-data")),
         cache_max_bytes=_int("CACHE_MAX_BYTES", 600_000_000),
         index_ttl_s=_int("INDEX_TTL_S", 600),
+        data_mode=(env("DATA_MODE") or "fixtures").strip().lower(),
+        marts_live=frozenset(g.strip() for g in env("MARTS_LIVE", MARTS_LIVE).split(",") if g.strip()),
+        mart_ttl_s=_int("MART_TTL_S", 600),
     )

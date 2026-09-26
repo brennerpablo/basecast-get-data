@@ -22,6 +22,8 @@ class TableSummary(BaseModel):
     sources: list[str]
     mode: str | None = None
     description: str | None = None
+    # The tables a derived dataset (a mart) reads, for the lineage in the app's /data/flow.
+    inputs: list[str] | None = None
     declared: bool
     loaded: bool
     rows: int | None = None

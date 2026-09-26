@@ -1387,7 +1387,7 @@
     "/caveats": {
       "get": {
         "tags": [
-          "caveats"
+          "catalogs"
         ],
         "summary": "Caveats",
         "description": "Every code that `meta.caveats` can carry, with the label and text the app shows.",
@@ -1399,6 +1399,48 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CaveatsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/glossary": {
+      "get": {
+        "tags": [
+          "catalogs"
+        ],
+        "summary": "Glossary",
+        "description": "The label and meaning of every trigger, flag and next-action code the account resources send.",
+        "operationId": "glossary_glossary_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlossaryResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
                 }
               }
             }
@@ -4885,6 +4927,74 @@
         ],
         "title": "Gap"
       },
+      "GlossaryItem": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "trigger",
+              "flag",
+              "next_action"
+            ],
+            "title": "Kind"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Short, for a chip or a column"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "What the code means, for a tooltip"
+          },
+          "strength": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "strong",
+                  "context"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Strength",
+            "description": "Triggers only"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "code",
+          "label",
+          "text"
+        ],
+        "title": "GlossaryItem"
+      },
+      "GlossaryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/GlossaryItem"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "GlossaryResponse",
+        "description": "Not an envelope: the labels of every trigger, flag and next-action code."
+      },
       "GridColumn": {
         "properties": {
           "name": {
@@ -4948,13 +5058,34 @@
           "database": {
             "type": "boolean",
             "title": "Database"
+          },
+          "data_mode": {
+            "type": "string",
+            "title": "Data Mode"
+          },
+          "marts_live": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Marts Live"
+          },
+          "marts_loaded": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Marts Loaded"
           }
         },
         "type": "object",
         "required": [
           "status",
           "lake",
-          "database"
+          "database",
+          "data_mode",
+          "marts_live",
+          "marts_loaded"
         ],
         "title": "Health"
       },
@@ -8554,6 +8685,20 @@
             ],
             "title": "Description"
           },
+          "inputs": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Inputs"
+          },
           "declared": {
             "type": "boolean",
             "title": "Declared"
@@ -8713,6 +8858,20 @@
               }
             ],
             "title": "Description"
+          },
+          "inputs": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Inputs"
           },
           "declared": {
             "type": "boolean",

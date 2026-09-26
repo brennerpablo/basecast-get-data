@@ -10,6 +10,8 @@ import logging
 import time
 from dataclasses import dataclass, field
 
+from psycopg import errors as pg_errors
+
 from basecast_get_data.db import pg
 
 log = logging.getLogger(__name__)
@@ -28,9 +30,24 @@ class Dataset:
     key_columns: list[str] = field(default_factory=list)
     partition_field: str | None = None
     cluster_fields: list[str] = field(default_factory=list)
+    # The tables a derived dataset (a mart) reads; None for the parsers' datasets.
+    inputs: list[str] | None = None
 
 
 _cache: tuple[float, dict[str, Dataset]] | None = None
+
+
+COLUMNS = (
+    "source_id, dataset, target, mode, version, description, key_columns, partition_field, cluster_fields"
+)
+
+
+def _rows() -> list[dict]:
+    """The registry rows; `inputs` only once basecast-airflow has added the column."""
+    try:
+        return pg.fetch_all(f"SELECT {COLUMNS}, inputs FROM dataset_registry ORDER BY dataset, source_id")
+    except pg_errors.UndefinedColumn:
+        return pg.fetch_all(f"SELECT {COLUMNS} FROM dataset_registry ORDER BY dataset, source_id")
 
 
 def load() -> dict[str, Dataset]:
@@ -41,10 +58,7 @@ def load() -> dict[str, Dataset]:
     out: dict[str, Dataset] = {}
     if pg.db_available():
         try:
-            rows = pg.fetch_all(
-                "SELECT source_id, dataset, target, mode, version, description, key_columns,"
-                " partition_field, cluster_fields FROM dataset_registry ORDER BY dataset, source_id"
-            )
+            rows = _rows()
         except Exception:
             log.exception("dataset_registry is not readable")
             rows = []
@@ -60,6 +74,7 @@ def load() -> dict[str, Dataset]:
                     key_columns=list(r["key_columns"] or []),
                     partition_field=r["partition_field"],
                     cluster_fields=list(r["cluster_fields"] or []),
+                    inputs=list(r["inputs"]) if r.get("inputs") else None,
                 )
             if r["source_id"] not in d.sources:
                 d.sources.append(r["source_id"])
