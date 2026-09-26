@@ -83,12 +83,16 @@ basecast-get-data/
 ├── .env.example              # API_TOKEN, DATA_MODE; never commit .env
 ├── pyproject.toml            # Python 3.12, uv, FastAPI
 ├── basecast_get_data/
-│   ├── main.py
-│   ├── routers/              # one router per resource (counties, forecasts, backtest, accounts, runs)
+│   ├── main.py               # create_app(); config.py (env, production defaults), auth.py (Bearer)
+│   ├── routers/              # one router per resource: lake, tables, pipeline (later counties, forecasts...)
 │   ├── schemas/              # Pydantic models = the contract
-│   └── data/                 # for now: JSON fixtures; later: reading the marts
+│   ├── lake/                 # storage (local | GCS), manifest index, file readers, parse cache
+│   ├── tables/               # dataset_registry, Postgres and BigQuery catalog and rows, filter grammar
+│   ├── db/                   # Postgres pool (basecast_reader) and BigQuery client
+│   └── data/                 # sources.yaml (display names of the raw sources)
 ├── openapi.json              # exported on every change; the app generates its client from it
-├── tests/
+├── scripts/                  # export_openapi.py, make_test_fixtures.py
+├── tests/                    # fixtures/lake: a small lake trimmed from real files
 └── docs/
     ├── KICKOFF.md
     ├── data-contract.md      # KICKOFF §6; owner of the contract between data and frontend

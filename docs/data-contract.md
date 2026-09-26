@@ -79,14 +79,54 @@
 
 `GET /accounts/{utility_id}/export.csv`: a recomendação em CSV, para colar num CRM.
 
-### 6. Pipeline e fontes (página /data)
-`GET /pipeline/runs?source=<id>&limit=<int>`
+### 6. Pipeline, lake e tabelas (página /data)
+Implementado (os primeiros routers do get-data). O schema exato de cada resposta está no `openapi.json`;
+aqui ficam as regras.
 
-- Itens: `source`, `started_at`, `finished_at`, `status`, `rows`, `files`, `error`.
+**Lake (arquivos brutos).** O índice vem dos `_manifest.json` de cada pasta `dt=` (em memória, refeito a
+cada 10 min). Só `raw/`, `parquet/` e `derived/` são navegáveis; o resto do bucket (`backups/`, `_logs/`)
+é recusado.
 
-`GET /sources`
+- `GET /lake/sources`: por fonte, `source_id`, `name`, `group`, `publisher`, `upstream_url`,
+  `catalog_id`, `schedule` (cron em palavras, America/Chicago), `files`, `bytes`, `snapshots`,
+  `first_dt`, `last_dt`, `last_fetched_at`, `formats[]`, `datasets[]` (do `dataset_registry`, com
+  `loaded` e `rows`) e `last_runs[]` (último `etl_run` por estágio). Substitui o rascunho `GET /sources`.
+- `GET /lake/list?prefix=&q=&recursive=&offset=&limit=`: pastas (`source=`, `dt=`) e objetos sob um prefixo.
+- `GET /lake/object?key=`: a entrada do manifest, o visualizador (`viewer`), os datasets da fonte, as
+  linhas do `lake_processed` desse arquivo (`current: false` se o arquivo mudou depois) e o mesmo
+  arquivo em outros snapshots.
+- `GET /lake/object/structure?key=&member=`: abas de planilha, membros de zip, colunas e total de linhas,
+  árvore de um JSON.
+- `GET /lake/object/rows?key=&member=&sheet=&offset=&limit=&with_summary=`: um bloco de linhas. Planilha e
+  texto delimitado são posicionais (colunas A, B, C…, sem adivinhar cabeçalho); Parquet e JSON mantêm
+  nomes e tipos.
+- `GET /lake/object/text?key=&member=`: texto por slide (pptx), por seção (docx) ou da página (html).
+- `GET /lake/object/url?key=`: URL assinada V4 de 10 min, ou `null` quando o serviço não pode assinar.
+- `GET /lake/object/content?key=&member=`: os bytes, com `Range` (o pdf.js lê PDFs por partes).
 
-- Itens: `source_id`, `catalog_id`, `last_success_at`, `data_start`, `data_end`, `verified`.
+**Tabelas tratadas.** Postgres `basecast.public` (como `basecast_reader`) e BigQuery `basecast`.
+
+- `GET /tables`: `dataset_registry` cruzado com o que existe; `kind` = `dataset` | `system` |
+  `unregistered`, `declared`, `loaded`, `rows` (no Postgres é a estimativa do `pg_class`,
+  `rows_estimated: true`), `bytes`.
+- `GET /tables/{name}`: o mesmo, mais `columns[]`, `key_columns`, `partition_field`, `cluster_fields`.
+- `GET /tables/{name}/rows?offset=&limit=&sort=&desc=&filter=&with_summary=`: um bloco. `limit` até 1.000 e
+  janela de 100.000 linhas (além disso, ordenar ou filtrar). `filter=<coluna>:<op>:<valor>`, repetível,
+  combinado com AND; ops `eq ne contains starts in gte lte gt lt between null notnull`; `in` e `between`
+  separam valores com U+001F. `with_summary=true` traz `total`: exato no Postgres quando cabe em 6 s,
+  senão a estimativa (`total_estimated: true`). No BigQuery, bloco sem filtro nem ordenação sai do
+  `tabledata.list` (sem query); com filtro ou ordenação, query com `maximum_bytes_billed`.
+- `GET /tables/{name}/lineage?offset=&limit=`: os arquivos brutos que alimentaram a tabela
+  (`lake_processed`).
+
+Blocos de linhas (`/lake/object/rows` e `/tables/{name}/rows`) têm a mesma forma: `columns[]` (`name`,
+`type` = `text` | `number` | `date` | `boolean` | `json` | `geometry`, `source_type`), `rows` (listas na
+ordem das colunas), `offset`, `limit`, `total`, `total_estimated`. Datas saem em ISO 8601; geometrias
+resumidas (`POLYGON · 1023 points`).
+
+**Execuções.** `GET /pipeline/runs?source=&stage=&status=&offset=&limit=`: `run_id`, `source`, `stage`
+(`raw` | `process`), `dag_id`, `task_id`, `started_at`, `finished_at`, `duration_s`, `status`, `rows`,
+`files`, `files_skipped`, `bytes`, `error`, mais `total`.
 
 ### 7. Log operacional (`ops.log`, tela /ops do app)
 Não é endpoint: é a tabela onde app, get-data e airflow escrevem o mesmo formato de log, e que a tela
