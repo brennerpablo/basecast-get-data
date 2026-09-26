@@ -52,3 +52,46 @@ class QueueProjectsData(BaseModel):
 class QueueProjectsResponse(BaseModel):
     meta: Meta
     data: QueueProjectsData
+
+
+# --- survival curves (the /forecast queue tab) -----------------------------------------------------------
+
+
+class CurvePoint(BaseModel):
+    month: int = Field(description="Months since the start of the stage")
+    at_risk: int
+    cif_cod: float | None = Field(
+        None, description="Share reaching COD; null where fewer than 10 are at risk"
+    )
+    cif_withdrawn: float | None = None
+    survival: float | None = None
+    supported: bool = Field(description="At least 10 projects at risk; past that the curve shows no value")
+
+
+class StageCurve(BaseModel):
+    stage: str = Field(description="entry (from entering the queue) or ia (from a signed IA)")
+    stratum: Stratum
+    weighting: Literal["mw", "count"]
+    points: list[CurvePoint]
+
+
+class CurveMilestone(BaseModel):
+    """COD by 12, 24, 36 and 48 months, the numbers the tab prints."""
+
+    stage: str
+    stratum: Stratum
+    weighting: Literal["mw", "count"]
+    month: int
+    cif_cod: float | None = None
+    supported: bool
+
+
+class QueueCurvesData(BaseModel):
+    as_of_month: date | None = None
+    curves: list[StageCurve]
+    milestones: list[CurveMilestone]
+
+
+class QueueCurvesResponse(BaseModel):
+    meta: Meta
+    data: QueueCurvesData

@@ -1,0 +1,170 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "year": 2012,
+   "load_peak_mean_he": 17.3,
+   "net_load_peak_mean_he": 17.5,
+   "cp_net_load_rank_median": 1.0,
+   "cp_price_rank_median": 5,
+   "cp_in_top20_price_share": 0.3,
+   "top20_price_after_18h_share": 0.2,
+   "wind_solar_share": 0.15,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2013,
+   "load_peak_mean_he": 17.2,
+   "net_load_peak_mean_he": 17.8,
+   "cp_net_load_rank_median": 1.8,
+   "cp_price_rank_median": 11,
+   "cp_in_top20_price_share": 0.27,
+   "top20_price_after_18h_share": 0.25,
+   "wind_solar_share": 0.165,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2014,
+   "load_peak_mean_he": 17.4,
+   "net_load_peak_mean_he": 18.0,
+   "cp_net_load_rank_median": 2.6,
+   "cp_price_rank_median": 17,
+   "cp_in_top20_price_share": 0.24,
+   "top20_price_after_18h_share": 0.3,
+   "wind_solar_share": 0.18,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2015,
+   "load_peak_mean_he": 16.9,
+   "net_load_peak_mean_he": 18.2,
+   "cp_net_load_rank_median": 3.4,
+   "cp_price_rank_median": 23,
+   "cp_in_top20_price_share": 0.21,
+   "top20_price_after_18h_share": 0.35,
+   "wind_solar_share": 0.195,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2016,
+   "load_peak_mean_he": 17.4,
+   "net_load_peak_mean_he": 18.5,
+   "cp_net_load_rank_median": 4.2,
+   "cp_price_rank_median": 29,
+   "cp_in_top20_price_share": 0.18,
+   "top20_price_after_18h_share": 0.4,
+   "wind_solar_share": 0.21,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2017,
+   "load_peak_mean_he": 16.8,
+   "net_load_peak_mean_he": 18.8,
+   "cp_net_load_rank_median": 5.0,
+   "cp_price_rank_median": 35,
+   "cp_in_top20_price_share": 0.15,
+   "top20_price_after_18h_share": 0.45,
+   "wind_solar_share": 0.225,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2018,
+   "load_peak_mean_he": 17.3,
+   "net_load_peak_mean_he": 19.0,
+   "cp_net_load_rank_median": 5.8,
+   "cp_price_rank_median": 41,
+   "cp_in_top20_price_share": 0.12,
+   "top20_price_after_18h_share": 0.5,
+   "wind_solar_share": 0.24,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2019,
+   "load_peak_mean_he": 17.5,
+   "net_load_peak_mean_he": 19.2,
+   "cp_net_load_rank_median": 6.6,
+   "cp_price_rank_median": 47,
+   "cp_in_top20_price_share": 0.09,
+   "top20_price_after_18h_share": 0.55,
+   "wind_solar_share": 0.255,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2020,
+   "load_peak_mean_he": 17.3,
+   "net_load_peak_mean_he": 19.5,
+   "cp_net_load_rank_median": 7.4,
+   "cp_price_rank_median": 53,
+   "cp_in_top20_price_share": 0.06,
+   "top20_price_after_18h_share": 0.6,
+   "wind_solar_share": 0.27,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2021,
+   "load_peak_mean_he": 17.2,
+   "net_load_peak_mean_he": 19.8,
+   "cp_net_load_rank_median": 8.2,
+   "cp_price_rank_median": 59,
+   "cp_in_top20_price_share": 0.03,
+   "top20_price_after_18h_share": 0.65,
+   "wind_solar_share": 0.285,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2022,
+   "load_peak_mean_he": 17.5,
+   "net_load_peak_mean_he": 20.0,
+   "cp_net_load_rank_median": 9.0,
+   "cp_price_rank_median": 65,
+   "cp_in_top20_price_share": 0.0,
+   "top20_price_after_18h_share": 0.7,
+   "wind_solar_share": 0.3,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2023,
+   "load_peak_mean_he": 17.0,
+   "net_load_peak_mean_he": 20.2,
+   "cp_net_load_rank_median": 9.8,
+   "cp_price_rank_median": 71,
+   "cp_in_top20_price_share": 0.0,
+   "top20_price_after_18h_share": 0.75,
+   "wind_solar_share": 0.315,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2024,
+   "load_peak_mean_he": 16.7,
+   "net_load_peak_mean_he": 20.5,
+   "cp_net_load_rank_median": 10.6,
+   "cp_price_rank_median": 77,
+   "cp_in_top20_price_share": 0.0,
+   "top20_price_after_18h_share": 0.8,
+   "wind_solar_share": 0.33,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2025,
+   "load_peak_mean_he": 16.9,
+   "net_load_peak_mean_he": 20.8,
+   "cp_net_load_rank_median": 11.4,
+   "cp_price_rank_median": 83,
+   "cp_in_top20_price_share": 0.0,
+   "top20_price_after_18h_share": 0.85,
+   "wind_solar_share": 0.345,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2026,
+   "load_peak_mean_he": 16.7,
+   "net_load_peak_mean_he": 21.0,
+   "cp_net_load_rank_median": 12.2,
+   "cp_price_rank_median": 89,
+   "cp_in_top20_price_share": 0.0,
+   "top20_price_after_18h_share": 0.9,
+   "wind_solar_share": 0.36,
+   "model_version": "fixture-v2"
+  }
+ ]
+}

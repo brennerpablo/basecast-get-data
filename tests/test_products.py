@@ -305,3 +305,33 @@ def test_a_queue_card_always_names_its_queue(client):
         text = f"{card['title']} {card['caption']}".lower()
         if "queue" in text or card["unit"] == "MW" and "438" in text:
             assert card["queue"] in ("generation", "large_load"), card["id"]
+
+
+# --- P1 forecast tabs -------------------------------------------------------------------------------------
+
+
+def test_queue_curves_hide_unsupported_values(client):
+    d = client.get("/forecasts/queue-curves", params={"stratum": "wind", "weighting": "count"}).json()["data"]
+    assert d["curves"] and {c["stratum"] for c in d["curves"]} == {"wind"}
+    points = [p for c in d["curves"] for p in c["points"]]
+    assert any(not p["supported"] for p in points)
+    assert all(p["cif_cod"] is None for p in points if not p["supported"])
+    assert {m["month"] for m in d["milestones"]} <= {12, 24, 36, 48}
+
+
+def test_normalized_load_for_a_zone(client):
+    d = client.get("/load/normalized", params={"region": "WEST"}).json()["data"]
+    assert d["region"] == "WEST" and "ERCOT" in d["regions"]
+    months = [m["month"] for m in d["monthly"]]
+    assert months == sorted(months) and d["monthly"][-1]["complete"] is False
+    assert d["annual"] and d["normal_period"]
+
+
+def test_four_cp_caveats_and_rates(client):
+    body = client.get("/four-cp").json()
+    codes = [c["code"] for c in body["meta"]["caveats"]]
+    assert "optimistic_weather" in codes and "preliminary_actuals" in codes
+    d = body["data"]
+    assert {r["status"] for r in d["rates"]} <= {"final", "pending"}
+    assert d["intervals"] and d["zones"] and d["dispatch_curve"] and d["scarcity"]
+    assert d["window_start_local"] and d["window_end_local"]

@@ -201,7 +201,20 @@ no P1, em `GET /geo/zones`.
 - Todas as linhas trazem `verified`. Caveats: `machine_read_unverified`, `policy_pause_2026`.
 
 Fora do contrato: `generation_added_mw`, `region_type=county` e `region_type=utility` (volta só no P2, simulado).
-P1: `GET /forecasts/queue-curves`, `GET /load/normalized`, `GET /four-cp`.
+P1 (implementados, grupo `forecast`; cada endpoint só dá 503 se faltar o seu próprio mart):
+
+- `GET /forecasts/queue-curves?stratum=&stage=&weighting=mw|count` (`mart_queue_stage_curves`): `curves[]` por
+  etapa (`entry`, `ia`), estrato e peso, com `points[]` (`month`, `at_risk`, `cif_cod`, `cif_withdrawn`,
+  `survival`, `supported`); onde há menos de 10 em risco (`supported = false`) a API anula os valores.
+  `milestones[]`: COD em 12, 24, 36 e 48 meses.
+- `GET /load/normalized?region=` (`mart_load_normalized_monthly`, `mart_load_normalized_annual`): `monthly[]`
+  (média, energia e pico, real e a clima normal, temperatura, variação em 12 meses; `complete = false` no mês
+  corrente) e `annual[]` (energia e o pico de verão com P10/P50/P90 sob os anos de clima normal), mais
+  `normal_period` e `weather_source` do `mart_meta`.
+- `GET /four-cp` (`mart_four_cp_intervals`, `_zone`, `_dispatch_curve`, `_scarcity`, `_rates`): intervalos por
+  ano, carga das zonas nos CPs, curva dias de despacho × acerto, deslocamento da escassez, tarifas
+  (`docket`, `status` final | pending, `billed_year`) e a janela da oferta (`mart_meta`). Caveats
+  `optimistic_weather` e, enquanto o último verão não fechar, `preliminary_actuals`.
 
 ### 4. Backtest
 

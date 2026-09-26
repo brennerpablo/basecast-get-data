@@ -62,6 +62,9 @@ def test_every_endpoint_answers_in_marts_mode(client, fake_pg, monkeypatch):
         "/backtest/queue",
         "/glossary",
         "/insights",
+        "/forecasts/queue-curves",
+        "/load/normalized",
+        "/four-cp",
     ):
         assert client.get(path).status_code == 200, path
 

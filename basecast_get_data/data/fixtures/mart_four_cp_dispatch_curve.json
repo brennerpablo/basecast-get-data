@@ -1,0 +1,105 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "forecast": "threshold",
+   "param": 0.9,
+   "window": "fixture window",
+   "dispatch_days": 70,
+   "all4_rate": 1.0,
+   "month_rate": 1.0,
+   "day_rate": 0.7833,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "threshold",
+   "param": 0.93,
+   "window": "fixture window",
+   "dispatch_days": 58,
+   "all4_rate": 1.0,
+   "month_rate": 1.0,
+   "day_rate": 0.6833,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "threshold",
+   "param": 0.95,
+   "window": "fixture window",
+   "dispatch_days": 47,
+   "all4_rate": 0.9214,
+   "month_rate": 1.0,
+   "day_rate": 0.5917,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "threshold",
+   "param": 0.97,
+   "window": "fixture window",
+   "dispatch_days": 36,
+   "all4_rate": 0.7643,
+   "month_rate": 0.9,
+   "day_rate": 0.5,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "threshold",
+   "param": 0.99,
+   "window": "fixture window",
+   "dispatch_days": 22,
+   "all4_rate": 0.5643,
+   "month_rate": 0.7444,
+   "day_rate": 0.3833,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "top_n",
+   "param": 0.9,
+   "window": "fixture window",
+   "dispatch_days": 70,
+   "all4_rate": 1.0,
+   "month_rate": 1.0,
+   "day_rate": 0.7833,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "top_n",
+   "param": 0.93,
+   "window": "fixture window",
+   "dispatch_days": 58,
+   "all4_rate": 1.0,
+   "month_rate": 1.0,
+   "day_rate": 0.6833,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "top_n",
+   "param": 0.95,
+   "window": "fixture window",
+   "dispatch_days": 47,
+   "all4_rate": 0.9214,
+   "month_rate": 1.0,
+   "day_rate": 0.5917,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "top_n",
+   "param": 0.97,
+   "window": "fixture window",
+   "dispatch_days": 36,
+   "all4_rate": 0.7643,
+   "month_rate": 0.9,
+   "day_rate": 0.5,
+   "model_version": "fixture-v2"
+  },
+  {
+   "forecast": "top_n",
+   "param": 0.99,
+   "window": "fixture window",
+   "dispatch_days": 22,
+   "all4_rate": 0.5643,
+   "month_rate": 0.7444,
+   "day_rate": 0.3833,
+   "model_version": "fixture-v2"
+  }
+ ]
+}

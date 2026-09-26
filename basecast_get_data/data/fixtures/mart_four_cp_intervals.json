@@ -1,0 +1,595 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "year": 2012,
+   "month": 6,
+   "interval_end_local": "2012-06-16 17:45",
+   "interval_end_utc": "2012-06-16T22:45:00+00:00",
+   "mw": 62396.6,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2012,
+   "month": 7,
+   "interval_end_local": "2012-07-07 17:30",
+   "interval_end_utc": "2012-07-07T22:30:00+00:00",
+   "mw": 60857.2,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2012,
+   "month": 8,
+   "interval_end_local": "2012-08-25 17:15",
+   "interval_end_utc": "2012-08-25T22:15:00+00:00",
+   "mw": 62541.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2012,
+   "month": 9,
+   "interval_end_local": "2012-09-02 16:30",
+   "interval_end_utc": "2012-09-02T21:30:00+00:00",
+   "mw": 61423.1,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2013,
+   "month": 6,
+   "interval_end_local": "2013-06-10 17:45",
+   "interval_end_utc": "2013-06-10T22:45:00+00:00",
+   "mw": 61557.4,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2013,
+   "month": 7,
+   "interval_end_local": "2013-07-06 17:00",
+   "interval_end_utc": "2013-07-06T22:00:00+00:00",
+   "mw": 59042.5,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2013,
+   "month": 8,
+   "interval_end_local": "2013-08-10 17:30",
+   "interval_end_utc": "2013-08-10T22:30:00+00:00",
+   "mw": 58762.8,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2013,
+   "month": 9,
+   "interval_end_local": "2013-09-24 17:00",
+   "interval_end_utc": "2013-09-24T22:00:00+00:00",
+   "mw": 60885.1,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2014,
+   "month": 6,
+   "interval_end_local": "2014-06-17 16:30",
+   "interval_end_utc": "2014-06-17T21:30:00+00:00",
+   "mw": 62416.4,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2014,
+   "month": 7,
+   "interval_end_local": "2014-07-14 16:30",
+   "interval_end_utc": "2014-07-14T21:30:00+00:00",
+   "mw": 61672.8,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2014,
+   "month": 8,
+   "interval_end_local": "2014-08-11 16:45",
+   "interval_end_utc": "2014-08-11T21:45:00+00:00",
+   "mw": 59469.9,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2014,
+   "month": 9,
+   "interval_end_local": "2014-09-08 17:00",
+   "interval_end_utc": "2014-09-08T22:00:00+00:00",
+   "mw": 62349.3,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2015,
+   "month": 6,
+   "interval_end_local": "2015-06-06 16:45",
+   "interval_end_utc": "2015-06-06T21:45:00+00:00",
+   "mw": 59576.1,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2015,
+   "month": 7,
+   "interval_end_local": "2015-07-25 17:30",
+   "interval_end_utc": "2015-07-25T22:30:00+00:00",
+   "mw": 57689.4,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2015,
+   "month": 8,
+   "interval_end_local": "2015-08-27 17:30",
+   "interval_end_utc": "2015-08-27T22:30:00+00:00",
+   "mw": 58770.5,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2015,
+   "month": 9,
+   "interval_end_local": "2015-09-11 17:45",
+   "interval_end_utc": "2015-09-11T22:45:00+00:00",
+   "mw": 59398.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2016,
+   "month": 6,
+   "interval_end_local": "2016-06-24 17:30",
+   "interval_end_utc": "2016-06-24T22:30:00+00:00",
+   "mw": 70555.6,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2016,
+   "month": 7,
+   "interval_end_local": "2016-07-14 17:45",
+   "interval_end_utc": "2016-07-14T22:45:00+00:00",
+   "mw": 67321.2,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2016,
+   "month": 8,
+   "interval_end_local": "2016-08-01 17:15",
+   "interval_end_utc": "2016-08-01T22:15:00+00:00",
+   "mw": 65765.9,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2016,
+   "month": 9,
+   "interval_end_local": "2016-09-06 17:00",
+   "interval_end_utc": "2016-09-06T22:00:00+00:00",
+   "mw": 65782.3,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2017,
+   "month": 6,
+   "interval_end_local": "2017-06-01 17:30",
+   "interval_end_utc": "2017-06-01T22:30:00+00:00",
+   "mw": 63058.5,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2017,
+   "month": 7,
+   "interval_end_local": "2017-07-28 16:30",
+   "interval_end_utc": "2017-07-28T21:30:00+00:00",
+   "mw": 69057.1,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2017,
+   "month": 8,
+   "interval_end_local": "2017-08-11 17:15",
+   "interval_end_utc": "2017-08-11T22:15:00+00:00",
+   "mw": 68355.8,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2017,
+   "month": 9,
+   "interval_end_local": "2017-09-21 17:30",
+   "interval_end_utc": "2017-09-21T22:30:00+00:00",
+   "mw": 63257.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2018,
+   "month": 6,
+   "interval_end_local": "2018-06-23 17:00",
+   "interval_end_utc": "2018-06-23T22:00:00+00:00",
+   "mw": 72470.9,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "interval_end_local": "2018-07-09 16:30",
+   "interval_end_utc": "2018-07-09T21:30:00+00:00",
+   "mw": 69423.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "interval_end_local": "2018-08-16 17:30",
+   "interval_end_utc": "2018-08-16T22:30:00+00:00",
+   "mw": 69550.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "interval_end_local": "2018-09-04 17:30",
+   "interval_end_utc": "2018-09-04T22:30:00+00:00",
+   "mw": 66482.2,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2019,
+   "month": 6,
+   "interval_end_local": "2019-06-23 17:15",
+   "interval_end_utc": "2019-06-23T22:15:00+00:00",
+   "mw": 72319.6,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "interval_end_local": "2019-07-04 17:45",
+   "interval_end_utc": "2019-07-04T22:45:00+00:00",
+   "mw": 69175.2,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "interval_end_local": "2019-08-14 17:15",
+   "interval_end_utc": "2019-08-14T22:15:00+00:00",
+   "mw": 73331.2,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "interval_end_local": "2019-09-16 17:45",
+   "interval_end_utc": "2019-09-16T22:45:00+00:00",
+   "mw": 72429.2,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "interval_end_local": "2020-06-24 17:15",
+   "interval_end_utc": "2020-06-24T22:15:00+00:00",
+   "mw": 73023.0,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "interval_end_local": "2020-07-20 17:45",
+   "interval_end_utc": "2020-07-20T22:45:00+00:00",
+   "mw": 69124.6,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "interval_end_local": "2020-08-16 17:00",
+   "interval_end_utc": "2020-08-16T22:00:00+00:00",
+   "mw": 69190.8,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "interval_end_local": "2020-09-20 17:15",
+   "interval_end_utc": "2020-09-20T22:15:00+00:00",
+   "mw": 68545.1,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2021,
+   "month": 6,
+   "interval_end_local": "2021-06-18 16:00",
+   "interval_end_utc": "2021-06-18T21:00:00+00:00",
+   "mw": 65777.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2021,
+   "month": 7,
+   "interval_end_local": "2021-07-18 17:15",
+   "interval_end_utc": "2021-07-18T22:15:00+00:00",
+   "mw": 70398.8,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2021,
+   "month": 8,
+   "interval_end_local": "2021-08-27 17:30",
+   "interval_end_utc": "2021-08-27T22:30:00+00:00",
+   "mw": 72743.9,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2021,
+   "month": 9,
+   "interval_end_local": "2021-09-28 17:30",
+   "interval_end_utc": "2021-09-28T22:30:00+00:00",
+   "mw": 65579.0,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2022,
+   "month": 6,
+   "interval_end_local": "2022-06-04 17:15",
+   "interval_end_utc": "2022-06-04T22:15:00+00:00",
+   "mw": 74610.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2022,
+   "month": 7,
+   "interval_end_local": "2022-07-28 17:15",
+   "interval_end_utc": "2022-07-28T22:15:00+00:00",
+   "mw": 74943.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2022,
+   "month": 8,
+   "interval_end_local": "2022-08-06 17:00",
+   "interval_end_utc": "2022-08-06T22:00:00+00:00",
+   "mw": 78413.8,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2022,
+   "month": 9,
+   "interval_end_local": "2022-09-08 17:30",
+   "interval_end_utc": "2022-09-08T22:30:00+00:00",
+   "mw": 73380.3,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2023,
+   "month": 6,
+   "interval_end_local": "2023-06-25 17:15",
+   "interval_end_utc": "2023-06-25T22:15:00+00:00",
+   "mw": 78240.9,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2023,
+   "month": 7,
+   "interval_end_local": "2023-07-09 16:15",
+   "interval_end_utc": "2023-07-09T21:15:00+00:00",
+   "mw": 82513.3,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2023,
+   "month": 8,
+   "interval_end_local": "2023-08-24 17:15",
+   "interval_end_utc": "2023-08-24T22:15:00+00:00",
+   "mw": 80382.4,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2023,
+   "month": 9,
+   "interval_end_local": "2023-09-26 16:30",
+   "interval_end_utc": "2023-09-26T21:30:00+00:00",
+   "mw": 81799.9,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2024,
+   "month": 6,
+   "interval_end_local": "2024-06-20 17:45",
+   "interval_end_utc": "2024-06-20T22:45:00+00:00",
+   "mw": 76455.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2024,
+   "month": 7,
+   "interval_end_local": "2024-07-18 17:15",
+   "interval_end_utc": "2024-07-18T22:15:00+00:00",
+   "mw": 83312.6,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2024,
+   "month": 8,
+   "interval_end_local": "2024-08-10 17:00",
+   "interval_end_utc": "2024-08-10T22:00:00+00:00",
+   "mw": 81336.0,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2024,
+   "month": 9,
+   "interval_end_local": "2024-09-12 17:00",
+   "interval_end_utc": "2024-09-12T22:00:00+00:00",
+   "mw": 81588.6,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2025,
+   "month": 6,
+   "interval_end_local": "2025-06-27 17:00",
+   "interval_end_utc": "2025-06-27T22:00:00+00:00",
+   "mw": 79717.4,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2025,
+   "month": 7,
+   "interval_end_local": "2025-07-25 17:30",
+   "interval_end_utc": "2025-07-25T22:30:00+00:00",
+   "mw": 75990.7,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2025,
+   "month": 8,
+   "interval_end_local": "2025-08-10 17:15",
+   "interval_end_utc": "2025-08-10T22:15:00+00:00",
+   "mw": 81532.8,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2025,
+   "month": 9,
+   "interval_end_local": "2025-09-14 17:30",
+   "interval_end_utc": "2025-09-14T22:30:00+00:00",
+   "mw": 83243.2,
+   "source": "de_15min",
+   "final": true,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2026,
+   "month": 6,
+   "interval_end_local": "2026-06-13 17:30",
+   "interval_end_utc": "2026-06-13T22:30:00+00:00",
+   "mw": 84002.9,
+   "source": "de_15min",
+   "final": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2026,
+   "month": 7,
+   "interval_end_local": "2026-07-02 17:00",
+   "interval_end_utc": "2026-07-02T22:00:00+00:00",
+   "mw": 83191.6,
+   "source": "de_15min",
+   "final": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2026,
+   "month": 8,
+   "interval_end_local": "2026-08-07 16:00",
+   "interval_end_utc": "2026-08-07T21:00:00+00:00",
+   "mw": 86251.6,
+   "source": "hourly_provisional",
+   "final": false,
+   "model_version": "fixture-v2"
+  }
+ ]
+}

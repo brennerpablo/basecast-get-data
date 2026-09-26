@@ -1214,6 +1214,226 @@
         }
       }
     },
+    "/forecasts/queue-curves": {
+      "get": {
+        "tags": [
+          "forecast"
+        ],
+        "summary": "Queue Curves",
+        "description": "Generation-queue survival: the share of projects (or MW) reaching COD, and withdrawing, by months since\nthey entered the queue or signed their IA, per stratum. Values past the point where fewer than 10 projects\nremain at risk come back null.",
+        "operationId": "queue_curves_forecasts_queue_curves_get",
+        "parameters": [
+          {
+            "name": "stratum",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "all",
+                      "solar",
+                      "storage",
+                      "wind",
+                      "gas_other"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Stratum"
+            }
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "entry or ia",
+              "title": "Stage"
+            },
+            "description": "entry or ia"
+          },
+          {
+            "name": "weighting",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "mw",
+                    "count"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Weighting"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueueCurvesResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/load/normalized": {
+      "get": {
+        "tags": [
+          "forecast"
+        ],
+        "summary": "Normalized",
+        "description": "The region's load actual and at normal weather: monthly (average, energy, peak) and yearly (energy and\nthe summer peak under the normal weather years).",
+        "operationId": "normalized_load_normalized_get",
+        "parameters": [
+          {
+            "name": "region",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "ERCOT",
+                "COAST",
+                "EAST",
+                "FWEST",
+                "NCENT",
+                "NORTH",
+                "SCENT",
+                "SOUTH",
+                "WEST"
+              ],
+              "type": "string",
+              "description": "ERCOT or a weather zone",
+              "default": "ERCOT",
+              "title": "Region"
+            },
+            "description": "ERCOT or a weather zone"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizedLoadResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/four-cp": {
+      "get": {
+        "tags": [
+          "forecast"
+        ],
+        "summary": "Four Cp",
+        "description": "The 4CP intervals by year, each zone's load at them, the dispatch days a weather rule needs to catch\nall four, the shift of scarcity past 6 pm, and the transmission rate each year's 4CP is billed at.",
+        "operationId": "four_cp_four_cp_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FourCpResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/backtest/peak": {
       "get": {
         "tags": [
@@ -4234,6 +4454,121 @@
         "type": "object",
         "title": "Coverage"
       },
+      "CurveMilestone": {
+        "properties": {
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "stratum": {
+            "type": "string",
+            "enum": [
+              "all",
+              "solar",
+              "storage",
+              "wind",
+              "gas_other"
+            ],
+            "title": "Stratum"
+          },
+          "weighting": {
+            "type": "string",
+            "enum": [
+              "mw",
+              "count"
+            ],
+            "title": "Weighting"
+          },
+          "month": {
+            "type": "integer",
+            "title": "Month"
+          },
+          "cif_cod": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cif Cod"
+          },
+          "supported": {
+            "type": "boolean",
+            "title": "Supported"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stage",
+          "stratum",
+          "weighting",
+          "month",
+          "supported"
+        ],
+        "title": "CurveMilestone",
+        "description": "COD by 12, 24, 36 and 48 months, the numbers the tab prints."
+      },
+      "CurvePoint": {
+        "properties": {
+          "month": {
+            "type": "integer",
+            "title": "Month",
+            "description": "Months since the start of the stage"
+          },
+          "at_risk": {
+            "type": "integer",
+            "title": "At Risk"
+          },
+          "cif_cod": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cif Cod",
+            "description": "Share reaching COD; null where fewer than 10 are at risk"
+          },
+          "cif_withdrawn": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cif Withdrawn"
+          },
+          "survival": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Survival"
+          },
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "At least 10 projects at risk; past that the curve shows no value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "month",
+          "at_risk",
+          "supported"
+        ],
+        "title": "CurvePoint"
+      },
       "DataCenterSite": {
         "properties": {
           "tceq_rn": {
@@ -4402,6 +4737,63 @@
           "loaded"
         ],
         "title": "DatasetRef"
+      },
+      "DispatchPoint": {
+        "properties": {
+          "forecast": {
+            "type": "string",
+            "title": "Forecast"
+          },
+          "param": {
+            "type": "number",
+            "title": "Param"
+          },
+          "window": {
+            "type": "string",
+            "title": "Window"
+          },
+          "dispatch_days": {
+            "type": "number",
+            "title": "Dispatch Days",
+            "description": "Dispatch days per summer"
+          },
+          "all4_rate": {
+            "type": "number",
+            "title": "All4 Rate",
+            "description": "Share of summers with all four CPs caught"
+          },
+          "month_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Month Rate"
+          },
+          "day_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Day Rate"
+          }
+        },
+        "type": "object",
+        "required": [
+          "forecast",
+          "param",
+          "window",
+          "dispatch_days",
+          "all4_rate"
+        ],
+        "title": "DispatchPoint"
       },
       "EiaYear": {
         "properties": {
@@ -4937,6 +5329,260 @@
           "files"
         ],
         "title": "FormatCount"
+      },
+      "FourCpData": {
+        "properties": {
+          "window_start_local": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Window Start Local",
+            "description": "The dispatch window the offer uses"
+          },
+          "window_end_local": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Window End Local"
+          },
+          "intervals": {
+            "items": {
+              "$ref": "#/components/schemas/FourCpInterval"
+            },
+            "type": "array",
+            "title": "Intervals"
+          },
+          "zones": {
+            "items": {
+              "$ref": "#/components/schemas/FourCpZone"
+            },
+            "type": "array",
+            "title": "Zones"
+          },
+          "dispatch_curve": {
+            "items": {
+              "$ref": "#/components/schemas/DispatchPoint"
+            },
+            "type": "array",
+            "title": "Dispatch Curve"
+          },
+          "scarcity": {
+            "items": {
+              "$ref": "#/components/schemas/Scarcity"
+            },
+            "type": "array",
+            "title": "Scarcity"
+          },
+          "rates": {
+            "items": {
+              "$ref": "#/components/schemas/TransmissionRate"
+            },
+            "type": "array",
+            "title": "Rates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "intervals",
+          "zones",
+          "dispatch_curve",
+          "scarcity",
+          "rates"
+        ],
+        "title": "FourCpData"
+      },
+      "FourCpInterval": {
+        "properties": {
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "month": {
+            "type": "integer",
+            "title": "Month"
+          },
+          "interval_end_local": {
+            "type": "string",
+            "title": "Interval End Local",
+            "description": "Interval end, Central time"
+          },
+          "interval_end_utc": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interval End Utc"
+          },
+          "mw": {
+            "type": "number",
+            "title": "Mw"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "de_15min, or hourly_provisional for months not yet in the D&E report"
+          },
+          "final": {
+            "type": "boolean",
+            "title": "Final"
+          }
+        },
+        "type": "object",
+        "required": [
+          "year",
+          "month",
+          "interval_end_local",
+          "mw",
+          "source",
+          "final"
+        ],
+        "title": "FourCpInterval"
+      },
+      "FourCpResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/FourCpData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "FourCpResponse"
+      },
+      "FourCpZone": {
+        "properties": {
+          "region_type": {
+            "type": "string",
+            "title": "Region Type",
+            "description": "weather_zone or load_zone"
+          },
+          "region_id": {
+            "type": "string",
+            "title": "Region Id"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "cp_avg_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cp Avg Mw"
+          },
+          "ncp_summer_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ncp Summer Mw"
+          },
+          "cf_summer": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cf Summer",
+            "description": "Load at the CPs ÷ the zone's own summer peak"
+          },
+          "share_4cp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Share 4Cp"
+          },
+          "share_energy": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Share Energy"
+          },
+          "intensity": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Intensity",
+            "description": "share_4cp ÷ share_energy"
+          },
+          "ncp_end_hour": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ncp End Hour",
+            "description": "The zone's own peak, local hour as a decimal"
+          },
+          "energy_mwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Mwh"
+          }
+        },
+        "type": "object",
+        "required": [
+          "region_type",
+          "region_id",
+          "year"
+        ],
+        "title": "FourCpZone"
       },
       "Gap": {
         "properties": {
@@ -6352,6 +6998,325 @@
         ],
         "title": "NextActionCard"
       },
+      "NormalizedLoadData": {
+        "properties": {
+          "region": {
+            "type": "string",
+            "enum": [
+              "ERCOT",
+              "COAST",
+              "EAST",
+              "FWEST",
+              "NCENT",
+              "NORTH",
+              "SCENT",
+              "SOUTH",
+              "WEST"
+            ],
+            "title": "Region"
+          },
+          "regions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "ERCOT",
+                "COAST",
+                "EAST",
+                "FWEST",
+                "NCENT",
+                "NORTH",
+                "SCENT",
+                "SOUTH",
+                "WEST"
+              ]
+            },
+            "type": "array",
+            "title": "Regions"
+          },
+          "normal_period": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Normal Period"
+          },
+          "weather_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weather Source"
+          },
+          "monthly": {
+            "items": {
+              "$ref": "#/components/schemas/NormalizedMonth"
+            },
+            "type": "array",
+            "title": "Monthly"
+          },
+          "annual": {
+            "items": {
+              "$ref": "#/components/schemas/NormalizedYear"
+            },
+            "type": "array",
+            "title": "Annual"
+          }
+        },
+        "type": "object",
+        "required": [
+          "region",
+          "regions",
+          "monthly",
+          "annual"
+        ],
+        "title": "NormalizedLoadData"
+      },
+      "NormalizedLoadResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/NormalizedLoadData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "NormalizedLoadResponse"
+      },
+      "NormalizedMonth": {
+        "properties": {
+          "month": {
+            "type": "string",
+            "format": "date",
+            "title": "Month",
+            "description": "First day of the month"
+          },
+          "days": {
+            "type": "integer",
+            "title": "Days"
+          },
+          "complete": {
+            "type": "boolean",
+            "title": "Complete",
+            "description": "False for the running month"
+          },
+          "avg_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg Mw"
+          },
+          "avg_norm_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg Norm Mw",
+            "description": "Average load at normal weather"
+          },
+          "energy_gwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Gwh"
+          },
+          "energy_norm_gwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Norm Gwh"
+          },
+          "peak_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak Mw"
+          },
+          "peak_norm_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak Norm Mw",
+            "description": "Weather-adjusted daily peak; not an expected peak"
+          },
+          "t_mean_c": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "T Mean C"
+          },
+          "yoy_norm_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Yoy Norm Pct",
+            "description": "12-month change of avg_norm_mw, in %"
+          }
+        },
+        "type": "object",
+        "required": [
+          "month",
+          "days",
+          "complete"
+        ],
+        "title": "NormalizedMonth"
+      },
+      "NormalizedYear": {
+        "properties": {
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "energy_gwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Gwh"
+          },
+          "energy_norm_gwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Norm Gwh"
+          },
+          "yoy_norm_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Yoy Norm Pct"
+          },
+          "summer_peak_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summer Peak Mw",
+            "description": "Actual June–September daily max"
+          },
+          "summer_peak_norm_p10": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summer Peak Norm P10",
+            "description": "The summer peak under the normal weather years"
+          },
+          "summer_peak_norm_p50": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summer Peak Norm P50"
+          },
+          "summer_peak_norm_p90": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summer Peak Norm P90"
+          },
+          "complete_through": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Complete Through",
+            "description": "Last day included"
+          }
+        },
+        "type": "object",
+        "required": [
+          "year"
+        ],
+        "title": "NormalizedYear"
+      },
       "ObjectDetail": {
         "properties": {
           "object": {
@@ -7415,6 +8380,58 @@
         ],
         "title": "QueueBacktestRow"
       },
+      "QueueCurvesData": {
+        "properties": {
+          "as_of_month": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of Month"
+          },
+          "curves": {
+            "items": {
+              "$ref": "#/components/schemas/StageCurve"
+            },
+            "type": "array",
+            "title": "Curves"
+          },
+          "milestones": {
+            "items": {
+              "$ref": "#/components/schemas/CurveMilestone"
+            },
+            "type": "array",
+            "title": "Milestones"
+          }
+        },
+        "type": "object",
+        "required": [
+          "curves",
+          "milestones"
+        ],
+        "title": "QueueCurvesData"
+      },
+      "QueueCurvesResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/QueueCurvesData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "QueueCurvesResponse"
+      },
       "QueueProject": {
         "properties": {
           "inr": {
@@ -8183,6 +9200,96 @@
         ],
         "title": "RunsResponse"
       },
+      "Scarcity": {
+        "properties": {
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "load_peak_mean_he": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Load Peak Mean He"
+          },
+          "net_load_peak_mean_he": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Net Load Peak Mean He"
+          },
+          "cp_net_load_rank_median": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cp Net Load Rank Median"
+          },
+          "cp_price_rank_median": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cp Price Rank Median"
+          },
+          "cp_in_top20_price_share": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cp In Top20 Price Share"
+          },
+          "top20_price_after_18h_share": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top20 Price After 18H Share"
+          },
+          "wind_solar_share": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wind Solar Share"
+          }
+        },
+        "type": "object",
+        "required": [
+          "year"
+        ],
+        "title": "Scarcity"
+      },
       "ScoreSignal": {
         "properties": {
           "signal": {
@@ -8778,6 +9885,49 @@
           "data"
         ],
         "title": "SourcesResponse"
+      },
+      "StageCurve": {
+        "properties": {
+          "stage": {
+            "type": "string",
+            "title": "Stage",
+            "description": "entry (from entering the queue) or ia (from a signed IA)"
+          },
+          "stratum": {
+            "type": "string",
+            "enum": [
+              "all",
+              "solar",
+              "storage",
+              "wind",
+              "gas_other"
+            ],
+            "title": "Stratum"
+          },
+          "weighting": {
+            "type": "string",
+            "enum": [
+              "mw",
+              "count"
+            ],
+            "title": "Weighting"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/CurvePoint"
+            },
+            "type": "array",
+            "title": "Points"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stage",
+          "stratum",
+          "weighting",
+          "points"
+        ],
+        "title": "StageCurve"
       },
       "StructureResponse": {
         "properties": {
@@ -9408,6 +10558,55 @@
           "age_days"
         ],
         "title": "TopTrigger"
+      },
+      "TransmissionRate": {
+        "properties": {
+          "charges_for_year": {
+            "type": "integer",
+            "title": "Charges For Year"
+          },
+          "docket": {
+            "type": "string",
+            "title": "Docket"
+          },
+          "postage_stamp_usd_per_kw_yr": {
+            "type": "number",
+            "title": "Postage Stamp Usd Per Kw Yr"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "final",
+              "pending"
+            ],
+            "title": "Status"
+          },
+          "billed_year": {
+            "type": "integer",
+            "title": "Billed Year",
+            "description": "Year Y's 4CP is billed in year Y+1"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "charges_for_year",
+          "docket",
+          "postage_stamp_usd_per_kw_yr",
+          "status",
+          "billed_year"
+        ],
+        "title": "TransmissionRate"
       },
       "ValidationError": {
         "properties": {

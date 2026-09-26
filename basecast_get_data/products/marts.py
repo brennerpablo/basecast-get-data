@@ -32,6 +32,14 @@ MARTS: dict[str, str] = {
     "mart_large_load_in_service": "forecast",
     "mart_large_load_monthly": "forecast",
     "mart_annotations": "forecast",
+    "mart_queue_stage_curves": "forecast",
+    "mart_load_normalized_monthly": "forecast",
+    "mart_load_normalized_annual": "forecast",
+    "mart_four_cp_intervals": "forecast",
+    "mart_four_cp_zone": "forecast",
+    "mart_four_cp_dispatch_curve": "forecast",
+    "mart_four_cp_scarcity": "forecast",
+    "mart_four_cp_rates": "forecast",
     "mart_peak_backtest": "backtest",
     "mart_actual_summer_peaks": "backtest",
     "mart_backtest_fan": "backtest",
@@ -47,6 +55,8 @@ META_GROUPS: dict[str, str] = {
     "glossary": "accounts",
     "county_acquisition": "explorer",
     "peak_forecast": "forecast",
+    "load_normalized_monthly": "forecast",
+    "four_cp_intervals": "forecast",
     "peak_backtest": "backtest",
 }
 

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from datetime import date
-from typing import Any
+from typing import Any, Literal
 
 import polars as pl
 from fastapi import APIRouter, Depends, Query
@@ -29,6 +29,14 @@ from basecast_get_data.schemas.forecasts import (
     Region,
     Variant,
     VariantOption,
+)
+from basecast_get_data.schemas.queue import (
+    CurveMilestone,
+    CurvePoint,
+    QueueCurvesData,
+    QueueCurvesResponse,
+    StageCurve,
+    Stratum,
 )
 
 router = APIRouter(prefix="/forecasts", tags=["forecast"], dependencies=[Depends(require_token)])
@@ -170,4 +178,56 @@ def large_load() -> LargeLoadResponse:
             annotations=[Annotation(**r) for r in annotations.to_dicts()],
             deck_vintages=sorted(vintages),
         ),
+    )
+
+
+CURVES = "mart_queue_stage_curves"
+MILESTONES = (12, 24, 36, 48)
+
+
+@router.get("/queue-curves", response_model=QueueCurvesResponse, responses=PRODUCT_ERRORS)
+def queue_curves(
+    stratum: list[Stratum] | None = Query(None),
+    stage: list[str] | None = Query(None, description="entry or ia"),
+    weighting: Literal["mw", "count"] | None = Query(None),
+) -> QueueCurvesResponse:
+    """Generation-queue survival: the share of projects (or MW) reaching COD, and withdrawing, by months since
+    they entered the queue or signed their IA, per stratum. Values past the point where fewer than 10 projects
+    remain at risk come back null."""
+    df = store.frame(CURVES)
+    if df.height and "as_of_month" in df.columns:
+        df = df.filter(pl.col("as_of_month") == pl.col("as_of_month").max())
+    for column, values in (("stratum", stratum), ("stage", stage)):
+        if values:
+            df = df.filter(pl.col(column).is_in(values))
+    if weighting:
+        df = df.filter(pl.col("weighting") == weighting)
+    # No screen may show a value the curve does not support (fewer than 10 at risk).
+    df = df.with_columns(
+        [
+            pl.when(pl.col("supported")).then(pl.col(c)).alias(c)
+            for c in ("cif_cod", "cif_withdrawn", "survival")
+        ]
+    ).sort(["stage", "stratum", "weighting", "month"])
+    curves = [
+        StageCurve(
+            stage=stage_,
+            stratum=stratum_,
+            weighting=weighting_,
+            points=[CurvePoint(**p) for p in g.to_dicts()],
+        )
+        for (stage_, stratum_, weighting_), g in df.group_by(
+            ["stage", "stratum", "weighting"], maintain_order=True
+        )
+    ]
+    milestones = [
+        CurveMilestone(**r)
+        for r in df.filter(pl.col("month").is_in(MILESTONES))
+        .select("stage", "stratum", "weighting", "month", "cif_cod", "supported")
+        .to_dicts()
+    ]
+    month = df["as_of_month"].max() if df.height and "as_of_month" in df.columns else None
+    return QueueCurvesResponse(
+        meta=product_meta(CURVES, rows=df),
+        data=QueueCurvesData(as_of_month=month, curves=curves, milestones=milestones),  # type: ignore[arg-type]
     )

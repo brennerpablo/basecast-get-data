@@ -1860,6 +1860,196 @@ def make_insights() -> list[dict[str, Any]]:
     ]
 
 
+# --- P1: the other /forecast tabs --------------------------------------------------------------------------
+
+
+def make_queue_curves() -> list[dict[str, Any]]:
+    rows = []
+    for stage, (cod_max, speed) in (("entry", (0.09, 0.03)), ("ia", (0.5, 0.06))):
+        for stratum, scale in (
+            ("all", 1.0),
+            ("solar", 0.7),
+            ("storage", 1.2),
+            ("wind", 0.8),
+            ("gas_other", 0.9),
+        ):
+            for weighting in ("mw", "count"):
+                at_risk0 = rng.randint(120, 900) if stratum == "all" else rng.randint(25, 300)
+                for month in range(0, 61, 3):
+                    cod = min(0.95, cod_max * scale * (1 - math.exp(-speed * month)))
+                    withdrawn = min(0.9 - cod, 0.6 * (1 - math.exp(-0.035 * month)))
+                    at_risk = int(at_risk0 * math.exp(-0.05 * month))
+                    rows.append(
+                        {
+                            "as_of_month": iso(QUEUE_MONTH),
+                            "stage": stage,
+                            "stratum": stratum,
+                            "weighting": weighting,
+                            "month": month,
+                            "at_risk": at_risk,
+                            "cif_cod": r4(cod),
+                            "cif_withdrawn": r4(withdrawn),
+                            "survival": r4(1 - cod - withdrawn),
+                            "supported": at_risk >= 10,
+                            "model_version": MODEL_VERSION,
+                        }
+                    )
+    return rows
+
+
+def make_normalized() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    monthly, annual = [], []
+    last = date(2026, 9, 1)
+    for region in ["ERCOT", *ZONES]:
+        share = 1.0 if region == "ERCOT" else ORGANIC_SHARE[region]
+        for k in range(129):
+            month = month_add(date(2016, 1, 1), k)
+            if month > last:
+                break
+            trend = 44000 * (1.021 ** (k / 12)) * share
+            season = 1 + 0.35 * math.cos((month.month - 7.5) / 12 * 2 * math.pi) * -1
+            norm = trend * (1 + 0.22 * math.cos((month.month - 7.5) / 12 * 2 * math.pi) * -1)
+            actual = norm * rng.uniform(0.94, 1.06)
+            days = 19 if month == last else 30
+            monthly.append(
+                {
+                    "weather_zone": region,
+                    "month": iso(month),
+                    "days": days,
+                    "complete": month != last,
+                    "avg_mw": r1(actual),
+                    "avg_norm_mw": r1(norm),
+                    "energy_gwh": r1(actual * 24 * days / 1000),
+                    "energy_norm_gwh": r1(norm * 24 * days / 1000),
+                    "peak_mw": r1(actual * 1.35 * season / season),
+                    "peak_norm_mw": r1(norm * 1.33),
+                    "t_mean_c": r1(20 + 9 * -math.cos((month.month - 0.5) / 12 * 2 * math.pi)),
+                    "yoy_norm_pct": r4(2.1 + rng.uniform(-0.6, 0.6)) if k >= 12 else None,
+                    "as_of": iso(AS_OF),
+                    "model_version": MODEL_VERSION,
+                }
+            )
+        for year in range(2016, 2027):
+            base = 44000 * (1.021 ** (year - 2016)) * share
+            annual.append(
+                {
+                    "weather_zone": region,
+                    "year": year,
+                    "energy_gwh": r1(base * 8.76 * rng.uniform(0.97, 1.03)),
+                    "energy_norm_gwh": r1(base * 8.76),
+                    "yoy_norm_pct": r4(2.1 + rng.uniform(-0.5, 0.5)) if year > 2016 else None,
+                    "summer_peak_mw": r1(base * 1.62 * rng.uniform(0.95, 1.05)),
+                    "summer_peak_norm_p10": r1(base * 1.55),
+                    "summer_peak_norm_p50": r1(base * 1.6),
+                    "summer_peak_norm_p90": r1(base * 1.66),
+                    "complete_through": "2026-09-19" if year == 2026 else f"{year}-12-31",
+                    "as_of": iso(AS_OF),
+                    "model_version": MODEL_VERSION,
+                }
+            )
+    return monthly, annual
+
+
+def make_four_cp() -> dict[str, list[dict[str, Any]]]:
+    intervals, zones, scarcity = [], [], []
+    for year in range(2012, 2027):
+        for month in (6, 7, 8, 9):
+            if year == 2026 and month == 9:
+                continue
+            day = rng.randint(1, 28)
+            minute = rng.choice([0, 15, 30, 45])
+            hour = rng.choice([16, 17, 17, 17])
+            intervals.append(
+                {
+                    "year": year,
+                    "month": month,
+                    "interval_end_local": f"{year}-{month:02d}-{day:02d} {hour}:{minute:02d}",
+                    "interval_end_utc": f"{year}-{month:02d}-{day:02d}T{hour + 5:02d}:{minute:02d}:00+00:00",
+                    "mw": r1(
+                        ACTUALS.get(year, 70000) * rng.uniform(0.9, 1.0)
+                        if year >= 2016
+                        else 64000 * rng.uniform(0.9, 1)
+                    ),
+                    "source": "hourly_provisional" if year == 2026 and month == 8 else "de_15min",
+                    "final": year < 2026,
+                    "model_version": MODEL_VERSION,
+                }
+            )
+        for zone in ZONES:
+            share4 = ORGANIC_SHARE[zone] * rng.uniform(0.9, 1.1)
+            intensity = rng.uniform(0.9, 1.12)
+            zones.append(
+                {
+                    "region_type": "weather_zone",
+                    "region_id": zone,
+                    "year": year,
+                    "cp_avg_mw": r1(60000 * share4),
+                    "ncp_summer_mw": r1(60000 * share4 * rng.uniform(1.03, 1.15)),
+                    "cf_summer": r4(rng.uniform(0.84, 0.97)),
+                    "share_4cp": r4(share4),
+                    "share_energy": r4(share4 / intensity),
+                    "intensity": r4(intensity),
+                    "ncp_end_hour": r4(rng.uniform(15.6, 18.5)),
+                    "energy_mwh": r1(60000 * share4 * 8760 * 0.6),
+                    "model_version": MODEL_VERSION,
+                }
+            )
+        scarcity.append(
+            {
+                "year": year,
+                "load_peak_mean_he": r1(17 + rng.uniform(-0.3, 0.6)),
+                "net_load_peak_mean_he": r1(17.5 + (year - 2012) * 0.25),
+                "cp_net_load_rank_median": r1(1 + (year - 2012) * 0.8),
+                "cp_price_rank_median": r1(5 + (year - 2012) * 6),
+                "cp_in_top20_price_share": r4(max(0.0, 0.3 - (year - 2012) * 0.03)),
+                "top20_price_after_18h_share": r4(min(0.95, 0.2 + (year - 2012) * 0.05)),
+                "wind_solar_share": r4(0.15 + (year - 2012) * 0.015),
+                "model_version": MODEL_VERSION,
+            }
+        )
+    dispatch = [
+        {
+            "forecast": forecast,
+            "param": r4(param),
+            "window": "fixture window",
+            "dispatch_days": r1(days),
+            "all4_rate": r4(min(1.0, 0.25 + days / 70)),
+            "month_rate": r4(min(1.0, 0.5 + days / 90)),
+            "day_rate": r4(min(1.0, 0.2 + days / 120)),
+            "model_version": MODEL_VERSION,
+        }
+        for forecast in ("threshold", "top_n")
+        for param, days in ((0.9, 70), (0.93, 58), (0.95, 47), (0.97, 36), (0.99, 22))
+    ]
+    rates = [
+        {
+            "charges_for_year": 2025,
+            "docket": "FIXTURE-A",
+            "postage_stamp_usd_per_kw_yr": 70.0,
+            "status": "final",
+            "billed_year": 2026,
+            "source_url": None,
+            "model_version": MODEL_VERSION,
+        },
+        {
+            "charges_for_year": 2026,
+            "docket": "FIXTURE-B",
+            "postage_stamp_usd_per_kw_yr": 77.0,
+            "status": "pending",
+            "billed_year": 2027,
+            "source_url": None,
+            "model_version": MODEL_VERSION,
+        },
+    ]
+    return {
+        "intervals": intervals,
+        "zones": zones,
+        "dispatch": dispatch,
+        "scarcity": scarcity,
+        "rates": rates,
+    }
+
+
 def main() -> None:
     projects = make_projects()
     queue = county_queue(projects)
@@ -1892,6 +2082,16 @@ def main() -> None:
     write("mart_official_forecast_errors", make_official_errors())
     write("mart_queue_backtest", make_queue_backtest())
     write("mart_insights", make_insights())
+    write("mart_queue_stage_curves", make_queue_curves())
+    normalized_monthly, normalized_annual = make_normalized()
+    write("mart_load_normalized_monthly", normalized_monthly)
+    write("mart_load_normalized_annual", normalized_annual)
+    four_cp = make_four_cp()
+    write("mart_four_cp_intervals", four_cp["intervals"])
+    write("mart_four_cp_zone", four_cp["zones"])
+    write("mart_four_cp_dispatch_curve", four_cp["dispatch"])
+    write("mart_four_cp_scarcity", four_cp["scarcity"])
+    write("mart_four_cp_rates", four_cp["rates"])
     write(
         "mart_meta",
         {
@@ -1920,6 +2120,11 @@ def main() -> None:
                 "÷ MW the deck promised beyond its own approved stock (horizons of 6 months or more).",
             },
             "glossary": {"items": glossary()},
+            "load_normalized_monthly": {
+                "normal_period": "fixture normal years",
+                "weather_source": "fixture weather",
+            },
+            "four_cp_intervals": {"window_start_local": "15:30", "window_end_local": "17:30"},
             "peak_backtest": {
                 "eras": [
                     {

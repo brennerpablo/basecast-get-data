@@ -252,6 +252,14 @@
     }
    ]
   },
+  "load_normalized_monthly": {
+   "normal_period": "fixture normal years",
+   "weather_source": "fixture weather"
+  },
+  "four_cp_intervals": {
+   "window_start_local": "15:30",
+   "window_end_local": "17:30"
+  },
   "peak_backtest": {
    "eras": [
     {

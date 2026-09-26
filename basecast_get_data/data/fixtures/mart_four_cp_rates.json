@@ -1,0 +1,23 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "charges_for_year": 2025,
+   "docket": "FIXTURE-A",
+   "postage_stamp_usd_per_kw_yr": 70.0,
+   "status": "final",
+   "billed_year": 2026,
+   "source_url": null,
+   "model_version": "fixture-v2"
+  },
+  {
+   "charges_for_year": 2026,
+   "docket": "FIXTURE-B",
+   "postage_stamp_usd_per_kw_yr": 77.0,
+   "status": "pending",
+   "billed_year": 2027,
+   "source_url": null,
+   "model_version": "fixture-v2"
+  }
+ ]
+}
