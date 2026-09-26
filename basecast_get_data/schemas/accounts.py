@@ -63,6 +63,7 @@ class AccountSummary(BaseModel):
     signals: dict[str, SignalValue]
     next_action: NextAction
     action_changes_on: date | None = Field(None, description="The day the action lapses without a new event")
+    action_changes_to: NextAction | None = Field(None, description="The action it lapses to")
     n_strong: int
     n_context: int
     latest_event_date: date | None = None

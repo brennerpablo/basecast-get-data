@@ -2,6 +2,331 @@
  "note": "public.mart_meta rows of the sampled marts",
  "rows": [
   {
+   "mart": "accounts",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "accounts",
+   "key": "caveats",
+   "value": [
+    "weights_pending_review",
+    "by_county_not_point"
+   ]
+  },
+  {
+   "mart": "accounts",
+   "key": "inputs",
+   "value": [
+    "puct_ccn_territories",
+    "county_utility_overlap_puct",
+    "eia861_sales",
+    "census_population_county",
+    "census_permits_county",
+    "census_housing_county",
+    "tceq_data_center_sites",
+    "ltlf_forecasts",
+    "county_weather_zone",
+    "cpa_local_dev_agreements",
+    "ercot_market_participants",
+    "gis_project_events",
+    "tpit_projects",
+    "puct_tsp_large_load_requests"
+   ]
+  },
+  {
+   "mart": "accounts",
+   "key": "signals",
+   "value": [
+    {
+     "unit": "share",
+     "label": "Population growth 2020→2025",
+     "signal": "pop_growth",
+     "weight": 0.25
+    },
+    {
+     "unit": "units/1k",
+     "label": "Permits 2023–2025 per 1,000 residents",
+     "signal": "permits_per_1k",
+     "weight": 0.15
+    },
+    {
+     "unit": "homes",
+     "label": "Owner-occupied single-family homes",
+     "signal": "owner_sf_homes",
+     "weight": 0.2
+    },
+    {
+     "unit": "share",
+     "label": "Owner-occupied single-family share",
+     "signal": "owner_sf_share",
+     "weight": 0.1
+    },
+    {
+     "unit": "sites",
+     "label": "New data-center sites since 2025 (expected)",
+     "signal": "dc_sites",
+     "weight": 0.15
+    },
+    {
+     "unit": "per year",
+     "label": "Zone summer peak CAGR 2025→2031 (LTLF)",
+     "signal": "zone_peak_cagr",
+     "weight": 0.15
+    }
+   ]
+  },
+  {
+   "mart": "account_events",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "account_events",
+   "key": "caveats",
+   "value": [
+    "by_county_not_point"
+   ]
+  },
+  {
+   "mart": "account_events",
+   "key": "inputs",
+   "value": [
+    "mart_accounts"
+   ]
+  },
+  {
+   "mart": "account_counties",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "account_counties",
+   "key": "caveats",
+   "value": []
+  },
+  {
+   "mart": "account_counties",
+   "key": "inputs",
+   "value": [
+    "county_utility_overlap_puct",
+    "county_weather_zone",
+    "mart_accounts"
+   ]
+  },
+  {
+   "mart": "account_detail",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "account_detail",
+   "key": "caveats",
+   "value": [
+    "weights_pending_review"
+   ]
+  },
+  {
+   "mart": "account_detail",
+   "key": "inputs",
+   "value": [
+    "mart_accounts",
+    "mart_account_events",
+    "mart_account_counties"
+   ]
+  },
+  {
+   "mart": "glossary",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "glossary",
+   "key": "caveats",
+   "value": []
+  },
+  {
+   "mart": "glossary",
+   "key": "inputs",
+   "value": []
+  },
+  {
+   "mart": "glossary",
+   "key": "items",
+   "value": [
+    {
+     "code": "dc_permit",
+     "kind": "trigger",
+     "text": "New data-center air permit in the territory",
+     "as_of": "2026-09-26",
+     "label": "Data-center permit",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "strong",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "gen_storage_ia",
+     "kind": "trigger",
+     "text": "Generation or storage project signed its interconnection agreement nearby",
+     "as_of": "2026-09-26",
+     "label": "Storage/gas IA nearby",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "strong",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "dev_agreement",
+     "kind": "trigger",
+     "text": "Local economic-development agreement (Ch. 312 / Ch. 380)",
+     "as_of": "2026-09-26",
+     "label": "Dev agreement",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "strong",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "market_registration",
+     "kind": "trigger",
+     "text": "Account registered a new ERCOT market role (LSE / QSE / TDSP / RE)",
+     "as_of": "2026-09-26",
+     "label": "ERCOT registration",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "strong",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "permit_surge",
+     "kind": "trigger",
+     "text": "Residential permits up ≥ 25% (last 12 months vs the 12 before)",
+     "as_of": "2026-09-26",
+     "label": "Permit surge",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "strong",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "new_transmission",
+     "kind": "trigger",
+     "text": "New transmission project listed in ERCOT TPIT touching the territory",
+     "as_of": "2026-09-26",
+     "label": "New transmission",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "context",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "rate_increase",
+     "kind": "trigger",
+     "text": "Residential average price up ≥ 10% (EIA-861)",
+     "as_of": "2026-09-26",
+     "label": "Rate increase",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "context",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "tsp_large_load",
+     "kind": "trigger",
+     "text": "The account's G&T / TSP reported large-load requests (PUCT 58777 RFI)",
+     "as_of": "2026-09-26",
+     "label": "G&T large-load requests",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": "context",
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "no_exposed_county",
+     "kind": "flag",
+     "text": "No county where the territory covers ≥ 20% of the land: county events (data centers, IAs, permits, transmission) never reach the account; its context is the home county.",
+     "as_of": "2026-09-26",
+     "label": "No exposed county",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "apportionment_under",
+     "kind": "flag",
+     "text": "Area apportionment under-counts the territory (a city inside a large county): population, homes and permit counts run low.",
+     "as_of": "2026-09-26",
+     "label": "Homes under-counted",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "apportionment_over",
+     "kind": "flag",
+     "text": "Area apportionment gives the territory more homes than it has EIA meters: size and growth signals are over-counted.",
+     "as_of": "2026-09-26",
+     "label": "Homes over-counted",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "short_form",
+     "kind": "flag",
+     "text": "Files the EIA-861 short form: totals only, no residential split or residential price.",
+     "as_of": "2026-09-26",
+     "label": "EIA short form",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "eia_break",
+     "kind": "flag",
+     "text": "The EIA meter count moves 50% or more in one year: a reporting change, so read the meter growth with care.",
+     "as_of": "2026-09-26",
+     "label": "EIA series break",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "call_now",
+     "kind": "next_action",
+     "text": "Tier A with an active strong trigger; or tier B with two, or with one from the last 90 days.",
+     "as_of": "2026-09-26",
+     "label": "Call now",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "nurture",
+     "kind": "next_action",
+     "text": "Tier A without an active strong trigger; or tier B with one strong trigger older than 90 days.",
+     "as_of": "2026-09-26",
+     "label": "Nurture",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "watch",
+     "kind": "next_action",
+     "text": "Tier B without an active strong trigger; or tier C with an active strong trigger: set an alert.",
+     "as_of": "2026-09-26",
+     "label": "Watch (alert)",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    },
+    {
+     "code": "hold",
+     "kind": "next_action",
+     "text": "Tier C without an active strong trigger.",
+     "as_of": "2026-09-26",
+     "label": "Hold",
+     "built_at": "2026-09-26 23:51:18.875562+00:00",
+     "strength": null,
+     "model_version": "f85bb1f.v1"
+    }
+   ]
+  },
+  {
    "mart": "actual_summer_peaks",
    "key": "as_of",
    "value": "2026-09-26"

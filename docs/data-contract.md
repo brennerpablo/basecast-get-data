@@ -278,7 +278,8 @@ separadas por `; `.
 - P1 entram depois neste payload: card do G&T (X13), oferta de 4CP (X3 + X15) e fatos de cidade das munis (X10).
 
 `GET /accounts/{account_id}/events?since=&trigger=&strength=&offset=&limit=`: o histórico completo, do mais novo
-para o mais antigo (`mart_account_events`). Paginação por `offset`/`limit` (até 500), como em
+para o mais antigo (`mart_account_events`); eventos sem data (acordos expirados sem data na fonte) ficam de fora,
+e um evento sem título usa o `detail` como título. Paginação por `offset`/`limit` (até 500), como em
 `/pipeline/runs`.
 
 Fora do contrato: `first_deficit_year`, `deficit_mw_p50_next_3y` (precisam da carga da conta: só no P2,

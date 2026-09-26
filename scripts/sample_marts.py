@@ -23,7 +23,13 @@ from basecast_get_data.products import marts
 OUT = Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "marts"
 MAX_ROWS = 400
 # mart → SQL WHERE clause that trims it (fixed values, never user input).
-TRIM: dict[str, str] = {}
+# The three accounts of X9's worked diagnoses: #1 (a muni), the median co-op and a short-form muni.
+X9_ACCOUNTS = "account_id IN ('30123', '30120', '30012')"
+TRIM: dict[str, str] = {
+    "mart_account_detail": X9_ACCOUNTS,
+    "mart_account_events": X9_ACCOUNTS,
+    "mart_account_counties": X9_ACCOUNTS,
+}
 
 
 def _json(value: Any) -> Any:

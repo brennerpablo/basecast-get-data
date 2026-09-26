@@ -2987,6 +2987,24 @@
             "title": "Action Changes On",
             "description": "The day the action lapses without a new event"
           },
+          "action_changes_to": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "call_now",
+                  "nurture",
+                  "watch",
+                  "hold"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Action Changes To",
+            "description": "The action it lapses to"
+          },
           "n_strong": {
             "type": "integer",
             "title": "N Strong"

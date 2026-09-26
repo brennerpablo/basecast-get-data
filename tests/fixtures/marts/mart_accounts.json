@@ -1,0 +1,6551 @@
+{
+ "note": "public.mart_accounts, trimmed by scripts/sample_marts.py",
+ "rows": [
+  {
+   "account_id": "30123",
+   "name": "New Braunfels Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "13418",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 60463.0,
+   "score": 0.8279582210242586,
+   "rank": 1,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.830188679245283,
+     "raw": 0.2423731070048014
+    },
+    "pop_growth": {
+     "pct": 1.0,
+     "raw": 0.26368551684356545
+    },
+    "owner_sf_homes": {
+     "pct": 0.6509433962264151,
+     "raw": 13567.294306460759
+    },
+    "owner_sf_share": {
+     "pct": 0.9622641509433962,
+     "raw": 0.7002456289548903
+    },
+    "permits_per_1k": {
+     "pct": 0.9238095238095239,
+     "raw": 38.96101261360224
+    },
+    "zone_peak_cagr": {
+     "pct": 0.5896226415094339,
+     "raw": 0.1075180590209688
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-10-22",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "CLOUDBURST DATA CENTERS",
+    "trigger": "dc_permit",
+    "age_days": 339,
+    "event_date": "2025-10-22"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 1,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30053",
+   "name": "Fannin County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "6173",
+   "gt": "Rayburn Electric Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 12172.0,
+   "score": 0.8248382749326145,
+   "rank": 2,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7264150943396226,
+     "raw": 0.00484860153492021
+    },
+    "pop_growth": {
+     "pct": 0.830188679245283,
+     "raw": 0.17539909988086633
+    },
+    "owner_sf_homes": {
+     "pct": 0.820754716981132,
+     "raw": 31957.54238524771
+    },
+    "owner_sf_share": {
+     "pct": 0.7264150943396226,
+     "raw": 0.641254913183584
+    },
+    "permits_per_1k": {
+     "pct": 0.8857142857142858,
+     "raw": 35.30258342290428
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9245283018867925,
+     "raw": 0.244865122399916
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 1,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30128",
+   "name": "Pedernales Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "14626",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 457598.0,
+   "score": 0.805067385444744,
+   "rank": 3,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9528301886792453,
+     "raw": 1.010536770115309
+    },
+    "pop_growth": {
+     "pct": 0.7924528301886792,
+     "raw": 0.1638712895960459
+    },
+    "owner_sf_homes": {
+     "pct": 0.9905660377358491,
+     "raw": 274187.0221890253
+    },
+    "owner_sf_share": {
+     "pct": 0.16981132075471697,
+     "raw": 0.5648696373857252
+    },
+    "permits_per_1k": {
+     "pct": 0.9142857142857144,
+     "raw": 38.676147337623256
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7452830188679245,
+     "raw": 0.17329781396165644
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-06-01",
+   "action_changes_to": "nurture",
+   "n_strong": 3,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "H-E-B, LP",
+    "trigger": "dev_agreement",
+    "age_days": 117,
+    "event_date": "2026-06-01"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 2,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30071",
+   "name": "Grayson-Collin Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "7559",
+   "gt": "Rayburn Electric Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 95519.0,
+   "score": 0.7746967654986523,
+   "rank": 4,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8584905660377358,
+     "raw": 0.1911595001090609
+    },
+    "owner_sf_homes": {
+     "pct": 0.9716981132075472,
+     "raw": 122399.14011147642
+    },
+    "owner_sf_share": {
+     "pct": 0.5377358490566038,
+     "raw": 0.6209216460257079
+    },
+    "permits_per_1k": {
+     "pct": 0.9523809523809524,
+     "raw": 43.89575574880478
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7830188679245282,
+     "raw": 0.19500839932283093
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-12-22",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "RAYBURN ENERGY STATION II Gas (TEF-Due Diligence)",
+    "trigger": "gen_storage_ia",
+    "age_days": 278,
+    "event_date": "2025-12-22"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 3,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30162",
+   "name": "Tri-County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "19159",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 139316.0,
+   "score": 0.7495417789757413,
+   "rank": 5,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8867924528301886,
+     "raw": 0.618294111168631
+    },
+    "pop_growth": {
+     "pct": 0.6415094339622641,
+     "raw": 0.1014717409933823
+    },
+    "owner_sf_homes": {
+     "pct": 0.9811320754716981,
+     "raw": 150843.0691987276
+    },
+    "owner_sf_share": {
+     "pct": 0.4528301886792453,
+     "raw": 0.6061674965602506
+    },
+    "permits_per_1k": {
+     "pct": 0.6761904761904762,
+     "raw": 17.052562640006418
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7547169811320754,
+     "raw": 0.17713347284773723
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-02-05",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 3,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "JOURNEY SITE",
+    "trigger": "dc_permit",
+    "age_days": 233,
+    "event_date": "2026-02-05"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "gen_storage_ia",
+    "new_transmission",
+    "rate_increase",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 4,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30065",
+   "name": "Georgetown Utility Systems",
+   "account_type": "muni",
+   "eia_utility_id": "7129",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 33066.0,
+   "score": 0.7289757412398922,
+   "rank": 6,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7547169811320754,
+     "raw": 0.03757850005729071
+    },
+    "pop_growth": {
+     "pct": 0.9622641509433962,
+     "raw": 0.22289400286869476
+    },
+    "owner_sf_homes": {
+     "pct": 0.5377358490566038,
+     "raw": 6114.285008821599
+    },
+    "owner_sf_share": {
+     "pct": 0.7547169811320754,
+     "raw": 0.6448361821950436
+    },
+    "permits_per_1k": {
+     "pct": 0.8095238095238096,
+     "raw": 27.606608158315254
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-12-15",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": {
+    "title": "Compal USA Technology, Inc.",
+    "trigger": "dev_agreement",
+    "age_days": 285,
+    "event_date": "2025-12-15"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 2,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30122",
+   "name": "Navarro County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "13332",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NCENT",
+   "meters": 20262.0,
+   "score": 0.6997843665768193,
+   "rank": 7,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7924528301886792,
+     "raw": 0.07453184051783009
+    },
+    "pop_growth": {
+     "pct": 0.820754716981132,
+     "raw": 0.17114046293157426
+    },
+    "owner_sf_homes": {
+     "pct": 0.8113207547169811,
+     "raw": 31235.976058628046
+    },
+    "owner_sf_share": {
+     "pct": 0.6792452830188679,
+     "raw": 0.6338529165322279
+    },
+    "permits_per_1k": {
+     "pct": 0.8476190476190477,
+     "raw": 31.90406214225952
+    },
+    "zone_peak_cagr": {
+     "pct": 0.12264150943396226,
+     "raw": 0.04535156987295618
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-12",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-08-12",
+   "top_trigger": {
+    "title": "Owens Corning Insulation Systems LLC",
+    "trigger": "dev_agreement",
+    "age_days": 45,
+    "event_date": "2026-08-12"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 5,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30007",
+   "name": "Bartlett Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "1273",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "SCENT",
+   "meters": 15253.0,
+   "score": 0.6992183288409705,
+   "rank": 8,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9905660377358491,
+     "raw": 1.824358711454746
+    },
+    "pop_growth": {
+     "pct": 0.7264150943396226,
+     "raw": 0.1391452253688974
+    },
+    "owner_sf_homes": {
+     "pct": 0.8773584905660377,
+     "raw": 50803.68324132764
+    },
+    "owner_sf_share": {
+     "pct": 0.2830188679245283,
+     "raw": 0.5832774183180058
+    },
+    "permits_per_1k": {
+     "pct": 0.7809523809523811,
+     "raw": 24.333854398558785
+    },
+    "zone_peak_cagr": {
+     "pct": 0.32075471698113206,
+     "raw": 0.08742550685883814
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-12",
+   "action_changes_to": "nurture",
+   "n_strong": 3,
+   "n_context": 2,
+   "latest_event_date": "2026-08-12",
+   "top_trigger": {
+    "title": "BLUESTEM TECHNOLOGY PARK",
+    "trigger": "dc_permit",
+    "age_days": 45,
+    "event_date": "2026-08-12"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 6,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30052",
+   "name": "United Electric Cooperative Services, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "19490",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NCENT",
+   "meters": 105631.0,
+   "score": 0.6925202156334233,
+   "rank": 9,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8962264150943395,
+     "raw": 0.7241748713839021
+    },
+    "pop_growth": {
+     "pct": 0.7358490566037735,
+     "raw": 0.14487434785133346
+    },
+    "owner_sf_homes": {
+     "pct": 0.9339622641509434,
+     "raw": 67717.78113817169
+    },
+    "owner_sf_share": {
+     "pct": 0.49056603773584906,
+     "raw": 0.6181798145929351
+    },
+    "permits_per_1k": {
+     "pct": 0.7142857142857143,
+     "raw": 20.72238806650274
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-04",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-08-04",
+   "top_trigger": {
+    "title": "Crocus Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 53,
+    "event_date": "2026-08-04"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 7,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30134",
+   "name": "Sam Houston Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "16613",
+   "gt": "East Texas Electric Coop",
+   "primary_weather_zone": "COAST",
+   "meters": 93486.0,
+   "score": 0.6786388140161725,
+   "rank": 10,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8584905660377358,
+     "raw": 0.39994893021398836
+    },
+    "pop_growth": {
+     "pct": 0.7452830188679245,
+     "raw": 0.15206197409337907
+    },
+    "owner_sf_homes": {
+     "pct": 0.9056603773584906,
+     "raw": 55934.35529061058
+    },
+    "owner_sf_share": {
+     "pct": 0.3113207547169811,
+     "raw": 0.5854797075930812
+    },
+    "permits_per_1k": {
+     "pct": 0.9047619047619049,
+     "raw": 37.113910409332036
+    },
+    "zone_peak_cagr": {
+     "pct": 0.10377358490566037,
+     "raw": 0.044052608573559596
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-05-22",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-05-22",
+   "top_trigger": {
+    "title": "SAM HOUSTON ELECTRIC COOP INC registered as TDSP",
+    "trigger": "market_registration",
+    "age_days": 127,
+    "event_date": "2026-05-22"
+   },
+   "active_triggers": [
+    "market_registration",
+    "rate_increase"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 8,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30011",
+   "name": "Bluebonnet Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "1892",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 133219.0,
+   "score": 0.6781266846361186,
+   "rank": 11,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7830188679245282,
+     "raw": 0.06245282285846719
+    },
+    "pop_growth": {
+     "pct": 0.7075471698113207,
+     "raw": 0.13333683861790635
+    },
+    "owner_sf_homes": {
+     "pct": 0.9528301886792453,
+     "raw": 103647.93533789857
+    },
+    "owner_sf_share": {
+     "pct": 0.09433962264150943,
+     "raw": 0.5386132717856928
+    },
+    "permits_per_1k": {
+     "pct": 0.8761904761904763,
+     "raw": 34.72863873222163
+    },
+    "zone_peak_cagr": {
+     "pct": 0.3490566037735849,
+     "raw": 0.10613320924199367
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-12-26",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "LOST PINES GAS RECIP PHASE 2",
+    "trigger": "gen_storage_ia",
+    "age_days": 274,
+    "event_date": "2025-12-26"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 9,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30145",
+   "name": "South Plains Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "17561",
+   "gt": "Brazos Electric Power Coop;Golden Spread Electric Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 75401.0,
+   "score": 0.6731940700808624,
+   "rank": 12,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8679245283018867,
+     "raw": 0.5583771963903691
+    },
+    "pop_growth": {
+     "pct": 0.40566037735849053,
+     "raw": 0.04573698689971173
+    },
+    "owner_sf_homes": {
+     "pct": 0.9150943396226415,
+     "raw": 61468.95495056924
+    },
+    "owner_sf_share": {
+     "pct": 0.08490566037735849,
+     "raw": 0.5285653128298547
+    },
+    "permits_per_1k": {
+     "pct": 0.7238095238095239,
+     "raw": 21.01984896931377
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9433962264150944,
+     "raw": 0.26303792323723696
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-07-10",
+   "action_changes_to": "nurture",
+   "n_strong": 3,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "CEMCO-403 & 365 CBP CLOCKTOWER DATA CENTER",
+    "trigger": "dc_permit",
+    "age_days": 78,
+    "event_date": "2026-07-10"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 10,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30094",
+   "name": "Trinity Valley Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "18976",
+   "gt": "Rayburn Electric Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 88305.0,
+   "score": 0.6701212938005391,
+   "rank": 13,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7641509433962264,
+     "raw": 0.0524047484917395
+    },
+    "pop_growth": {
+     "pct": 0.9056603773584906,
+     "raw": 0.20360902016309135
+    },
+    "owner_sf_homes": {
+     "pct": 0.9433962264150944,
+     "raw": 68964.23484307829
+    },
+    "owner_sf_share": {
+     "pct": 0.46226415094339623,
+     "raw": 0.6069147896840474
+    },
+    "permits_per_1k": {
+     "pct": 0.5523809523809524,
+     "raw": 12.796552343320846
+    },
+    "zone_peak_cagr": {
+     "pct": 0.07547169811320754,
+     "raw": 0.03180699137184693
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-07-31",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-07-31",
+   "top_trigger": {
+    "title": "Pham BESS",
+    "trigger": "gen_storage_ia",
+    "age_days": 57,
+    "event_date": "2026-07-31"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 11,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30175",
+   "name": "Wise Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "20948",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NCENT",
+   "meters": 26734.0,
+   "score": 0.6656940700808625,
+   "rank": 14,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8490566037735848,
+     "raw": 0.19066028611334662
+    },
+    "owner_sf_homes": {
+     "pct": 0.7169811320754716,
+     "raw": 17296.830453509534
+    },
+    "owner_sf_share": {
+     "pct": 0.7358490566037735,
+     "raw": 0.6413438309555035
+    },
+    "permits_per_1k": {
+     "pct": 0.5904761904761905,
+     "raw": 13.841408495035992
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6415094339622641,
+     "raw": 0.1260395282833291
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 12,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30031",
+   "name": "CPS Energy",
+   "account_type": "muni",
+   "eia_utility_id": "16604",
+   "gt": null,
+   "primary_weather_zone": "SCENT",
+   "meters": 962272.0,
+   "score": 0.6554582210242588,
+   "rank": 15,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8396226415094339,
+     "raw": 0.3326136425432875
+    },
+    "pop_growth": {
+     "pct": 0.5660377358490566,
+     "raw": 0.07472145724068358
+    },
+    "owner_sf_homes": {
+     "pct": 1.0,
+     "raw": 430409.0401454689
+    },
+    "owner_sf_share": {
+     "pct": 0.16037735849056603,
+     "raw": 0.5629655611525135
+    },
+    "permits_per_1k": {
+     "pct": 0.5238095238095238,
+     "raw": 12.0904589994585
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6226415094339622,
+     "raw": 0.10826973866184492
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-18",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-08-18",
+   "top_trigger": {
+    "title": "Riverwalk BESS",
+    "trigger": "gen_storage_ia",
+    "age_days": 39,
+    "event_date": "2026-08-18"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 3,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30184",
+   "name": "San Marcos Electric Utility",
+   "account_type": "muni",
+   "eia_utility_id": "28978",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 26024.0,
+   "score": 0.652345013477089,
+   "rank": 16,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.9905660377358491,
+     "raw": 0.2475818086431898
+    },
+    "owner_sf_homes": {
+     "pct": 0.40566037735849053,
+     "raw": 1390.8421146439025
+    },
+    "owner_sf_share": {
+     "pct": 0.3490566037735849,
+     "raw": 0.5937064968101834
+    },
+    "permits_per_1k": {
+     "pct": 0.9904761904761905,
+     "raw": 49.315023489602154
+    },
+    "zone_peak_cagr": {
+     "pct": 0.5896226415094339,
+     "raw": 0.1075180590209688
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 4,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30173",
+   "name": "Whitesboro Electric Utility",
+   "account_type": "muni",
+   "eia_utility_id": "20588",
+   "gt": "LCRA",
+   "primary_weather_zone": "NORTH",
+   "meters": 2298.0,
+   "score": 0.6150134770889487,
+   "rank": 26,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6981132075471698,
+     "raw": 0.12820493988557335
+    },
+    "owner_sf_homes": {
+     "pct": 0.32075471698113206,
+     "raw": 129.47088612947718
+    },
+    "owner_sf_share": {
+     "pct": 0.36792452830188677,
+     "raw": 0.5965102809151462
+    },
+    "permits_per_1k": {
+     "pct": 0.942857142857143,
+     "raw": 42.11883108851464
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9764150943396226,
+     "raw": 0.2633106956015856
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 8,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30083",
+   "name": "HILCO Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "8620",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NCENT",
+   "meters": 35322.0,
+   "score": 0.6416037735849056,
+   "rank": 17,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9056603773584906,
+     "raw": 0.789277526520461
+    },
+    "pop_growth": {
+     "pct": 0.6509433962264151,
+     "raw": 0.10988885653006286
+    },
+    "owner_sf_homes": {
+     "pct": 0.8490566037735848,
+     "raw": 43447.54703009441
+    },
+    "owner_sf_share": {
+     "pct": 0.32075471698113206,
+     "raw": 0.5886004586146587
+    },
+    "permits_per_1k": {
+     "pct": 0.7333333333333334,
+     "raw": 22.722609863759022
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-12",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-08-12",
+   "top_trigger": {
+    "title": "Owens Corning  Insulating Systems LLC",
+    "trigger": "dev_agreement",
+    "age_days": 45,
+    "event_date": "2026-08-12"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 13,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30073",
+   "name": "Greenville Electric Utility System",
+   "account_type": "muni",
+   "eia_utility_id": "7634",
+   "gt": null,
+   "primary_weather_zone": "NCENT",
+   "meters": 17439.0,
+   "score": 0.6336657681940701,
+   "rank": 18,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.820754716981132,
+     "raw": 0.10901537134791237
+    },
+    "pop_growth": {
+     "pct": 0.9716981132075472,
+     "raw": 0.23016157989228003
+    },
+    "owner_sf_homes": {
+     "pct": 0.4433962264150943,
+     "raw": 2450.8835786437658
+    },
+    "owner_sf_share": {
+     "pct": 0.29245283018867924,
+     "raw": 0.5844642021525503
+    },
+    "permits_per_1k": {
+     "pct": 0.7904761904761906,
+     "raw": 24.47784912758643
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2025-12-31",
+   "top_trigger": null,
+   "active_triggers": [
+    "rate_increase"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 5,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30029",
+   "name": "Central Texas Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "3282",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 47593.0,
+   "score": 0.6293598382749327,
+   "rank": 19,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5849056603773585,
+     "raw": 0.07917690927426446
+    },
+    "owner_sf_homes": {
+     "pct": 0.7641509433962264,
+     "raw": 25238.86072770981
+    },
+    "owner_sf_share": {
+     "pct": 0.6981132075471698,
+     "raw": 0.6367482207711422
+    },
+    "permits_per_1k": {
+     "pct": 0.580952380952381,
+     "raw": 13.59584171845128
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8113207547169811,
+     "raw": 0.2242962783892069
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-12-26",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 3,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "Marshall Spring Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 274,
+    "event_date": "2025-12-26"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "rate_increase",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 14,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30040",
+   "name": "PenTex Energy",
+   "account_type": "coop",
+   "eia_utility_id": "4262",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 17997.0,
+   "score": 0.6283625336927223,
+   "rank": 20,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5943396226415094,
+     "raw": 0.08864047087620897
+    },
+    "owner_sf_homes": {
+     "pct": 0.6792452830188679,
+     "raw": 14739.32877767705
+    },
+    "owner_sf_share": {
+     "pct": 0.7075471698113207,
+     "raw": 0.6373052115760038
+    },
+    "permits_per_1k": {
+     "pct": 0.5428571428571429,
+     "raw": 12.128231995712952
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9339622641509434,
+     "raw": 0.2604359684318707
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 3,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission",
+    "rate_increase",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 15,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30046",
+   "name": "Denton Municipal Electric",
+   "account_type": "muni",
+   "eia_utility_id": "5063",
+   "gt": null,
+   "primary_weather_zone": "NCENT",
+   "meters": 66609.0,
+   "score": 0.6278369272237198,
+   "rank": 21,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8018867924528301,
+     "raw": 0.1693013907887988
+    },
+    "owner_sf_homes": {
+     "pct": 0.7735849056603773,
+     "raw": 26009.75037752088
+    },
+    "owner_sf_share": {
+     "pct": 0.6415094339622641,
+     "raw": 0.6314291105240959
+    },
+    "permits_per_1k": {
+     "pct": 0.8380952380952382,
+     "raw": 29.755570227035964
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2025-07-15",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 6,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30012",
+   "name": "Boerne Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "1913",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 6542.0,
+   "score": 0.6272304582210243,
+   "rank": 22,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8867924528301886,
+     "raw": 0.19567851373182554
+    },
+    "owner_sf_homes": {
+     "pct": 0.3584905660377358,
+     "raw": 173.18607064156683
+    },
+    "owner_sf_share": {
+     "pct": 1.0,
+     "raw": 0.7327659094752269
+    },
+    "permits_per_1k": {
+     "pct": 0.7428571428571429,
+     "raw": 22.9127962618927
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-02-12",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": {
+    "title": "Buc-ee's Ltd.",
+    "trigger": "dev_agreement",
+    "age_days": 226,
+    "event_date": "2026-02-12"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 7,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30156",
+   "name": "Taylor Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "27369",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "WEST",
+   "meters": 21478.0,
+   "score": 0.6219811320754717,
+   "rank": 23,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9150943396226415,
+     "raw": 0.8234958501096178
+    },
+    "pop_growth": {
+     "pct": 0.36792452830188677,
+     "raw": 0.04090333277588565
+    },
+    "owner_sf_homes": {
+     "pct": 0.8396226415094339,
+     "raw": 34993.595154351155
+    },
+    "owner_sf_share": {
+     "pct": 0.3018867924528302,
+     "raw": 0.5853102266927319
+    },
+    "permits_per_1k": {
+     "pct": 0.5333333333333334,
+     "raw": 12.126101389597661
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7641509433962264,
+     "raw": 0.17975498193491368
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-01",
+   "action_changes_to": "nurture",
+   "n_strong": 3,
+   "n_context": 2,
+   "latest_event_date": "2026-08-01",
+   "top_trigger": {
+    "title": "permits +120.0% in 12 months",
+    "trigger": "permit_surge",
+    "age_days": 56,
+    "event_date": "2026-08-01"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "gen_storage_ia",
+    "new_transmission",
+    "permit_surge",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 16,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30119",
+   "name": "Mid-South Electric Cooperative Association",
+   "account_type": "coop",
+   "eia_utility_id": "12452",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 41331.0,
+   "score": 0.6199528301886793,
+   "rank": 24,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8773584905660377,
+     "raw": 0.1926695203586064
+    },
+    "owner_sf_homes": {
+     "pct": 0.8584905660377358,
+     "raw": 47404.47472647867
+    },
+    "owner_sf_share": {
+     "pct": 0.27358490566037735,
+     "raw": 0.5812928031321629
+    },
+    "permits_per_1k": {
+     "pct": 0.9333333333333335,
+     "raw": 39.35967894616408
+    },
+    "zone_peak_cagr": {
+     "pct": 0.0660377358490566,
+     "raw": 0.027671216175389323
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-04-21",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "Hill Valley BESS",
+    "trigger": "gen_storage_ia",
+    "age_days": 158,
+    "event_date": "2026-04-21"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 17,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30118",
+   "name": "Medina Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "12268",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "SOUTH",
+   "meters": 37645.0,
+   "score": 0.618099730458221,
+   "rank": 25,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9622641509433962,
+     "raw": 1.5165658175817884
+    },
+    "pop_growth": {
+     "pct": 0.3773584905660377,
+     "raw": 0.041163630257733175
+    },
+    "owner_sf_homes": {
+     "pct": 0.8962264150943395,
+     "raw": 55553.41301095144
+    },
+    "owner_sf_share": {
+     "pct": 0.25471698113207547,
+     "raw": 0.580402282428993
+    },
+    "permits_per_1k": {
+     "pct": 0.4571428571428572,
+     "raw": 8.750399038952567
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7075471698113207,
+     "raw": 0.14259957263774067
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-12",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 1,
+   "latest_event_date": "2026-08-12",
+   "top_trigger": {
+    "title": "SAT14",
+    "trigger": "dc_permit",
+    "age_days": 45,
+    "event_date": "2026-08-12"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "gen_storage_ia",
+    "new_transmission"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 18,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30056",
+   "name": "Farmersville Municipal Light & Power",
+   "account_type": "muni",
+   "eia_utility_id": "6203",
+   "gt": null,
+   "primary_weather_zone": "NCENT",
+   "meters": 1593.0,
+   "score": 0.6077291105121295,
+   "rank": 27,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.9150943396226415,
+     "raw": 0.2061036975877537
+    },
+    "owner_sf_homes": {
+     "pct": 0.46226415094339623,
+     "raw": 2766.6723264855045
+    },
+    "owner_sf_share": {
+     "pct": 0.5943396226415094,
+     "raw": 0.6269326958617147
+    },
+    "permits_per_1k": {
+     "pct": 0.961904761904762,
+     "raw": 44.307686140463275
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2019-08-29",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_over",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 9,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30140",
+   "name": "Seguin Electric System",
+   "account_type": "muni",
+   "eia_utility_id": "16900",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 9970.0,
+   "score": 0.606111859838275,
+   "rank": 28,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.7641509433962264,
+     "raw": 0.15765993944347856
+    },
+    "owner_sf_homes": {
+     "pct": 0.3962264150943396,
+     "raw": 759.4309515996292
+    },
+    "owner_sf_share": {
+     "pct": 0.9056603773584906,
+     "raw": 0.6825782587429688
+    },
+    "permits_per_1k": {
+     "pct": 0.8190476190476191,
+     "raw": 29.272391863199925
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 10,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30006",
+   "name": "Bartlett City of",
+   "account_type": "muni",
+   "eia_utility_id": "1287",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 686.0,
+   "score": 0.6025471698113207,
+   "rank": 29,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.6981132075471698,
+     "raw": 0.0017319149346034799
+    },
+    "pop_growth": {
+     "pct": 0.8679245283018867,
+     "raw": 0.19137785595231738
+    },
+    "owner_sf_homes": {
+     "pct": 0.29245283018867924,
+     "raw": 119.2914162276484
+    },
+    "owner_sf_share": {
+     "pct": 0.5283018867924528,
+     "raw": 0.6204530926853673
+    },
+    "permits_per_1k": {
+     "pct": 0.8,
+     "raw": 26.65342705744755
+    },
+    "zone_peak_cagr": {
+     "pct": 0.330188679245283,
+     "raw": 0.09052118071486176
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 11,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30009",
+   "name": "Heart of Texas Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "55982",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NCENT",
+   "meters": 24740.0,
+   "score": 0.5952695417789757,
+   "rank": 30,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9716981132075472,
+     "raw": 1.537837815420085
+    },
+    "pop_growth": {
+     "pct": 0.4528301886792453,
+     "raw": 0.05328557263015754
+    },
+    "owner_sf_homes": {
+     "pct": 0.8867924528301886,
+     "raw": 50805.07756590911
+    },
+    "owner_sf_share": {
+     "pct": 0.1792452830188679,
+     "raw": 0.5663854638988024
+    },
+    "permits_per_1k": {
+     "pct": 0.6571428571428573,
+     "raw": 16.611933034640465
+    },
+    "zone_peak_cagr": {
+     "pct": 0.2830188679245283,
+     "raw": 0.06585248254815602
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-05-06",
+   "action_changes_to": "nurture",
+   "n_strong": 3,
+   "n_context": 2,
+   "latest_event_date": "2026-08-06",
+   "top_trigger": {
+    "title": "San Gabriel Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 51,
+    "event_date": "2026-08-06"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 19,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30008",
+   "name": "Bastrop Power & Light",
+   "account_type": "muni",
+   "eia_utility_id": "1324",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 2943.0,
+   "score": 0.5872371967654987,
+   "rank": 31,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.9292452830188679,
+     "raw": 0.21260452784009787
+    },
+    "owner_sf_homes": {
+     "pct": 0.330188679245283,
+     "raw": 136.02729003261476
+    },
+    "owner_sf_share": {
+     "pct": 0.19339622641509432,
+     "raw": 0.5667516545513724
+    },
+    "permits_per_1k": {
+     "pct": 0.980952380952381,
+     "raw": 45.84216368957514
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 12,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30136",
+   "name": "San Bernard Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "16638",
+   "gt": "LCRA;San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "SCENT",
+   "meters": 32863.0,
+   "score": 0.5799932614555255,
+   "rank": 32,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.7735849056603773,
+     "raw": 0.15780463881532092
+    },
+    "owner_sf_homes": {
+     "pct": 0.6981132075471698,
+     "raw": 16662.005115586162
+    },
+    "owner_sf_share": {
+     "pct": 0.4433962264150943,
+     "raw": 0.605645133602865
+    },
+    "permits_per_1k": {
+     "pct": 0.6952380952380953,
+     "raw": 20.00502134007525
+    },
+    "zone_peak_cagr": {
+     "pct": 0.3113207547169811,
+     "raw": 0.08128060028790939
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-12-23",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "CLAY PARTNERS-TWINWOOD DISTRIBUTION #5 LP",
+    "trigger": "dev_agreement",
+    "age_days": 108,
+    "event_date": "2026-06-10"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 20,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30108",
+   "name": "Lockhart Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "11119",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 6177.0,
+   "score": 0.5795687331536388,
+   "rank": 33,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8962264150943395,
+     "raw": 0.20034824246381544
+    },
+    "owner_sf_homes": {
+     "pct": 0.3490566037735849,
+     "raw": 159.65089381374102
+    },
+    "owner_sf_share": {
+     "pct": 0.11320754716981132,
+     "raw": 0.5435814260827777
+    },
+    "permits_per_1k": {
+     "pct": 0.8952380952380953,
+     "raw": 35.30371713508613
+    },
+    "zone_peak_cagr": {
+     "pct": 0.5896226415094339,
+     "raw": 0.1075180590209688
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 13,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30112",
+   "name": "Luling Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "11316",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 2883.0,
+   "score": 0.5792924528301887,
+   "rank": 34,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8396226415094339,
+     "raw": 0.18307110523276138
+    },
+    "owner_sf_homes": {
+     "pct": 0.3773584905660377,
+     "raw": 220.37946782342897
+    },
+    "owner_sf_share": {
+     "pct": 0.4150943396226415,
+     "raw": 0.6011361327026764
+    },
+    "permits_per_1k": {
+     "pct": 0.8666666666666667,
+     "raw": 32.915104087348126
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 14,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30116",
+   "name": "Magic Valley Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "11501",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "SOUTH",
+   "meters": 145755.0,
+   "score": 0.576233153638814,
+   "rank": 35,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.4150943396226415,
+     "raw": 0.045809169375855774
+    },
+    "owner_sf_homes": {
+     "pct": 0.9622641509433962,
+     "raw": 118392.8159795502
+    },
+    "owner_sf_share": {
+     "pct": 0.2358490566037736,
+     "raw": 0.5788706407346593
+    },
+    "permits_per_1k": {
+     "pct": 0.7047619047619048,
+     "raw": 20.57656452881577
+    },
+    "zone_peak_cagr": {
+     "pct": 0.660377358490566,
+     "raw": 0.13448632111594813
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": "2026-12-31",
+   "action_changes_to": "watch",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "Val Vista Grid BESS 2",
+    "trigger": "gen_storage_ia",
+    "age_days": 269,
+    "event_date": "2025-12-31"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 21,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30144",
+   "name": "Smithville Utilities Department",
+   "account_type": "muni",
+   "eia_utility_id": "17453",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 2330.0,
+   "score": 0.5707142857142857,
+   "rank": 36,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.9292452830188679,
+     "raw": 0.21260452784009787
+    },
+    "owner_sf_homes": {
+     "pct": 0.25471698113207547,
+     "raw": 86.38651481036679
+    },
+    "owner_sf_share": {
+     "pct": 0.19339622641509432,
+     "raw": 0.5667516545513724
+    },
+    "permits_per_1k": {
+     "pct": 0.9714285714285715,
+     "raw": 45.84216368957513
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 15,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30168",
+   "name": "Weatherford Municipal Utility System",
+   "account_type": "muni",
+   "eia_utility_id": "20230",
+   "gt": null,
+   "primary_weather_zone": "NCENT",
+   "meters": 16967.0,
+   "score": 0.5691981132075472,
+   "rank": 37,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.9811320754716981,
+     "raw": 0.2354121116081278
+    },
+    "owner_sf_homes": {
+     "pct": 0.43396226415094336,
+     "raw": 2119.539449432292
+    },
+    "owner_sf_share": {
+     "pct": 0.9433962264150944,
+     "raw": 0.6979641015645764
+    },
+    "permits_per_1k": {
+     "pct": 0.4,
+     "raw": 6.537964030373389
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2024-09-10",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 16,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30093",
+   "name": "Karnes Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "10009",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "SOUTH",
+   "meters": 23149.0,
+   "score": 0.5652964959568733,
+   "rank": 38,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7075471698113207,
+     "raw": 0.0037644519157441648
+    },
+    "pop_growth": {
+     "pct": 0.5754716981132075,
+     "raw": 0.07674401840735778
+    },
+    "owner_sf_homes": {
+     "pct": 0.6698113207547169,
+     "raw": 14375.33697159471
+    },
+    "owner_sf_share": {
+     "pct": 0.12264150943396226,
+     "raw": 0.5449574244317195
+    },
+    "permits_per_1k": {
+     "pct": 0.4761904761904762,
+     "raw": 10.428658008214132
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6509433962264151,
+     "raw": 0.12720145545071676
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 22,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30129",
+   "name": "Rio Grande Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "16057",
+   "gt": "LCRA",
+   "primary_weather_zone": "FWEST",
+   "meters": 14250.0,
+   "score": 0.5637870619946092,
+   "rank": 39,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9811320754716981,
+     "raw": 1.6752593634942632
+    },
+    "pop_growth": {
+     "pct": 0.11320754716981132,
+     "raw": 0.007319773616242031
+    },
+    "owner_sf_homes": {
+     "pct": 0.9245283018867925,
+     "raw": 65240.40527380058
+    },
+    "owner_sf_share": {
+     "pct": 0.330188679245283,
+     "raw": 0.5905796371445463
+    },
+    "permits_per_1k": {
+     "pct": 0.40952380952380957,
+     "raw": 6.997532037572068
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7264150943396226,
+     "raw": 0.16625824825419686
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-07-23",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-07-28",
+   "top_trigger": {
+    "title": "Rose Quartz BESS",
+    "trigger": "gen_storage_ia",
+    "age_days": 60,
+    "event_date": "2026-07-28"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 23,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30138",
+   "name": "Sanger Electric System",
+   "account_type": "muni",
+   "eia_utility_id": "16647",
+   "gt": "LCRA",
+   "primary_weather_zone": "NCENT",
+   "meters": 2621.0,
+   "score": 0.5598989218328841,
+   "rank": 40,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.8113207547169811,
+     "raw": 0.16930139078879902
+    },
+    "owner_sf_homes": {
+     "pct": 0.4245283018867924,
+     "raw": 2114.1852096665325
+    },
+    "owner_sf_share": {
+     "pct": 0.6509433962264151,
+     "raw": 0.631429110524096
+    },
+    "permits_per_1k": {
+     "pct": 0.8285714285714286,
+     "raw": 29.755570227035957
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 17,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30023",
+   "name": "Burnet Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "2559",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 3361.0,
+   "score": 0.5568396226415094,
+   "rank": 41,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.7547169811320754,
+     "raw": 0.15228375101050928
+    },
+    "owner_sf_homes": {
+     "pct": 0.2830188679245283,
+     "raw": 99.80634940242619
+    },
+    "owner_sf_share": {
+     "pct": 0.5471698113207547,
+     "raw": 0.6216796222995852
+    },
+    "permits_per_1k": {
+     "pct": 1.0,
+     "raw": 54.42427431377707
+    },
+    "zone_peak_cagr": {
+     "pct": 0.36792452830188677,
+     "raw": 0.10751805902096877
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 18,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30107",
+   "name": "Llano Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "11103",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 2075.0,
+   "score": 0.5552156334231805,
+   "rank": 42,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6226415094339622,
+     "raw": 0.09479161783320045
+    },
+    "owner_sf_homes": {
+     "pct": 0.1792452830188679,
+     "raw": 48.01046774596451
+    },
+    "owner_sf_share": {
+     "pct": 0.7830188679245282,
+     "raw": 0.6499767765908036
+    },
+    "permits_per_1k": {
+     "pct": 0.6857142857142857,
+     "raw": 17.47098873806363
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8726415094339622,
+     "raw": 0.23127015406115659
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 19,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30111",
+   "name": "Lubbock Power & Light System",
+   "account_type": "muni",
+   "eia_utility_id": "11292",
+   "gt": null,
+   "primary_weather_zone": "NORTH",
+   "meters": 110694.0,
+   "score": 0.5477628032345013,
+   "rank": 43,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.4716981132075472,
+     "raw": 0.055576416368999126
+    },
+    "owner_sf_homes": {
+     "pct": 0.5566037735849056,
+     "raw": 7853.708151299776
+    },
+    "owner_sf_share": {
+     "pct": 0.07547169811320754,
+     "raw": 0.518407605466429
+    },
+    "permits_per_1k": {
+     "pct": 0.7523809523809525,
+     "raw": 23.04913865967784
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9764150943396226,
+     "raw": 0.2633106956015856
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": null,
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 20,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30019",
+   "name": "Bridgeport Light & Power System",
+   "account_type": "muni",
+   "eia_utility_id": "2210",
+   "gt": "LCRA",
+   "primary_weather_zone": "NCENT",
+   "meters": 2344.0,
+   "score": 0.5439690026954178,
+   "rank": 44,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.9433962264150944,
+     "raw": 0.21538930234582399
+    },
+    "owner_sf_homes": {
+     "pct": 0.36792452830188677,
+     "raw": 189.69835676399455
+    },
+    "owner_sf_share": {
+     "pct": 0.660377358490566,
+     "raw": 0.6327034016311915
+    },
+    "permits_per_1k": {
+     "pct": 0.5714285714285715,
+     "raw": 13.05832080021008
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 21,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30039",
+   "name": "Concho Valley Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "4146",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "WEST",
+   "meters": 16114.0,
+   "score": 0.5411051212938005,
+   "rank": 45,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9433962264150944,
+     "raw": 0.8844548895893457
+    },
+    "pop_growth": {
+     "pct": 0.07547169811320754,
+     "raw": 0.0040487316751747215
+    },
+    "owner_sf_homes": {
+     "pct": 0.7547169811320754,
+     "raw": 25130.533993408295
+    },
+    "owner_sf_share": {
+     "pct": 0.4811320754716981,
+     "raw": 0.616514347668258
+    },
+    "permits_per_1k": {
+     "pct": 0.380952380952381,
+     "raw": 6.4126654202015665
+    },
+    "zone_peak_cagr": {
+     "pct": 0.830188679245283,
+     "raw": 0.2300109190284327
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": "2027-06-12",
+   "action_changes_to": "watch",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "WESTLINE 2335",
+    "trigger": "dc_permit",
+    "age_days": 106,
+    "event_date": "2026-06-12"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 24,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30088",
+   "name": "J-A-C Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "9422",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 5992.0,
+   "score": 0.5359905660377359,
+   "rank": 46,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5283018867924528,
+     "raw": 0.06962593631859426
+    },
+    "owner_sf_homes": {
+     "pct": 0.4716981132075472,
+     "raw": 3821.785663078375
+    },
+    "owner_sf_share": {
+     "pct": 0.9905660377358491,
+     "raw": 0.7323873884442089
+    },
+    "permits_per_1k": {
+     "pct": 0.2666666666666667,
+     "raw": 3.3954200454829073
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7924528301886792,
+     "raw": 0.21557402883592922
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": "2026-12-05",
+   "action_changes_to": "watch",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": {
+    "title": "O'Bannion Energy Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 295,
+    "event_date": "2025-12-05"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 25,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30100",
+   "name": "Lampasas Public Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "10656",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 4699.0,
+   "score": 0.5203167115902965,
+   "rank": 47,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6132075471698113,
+     "raw": 0.08998341319572423
+    },
+    "owner_sf_homes": {
+     "pct": 0.3113207547169811,
+     "raw": 127.92783363874267
+    },
+    "owner_sf_share": {
+     "pct": 0.8867924528301886,
+     "raw": 0.6818831942789035
+    },
+    "permits_per_1k": {
+     "pct": 0.1904761904761905,
+     "raw": 2.493976412901044
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9056603773584906,
+     "raw": 0.2312701540611566
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 22,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30079",
+   "name": "Hamilton County Electric Cooperative Association",
+   "account_type": "coop",
+   "eia_utility_id": "7979",
+   "gt": "Brazos Electric Power Coop;LCRA",
+   "primary_weather_zone": "NCENT",
+   "meters": 20392.0,
+   "score": 0.5159905660377357,
+   "rank": 48,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.4433962264150943,
+     "raw": 0.05021852357770573
+    },
+    "owner_sf_homes": {
+     "pct": 0.660377358490566,
+     "raw": 14165.670252893862
+    },
+    "owner_sf_share": {
+     "pct": 0.5660377358490566,
+     "raw": 0.6229566294171738
+    },
+    "permits_per_1k": {
+     "pct": 0.46666666666666673,
+     "raw": 9.731890169557857
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6320754716981132,
+     "raw": 0.11368367668537292
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": "2026-12-31",
+   "action_changes_to": "watch",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-06-01",
+   "top_trigger": {
+    "title": "Starlight Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 269,
+    "event_date": "2025-12-31"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 26,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30014",
+   "name": "Bowie Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "2050",
+   "gt": null,
+   "primary_weather_zone": "NORTH",
+   "meters": 3165.0,
+   "score": 0.5096361185983826,
+   "rank": 49,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6320754716981132,
+     "raw": 0.09610778443113777
+    },
+    "owner_sf_homes": {
+     "pct": 0.1981132075471698,
+     "raw": 53.13427190688653
+    },
+    "owner_sf_share": {
+     "pct": 0.9245283018867925,
+     "raw": 0.6940735535254158
+    },
+    "permits_per_1k": {
+     "pct": 0.14285714285714288,
+     "raw": 2.185195301830101
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9764150943396226,
+     "raw": 0.2633106956015856
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 23,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30131",
+   "name": "Navasota Valley Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "16146",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 21615.0,
+   "score": 0.507466307277628,
+   "rank": 50,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8113207547169811,
+     "raw": 0.08354132724932126
+    },
+    "pop_growth": {
+     "pct": 0.46226415094339623,
+     "raw": 0.055079029157182546
+    },
+    "owner_sf_homes": {
+     "pct": 0.8018867924528301,
+     "raw": 31177.318972575937
+    },
+    "owner_sf_share": {
+     "pct": 0.05660377358490566,
+     "raw": 0.5110695384201385
+    },
+    "permits_per_1k": {
+     "pct": 0.6095238095238096,
+     "raw": 14.854116488170744
+    },
+    "zone_peak_cagr": {
+     "pct": 0.08490566037735849,
+     "raw": 0.0389101456170455
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-07-15",
+   "action_changes_to": "nurture",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-08-01",
+   "top_trigger": {
+    "title": "permits +51.0% in 12 months",
+    "trigger": "permit_surge",
+    "age_days": 56,
+    "event_date": "2026-08-01"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "permit_surge",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 27,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30059",
+   "name": "Floresville Electric Light & Power System",
+   "account_type": "muni",
+   "eia_utility_id": "6427",
+   "gt": null,
+   "primary_weather_zone": "SCENT",
+   "meters": 17915.0,
+   "score": 0.5041576819407008,
+   "rank": 51,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6886792452830188,
+     "raw": 0.11852783527565469
+    },
+    "owner_sf_homes": {
+     "pct": 0.5094339622641509,
+     "raw": 5463.783806555178
+    },
+    "owner_sf_share": {
+     "pct": 0.5754716981132075,
+     "raw": 0.6257938884368935
+    },
+    "permits_per_1k": {
+     "pct": 0.43809523809523815,
+     "raw": 7.90323629419909
+    },
+    "zone_peak_cagr": {
+     "pct": 0.36792452830188677,
+     "raw": 0.10751805902096877
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 24,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30137",
+   "name": "San Patricio Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "16627",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "SOUTH",
+   "meters": 12522.0,
+   "score": 0.5040296495956873,
+   "rank": 52,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.3962264150943396,
+     "raw": 0.04552159405570855
+    },
+    "owner_sf_homes": {
+     "pct": 0.7358490566037735,
+     "raw": 19660.345656481888
+    },
+    "owner_sf_share": {
+     "pct": 0.2641509433962264,
+     "raw": 0.5812837929318939
+    },
+    "permits_per_1k": {
+     "pct": 0.5142857142857143,
+     "raw": 11.752594767356646
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6839622641509434,
+     "raw": 0.13448632111594816
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-11-09",
+   "action_changes_to": "nurture",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-08-10",
+   "top_trigger": {
+    "title": "Iron Cowboy Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 47,
+    "event_date": "2026-08-10"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 28,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30084",
+   "name": "Hondo Electric System",
+   "account_type": "muni",
+   "eia_utility_id": "8801",
+   "gt": null,
+   "primary_weather_zone": "SCENT",
+   "meters": 3068.0,
+   "score": 0.4989824797843666,
+   "rank": 53,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7452830188679245,
+     "raw": 0.01386002848915458
+    },
+    "pop_growth": {
+     "pct": 0.6650943396226415,
+     "raw": 0.11404677033961375
+    },
+    "owner_sf_homes": {
+     "pct": 0.2358490566037736,
+     "raw": 77.48448926861867
+    },
+    "owner_sf_share": {
+     "pct": 0.6084905660377359,
+     "raw": 0.6280049427095035
+    },
+    "permits_per_1k": {
+     "pct": 0.28095238095238095,
+     "raw": 3.5512737117842517
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 25,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30120",
+   "name": "Big Country Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "1591",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "WEST",
+   "meters": 13596.0,
+   "score": 0.49723719676549866,
+   "rank": 54,
+   "tier": "B",
+   "signals": {
+    "dc_sites": {
+     "pct": 1.0,
+     "raw": 2.8301556754331583
+    },
+    "pop_growth": {
+     "pct": 0.03773584905660377,
+     "raw": -0.004489482276399004
+    },
+    "owner_sf_homes": {
+     "pct": 0.5849056603773585,
+     "raw": 9845.116671671582
+    },
+    "owner_sf_share": {
+     "pct": 0.9339622641509434,
+     "raw": 0.6946037923467495
+    },
+    "permits_per_1k": {
+     "pct": 0.04761904761904762,
+     "raw": 0.9741542236642585
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8018867924528301,
+     "raw": 0.21968218752028226
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-05-26",
+   "action_changes_to": "nurture",
+   "n_strong": 3,
+   "n_context": 2,
+   "latest_event_date": "2026-09-18",
+   "top_trigger": {
+    "title": "CEMCO-348 CBP SWEETWATER 2 DATA CENTER",
+    "trigger": "dc_permit",
+    "age_days": 8,
+    "event_date": "2026-09-18"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 29,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30036",
+   "name": "Comanche Electric Cooperative Association",
+   "account_type": "coop",
+   "eia_utility_id": "4295",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NCENT",
+   "meters": 18152.0,
+   "score": 0.4928504043126684,
+   "rank": 55,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8490566037735848,
+     "raw": 0.3605765210568493
+    },
+    "pop_growth": {
+     "pct": 0.3018867924528302,
+     "raw": 0.029945755264557006
+    },
+    "owner_sf_homes": {
+     "pct": 0.6415094339622641,
+     "raw": 13504.566042201175
+    },
+    "owner_sf_share": {
+     "pct": 0.5566037735849056,
+     "raw": 0.622264277294077
+    },
+    "permits_per_1k": {
+     "pct": 0.44761904761904764,
+     "raw": 8.210200816881384
+    },
+    "zone_peak_cagr": {
+     "pct": 0.25943396226415094,
+     "raw": 0.05284106274346657
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-08-04",
+   "action_changes_to": "hold",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-08-04",
+   "top_trigger": {
+    "title": "Crocus Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 53,
+    "event_date": "2026-08-04"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 30,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30176",
+   "name": "Wood County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "20927",
+   "gt": "East Texas Electric Coop;Northeast Texas Electric Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 41529.0,
+   "score": 0.4920080862533692,
+   "rank": 56,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6037735849056604,
+     "raw": 0.08933883165408263
+    },
+    "owner_sf_homes": {
+     "pct": 0.7924528301886792,
+     "raw": 30653.846305547326
+    },
+    "owner_sf_share": {
+     "pct": 0.7169811320754716,
+     "raw": 0.6378620893746233
+    },
+    "permits_per_1k": {
+     "pct": 0.3523809523809524,
+     "raw": 5.403613506987201
+    },
+    "zone_peak_cagr": {
+     "pct": 0.04245283018867924,
+     "raw": 0.024349735397150688
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 31,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30072",
+   "name": "Greenbelt Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "7561",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 5663.0,
+   "score": 0.49013477088948787,
+   "rank": 57,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9339622641509434,
+     "raw": 0.8828585412685082
+    },
+    "pop_growth": {
+     "pct": 0.009433962264150943,
+     "raw": -0.023935414726755533
+    },
+    "owner_sf_homes": {
+     "pct": 0.4811320754716981,
+     "raw": 4038.279837310104
+    },
+    "owner_sf_share": {
+     "pct": 0.9716981132075472,
+     "raw": 0.7030992302544679
+    },
+    "permits_per_1k": {
+     "pct": 0.028571428571428574,
+     "raw": 0.815258059307995
+    },
+    "zone_peak_cagr": {
+     "pct": 1.0,
+     "raw": 0.26331069560158565
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2026-12-19",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "Moon Hammer",
+    "trigger": "gen_storage_ia",
+    "age_days": 281,
+    "event_date": "2025-12-19"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 32,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30034",
+   "name": "Coleman County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "3938",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "WEST",
+   "meters": 9112.0,
+   "score": 0.4899730458221024,
+   "rank": 58,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7358490566037735,
+     "raw": 0.012444329138147659
+    },
+    "pop_growth": {
+     "pct": 0.10377358490566037,
+     "raw": 0.005201659181111484
+    },
+    "owner_sf_homes": {
+     "pct": 0.5188679245283019,
+     "raw": 5815.06488333969
+    },
+    "owner_sf_share": {
+     "pct": 0.8962264150943395,
+     "raw": 0.681891716285011
+    },
+    "permits_per_1k": {
+     "pct": 0.24761904761904763,
+     "raw": 3.2457973432325913
+    },
+    "zone_peak_cagr": {
+     "pct": 0.820754716981132,
+     "raw": 0.22683981447341292
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 2,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 33,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30082",
+   "name": "Hempstead Electric Department",
+   "account_type": "muni",
+   "eia_utility_id": "8435",
+   "gt": "LCRA",
+   "primary_weather_zone": "COAST",
+   "meters": 2698.0,
+   "score": 0.4867924528301886,
+   "rank": 59,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.9528301886792453,
+     "raw": 0.2192899780081683
+    },
+    "owner_sf_homes": {
+     "pct": 0.27358490566037735,
+     "raw": 94.37515281023005
+    },
+    "owner_sf_share": {
+     "pct": 0.21698113207547168,
+     "raw": 0.5701668302257115
+    },
+    "permits_per_1k": {
+     "pct": 0.6666666666666667,
+     "raw": 17.034555813221104
+    },
+    "zone_peak_cagr": {
+     "pct": 0.13679245283018868,
+     "raw": 0.04669298111706777
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 26,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30070",
+   "name": "Granbury Municipal Electric Department",
+   "account_type": "muni",
+   "eia_utility_id": "7480",
+   "gt": null,
+   "primary_weather_zone": "NCENT",
+   "meters": 3652.0,
+   "score": 0.477243935309973,
+   "rank": 60,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.7169811320754716,
+     "raw": 0.13612337641409078
+    },
+    "owner_sf_homes": {
+     "pct": 0.33962264150943394,
+     "raw": 147.56387868955346
+    },
+    "owner_sf_share": {
+     "pct": 0.9150943396226415,
+     "raw": 0.6834227951259649
+    },
+    "permits_per_1k": {
+     "pct": 0.4190476190476191,
+     "raw": 7.219755748145417
+    },
+    "zone_peak_cagr": {
+     "pct": 0.16037735849056603,
+     "raw": 0.05284106274346655
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2026-12-05",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 0,
+   "latest_event_date": "2025-12-05",
+   "top_trigger": {
+    "title": "Lata Development LLC",
+    "trigger": "dev_agreement",
+    "age_days": 295,
+    "event_date": "2025-12-05"
+   },
+   "active_triggers": [
+    "dev_agreement"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 27,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30098",
+   "name": "Lamar County Electric Cooperative Association",
+   "account_type": "coop",
+   "eia_utility_id": "10649",
+   "gt": null,
+   "primary_weather_zone": "NORTH",
+   "meters": 14013.0,
+   "score": 0.47522237196765493,
+   "rank": 61,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.2641509433962264,
+     "raw": 0.028610345963630657
+    },
+    "owner_sf_homes": {
+     "pct": 0.6226415094339622,
+     "raw": 12398.600221003151
+    },
+    "owner_sf_share": {
+     "pct": 0.4716981132075472,
+     "raw": 0.6074348047931094
+    },
+    "permits_per_1k": {
+     "pct": 0.3238095238095238,
+     "raw": 4.643007553548818
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9150943396226415,
+     "raw": 0.2432075680420084
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-06-22",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "R4U VENTURES",
+    "trigger": "dev_agreement",
+    "age_days": 96,
+    "event_date": "2026-06-22"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 34,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30149",
+   "name": "Southwest Texas Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "17693",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "FWEST",
+   "meters": 9904.0,
+   "score": 0.47165768194070073,
+   "rank": 62,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8773584905660377,
+     "raw": 0.5812310431471412
+    },
+    "pop_growth": {
+     "pct": 0.018867924528301886,
+     "raw": -0.019397121719339938
+    },
+    "owner_sf_homes": {
+     "pct": 0.5754716981132075,
+     "raw": 8401.49373163812
+    },
+    "owner_sf_share": {
+     "pct": 0.5849056603773585,
+     "raw": 0.6264175792399169
+    },
+    "permits_per_1k": {
+     "pct": 0.3047619047619048,
+     "raw": 4.5453301092611476
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7735849056603773,
+     "raw": 0.1930559454277367
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-07-23",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 2,
+   "latest_event_date": "2026-07-23",
+   "top_trigger": {
+    "title": "KMT AZURITE ENERGY",
+    "trigger": "dc_permit",
+    "age_days": 65,
+    "event_date": "2026-07-23"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 35,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30022",
+   "name": "BTU Rural Electric Division",
+   "account_type": "muni",
+   "eia_utility_id": "2442",
+   "gt": null,
+   "primary_weather_zone": "EAST",
+   "meters": 68685.0,
+   "score": 0.469710242587601,
+   "rank": 63,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.49056603773584906,
+     "raw": 0.06362443216427138
+    },
+    "owner_sf_homes": {
+     "pct": 0.830188679245283,
+     "raw": 32802.777986808076
+    },
+    "owner_sf_share": {
+     "pct": 0.009433962264150943,
+     "raw": 0.41715713844503394
+    },
+    "permits_per_1k": {
+     "pct": 0.761904761904762,
+     "raw": 23.374968360451344
+    },
+    "zone_peak_cagr": {
+     "pct": 0.09433962264150943,
+     "raw": 0.03924006415051711
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-08-01",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-08-01",
+   "top_trigger": {
+    "title": "permits +76.0% in 12 months",
+    "trigger": "permit_surge",
+    "age_days": 56,
+    "event_date": "2026-08-01"
+   },
+   "active_triggers": [
+    "new_transmission",
+    "permit_surge"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 28,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30089",
+   "name": "Jackson Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "9590",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "COAST",
+   "meters": 17402.0,
+   "score": 0.46481805929919134,
+   "rank": 64,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.4245283018867924,
+     "raw": 0.048822448524883155
+    },
+    "owner_sf_homes": {
+     "pct": 0.6320754716981132,
+     "raw": 12600.983712894125
+    },
+    "owner_sf_share": {
+     "pct": 0.6226415094339622,
+     "raw": 0.6282343384318053
+    },
+    "permits_per_1k": {
+     "pct": 0.6380952380952382,
+     "raw": 15.457571107235394
+    },
+    "zone_peak_cagr": {
+     "pct": 0.1509433962264151,
+     "raw": 0.04717725666766211
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 36,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30027",
+   "name": "Castroville Utility System",
+   "account_type": "muni",
+   "eia_utility_id": "3168",
+   "gt": null,
+   "primary_weather_zone": "SCENT",
+   "meters": 1712.0,
+   "score": 0.4645485175202156,
+   "rank": 65,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7169811320754716,
+     "raw": 0.0038338399085347634
+    },
+    "pop_growth": {
+     "pct": 0.6650943396226415,
+     "raw": 0.11404677033961375
+    },
+    "owner_sf_homes": {
+     "pct": 0.08490566037735849,
+     "raw": 21.433082008663593
+    },
+    "owner_sf_share": {
+     "pct": 0.6084905660377359,
+     "raw": 0.6280049427095035
+    },
+    "permits_per_1k": {
+     "pct": 0.28095238095238095,
+     "raw": 3.5512737117842517
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2022-12-12",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 29,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30104",
+   "name": "Lighthouse Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "11014",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "NORTH",
+   "meters": 9500.0,
+   "score": 0.4599326145552561,
+   "rank": 66,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.9245283018867925,
+     "raw": 0.8771472957910933
+    },
+    "pop_growth": {
+     "pct": 0.0,
+     "raw": -0.03507640082549224
+    },
+    "owner_sf_homes": {
+     "pct": 0.49056603773584906,
+     "raw": 5322.063053836224
+    },
+    "owner_sf_share": {
+     "pct": 0.7735849056603773,
+     "raw": 0.646337319432867
+    },
+    "permits_per_1k": {
+     "pct": 0.01904761904761905,
+     "raw": 0.49181667609900853
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9528301886792453,
+     "raw": 0.26331069560158554
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-06-10",
+   "action_changes_to": "hold",
+   "n_strong": 3,
+   "n_context": 3,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "LBB120 HORIZON JUNCTION TECHNOLOGY PARK",
+    "trigger": "dc_permit",
+    "age_days": 108,
+    "event_date": "2026-06-10"
+   },
+   "active_triggers": [
+    "dc_permit",
+    "dev_agreement",
+    "gen_storage_ia",
+    "new_transmission",
+    "rate_increase",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 37,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30062",
+   "name": "Fredericksburg Electric Utility",
+   "account_type": "muni",
+   "eia_utility_id": "6758",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 5954.0,
+   "score": 0.4576010781671158,
+   "rank": 67,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5188679245283019,
+     "raw": 0.0657127913927078
+    },
+    "owner_sf_homes": {
+     "pct": 0.1320754716981132,
+     "raw": 37.49400174251621
+    },
+    "owner_sf_share": {
+     "pct": 0.6320754716981132,
+     "raw": 0.631025796925215
+    },
+    "permits_per_1k": {
+     "pct": 0.37142857142857144,
+     "raw": 5.959266659655764
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8726415094339622,
+     "raw": 0.23127015406115659
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 30,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30010",
+   "name": "Bellville Light & Power System",
+   "account_type": "muni",
+   "eia_utility_id": "1519",
+   "gt": "LCRA",
+   "primary_weather_zone": "COAST",
+   "meters": 2617.0,
+   "score": 0.4545148247978436,
+   "rank": 68,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6792452830188679,
+     "raw": 0.11588623767962036
+    },
+    "owner_sf_homes": {
+     "pct": 0.22641509433962265,
+     "raw": 63.128784820951125
+    },
+    "owner_sf_share": {
+     "pct": 0.38679245283018865,
+     "raw": 0.598202506596306
+    },
+    "permits_per_1k": {
+     "pct": 0.8571428571428572,
+     "raw": 32.20817843866171
+    },
+    "zone_peak_cagr": {
+     "pct": 0.13679245283018868,
+     "raw": 0.04669298111706777
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 31,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30061",
+   "name": "Fort Belknap Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "6611",
+   "gt": "Brazos Electric Power Coop",
+   "primary_weather_zone": "NCENT",
+   "meters": 6232.0,
+   "score": 0.45411051212938003,
+   "rank": 69,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.7735849056603773,
+     "raw": 0.05724390546744009
+    },
+    "pop_growth": {
+     "pct": 0.25471698113207547,
+     "raw": 0.028422308304045574
+    },
+    "owner_sf_homes": {
+     "pct": 0.5283018867924528,
+     "raw": 6077.539321384206
+    },
+    "owner_sf_share": {
+     "pct": 0.8773584905660377,
+     "raw": 0.6818123213271511
+    },
+    "permits_per_1k": {
+     "pct": 0.2380952380952381,
+     "raw": 3.1468592974230285
+    },
+    "zone_peak_cagr": {
+     "pct": 0.3018867924528302,
+     "raw": 0.07551099708103327
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 38,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30057",
+   "name": "Fayette Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "6183",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 16230.0,
+   "score": 0.4507479784366576,
+   "rank": 70,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.38679245283018865,
+     "raw": 0.044221636334676795
+    },
+    "owner_sf_homes": {
+     "pct": 0.5660377358490566,
+     "raw": 7961.367981309594
+    },
+    "owner_sf_share": {
+     "pct": 0.8396226415094339,
+     "raw": 0.6611955640650253
+    },
+    "permits_per_1k": {
+     "pct": 0.36190476190476195,
+     "raw": 5.585744965155566
+    },
+    "zone_peak_cagr": {
+     "pct": 0.33962264150943394,
+     "raw": 0.10499953249499391
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 2,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 39,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30021",
+   "name": "Brownsville Public Utilities Board",
+   "account_type": "muni",
+   "eia_utility_id": "2409",
+   "gt": null,
+   "primary_weather_zone": "SOUTH",
+   "meters": 54712.0,
+   "score": 0.4424258760107817,
+   "rank": 71,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.27358490566037735,
+     "raw": 0.02951810658973586
+    },
+    "owner_sf_homes": {
+     "pct": 0.5,
+     "raw": 5339.512998207278
+    },
+    "owner_sf_share": {
+     "pct": 0.22641509433962265,
+     "raw": 0.5705937168160771
+    },
+    "permits_per_1k": {
+     "pct": 0.6476190476190476,
+     "raw": 16.133343780101672
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6839622641509434,
+     "raw": 0.13448632111594816
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-01-23",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 0,
+   "latest_event_date": "2026-01-23",
+   "top_trigger": {
+    "title": "Breeze Aviation Group, Inc.",
+    "trigger": "dev_agreement",
+    "age_days": 246,
+    "event_date": "2026-01-23"
+   },
+   "active_triggers": [
+    "dev_agreement"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 32,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30187",
+   "name": "Kerrville Public Utility Board",
+   "account_type": "muni",
+   "eia_utility_id": "28604",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 24387.0,
+   "score": 0.4419272237196765,
+   "rank": 72,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.24528301886792453,
+     "raw": 0.025447851829360824
+    },
+    "owner_sf_homes": {
+     "pct": 0.4150943396226415,
+     "raw": 1712.9726220493276
+    },
+    "owner_sf_share": {
+     "pct": 0.20754716981132074,
+     "raw": 0.5701083351757682
+    },
+    "permits_per_1k": {
+     "pct": 0.6285714285714287,
+     "raw": 15.137775968318005
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8726415094339622,
+     "raw": 0.23127015406115659
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 33,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30024",
+   "name": "Caldwell City Government",
+   "account_type": "muni",
+   "eia_utility_id": "2800",
+   "gt": null,
+   "primary_weather_zone": "SCENT",
+   "meters": 2227.0,
+   "score": 0.44088274932614546,
+   "rank": 73,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.7830188679245282,
+     "raw": 0.1623394988404323
+    },
+    "owner_sf_homes": {
+     "pct": 0.1509433962264151,
+     "raw": 38.824506925806816
+    },
+    "owner_sf_share": {
+     "pct": 0.33962264150943394,
+     "raw": 0.5913924050632913
+    },
+    "permits_per_1k": {
+     "pct": 0.39047619047619053,
+     "raw": 6.423670251593752
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-02-04",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 0,
+   "latest_event_date": "2026-02-04",
+   "top_trigger": {
+    "title": "CITY OF CALDWELL registered as LSE",
+    "trigger": "market_registration",
+    "age_days": 234,
+    "event_date": "2026-02-04"
+   },
+   "active_triggers": [
+    "market_registration"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 34,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30063",
+   "name": "Garland Power & Light System",
+   "account_type": "muni",
+   "eia_utility_id": "6958",
+   "gt": null,
+   "primary_weather_zone": "NCENT",
+   "meters": 76337.0,
+   "score": 0.4404716981132075,
+   "rank": 74,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.8018867924528301,
+     "raw": 0.07979867412662
+    },
+    "pop_growth": {
+     "pct": 0.20754716981132074,
+     "raw": 0.019379102666537085
+    },
+    "owner_sf_homes": {
+     "pct": 0.7264150943396226,
+     "raw": 18557.580661516116
+    },
+    "owner_sf_share": {
+     "pct": 0.018867924528301886,
+     "raw": 0.47328023672661146
+    },
+    "permits_per_1k": {
+     "pct": 0.6000000000000001,
+     "raw": 14.53635064592017
+    },
+    "zone_peak_cagr": {
+     "pct": 0.20754716981132074,
+     "raw": 0.05284106274346656
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-05-21",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 0,
+   "latest_event_date": "2026-05-21",
+   "top_trigger": {
+    "title": "H-E-B,LP",
+    "trigger": "dev_agreement",
+    "age_days": 128,
+    "event_date": "2026-05-21"
+   },
+   "active_triggers": [
+    "dev_agreement"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 35,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30018",
+   "name": "Brenham Municipal Light & Power System",
+   "account_type": "muni",
+   "eia_utility_id": "2194",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 7442.0,
+   "score": 0.4353840970350404,
+   "rank": 75,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5377358490566038,
+     "raw": 0.06976614232628298
+    },
+    "owner_sf_homes": {
+     "pct": 0.3018867924528302,
+     "raw": 123.70913808708401
+    },
+    "owner_sf_share": {
+     "pct": 0.4245283018867924,
+     "raw": 0.6028680317808928
+    },
+    "permits_per_1k": {
+     "pct": 0.5047619047619049,
+     "raw": 11.361262014208107
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 36,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30126",
+   "name": "Nueces Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "13830",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "SOUTH",
+   "meters": 53848.0,
+   "score": 0.42805929919137464,
+   "rank": 76,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.04716981132075471,
+     "raw": -0.0033247048867820483
+    },
+    "owner_sf_homes": {
+     "pct": 0.8679245283018867,
+     "raw": 47579.46257566605
+    },
+    "owner_sf_share": {
+     "pct": 0.14150943396226415,
+     "raw": 0.5538177371866376
+    },
+    "permits_per_1k": {
+     "pct": 0.49523809523809526,
+     "raw": 10.737403640252525
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6839622641509434,
+     "raw": 0.13448632111594816
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2026-10-20",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "NavBoot BESS",
+    "trigger": "gen_storage_ia",
+    "age_days": 341,
+    "event_date": "2025-10-20"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 40,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30030",
+   "name": "Cherokee County Electric Cooperative Association",
+   "account_type": "coop",
+   "eia_utility_id": "3470",
+   "gt": "East Texas Electric Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 23768.0,
+   "score": 0.4235849056603774,
+   "rank": 77,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5094339622641509,
+     "raw": 0.06538825132604931
+    },
+    "owner_sf_homes": {
+     "pct": 0.7830188679245282,
+     "raw": 27288.48259814175
+    },
+    "owner_sf_share": {
+     "pct": 0.3584905660377358,
+     "raw": 0.5957749958565811
+    },
+    "permits_per_1k": {
+     "pct": 0.33333333333333337,
+     "raw": 5.000971949883923
+    },
+    "zone_peak_cagr": {
+     "pct": 0.014150943396226415,
+     "raw": 0.024349735397150685
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 41,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30066",
+   "name": "Giddings Light & Power System",
+   "account_type": "muni",
+   "eia_utility_id": "7184",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 2856.0,
+   "score": 0.3856940700808625,
+   "rank": 78,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5518867924528301,
+     "raw": 0.06998400365630708
+    },
+    "owner_sf_homes": {
+     "pct": 0.11320754716981132,
+     "raw": 26.0334124686015
+    },
+    "owner_sf_share": {
+     "pct": 0.5141509433962264,
+     "raw": 0.6191294387170676
+    },
+    "permits_per_1k": {
+     "pct": 0.22380952380952382,
+     "raw": 3.04340861765177
+    },
+    "zone_peak_cagr": {
+     "pct": 0.5896226415094339,
+     "raw": 0.1075180590209688
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 37,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30067",
+   "name": "Goldsmith City Government",
+   "account_type": "muni",
+   "eia_utility_id": "7419",
+   "gt": null,
+   "primary_weather_zone": "FWEST",
+   "meters": 222.0,
+   "score": 0.38224393530997297,
+   "rank": 79,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.43396226415094336,
+     "raw": 0.05021421104470947
+    },
+    "owner_sf_homes": {
+     "pct": 0.07547169811320754,
+     "raw": 20.679916478432638
+    },
+    "owner_sf_share": {
+     "pct": 0.0660377358490566,
+     "raw": 0.5132816009169339
+    },
+    "permits_per_1k": {
+     "pct": 0.6190476190476191,
+     "raw": 15.045943349002595
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7169811320754716,
+     "raw": 0.15745028239675363
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 38,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30172",
+   "name": "Wharton County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "20472",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "COAST",
+   "meters": 6673.0,
+   "score": 0.38205525606469004,
+   "rank": 80,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.16037735849056603,
+     "raw": 0.01372519779001169
+    },
+    "owner_sf_homes": {
+     "pct": 0.5471698113207547,
+     "raw": 6961.910094418965
+    },
+    "owner_sf_share": {
+     "pct": 0.6698113207547169,
+     "raw": 0.6337475781955951
+    },
+    "permits_per_1k": {
+     "pct": 0.48571428571428577,
+     "raw": 10.463924674214582
+    },
+    "zone_peak_cagr": {
+     "pct": 0.27358490566037735,
+     "raw": 0.05663978214195751
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-08-04",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-08-04",
+   "top_trigger": {
+    "title": "EmberGreen",
+    "trigger": "gen_storage_ia",
+    "age_days": 53,
+    "event_date": "2026-08-04"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission"
+   ],
+   "flags": [
+    "apportionment_over"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 42,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30035",
+   "name": "College Station Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "3940",
+   "gt": null,
+   "primary_weather_zone": "EAST",
+   "meters": 47049.0,
+   "score": 0.38033692722371965,
+   "rank": 81,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.4811320754716981,
+     "raw": 0.062086668059540884
+    },
+    "owner_sf_homes": {
+     "pct": 0.4528301886792453,
+     "raw": 2596.6288728443947
+    },
+    "owner_sf_share": {
+     "pct": 0.0,
+     "raw": 0.41349479069461065
+    },
+    "permits_per_1k": {
+     "pct": 0.7714285714285715,
+     "raw": 23.714510534429603
+    },
+    "zone_peak_cagr": {
+     "pct": 0.014150943396226415,
+     "raw": 0.024349735397150685
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-08-01",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 0,
+   "latest_event_date": "2026-08-01",
+   "top_trigger": {
+    "title": "permits +76.0% in 12 months",
+    "trigger": "permit_surge",
+    "age_days": 56,
+    "event_date": "2026-08-01"
+   },
+   "active_triggers": [
+    "permit_surge"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 39,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30113",
+   "name": "Lyntegar Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "11364",
+   "gt": "Golden Spread Electric Coop",
+   "primary_weather_zone": "FWEST",
+   "meters": 23882.0,
+   "score": 0.3801280323450134,
+   "rank": 82,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.12264150943396226,
+     "raw": 0.007474033372540934
+    },
+    "owner_sf_homes": {
+     "pct": 0.5943396226415094,
+     "raw": 10945.89673119019
+    },
+    "owner_sf_share": {
+     "pct": 0.5,
+     "raw": 0.6183327417433624
+    },
+    "permits_per_1k": {
+     "pct": 0.12380952380952381,
+     "raw": 2.0268262586234664
+    },
+    "zone_peak_cagr": {
+     "pct": 0.7358490566037735,
+     "raw": 0.17329598316719855
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-05-26",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 3,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "Mesquite Creek Wind LLC",
+    "trigger": "dev_agreement",
+    "age_days": 123,
+    "event_date": "2026-05-26"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "new_transmission",
+    "rate_increase",
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 43,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30033",
+   "name": "Coleman Municipal Power & Light Department",
+   "account_type": "muni",
+   "eia_utility_id": "3923",
+   "gt": null,
+   "primary_weather_zone": "WEST",
+   "meters": 2431.0,
+   "score": 0.3780188679245283,
+   "rank": 83,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.2830188679245283,
+     "raw": 0.02966046572134773
+    },
+    "owner_sf_homes": {
+     "pct": 0.04716981132075471,
+     "raw": 12.866605798543967
+    },
+    "owner_sf_share": {
+     "pct": 0.9528301886792453,
+     "raw": 0.6990726892013162
+    },
+    "permits_per_1k": {
+     "pct": 0.13333333333333336,
+     "raw": 2.147820593809223
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8726415094339622,
+     "raw": 0.23127015406115659
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2023-12-12",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 40,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30139",
+   "name": "Schulenburg Utilities Department",
+   "account_type": "muni",
+   "eia_utility_id": "16765",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 1895.0,
+   "score": 0.37568733153638806,
+   "rank": 84,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.3113207547169811,
+     "raw": 0.03202893333510537
+    },
+    "owner_sf_homes": {
+     "pct": 0.24528301886792453,
+     "raw": 85.07771328508872
+    },
+    "owner_sf_share": {
+     "pct": 0.8584905660377358,
+     "raw": 0.6667377854552565
+    },
+    "permits_per_1k": {
+     "pct": 0.1523809523809524,
+     "raw": 2.3542078187835584
+    },
+    "zone_peak_cagr": {
+     "pct": 0.5896226415094339,
+     "raw": 0.1075180590209688
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 41,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30058",
+   "name": "Flatonia Electric Department",
+   "account_type": "muni",
+   "eia_utility_id": "6396",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 1163.0,
+   "score": 0.372688679245283,
+   "rank": 85,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.330188679245283,
+     "raw": 0.03830109680779015
+    },
+    "owner_sf_homes": {
+     "pct": 0.2641509433962264,
+     "raw": 93.0542230809575
+    },
+    "owner_sf_share": {
+     "pct": 0.8490566037735848,
+     "raw": 0.6643093008575218
+    },
+    "permits_per_1k": {
+     "pct": 0.2,
+     "raw": 2.6645166687610202
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 42,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30097",
+   "name": "La Grange Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "10532",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 3197.0,
+   "score": 0.3694002695417789,
+   "rank": 86,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.3490566037735849,
+     "raw": 0.038676512586185874
+    },
+    "owner_sf_homes": {
+     "pct": 0.20754716981132074,
+     "raw": 60.83896233453608
+    },
+    "owner_sf_share": {
+     "pct": 0.8679245283018867,
+     "raw": 0.6690377775641643
+    },
+    "permits_per_1k": {
+     "pct": 0.20952380952380956,
+     "raw": 2.6709611532267568
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 43,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30166",
+   "name": "Victoria Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "19806",
+   "gt": "San Miguel Electric Coop | South Texas Electric Coop",
+   "primary_weather_zone": "COAST",
+   "meters": 24936.0,
+   "score": 0.36247304582210244,
+   "rank": 87,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.1320754716981132,
+     "raw": 0.010894982539484621
+    },
+    "owner_sf_homes": {
+     "pct": 0.7452830188679245,
+     "raw": 23444.349243736408
+    },
+    "owner_sf_share": {
+     "pct": 0.3773584905660377,
+     "raw": 0.5980300135397393
+    },
+    "permits_per_1k": {
+     "pct": 0.31428571428571433,
+     "raw": 4.602523322094028
+    },
+    "zone_peak_cagr": {
+     "pct": 0.29245283018867924,
+     "raw": 0.0673595889907434
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": null,
+   "active_triggers": [
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 44,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30102",
+   "name": "Lexington Municipal Electric Department",
+   "account_type": "muni",
+   "eia_utility_id": "10969",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 659.0,
+   "score": 0.3510242587601078,
+   "rank": 88,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5518867924528301,
+     "raw": 0.06998400365630708
+    },
+    "owner_sf_homes": {
+     "pct": 0.02830188679245283,
+     "raw": 8.638425263216423
+    },
+    "owner_sf_share": {
+     "pct": 0.5141509433962264,
+     "raw": 0.6191294387170676
+    },
+    "permits_per_1k": {
+     "pct": 0.22380952380952382,
+     "raw": 3.04340861765177
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 44,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30132",
+   "name": "Robstown Utility System",
+   "account_type": "muni",
+   "eia_utility_id": "16175",
+   "gt": "LCRA",
+   "primary_weather_zone": "SOUTH",
+   "meters": 4530.0,
+   "score": 0.34513477088948785,
+   "rank": 89,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.05660377358490566,
+     "raw": -0.0015895733042194937
+    },
+    "owner_sf_homes": {
+     "pct": 0.38679245283018865,
+     "raw": 592.6727296327218
+    },
+    "owner_sf_share": {
+     "pct": 0.1509433962264151,
+     "raw": 0.558424824641659
+    },
+    "permits_per_1k": {
+     "pct": 0.5619047619047619,
+     "raw": 13.02579095276947
+    },
+    "zone_peak_cagr": {
+     "pct": 0.6839622641509434,
+     "raw": 0.13448632111594816
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 45,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30169",
+   "name": "Weimar Electric Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "20331",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 1207.0,
+   "score": 0.34499326145552556,
+   "rank": 90,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.33962264150943394,
+     "raw": 0.03866091759120205
+    },
+    "owner_sf_homes": {
+     "pct": 0.0660377358490566,
+     "raw": 19.125588330626766
+    },
+    "owner_sf_share": {
+     "pct": 0.8018867924528301,
+     "raw": 0.6604510520347738
+    },
+    "permits_per_1k": {
+     "pct": 0.29523809523809524,
+     "raw": 4.104669061056952
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 46,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30117",
+   "name": "Mason Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "11793",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 1477.0,
+   "score": 0.33680592991913744,
+   "rank": 91,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.09433962264150943,
+     "raw": 0.005037783375315019
+    },
+    "owner_sf_homes": {
+     "pct": 0.0,
+     "raw": 3.5490819977897847
+    },
+    "owner_sf_share": {
+     "pct": 0.7924528301886792,
+     "raw": 0.6522501461133839
+    },
+    "permits_per_1k": {
+     "pct": 0.34285714285714286,
+     "raw": 5.012531328320802
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8726415094339622,
+     "raw": 0.23127015406115659
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 47,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30133",
+   "name": "Rusk County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "16461",
+   "gt": "East Texas Electric Coop;Northeast Texas Electric Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 23620.0,
+   "score": 0.3350539083557951,
+   "rank": 92,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.32075471698113206,
+     "raw": 0.036160680964488545
+    },
+    "owner_sf_homes": {
+     "pct": 0.7075471698113207,
+     "raw": 17080.3903172004
+    },
+    "owner_sf_share": {
+     "pct": 0.3962264150943396,
+     "raw": 0.5988170468066596
+    },
+    "permits_per_1k": {
+     "pct": 0.10476190476190478,
+     "raw": 1.7761996739248487
+    },
+    "zone_peak_cagr": {
+     "pct": 0.04245283018867924,
+     "raw": 0.024349735397150688
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-03-24",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-06-01",
+   "top_trigger": {
+    "title": "West Fraser Wood Products Inc",
+    "trigger": "dev_agreement",
+    "age_days": 186,
+    "event_date": "2026-03-24"
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 45,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30186",
+   "name": "San Saba City of",
+   "account_type": "muni",
+   "eia_utility_id": "28981",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 1900.0,
+   "score": 0.32712938005390835,
+   "rank": 93,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.14150943396226415,
+     "raw": 0.011182946007338712
+    },
+    "owner_sf_homes": {
+     "pct": 0.16037735849056603,
+     "raw": 39.41766934665664
+    },
+    "owner_sf_share": {
+     "pct": 0.7641509433962264,
+     "raw": 0.645933014354067
+    },
+    "permits_per_1k": {
+     "pct": 0.004761904761904762,
+     "raw": 0.0
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8726415094339622,
+     "raw": 0.23127015406115659
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 48,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30068",
+   "name": "Goldthwaite Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "7368",
+   "gt": "LCRA",
+   "primary_weather_zone": "NCENT",
+   "meters": 1334.0,
+   "score": 0.3102108768035515,
+   "rank": 94,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.29245283018867924,
+     "raw": 0.029907803013267342
+    },
+    "owner_sf_homes": {
+     "pct": 0.009433962264150943,
+     "raw": 3.9846261661265943
+    },
+    "owner_sf_share": {
+     "pct": 0.9811320754716981,
+     "raw": 0.7304057809894385
+    },
+    "permits_per_1k": {
+     "pct": null,
+     "raw": null
+    },
+    "zone_peak_cagr": {
+     "pct": 0.25943396226415094,
+     "raw": 0.05284106274346657
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 49,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30085",
+   "name": "Houston County Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "8898",
+   "gt": "East Texas Electric Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 22901.0,
+   "score": 0.3016711590296496,
+   "rank": 95,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.3584905660377358,
+     "raw": 0.03988056774222937
+    },
+    "owner_sf_homes": {
+     "pct": 0.6037735849056604,
+     "raw": 12098.63567141087
+    },
+    "owner_sf_share": {
+     "pct": 0.10377358490566037,
+     "raw": 0.5405634510769595
+    },
+    "permits_per_1k": {
+     "pct": 0.18095238095238098,
+     "raw": 2.439034123396844
+    },
+    "zone_peak_cagr": {
+     "pct": 0.014150943396226415,
+     "raw": 0.024349735397150685
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-07-31",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-07-31",
+   "top_trigger": {
+    "title": "Pham BESS",
+    "trigger": "gen_storage_ia",
+    "age_days": 57,
+    "event_date": "2026-07-31"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 46,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30081",
+   "name": "Hearne Municipal Electric System",
+   "account_type": "muni",
+   "eia_utility_id": "8359",
+   "gt": null,
+   "primary_weather_zone": "EAST",
+   "meters": 2493.0,
+   "score": 0.3015498652291105,
+   "rank": 96,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.5,
+     "raw": 0.06393511063398338
+    },
+    "owner_sf_homes": {
+     "pct": 0.16981132075471697,
+     "raw": 40.40397709840837
+    },
+    "owner_sf_share": {
+     "pct": 0.24528301886792453,
+     "raw": 0.5794657513803909
+    },
+    "permits_per_1k": {
+     "pct": 0.4285714285714286,
+     "raw": 7.567688771792141
+    },
+    "zone_peak_cagr": {
+     "pct": 0.014150943396226415,
+     "raw": 0.024349735397150685
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 50,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30177",
+   "name": "Yoakum Municipal Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "21108",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 3078.0,
+   "score": 0.29848382749326147,
+   "rank": 97,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.1981132075471698,
+     "raw": 0.017650863297091313
+    },
+    "owner_sf_homes": {
+     "pct": 0.18867924528301885,
+     "raw": 50.478588016465395
+    },
+    "owner_sf_share": {
+     "pct": 0.7452830188679245,
+     "raw": 0.6421190201070187
+    },
+    "permits_per_1k": {
+     "pct": 0.09523809523809525,
+     "raw": 1.6630770908443928
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 51,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30142",
+   "name": "Seymour City Government",
+   "account_type": "muni",
+   "eia_utility_id": "16961",
+   "gt": "LCRA",
+   "primary_weather_zone": "NORTH",
+   "meters": 2369.0,
+   "score": 0.2879784366576819,
+   "rank": 98,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.0660377358490566,
+     "raw": 0.0031782721756716814
+    },
+    "owner_sf_homes": {
+     "pct": 0.018867924528301886,
+     "raw": 7.726399781720355
+    },
+    "owner_sf_share": {
+     "pct": 0.6886792452830188,
+     "raw": 0.6359477124183006
+    },
+    "permits_per_1k": {
+     "pct": 0.004761904761904762,
+     "raw": 0.0
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9764150943396226,
+     "raw": 0.2633106956015856
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 52,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30078",
+   "name": "Hallettsville Municipal Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "7958",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 1649.0,
+   "score": 0.2845350404312669,
+   "rank": 99,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.1792452830188679,
+     "raw": 0.014541881601572104
+    },
+    "owner_sf_homes": {
+     "pct": 0.12264150943396226,
+     "raw": 29.837005289182112
+    },
+    "owner_sf_share": {
+     "pct": 0.820754716981132,
+     "raw": 0.6605710240679566
+    },
+    "permits_per_1k": {
+     "pct": 0.07142857142857144,
+     "raw": 1.5011379594208512
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 53,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30143",
+   "name": "Shiner City of",
+   "account_type": "muni",
+   "eia_utility_id": "17101",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 1237.0,
+   "score": 0.2829043126684636,
+   "rank": 100,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.1792452830188679,
+     "raw": 0.014541881601572104
+    },
+    "owner_sf_homes": {
+     "pct": 0.10377358490566037,
+     "raw": 24.24380305649602
+    },
+    "owner_sf_share": {
+     "pct": 0.820754716981132,
+     "raw": 0.6605710240679566
+    },
+    "permits_per_1k": {
+     "pct": 0.08571428571428572,
+     "raw": 1.5011379594208514
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 54,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30042",
+   "name": "Cuero Electric Utility",
+   "account_type": "muni",
+   "eia_utility_id": "4610",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 3795.0,
+   "score": 0.27775606469002695,
+   "rank": 101,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.21698113207547168,
+     "raw": 0.023587520790282923
+    },
+    "owner_sf_homes": {
+     "pct": 0.21698113207547168,
+     "raw": 62.03641328720888
+    },
+    "owner_sf_share": {
+     "pct": 0.40566037735849053,
+     "raw": 0.6000577951163127
+    },
+    "permits_per_1k": {
+     "pct": 0.1142857142857143,
+     "raw": 1.9695701413166575
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 55,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30121",
+   "name": "Moulton Electric Department",
+   "account_type": "muni",
+   "eia_utility_id": "13025",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 625.0,
+   "score": 0.27132749326145555,
+   "rank": 102,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.1792452830188679,
+     "raw": 0.014541881601572104
+    },
+    "owner_sf_homes": {
+     "pct": 0.05660377358490566,
+     "raw": 15.768522200577591
+    },
+    "owner_sf_share": {
+     "pct": 0.820754716981132,
+     "raw": 0.6605710240679566
+    },
+    "permits_per_1k": {
+     "pct": 0.07142857142857144,
+     "raw": 1.5011379594208512
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 56,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30015",
+   "name": "Brady Water & Light Works",
+   "account_type": "muni",
+   "eia_utility_id": "2135",
+   "gt": "LCRA",
+   "primary_weather_zone": "WEST",
+   "meters": 3028.0,
+   "score": 0.26493935309973043,
+   "rank": 103,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.02830188679245283,
+     "raw": -0.015806111696522573
+    },
+    "owner_sf_homes": {
+     "pct": 0.14150943396226415,
+     "raw": 37.885491294033564
+    },
+    "owner_sf_share": {
+     "pct": 0.43396226415094336,
+     "raw": 0.6044889293296937
+    },
+    "permits_per_1k": {
+     "pct": 0.05714285714285715,
+     "raw": 1.2044967880085653
+    },
+    "zone_peak_cagr": {
+     "pct": 0.8396226415094339,
+     "raw": 0.23127015406115656
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 57,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30091",
+   "name": "Jasper-Newton Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "9668",
+   "gt": "East Texas Electric Coop",
+   "primary_weather_zone": "COAST",
+   "meters": 23920.0,
+   "score": 0.26427897574123993,
+   "rank": 104,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.08490566037735849,
+     "raw": 0.004928226374560696
+    },
+    "owner_sf_homes": {
+     "pct": 0.6132075471698113,
+     "raw": 12342.861148942686
+    },
+    "owner_sf_share": {
+     "pct": 0.1320754716981132,
+     "raw": 0.5451472334016503
+    },
+    "permits_per_1k": {
+     "pct": 0.2571428571428572,
+     "raw": 3.300376300788875
+    },
+    "zone_peak_cagr": {
+     "pct": 0.11320754716981132,
+     "raw": 0.045282226425284816
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2021-12-01",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 47,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30045",
+   "name": "Deep East Texas Electric Cooperative, Inc.",
+   "account_type": "coop",
+   "eia_utility_id": "4975",
+   "gt": "East Texas Electric Coop;Northeast Texas Electric Coop",
+   "primary_weather_zone": "EAST",
+   "meters": 45353.0,
+   "score": 0.246044474393531,
+   "rank": 105,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.1509433962264151,
+     "raw": 0.011440268668160058
+    },
+    "owner_sf_homes": {
+     "pct": 0.6886792452830188,
+     "raw": 15127.209088462061
+    },
+    "owner_sf_share": {
+     "pct": 0.04716981132075471,
+     "raw": 0.5003812111245602
+    },
+    "permits_per_1k": {
+     "pct": 0.0380952380952381,
+     "raw": 0.9000680021132458
+    },
+    "zone_peak_cagr": {
+     "pct": 0.05660377358490566,
+     "raw": 0.025923072096527607
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2026-12-26",
+   "action_changes_to": "hold",
+   "n_strong": 1,
+   "n_context": 1,
+   "latest_event_date": "2026-07-13",
+   "top_trigger": {
+    "title": "Spindletop Storage",
+    "trigger": "gen_storage_ia",
+    "age_days": 274,
+    "event_date": "2025-12-26"
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "new_transmission"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 48,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30069",
+   "name": "Gonzales Electric System",
+   "account_type": "muni",
+   "eia_utility_id": "7370",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 2996.0,
+   "score": 0.2452897574123989,
+   "rank": 106,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.23113207547169812,
+     "raw": 0.02486019318759536
+    },
+    "owner_sf_homes": {
+     "pct": 0.09433962264150943,
+     "raw": 21.454818630365907
+    },
+    "owner_sf_share": {
+     "pct": 0.02830188679245283,
+     "raw": 0.48599545798637395
+    },
+    "permits_per_1k": {
+     "pct": 0.17142857142857143,
+     "raw": 2.4306761248077784
+    },
+    "zone_peak_cagr": {
+     "pct": 0.5896226415094339,
+     "raw": 0.1075180590209688
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 58,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  },
+  {
+   "account_id": "30167",
+   "name": "Waelder Electric Department",
+   "account_type": "muni",
+   "eia_utility_id": "19952",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": null,
+   "score": 0.20022911051212935,
+   "rank": 107,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.23113207547169812,
+     "raw": 0.02486019318759536
+    },
+    "owner_sf_homes": {
+     "pct": 0.03773584905660377,
+     "raw": 8.714852290927439
+    },
+    "owner_sf_share": {
+     "pct": 0.03773584905660377,
+     "raw": 0.485995457986374
+    },
+    "permits_per_1k": {
+     "pct": 0.1619047619047619,
+     "raw": 2.430676124807778
+    },
+    "zone_peak_cagr": {
+     "pct": 0.36792452830188677,
+     "raw": 0.10751805902096877
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 1,
+   "latest_event_date": "2026-04-15",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 59,
+   "model_version": "f85bb1f.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-26T23:51:18.875562+00:00"
+  }
+ ]
+}

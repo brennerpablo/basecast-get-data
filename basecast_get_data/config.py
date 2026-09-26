@@ -18,7 +18,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 # The resource groups production reads from the marts (MARTS_LIVE overrides it). A group goes live here, in
 # code, once its marts are built and passed their checks.
-MARTS_LIVE = ""
+# accounts: A-M3 (f85bb1f), golden checks passed, all 107 diagnoses served clean on 2026-09-26.
+MARTS_LIVE = "accounts"
 
 
 @dataclass(frozen=True)
