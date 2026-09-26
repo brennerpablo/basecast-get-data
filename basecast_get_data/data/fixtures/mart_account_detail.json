@@ -1,0 +1,5430 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "account_id": "FX001",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX001",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Fixture Valley Electric Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "coop",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX001",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": "Sample G&T Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999001",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Eastland, Parker, Dallas, Jack",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "4 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 3373.3,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "long",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 50238.6,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0444,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 798609.5,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 86911.7,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.1088,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.0228,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": 0.1219,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.1129,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.6286,
+     "rank": 2,
+     "rank_within_type": 1,
+     "n_accounts": 8,
+     "tier": "A",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": 0.2593,
+       "unit": "share",
+       "pct": 1.0,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.2,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 40.3,
+       "unit": "units/1k",
+       "pct": 1.0,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.15,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 16252.1,
+       "unit": "homes",
+       "pct": 0.4286,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0857,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 0.7188,
+       "unit": "sites",
+       "pct": 0.7143,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.1071,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.6068,
+       "unit": "share",
+       "pct": 0.5714,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.0571,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0329,
+       "unit": "per year",
+       "pct": 0.1429,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0286,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "call_now",
+     "action_label": "Call now",
+     "rule": "Tier A (rank 2 of 8) + 2 active strong trigger(s) → Call now",
+     "lead_trigger": {
+      "trigger": "gen_storage_ia",
+      "title": "Fixture Storage 485",
+      "event_date": "2026-08-03",
+      "source": "gis_project_events",
+      "source_ref": "FX-gen_storage_ia-FX001-0"
+     },
+     "offer": "local capacity is being built by others; position distributed storage as the member-owned option",
+     "talking_points": [
+      "4CP (NCENT, 2025): fixture talking point"
+     ],
+     "changes_on": "2027-08-03",
+     "changes_to": "nurture"
+    },
+    "triggers": {
+     "active": [
+      {
+       "event_date": "2026-08-03",
+       "age_days": 48,
+       "active": true,
+       "trigger": "gen_storage_ia",
+       "label": "Generation or storage project signed its interconnection agreement nearby",
+       "strength": "strong",
+       "title": "Fixture Storage 485",
+       "detail": null,
+       "county_fips": "48367",
+       "county_name": "Parker",
+       "exposure": 0.5288,
+       "mapping": "county",
+       "source": "gis_project_events",
+       "source_ref": "FX-gen_storage_ia-FX001-0",
+       "offer": "local capacity is being built by others; position distributed storage as the member-owned option"
+      },
+      {
+       "event_date": "2025-10-03",
+       "age_days": 352,
+       "active": true,
+       "trigger": "gen_storage_ia",
+       "label": "Generation or storage project signed its interconnection agreement nearby",
+       "strength": "strong",
+       "title": "Fixture Storage 423",
+       "detail": "Fixture event",
+       "county_fips": "48113",
+       "county_name": "Dallas",
+       "exposure": 0.444,
+       "mapping": "county",
+       "source": "gis_project_events",
+       "source_ref": "FX-gen_storage_ia-FX001-2",
+       "offer": "local capacity is being built by others; position distributed storage as the member-owned option"
+      }
+     ],
+     "context_summary": [],
+     "history_count": 5
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 93966.1,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": 0.2593,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 40.3,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 16252.1,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.6068,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 0.7188,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": 771.7,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "3 exposed counties (share ≥ 20%)",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": 307.9,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "NCENT",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.0125,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 6768.6,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 1.1008,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 16.9759,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48133",
+       "county_name": "Eastland",
+       "overlap_km2": 1214.5,
+       "county_share": 0.5425,
+       "weather_zone": "NCENT",
+       "exposed": true,
+       "territory_share": 0.36,
+       "context": true
+      },
+      {
+       "county_fips": "48367",
+       "county_name": "Parker",
+       "overlap_km2": 1155.2,
+       "county_share": 0.5288,
+       "weather_zone": "NCENT",
+       "exposed": true,
+       "territory_share": 0.3425,
+       "context": true
+      },
+      {
+       "county_fips": "48113",
+       "county_name": "Dallas",
+       "overlap_km2": 856.4,
+       "county_share": 0.444,
+       "weather_zone": "NCENT",
+       "exposed": true,
+       "territory_share": 0.2539,
+       "context": true
+      },
+      {
+       "county_fips": "48237",
+       "county_name": "Jack",
+       "overlap_km2": 147.2,
+       "county_share": 0.0683,
+       "weather_zone": "NCENT",
+       "exposed": false,
+       "territory_share": 0.0436,
+       "context": false
+      }
+     ],
+     "context_rule": "exposed",
+     "context_label": "3 exposed counties (share ≥ 20%)",
+     "zones": [
+      {
+       "weather_zone": "NCENT",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [
+      {
+       "stratum": "total",
+       "projects_context": 3,
+       "raw_mw_context": 771.7,
+       "adj_mw_2027_context": 150.6,
+       "adj_mw_2028_context": 307.9,
+       "raw_mw_apportioned": 354.8,
+       "adj_mw_2027_apportioned": 72.3,
+       "adj_mw_2028_apportioned": 144.9
+      },
+      {
+       "stratum": "storage",
+       "projects_context": 1,
+       "raw_mw_context": 388.2,
+       "adj_mw_2027_context": 7.8,
+       "adj_mw_2028_context": 101.0,
+       "raw_mw_apportioned": 172.4,
+       "adj_mw_2027_apportioned": 3.5,
+       "adj_mw_2028_apportioned": 44.8
+      }
+     ],
+     "zone_outlook": {
+      "zone": "NCENT",
+      "ltlf_start": 7106.5,
+      "ltlf_end": 7656.4,
+      "ltlf_now": 7195.3,
+      "ltlf_cagr": 0.0125,
+      "cp_year": 2025,
+      "cp_avg_mw": 5729.6,
+      "cf_summer": 0.8465,
+      "share_4cp": 0.127,
+      "share_energy": 0.1154,
+      "intensity": 1.1008,
+      "ncp_summer_mw_full": 6565.5,
+      "ncp_end_hour": 16.9759,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 6768.6,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": -0.0593,
+      "peak_mismatch": null,
+      "q7_holdout_mape": null,
+      "line": "4CP (NCENT, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "long",
+      "customers": 40431.4,
+      "delivery_customers": 0.0,
+      "meters": 40431.4,
+      "sales_mwh": 626117.8,
+      "revenue_kusd": 60831.5,
+      "price_usd_kwh": 0.0972,
+      "res_price_usd_kwh": 0.1088
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "long",
+      "customers": 42536.9,
+      "delivery_customers": 0.0,
+      "meters": 42536.9,
+      "sales_mwh": 662184.1,
+      "revenue_kusd": 63313.4,
+      "price_usd_kwh": 0.0956,
+      "res_price_usd_kwh": 0.1071
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "long",
+      "customers": 44997.1,
+      "delivery_customers": 0.0,
+      "meters": 44997.1,
+      "sales_mwh": 712704.8,
+      "revenue_kusd": 69922.3,
+      "price_usd_kwh": 0.0981,
+      "res_price_usd_kwh": 0.1099
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "long",
+      "customers": 45692.2,
+      "delivery_customers": 0.0,
+      "meters": 45692.2,
+      "sales_mwh": 620863.3,
+      "revenue_kusd": 61408.6,
+      "price_usd_kwh": 0.0989,
+      "res_price_usd_kwh": 0.1108
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "long",
+      "customers": 48098.9,
+      "delivery_customers": 0.0,
+      "meters": 48098.9,
+      "sales_mwh": 849025.3,
+      "revenue_kusd": 89856.6,
+      "price_usd_kwh": 0.1058,
+      "res_price_usd_kwh": 0.1185
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "long",
+      "customers": 50238.6,
+      "delivery_customers": 0.0,
+      "meters": 50238.6,
+      "sales_mwh": 798609.5,
+      "revenue_kusd": 86911.7,
+      "price_usd_kwh": 0.1088,
+      "res_price_usd_kwh": 0.1219
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "long",
+      "customers": 52229.2,
+      "delivery_customers": 0.0,
+      "meters": 52229.2,
+      "sales_mwh": 873703.1,
+      "revenue_kusd": 98659.7,
+      "price_usd_kwh": 0.1129,
+      "res_price_usd_kwh": 0.1265
+     }
+    ],
+    "gaps": [
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  },
+  {
+   "account_id": "FX002",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX002",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Sample City Utilities",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "muni",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX002",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": null,
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": "no G&T in the PUCT layer",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999002",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Fayette, Colorado",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "2 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 119.6,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "long",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 19107.9,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0296,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 265192.4,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 30191.4,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.1138,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.039,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": 0.1275,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.1223,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.7,
+     "rank": 1,
+     "rank_within_type": 1,
+     "n_accounts": 8,
+     "tier": "A",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": 0.0651,
+       "unit": "share",
+       "pct": 0.4286,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0857,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 3.2,
+       "unit": "units/1k",
+       "pct": 0.1429,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0214,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 40182.1,
+       "unit": "homes",
+       "pct": 1.0,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.2,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 1.3853,
+       "unit": "sites",
+       "pct": 1.0,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.15,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.5947,
+       "unit": "share",
+       "pct": 0.4286,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.0429,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0772,
+       "unit": "per year",
+       "pct": 1.0,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.2,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "call_now",
+     "action_label": "Call now",
+     "rule": "Tier A (rank 1 of 8) + 1 active strong trigger(s) → Call now",
+     "lead_trigger": {
+      "trigger": "market_registration",
+      "title": "Registered as QSE",
+      "event_date": "2025-10-14",
+      "source": "ercot_market_participants",
+      "source_ref": "FX-market_registration-FX002-0"
+     },
+     "offer": "wholesale set-up is changing; offer a QSE-ready VPP",
+     "talking_points": [
+      "4CP (SCENT, 2025): fixture talking point"
+     ],
+     "changes_on": "2026-10-14",
+     "changes_to": "nurture"
+    },
+    "triggers": {
+     "active": [
+      {
+       "event_date": "2025-10-14",
+       "age_days": 341,
+       "active": true,
+       "trigger": "market_registration",
+       "label": "Account registered a new ERCOT market role (LSE / QSE / TDSP / RE)",
+       "strength": "strong",
+       "title": "Registered as QSE",
+       "detail": null,
+       "county_fips": null,
+       "county_name": null,
+       "exposure": 1.0,
+       "mapping": "name",
+       "source": "ercot_market_participants",
+       "source_ref": "FX-market_registration-FX002-0",
+       "offer": "wholesale set-up is changing; offer a QSE-ready VPP"
+      }
+     ],
+     "context_summary": [],
+     "history_count": 4
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 49332.3,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": 0.0651,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 3.2,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 40182.1,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.5947,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 1.3853,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "home county: Fayette",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "SCENT",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.087,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 16862.3,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 1.0696,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 16.2165,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48149",
+       "county_name": "Fayette",
+       "overlap_km2": 80.9,
+       "county_share": 0.0468,
+       "weather_zone": "SCENT",
+       "exposed": false,
+       "territory_share": 0.6764,
+       "context": true
+      },
+      {
+       "county_fips": "48089",
+       "county_name": "Colorado",
+       "overlap_km2": 38.7,
+       "county_share": 0.0205,
+       "weather_zone": "SCENT",
+       "exposed": false,
+       "territory_share": 0.3236,
+       "context": false
+      }
+     ],
+     "context_rule": "home_county",
+     "context_label": "home county: Fayette",
+     "zones": [
+      {
+       "weather_zone": "SCENT",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [],
+     "zone_outlook": {
+      "zone": "SCENT",
+      "ltlf_start": 14449.2,
+      "ltlf_end": 23835.3,
+      "ltlf_now": 15706.3,
+      "ltlf_cagr": 0.087,
+      "cp_year": 2025,
+      "cp_avg_mw": 14762.9,
+      "cf_summer": 0.8755,
+      "share_4cp": 0.2861,
+      "share_energy": 0.2675,
+      "intensity": 1.0696,
+      "ncp_summer_mw_full": 16356.4,
+      "ncp_end_hour": 16.2165,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 16862.3,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": 0.0736,
+      "peak_mismatch": null,
+      "q7_holdout_mape": null,
+      "line": "4CP (SCENT, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "long",
+      "customers": 16512.4,
+      "delivery_customers": 0.0,
+      "meters": 16512.4,
+      "sales_mwh": 294326.4,
+      "revenue_kusd": 27667.9,
+      "price_usd_kwh": 0.094,
+      "res_price_usd_kwh": 0.1053
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "long",
+      "customers": 16691.7,
+      "delivery_customers": 0.0,
+      "meters": 16691.7,
+      "sales_mwh": 261139.6,
+      "revenue_kusd": 25831.3,
+      "price_usd_kwh": 0.0989,
+      "res_price_usd_kwh": 0.1108
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "long",
+      "customers": 17215.3,
+      "delivery_customers": 0.0,
+      "meters": 17215.3,
+      "sales_mwh": 257463.3,
+      "revenue_kusd": 25859.7,
+      "price_usd_kwh": 0.1004,
+      "res_price_usd_kwh": 0.1125
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "long",
+      "customers": 17525.6,
+      "delivery_customers": 0.0,
+      "meters": 17525.6,
+      "sales_mwh": 311655.8,
+      "revenue_kusd": 32214.8,
+      "price_usd_kwh": 0.1034,
+      "res_price_usd_kwh": 0.1158
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "long",
+      "customers": 18431.4,
+      "delivery_customers": 0.0,
+      "meters": 18431.4,
+      "sales_mwh": 293017.5,
+      "revenue_kusd": 32547.5,
+      "price_usd_kwh": 0.1111,
+      "res_price_usd_kwh": 0.1244
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "long",
+      "customers": 19107.9,
+      "delivery_customers": 0.0,
+      "meters": 19107.9,
+      "sales_mwh": 265192.4,
+      "revenue_kusd": 30191.4,
+      "price_usd_kwh": 0.1138,
+      "res_price_usd_kwh": 0.1275
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "long",
+      "customers": 19703.8,
+      "delivery_customers": 0.0,
+      "meters": 19703.8,
+      "sales_mwh": 261387.7,
+      "revenue_kusd": 31978.2,
+      "price_usd_kwh": 0.1223,
+      "res_price_usd_kwh": 0.137
+     }
+    ],
+    "gaps": [
+     {
+      "key": "gt",
+      "kind": "missing",
+      "detail": "G&T / wholesale supplier: no value (puct_ccn_territories)"
+     },
+     {
+      "key": "queue_raw_mw",
+      "kind": "missing",
+      "detail": "Generation queue, raw (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "queue_adj_2028",
+      "kind": "missing",
+      "detail": "Adjusted: expected COD by Dec 2028 (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     },
+     {
+      "key": "exposed_counties",
+      "kind": "structural",
+      "detail": "no county ≥ 20%: county triggers cannot fire; territory facts use the home county"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  },
+  {
+   "account_id": "FX003",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX003",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Example Plains Electric Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "coop",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX003",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": "Sample G&T Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999003",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Real, Uvalde, Kerr, Mason",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "4 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 1552.9,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "long",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 35262.5,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0271,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 617025.5,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 59539.2,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.0965,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.0161,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": 0.1081,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.097,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.6,
+     "rank": 3,
+     "rank_within_type": 2,
+     "n_accounts": 8,
+     "tier": "B",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": 0.2203,
+       "unit": "share",
+       "pct": 0.7143,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1429,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 11.2,
+       "unit": "units/1k",
+       "pct": 0.4286,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0643,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 31138.4,
+       "unit": "homes",
+       "pct": 0.7143,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1429,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 0.0601,
+       "unit": "sites",
+       "pct": 0.1429,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0214,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.7456,
+       "unit": "share",
+       "pct": 0.8571,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.0857,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0527,
+       "unit": "per year",
+       "pct": 0.7143,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1429,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "call_now",
+     "action_label": "Call now",
+     "rule": "Tier B (rank 3 of 8) + 3 active strong trigger(s) → Call now",
+     "lead_trigger": {
+      "trigger": "dc_permit",
+      "title": "FIXTURE DATA CAMPUS 95",
+      "event_date": "2026-04-19",
+      "source": "tceq_data_center_sites",
+      "source_ref": "FX-dc_permit-FX003-4"
+     },
+     "offer": "capacity: large-load pressure on the co-op's peak and 4CP; offer VPP capacity",
+     "talking_points": [
+      "bill pressure: demand-charge / 4CP savings for members",
+      "4CP (WEST, 2025): fixture talking point"
+     ],
+     "changes_on": "2027-04-19",
+     "changes_to": "nurture"
+    },
+    "triggers": {
+     "active": [
+      {
+       "event_date": "2026-04-19",
+       "age_days": 154,
+       "active": true,
+       "trigger": "dc_permit",
+       "label": "New data-center air permit in the territory",
+       "strength": "strong",
+       "title": "FIXTURE DATA CAMPUS 95",
+       "detail": "Fixture event",
+       "county_fips": "48265",
+       "county_name": "Kerr",
+       "exposure": 0.2635,
+       "mapping": "county",
+       "source": "tceq_data_center_sites",
+       "source_ref": "FX-dc_permit-FX003-4",
+       "offer": "capacity: large-load pressure on the co-op's peak and 4CP; offer VPP capacity"
+      },
+      {
+       "event_date": "2026-01-16",
+       "age_days": 247,
+       "active": true,
+       "trigger": "dev_agreement",
+       "label": "Local economic-development agreement (Ch. 312 / Ch. 380)",
+       "strength": "strong",
+       "title": "Example Manufacturing Co.",
+       "detail": "Fixture event",
+       "county_fips": null,
+       "county_name": null,
+       "exposure": 1.0,
+       "mapping": "name",
+       "source": "cpa_local_dev_agreements",
+       "source_ref": "FX-dev_agreement-FX003-1",
+       "offer": "new commercial/industrial load coming; offer peak shaving before it lands"
+      },
+      {
+       "event_date": "2025-11-16",
+       "age_days": 308,
+       "active": true,
+       "trigger": "dev_agreement",
+       "label": "Local economic-development agreement (Ch. 312 / Ch. 380)",
+       "strength": "strong",
+       "title": "Example Manufacturing Co.",
+       "detail": null,
+       "county_fips": null,
+       "county_name": null,
+       "exposure": 1.0,
+       "mapping": "name",
+       "source": "cpa_local_dev_agreements",
+       "source_ref": "FX-dev_agreement-FX003-3",
+       "offer": "new commercial/industrial load coming; offer peak shaving before it lands"
+      }
+     ],
+     "context_summary": [
+      {
+       "trigger": "rate_increase",
+       "label": "Residential average price up ≥ 10% (EIA-861)",
+       "count": 1,
+       "latest_date": "2026-06-11",
+       "counties": []
+      }
+     ],
+     "history_count": 6
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 78626.3,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": 0.2203,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 11.2,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 31138.4,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.7456,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 0.0601,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "2 exposed counties (share ≥ 20%)",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "WEST",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.0631,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 2903.7,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 1.0264,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 18.0491,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48385",
+       "county_name": "Real",
+       "overlap_km2": 546.2,
+       "county_share": 0.2003,
+       "weather_zone": "WEST",
+       "exposed": true,
+       "territory_share": 0.3517,
+       "context": true
+      },
+      {
+       "county_fips": "48463",
+       "county_name": "Uvalde",
+       "overlap_km2": 507.2,
+       "county_share": 0.1859,
+       "weather_zone": "WEST",
+       "exposed": false,
+       "territory_share": 0.3266,
+       "context": false
+      },
+      {
+       "county_fips": "48265",
+       "county_name": "Kerr",
+       "overlap_km2": 424.7,
+       "county_share": 0.2635,
+       "weather_zone": "WEST",
+       "exposed": true,
+       "territory_share": 0.2735,
+       "context": true
+      },
+      {
+       "county_fips": "48319",
+       "county_name": "Mason",
+       "overlap_km2": 74.8,
+       "county_share": 0.0318,
+       "weather_zone": "WEST",
+       "exposed": false,
+       "territory_share": 0.0482,
+       "context": false
+      }
+     ],
+     "context_rule": "exposed",
+     "context_label": "2 exposed counties (share ≥ 20%)",
+     "zones": [
+      {
+       "weather_zone": "WEST",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [],
+     "zone_outlook": {
+      "zone": "WEST",
+      "ltlf_start": 2797.1,
+      "ltlf_end": 4037.9,
+      "ltlf_now": 2973.6,
+      "ltlf_cagr": 0.0631,
+      "cp_year": 2025,
+      "cp_avg_mw": 2551.8,
+      "cf_summer": 0.8788,
+      "share_4cp": 0.1319,
+      "share_energy": 0.1285,
+      "intensity": 1.0264,
+      "ncp_summer_mw_full": 2816.6,
+      "ncp_end_hour": 18.0491,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 2903.7,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": -0.0235,
+      "peak_mismatch": "late",
+      "q7_holdout_mape": null,
+      "line": "4CP (WEST, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "long",
+      "customers": 30853.2,
+      "delivery_customers": 0.0,
+      "meters": 30853.2,
+      "sales_mwh": 438559.3,
+      "revenue_kusd": 39057.5,
+      "price_usd_kwh": 0.0891,
+      "res_price_usd_kwh": 0.0997
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "long",
+      "customers": 32601.6,
+      "delivery_customers": 0.0,
+      "meters": 32601.6,
+      "sales_mwh": 449036.8,
+      "revenue_kusd": 40148.7,
+      "price_usd_kwh": 0.0894,
+      "res_price_usd_kwh": 0.1001
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "long",
+      "customers": 32681.2,
+      "delivery_customers": 0.0,
+      "meters": 32681.2,
+      "sales_mwh": 585094.3,
+      "revenue_kusd": 53878.2,
+      "price_usd_kwh": 0.0921,
+      "res_price_usd_kwh": 0.1031
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "long",
+      "customers": 33034.9,
+      "delivery_customers": 0.0,
+      "meters": 33034.9,
+      "sales_mwh": 557918.3,
+      "revenue_kusd": 50307.9,
+      "price_usd_kwh": 0.0902,
+      "res_price_usd_kwh": 0.101
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "long",
+      "customers": 33686.8,
+      "delivery_customers": 0.0,
+      "meters": 33686.8,
+      "sales_mwh": 594599.6,
+      "revenue_kusd": 56364.7,
+      "price_usd_kwh": 0.0948,
+      "res_price_usd_kwh": 0.1062
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "long",
+      "customers": 35262.5,
+      "delivery_customers": 0.0,
+      "meters": 35262.5,
+      "sales_mwh": 617025.5,
+      "revenue_kusd": 59539.2,
+      "price_usd_kwh": 0.0965,
+      "res_price_usd_kwh": 0.1081
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "long",
+      "customers": 35911.6,
+      "delivery_customers": 0.0,
+      "meters": 35911.6,
+      "sales_mwh": 626567.2,
+      "revenue_kusd": 60788.1,
+      "price_usd_kwh": 0.097,
+      "res_price_usd_kwh": 0.1087
+     }
+    ],
+    "gaps": [
+     {
+      "key": "queue_raw_mw",
+      "kind": "missing",
+      "detail": "Generation queue, raw (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "queue_adj_2028",
+      "kind": "missing",
+      "detail": "Adjusted: expected COD by Dec 2028 (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  },
+  {
+   "account_id": "FX004",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX004",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Demo Springs Municipal Utilities",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "muni",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX004",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": "Demo Power Supply Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999004",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Jackson, Wharton",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "2 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 103.1,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "long",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 63404.7,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0346,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 905763.4,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 83936.4,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.0927,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.0317,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": 0.1038,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.0975,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.2786,
+     "rank": 8,
+     "rank_within_type": 4,
+     "n_accounts": 8,
+     "tier": "C",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": 0.0243,
+       "unit": "share",
+       "pct": 0.1429,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0286,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 8.2,
+       "unit": "units/1k",
+       "pct": 0.2857,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0429,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 23868.5,
+       "unit": "homes",
+       "pct": 0.5714,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1143,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 0.5054,
+       "unit": "sites",
+       "pct": 0.4286,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0643,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.5874,
+       "unit": "share",
+       "pct": 0.2857,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.0286,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0171,
+       "unit": "per year",
+       "pct": 0.0,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "nurture",
+     "action_label": "Nurture",
+     "rule": "Tier C (rank 8 of 8) + 3 active strong trigger(s) → Nurture",
+     "lead_trigger": {
+      "trigger": "market_registration",
+      "title": "Registered as QSE",
+      "event_date": "2026-06-08",
+      "source": "ercot_market_participants",
+      "source_ref": "FX-market_registration-FX004-5"
+     },
+     "offer": "wholesale set-up is changing; offer a QSE-ready VPP",
+     "talking_points": [
+      "bill pressure: demand-charge / 4CP savings for members",
+      "4CP (COAST, 2025): fixture talking point"
+     ],
+     "changes_on": "2027-06-08",
+     "changes_to": "watch"
+    },
+    "triggers": {
+     "active": [
+      {
+       "event_date": "2026-06-08",
+       "age_days": 104,
+       "active": true,
+       "trigger": "market_registration",
+       "label": "Account registered a new ERCOT market role (LSE / QSE / TDSP / RE)",
+       "strength": "strong",
+       "title": "Registered as QSE",
+       "detail": "Fixture event",
+       "county_fips": null,
+       "county_name": null,
+       "exposure": 1.0,
+       "mapping": "name",
+       "source": "ercot_market_participants",
+       "source_ref": "FX-market_registration-FX004-5",
+       "offer": "wholesale set-up is changing; offer a QSE-ready VPP"
+      },
+      {
+       "event_date": "2026-04-08",
+       "age_days": 165,
+       "active": true,
+       "trigger": "dev_agreement",
+       "label": "Local economic-development agreement (Ch. 312 / Ch. 380)",
+       "strength": "strong",
+       "title": "Example Manufacturing Co.",
+       "detail": "Fixture event",
+       "county_fips": null,
+       "county_name": null,
+       "exposure": 1.0,
+       "mapping": "name",
+       "source": "cpa_local_dev_agreements",
+       "source_ref": "FX-dev_agreement-FX004-4",
+       "offer": "new commercial/industrial load coming; offer peak shaving before it lands"
+      },
+      {
+       "event_date": "2026-01-31",
+       "age_days": 232,
+       "active": true,
+       "trigger": "dev_agreement",
+       "label": "Local economic-development agreement (Ch. 312 / Ch. 380)",
+       "strength": "strong",
+       "title": "Example Manufacturing Co.",
+       "detail": null,
+       "county_fips": null,
+       "county_name": null,
+       "exposure": 1.0,
+       "mapping": "name",
+       "source": "cpa_local_dev_agreements",
+       "source_ref": "FX-dev_agreement-FX004-3",
+       "offer": "new commercial/industrial load coming; offer peak shaving before it lands"
+      }
+     ],
+     "context_summary": [
+      {
+       "trigger": "rate_increase",
+       "label": "Residential average price up ≥ 10% (EIA-861)",
+       "count": 1,
+       "latest_date": "2026-06-04",
+       "counties": []
+      }
+     ],
+     "history_count": 9
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 145622.3,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": 0.0243,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 8.2,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 23868.5,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.5874,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 0.5054,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": 1819.7,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "home county: Jackson",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": 482.7,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "COAST",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.0761,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 14169.8,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 1.0072,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 17.6371,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48239",
+       "county_name": "Jackson",
+       "overlap_km2": 77.5,
+       "county_share": 0.0313,
+       "weather_zone": "COAST",
+       "exposed": false,
+       "territory_share": 0.7517,
+       "context": true
+      },
+      {
+       "county_fips": "48481",
+       "county_name": "Wharton",
+       "overlap_km2": 25.6,
+       "county_share": 0.011,
+       "weather_zone": "COAST",
+       "exposed": false,
+       "territory_share": 0.2483,
+       "context": false
+      }
+     ],
+     "context_rule": "home_county",
+     "context_label": "home county: Jackson",
+     "zones": [
+      {
+       "weather_zone": "COAST",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [
+      {
+       "stratum": "total",
+       "projects_context": 4,
+       "raw_mw_context": 1819.7,
+       "adj_mw_2027_context": 206.4,
+       "adj_mw_2028_context": 482.7,
+       "raw_mw_apportioned": 57.0,
+       "adj_mw_2027_apportioned": 6.5,
+       "adj_mw_2028_apportioned": 15.1
+      },
+      {
+       "stratum": "storage",
+       "projects_context": 2,
+       "raw_mw_context": 471.2,
+       "adj_mw_2027_context": 92.1,
+       "adj_mw_2028_context": 175.4,
+       "raw_mw_apportioned": 14.7,
+       "adj_mw_2027_apportioned": 2.9,
+       "adj_mw_2028_apportioned": 5.5
+      }
+     ],
+     "zone_outlook": {
+      "zone": "COAST",
+      "ltlf_start": 13455.7,
+      "ltlf_end": 20894.0,
+      "ltlf_now": 14479.7,
+      "ltlf_cagr": 0.0761,
+      "cp_year": 2025,
+      "cp_avg_mw": 12307.9,
+      "cf_summer": 0.8686,
+      "share_4cp": 0.1743,
+      "share_energy": 0.1731,
+      "intensity": 1.0072,
+      "ncp_summer_mw_full": 13744.7,
+      "ncp_end_hour": 17.6371,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 14169.8,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": -0.0214,
+      "peak_mismatch": null,
+      "q7_holdout_mape": null,
+      "line": "4CP (COAST, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "long",
+      "customers": 53484.4,
+      "delivery_customers": 0.0,
+      "meters": 53484.4,
+      "sales_mwh": 913263.5,
+      "revenue_kusd": 72414.2,
+      "price_usd_kwh": 0.0793,
+      "res_price_usd_kwh": 0.0888
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "long",
+      "customers": 55884.3,
+      "delivery_customers": 0.0,
+      "meters": 55884.3,
+      "sales_mwh": 969392.1,
+      "revenue_kusd": 75914.3,
+      "price_usd_kwh": 0.0783,
+      "res_price_usd_kwh": 0.0877
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "long",
+      "customers": 57819.8,
+      "delivery_customers": 0.0,
+      "meters": 57819.8,
+      "sales_mwh": 848984.7,
+      "revenue_kusd": 71553.3,
+      "price_usd_kwh": 0.0843,
+      "res_price_usd_kwh": 0.0944
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "long",
+      "customers": 60681.1,
+      "delivery_customers": 0.0,
+      "meters": 60681.1,
+      "sales_mwh": 812618.0,
+      "revenue_kusd": 68945.4,
+      "price_usd_kwh": 0.0848,
+      "res_price_usd_kwh": 0.095
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "long",
+      "customers": 63207.1,
+      "delivery_customers": 0.0,
+      "meters": 63207.1,
+      "sales_mwh": 1106821.3,
+      "revenue_kusd": 98043.4,
+      "price_usd_kwh": 0.0886,
+      "res_price_usd_kwh": 0.0992
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "long",
+      "customers": 63404.7,
+      "delivery_customers": 0.0,
+      "meters": 63404.7,
+      "sales_mwh": 905763.4,
+      "revenue_kusd": 83936.4,
+      "price_usd_kwh": 0.0927,
+      "res_price_usd_kwh": 0.1038
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "long",
+      "customers": 65018.7,
+      "delivery_customers": 0.0,
+      "meters": 65018.7,
+      "sales_mwh": 1044475.3,
+      "revenue_kusd": 101817.1,
+      "price_usd_kwh": 0.0975,
+      "res_price_usd_kwh": 0.1092
+     }
+    ],
+    "gaps": [
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     },
+     {
+      "key": "exposed_counties",
+      "kind": "structural",
+      "detail": "no county ≥ 20%: county triggers cannot fire; territory facts use the home county"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  },
+  {
+   "account_id": "FX005",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX005",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Placeholder Ridge Electric Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "coop",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX005",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": "Demo Power Supply Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999005",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Borden, Presidio, Ector, Crane",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "4 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 2336.2,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "long",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 50383.9,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0299,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 819849.7,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 109737.8,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.1339,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.0279,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": 0.1499,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.1299,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.5428,
+     "rank": 4,
+     "rank_within_type": 3,
+     "n_accounts": 8,
+     "tier": "B",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": 0.2369,
+       "unit": "share",
+       "pct": 0.8571,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1714,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 16.8,
+       "unit": "units/1k",
+       "pct": 0.5714,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0857,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 13296.5,
+       "unit": "homes",
+       "pct": 0.2857,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0571,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 0.8274,
+       "unit": "sites",
+       "pct": 0.8571,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.1286,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.4491,
+       "unit": "share",
+       "pct": 0.1429,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.0143,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0489,
+       "unit": "per year",
+       "pct": 0.4286,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0857,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "call_now",
+     "action_label": "Call now",
+     "rule": "Tier B (rank 4 of 8) + 2 active strong trigger(s) → Call now",
+     "lead_trigger": {
+      "trigger": "permit_surge",
+      "title": "Borden: permits up (12 months)",
+      "event_date": "2026-07-04",
+      "source": "census_permits_county",
+      "source_ref": "FX-permit_surge-FX005-0"
+     },
+     "offer": "new homes: batteries at construction, builder partnerships",
+     "talking_points": [
+      "bill pressure: demand-charge / 4CP savings for members",
+      "4CP (FWEST, 2025): fixture talking point"
+     ],
+     "changes_on": "2027-07-04",
+     "changes_to": "nurture"
+    },
+    "triggers": {
+     "active": [
+      {
+       "event_date": "2026-07-04",
+       "age_days": 78,
+       "active": true,
+       "trigger": "permit_surge",
+       "label": "Residential permits up ≥ 25% (last 12 months vs the 12 before)",
+       "strength": "strong",
+       "title": "Borden: permits up (12 months)",
+       "detail": null,
+       "county_fips": "48033",
+       "county_name": "Borden",
+       "exposure": 0.5252,
+       "mapping": "county",
+       "source": "census_permits_county",
+       "source_ref": "FX-permit_surge-FX005-0",
+       "offer": "new homes: batteries at construction, builder partnerships"
+      },
+      {
+       "event_date": "2026-02-25",
+       "age_days": 207,
+       "active": true,
+       "trigger": "gen_storage_ia",
+       "label": "Generation or storage project signed its interconnection agreement nearby",
+       "strength": "strong",
+       "title": "Fixture Storage 489",
+       "detail": null,
+       "county_fips": "48033",
+       "county_name": "Borden",
+       "exposure": 0.5252,
+       "mapping": "county",
+       "source": "gis_project_events",
+       "source_ref": "FX-gen_storage_ia-FX005-3",
+       "offer": "local capacity is being built by others; position distributed storage as the member-owned option"
+      }
+     ],
+     "context_summary": [
+      {
+       "trigger": "rate_increase",
+       "label": "Residential average price up ≥ 10% (EIA-861)",
+       "count": 2,
+       "latest_date": "2026-04-22",
+       "counties": []
+      }
+     ],
+     "history_count": 4
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 124324.4,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": 0.2369,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 16.8,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 13296.5,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.4491,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 0.8274,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "2 exposed counties (share ≥ 20%)",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "FWEST",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.014,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 9936.0,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 0.9187,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 15.7167,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48033",
+       "county_name": "Borden",
+       "overlap_km2": 1374.9,
+       "county_share": 0.5252,
+       "weather_zone": "FWEST",
+       "exposed": true,
+       "territory_share": 0.5885,
+       "context": true
+      },
+      {
+       "county_fips": "48377",
+       "county_name": "Presidio",
+       "overlap_km2": 416.8,
+       "county_share": 0.1827,
+       "weather_zone": "FWEST",
+       "exposed": false,
+       "territory_share": 0.1784,
+       "context": false
+      },
+      {
+       "county_fips": "48135",
+       "county_name": "Ector",
+       "overlap_km2": 391.3,
+       "county_share": 0.2427,
+       "weather_zone": "FWEST",
+       "exposed": true,
+       "territory_share": 0.1675,
+       "context": true
+      },
+      {
+       "county_fips": "48103",
+       "county_name": "Crane",
+       "overlap_km2": 153.2,
+       "county_share": 0.0845,
+       "weather_zone": "FWEST",
+       "exposed": false,
+       "territory_share": 0.0656,
+       "context": false
+      }
+     ],
+     "context_rule": "exposed",
+     "context_label": "2 exposed counties (share ≥ 20%)",
+     "zones": [
+      {
+       "weather_zone": "FWEST",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [],
+     "zone_outlook": {
+      "zone": "FWEST",
+      "ltlf_start": 9866.9,
+      "ltlf_end": 10725.3,
+      "ltlf_now": 10005.0,
+      "ltlf_cagr": 0.014,
+      "cp_year": 2025,
+      "cp_avg_mw": 8917.6,
+      "cf_summer": 0.8975,
+      "share_4cp": 0.2936,
+      "share_energy": 0.3196,
+      "intensity": 0.9187,
+      "ncp_summer_mw_full": 9637.9,
+      "ncp_end_hour": 15.7167,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 9936.0,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": -0.0069,
+      "peak_mismatch": "early",
+      "q7_holdout_mape": null,
+      "line": "4CP (FWEST, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "long",
+      "customers": 43490.1,
+      "delivery_customers": 0.0,
+      "meters": 43490.1,
+      "sales_mwh": 625806.3,
+      "revenue_kusd": 73053.5,
+      "price_usd_kwh": 0.1167,
+      "res_price_usd_kwh": 0.1307
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "long",
+      "customers": 44215.1,
+      "delivery_customers": 0.0,
+      "meters": 44215.1,
+      "sales_mwh": 657837.3,
+      "revenue_kusd": 75407.5,
+      "price_usd_kwh": 0.1146,
+      "res_price_usd_kwh": 0.1284
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "long",
+      "customers": 45207.5,
+      "delivery_customers": 0.0,
+      "meters": 45207.5,
+      "sales_mwh": 730197.7,
+      "revenue_kusd": 89359.7,
+      "price_usd_kwh": 0.1224,
+      "res_price_usd_kwh": 0.1371
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "long",
+      "customers": 46799.0,
+      "delivery_customers": 0.0,
+      "meters": 46799.0,
+      "sales_mwh": 662516.7,
+      "revenue_kusd": 86611.1,
+      "price_usd_kwh": 0.1307,
+      "res_price_usd_kwh": 0.1464
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "long",
+      "customers": 49272.5,
+      "delivery_customers": 0.0,
+      "meters": 49272.5,
+      "sales_mwh": 793243.9,
+      "revenue_kusd": 105142.5,
+      "price_usd_kwh": 0.1325,
+      "res_price_usd_kwh": 0.1485
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "long",
+      "customers": 50383.9,
+      "delivery_customers": 0.0,
+      "meters": 50383.9,
+      "sales_mwh": 819849.7,
+      "revenue_kusd": 109737.8,
+      "price_usd_kwh": 0.1339,
+      "res_price_usd_kwh": 0.1499
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "long",
+      "customers": 51226.0,
+      "delivery_customers": 0.0,
+      "meters": 51226.0,
+      "sales_mwh": 678326.6,
+      "revenue_kusd": 88086.9,
+      "price_usd_kwh": 0.1299,
+      "res_price_usd_kwh": 0.1454
+     }
+    ],
+    "gaps": [
+     {
+      "key": "queue_raw_mw",
+      "kind": "missing",
+      "detail": "Generation queue, raw (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "queue_adj_2028",
+      "kind": "missing",
+      "detail": "Adjusted: expected COD by Dec 2028 (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  },
+  {
+   "account_id": "FX006",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX006",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Testing Bend Public Utilities",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "muni",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX006",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": null,
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": "no G&T in the PUCT layer",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999006",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Haskell, Wilbarger",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "2 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 96.7,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "short",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 12767.7,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0186,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 201408.4,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 24282.7,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.1206,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.0349,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": null,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.1307,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.3,
+     "rank": 7,
+     "rank_within_type": 3,
+     "n_accounts": 8,
+     "tier": "C",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": 0.0394,
+       "unit": "share",
+       "pct": 0.2857,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0571,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 2.0,
+       "unit": "units/1k",
+       "pct": 0.0,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 10862.9,
+       "unit": "homes",
+       "pct": 0.1429,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0286,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 0.0333,
+       "unit": "sites",
+       "pct": 0.0,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.7709,
+       "unit": "share",
+       "pct": 1.0,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.1,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0518,
+       "unit": "per year",
+       "pct": 0.5714,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1143,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "watch",
+     "action_label": "Watch",
+     "rule": "Tier C (rank 7 of 8) + 0 active strong trigger(s) → Watch",
+     "lead_trigger": null,
+     "offer": null,
+     "talking_points": [
+      "bill pressure: demand-charge / 4CP savings for members",
+      "4CP (NORTH, 2025): fixture talking point"
+     ],
+     "changes_on": "2027-08-23",
+     "changes_to": "hold"
+    },
+    "triggers": {
+     "active": [],
+     "context_summary": [
+      {
+       "trigger": "rate_increase",
+       "label": "Residential average price up ≥ 10% (EIA-861)",
+       "count": 2,
+       "latest_date": "2026-08-23",
+       "counties": []
+      }
+     ],
+     "history_count": 6
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 25832.8,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": 0.0394,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 2.0,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 10862.9,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.7709,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 0.0333,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": 93.6,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "home county: Haskell",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": 31.0,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "NORTH",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.0732,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 16291.1,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 1.1361,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 15.6953,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48207",
+       "county_name": "Haskell",
+       "overlap_km2": 71.6,
+       "county_share": 0.0345,
+       "weather_zone": "NORTH",
+       "exposed": false,
+       "territory_share": 0.7404,
+       "context": true
+      },
+      {
+       "county_fips": "48487",
+       "county_name": "Wilbarger",
+       "overlap_km2": 25.1,
+       "county_share": 0.0111,
+       "weather_zone": "NORTH",
+       "exposed": false,
+       "territory_share": 0.2596,
+       "context": false
+      }
+     ],
+     "context_rule": "home_county",
+     "context_label": "home county: Haskell",
+     "zones": [
+      {
+       "weather_zone": "NORTH",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [
+      {
+       "stratum": "total",
+       "projects_context": 1,
+       "raw_mw_context": 93.6,
+       "adj_mw_2027_context": 7.7,
+       "adj_mw_2028_context": 31.0,
+       "raw_mw_apportioned": 3.2,
+       "adj_mw_2027_apportioned": 0.3,
+       "adj_mw_2028_apportioned": 1.1
+      }
+     ],
+     "zone_outlook": {
+      "zone": "NORTH",
+      "ltlf_start": 14285.7,
+      "ltlf_end": 21826.6,
+      "ltlf_now": 15331.4,
+      "ltlf_cagr": 0.0732,
+      "cp_year": 2025,
+      "cp_avg_mw": 14139.0,
+      "cf_summer": 0.8679,
+      "share_4cp": 0.0419,
+      "share_energy": 0.0369,
+      "intensity": 1.1361,
+      "ncp_summer_mw_full": 15802.4,
+      "ncp_end_hour": 15.6953,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 16291.1,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": 0.0626,
+      "peak_mismatch": "early",
+      "q7_holdout_mape": null,
+      "line": "4CP (NORTH, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "short",
+      "customers": 11645.9,
+      "delivery_customers": 0.0,
+      "meters": 11645.9,
+      "sales_mwh": 205106.0,
+      "revenue_kusd": 20839.4,
+      "price_usd_kwh": 0.1016,
+      "res_price_usd_kwh": null
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "short",
+      "customers": 11705.0,
+      "delivery_customers": 0.0,
+      "meters": 11705.0,
+      "sales_mwh": 159510.4,
+      "revenue_kusd": 15941.8,
+      "price_usd_kwh": 0.0999,
+      "res_price_usd_kwh": null
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "short",
+      "customers": 11809.0,
+      "delivery_customers": 0.0,
+      "meters": 11809.0,
+      "sales_mwh": 209392.1,
+      "revenue_kusd": 22054.4,
+      "price_usd_kwh": 0.1053,
+      "res_price_usd_kwh": null
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "short",
+      "customers": 11973.6,
+      "delivery_customers": 0.0,
+      "meters": 11973.6,
+      "sales_mwh": 162342.9,
+      "revenue_kusd": 16927.0,
+      "price_usd_kwh": 0.1043,
+      "res_price_usd_kwh": null
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "short",
+      "customers": 12519.5,
+      "delivery_customers": 0.0,
+      "meters": 12519.5,
+      "sales_mwh": 190447.4,
+      "revenue_kusd": 21139.6,
+      "price_usd_kwh": 0.111,
+      "res_price_usd_kwh": null
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "short",
+      "customers": 12767.7,
+      "delivery_customers": 0.0,
+      "meters": 12767.7,
+      "sales_mwh": 201408.4,
+      "revenue_kusd": 24282.7,
+      "price_usd_kwh": 0.1206,
+      "res_price_usd_kwh": null
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "short",
+      "customers": 12866.8,
+      "delivery_customers": 0.0,
+      "meters": 12866.8,
+      "sales_mwh": 192341.7,
+      "revenue_kusd": 25142.7,
+      "price_usd_kwh": 0.1307,
+      "res_price_usd_kwh": null
+     }
+    ],
+    "gaps": [
+     {
+      "key": "gt",
+      "kind": "missing",
+      "detail": "G&T / wholesale supplier: no value (puct_ccn_territories)"
+     },
+     {
+      "key": "res_price",
+      "kind": "missing",
+      "detail": "Residential price: no value (eia861_sales)"
+     },
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     },
+     {
+      "key": "exposed_counties",
+      "kind": "structural",
+      "detail": "no county ≥ 20%: county triggers cannot fire; territory facts use the home county"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  },
+  {
+   "account_id": "FX007",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX007",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Mock County Electric Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "coop",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX007",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": "Sample G&T Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999007",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Franklin, Shelby, Trinity, Madison",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "4 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 2993.5,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "long",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 18572.8,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0349,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 303698.6,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 34145.4,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.1124,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.011,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": 0.1259,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.1104,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.4571,
+     "rank": 6,
+     "rank_within_type": 4,
+     "n_accounts": 8,
+     "tier": "C",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": 0.1454,
+       "unit": "share",
+       "pct": 0.5714,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1143,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 22.8,
+       "unit": "units/1k",
+       "pct": 0.8571,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.1286,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 4493.2,
+       "unit": "homes",
+       "pct": 0.0,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 0.3785,
+       "unit": "sites",
+       "pct": 0.2857,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0429,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.434,
+       "unit": "share",
+       "pct": 0.0,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.0,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0559,
+       "unit": "per year",
+       "pct": 0.8571,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1714,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "watch",
+     "action_label": "Watch",
+     "rule": "Tier C (rank 6 of 8) + 0 active strong trigger(s) → Watch",
+     "lead_trigger": null,
+     "offer": null,
+     "talking_points": [
+      "wholesale supplier faces large-load growth; capacity costs likely to rise",
+      "4CP (EAST, 2025): fixture talking point"
+     ],
+     "changes_on": "2027-01-01",
+     "changes_to": "hold"
+    },
+    "triggers": {
+     "active": [],
+     "context_summary": [
+      {
+       "trigger": "tsp_large_load",
+       "label": "The account's G&T / TSP reported large-load requests (PUCT 58777 RFI)",
+       "count": 3,
+       "latest_date": "2026-01-01",
+       "counties": []
+      }
+     ],
+     "history_count": 10
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 48054.4,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": 0.1454,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 22.8,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 4493.2,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.434,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 0.3785,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "3 exposed counties (share ≥ 20%)",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": null,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "EAST",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.031,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 10296.9,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 1.0649,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 16.2437,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48159",
+       "county_name": "Franklin",
+       "overlap_km2": 1093.6,
+       "county_share": 0.4301,
+       "weather_zone": "EAST",
+       "exposed": true,
+       "territory_share": 0.3653,
+       "context": true
+      },
+      {
+       "county_fips": "48419",
+       "county_name": "Shelby",
+       "overlap_km2": 1049.5,
+       "county_share": 0.3948,
+       "weather_zone": "EAST",
+       "exposed": true,
+       "territory_share": 0.3506,
+       "context": true
+      },
+      {
+       "county_fips": "48455",
+       "county_name": "Trinity",
+       "overlap_km2": 665.1,
+       "county_share": 0.353,
+       "weather_zone": "EAST",
+       "exposed": true,
+       "territory_share": 0.2222,
+       "context": true
+      },
+      {
+       "county_fips": "48313",
+       "county_name": "Madison",
+       "overlap_km2": 185.3,
+       "county_share": 0.0905,
+       "weather_zone": "EAST",
+       "exposed": false,
+       "territory_share": 0.0619,
+       "context": false
+      }
+     ],
+     "context_rule": "exposed",
+     "context_label": "3 exposed counties (share ≥ 20%)",
+     "zones": [
+      {
+       "weather_zone": "EAST",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [],
+     "zone_outlook": {
+      "zone": "EAST",
+      "ltlf_start": 9021.1,
+      "ltlf_end": 10834.6,
+      "ltlf_now": 9300.8,
+      "ltlf_cagr": 0.031,
+      "cp_year": 2025,
+      "cp_avg_mw": 8527.9,
+      "cf_summer": 0.8282,
+      "share_4cp": 0.2395,
+      "share_energy": 0.2249,
+      "intensity": 1.0649,
+      "ncp_summer_mw_full": 9988.0,
+      "ncp_end_hour": 16.2437,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 10296.9,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": 0.1071,
+      "peak_mismatch": null,
+      "q7_holdout_mape": null,
+      "line": "4CP (EAST, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "long",
+      "customers": 15643.6,
+      "delivery_customers": 0.0,
+      "meters": 15643.6,
+      "sales_mwh": 248236.9,
+      "revenue_kusd": 26420.4,
+      "price_usd_kwh": 0.1064,
+      "res_price_usd_kwh": 0.1192
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "long",
+      "customers": 16473.5,
+      "delivery_customers": 0.0,
+      "meters": 16473.5,
+      "sales_mwh": 245461.8,
+      "revenue_kusd": 26396.0,
+      "price_usd_kwh": 0.1075,
+      "res_price_usd_kwh": 0.1204
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "long",
+      "customers": 16689.6,
+      "delivery_customers": 0.0,
+      "meters": 16689.6,
+      "sales_mwh": 259883.2,
+      "revenue_kusd": 29146.3,
+      "price_usd_kwh": 0.1122,
+      "res_price_usd_kwh": 0.1256
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "long",
+      "customers": 16718.1,
+      "delivery_customers": 0.0,
+      "meters": 16718.1,
+      "sales_mwh": 255587.9,
+      "revenue_kusd": 28259.1,
+      "price_usd_kwh": 0.1106,
+      "res_price_usd_kwh": 0.1238
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "long",
+      "customers": 17575.2,
+      "delivery_customers": 0.0,
+      "meters": 17575.2,
+      "sales_mwh": 279493.5,
+      "revenue_kusd": 31677.1,
+      "price_usd_kwh": 0.1133,
+      "res_price_usd_kwh": 0.1269
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "long",
+      "customers": 18572.8,
+      "delivery_customers": 0.0,
+      "meters": 18572.8,
+      "sales_mwh": 303698.6,
+      "revenue_kusd": 34145.4,
+      "price_usd_kwh": 0.1124,
+      "res_price_usd_kwh": 0.1259
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "long",
+      "customers": 19311.5,
+      "delivery_customers": 0.0,
+      "meters": 19311.5,
+      "sales_mwh": 310766.9,
+      "revenue_kusd": 34307.5,
+      "price_usd_kwh": 0.1104,
+      "res_price_usd_kwh": 0.1236
+     }
+    ],
+    "gaps": [
+     {
+      "key": "queue_raw_mw",
+      "kind": "missing",
+      "detail": "Generation queue, raw (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "queue_adj_2028",
+      "kind": "missing",
+      "detail": "Adjusted: expected COD by Dec 2028 (context counties): no value (queue_adjusted)"
+     },
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  },
+  {
+   "account_id": "FX008",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2",
+   "payload": {
+    "account_id": "FX008",
+    "as_of": "2026-09-20",
+    "simulated": false,
+    "header": [
+     {
+      "key": "name",
+      "label": "Name",
+      "value": "Stub Creek Municipal Power",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "account_type",
+      "label": "Type",
+      "value": "muni",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ccn_no",
+      "label": "PUCT CCN",
+      "value": "FX008",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "gt",
+      "label": "G&T / wholesale supplier",
+      "value": "Demo Power Supply Cooperative",
+      "unit": null,
+      "source": "puct_ccn_territories",
+      "as_of": "2026-06-29",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_utility_id",
+      "label": "EIA-861 utility id",
+      "value": "999008",
+      "unit": null,
+      "source": "utility_crosswalk",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "counties",
+      "label": "Counties (largest overlap first)",
+      "value": "Nueces, Maverick",
+      "unit": null,
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": "2 counties",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "territory_km2",
+      "label": "Territory area in ERCOT counties",
+      "value": 133.7,
+      "unit": "km²",
+      "source": "county_utility_overlap_puct",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "eia_form",
+      "label": "EIA-861 form (latest year)",
+      "value": "long",
+      "unit": null,
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customers",
+      "label": "Meters (all classes, incl. delivery-only)",
+      "value": 40977.4,
+      "unit": "customers",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "customer_cagr",
+      "label": "Meter growth 2019→2024",
+      "value": 0.0402,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "sales_mwh",
+      "label": "Retail sales",
+      "value": 721026.6,
+      "unit": "MWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "revenue_kusd",
+      "label": "Retail revenue",
+      "value": 64740.7,
+      "unit": "thousand USD",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price",
+      "label": "Average price (all classes)",
+      "value": 0.0898,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_cagr",
+      "label": "Price trend 2019→2024",
+      "value": 0.0216,
+      "unit": "per year",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "res_price",
+      "label": "Residential price",
+      "value": 0.1006,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2024-12-31",
+      "note": "long form only",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "price_early",
+      "label": "Average price, early release",
+      "value": 0.0909,
+      "unit": "USD/kWh",
+      "source": "eia861_sales",
+      "as_of": "2025-12-31",
+      "note": "early release, not final",
+      "simulated": false,
+      "verified": true
+     },
+     {
+      "key": "ercot_roles",
+      "label": "ERCOT market roles registered (ever)",
+      "value": "LSE, QSE",
+      "unit": null,
+      "source": "ercot_market_participants",
+      "as_of": "2026-09-20",
+      "note": null,
+      "simulated": false,
+      "verified": true
+     }
+    ],
+    "score": {
+     "score": 0.4928,
+     "rank": 5,
+     "rank_within_type": 2,
+     "n_accounts": 8,
+     "tier": "C",
+     "method": "weighted mean of within-universe percentile ranks (fixture weights)",
+     "weights_set": "q3",
+     "weights_status": "pending_review",
+     "signals": [
+      {
+       "signal": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "raw": -0.0046,
+       "unit": "share",
+       "pct": 0.0,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0,
+       "source": "census_population_county",
+       "as_of": "2025-07-01"
+      },
+      {
+       "signal": "permits_per_1k",
+       "label": "Permits 2023–2025 per 1,000 residents",
+       "raw": 20.3,
+       "unit": "units/1k",
+       "pct": 0.7143,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.1071,
+       "source": "census_permits_county",
+       "as_of": "2025-12-31"
+      },
+      {
+       "signal": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes",
+       "raw": 39654.1,
+       "unit": "homes",
+       "pct": 0.8571,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.1714,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "dc_sites",
+       "label": "New data-center sites since 2025 (expected)",
+       "raw": 0.6069,
+       "unit": "sites",
+       "pct": 0.5714,
+       "weight": 0.15,
+       "weight_used": 0.15,
+       "contribution": 0.0857,
+       "source": "tceq_data_center_sites",
+       "as_of": null
+      },
+      {
+       "signal": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "raw": 0.6197,
+       "unit": "share",
+       "pct": 0.7143,
+       "weight": 0.1,
+       "weight_used": 0.1,
+       "contribution": 0.0714,
+       "source": "census_housing_county",
+       "as_of": "2024-12-31"
+      },
+      {
+       "signal": "zone_peak_cagr",
+       "label": "Zone summer peak CAGR (LTLF)",
+       "raw": 0.0361,
+       "unit": "per year",
+       "pct": 0.2857,
+       "weight": 0.2,
+       "weight_used": 0.2,
+       "contribution": 0.0571,
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06"
+      }
+     ]
+    },
+    "next_action": {
+     "action": "nurture",
+     "action_label": "Nurture",
+     "rule": "Tier C (rank 5 of 8) + 1 active strong trigger(s) → Nurture",
+     "lead_trigger": {
+      "trigger": "market_registration",
+      "title": "Registered as QSE",
+      "event_date": "2026-06-19",
+      "source": "ercot_market_participants",
+      "source_ref": "FX-market_registration-FX008-4"
+     },
+     "offer": "wholesale set-up is changing; offer a QSE-ready VPP",
+     "talking_points": [
+      "bill pressure: demand-charge / 4CP savings for members",
+      "wholesale supplier faces large-load growth; capacity costs likely to rise",
+      "4CP (SOUTH, 2025): fixture talking point"
+     ],
+     "changes_on": "2027-06-19",
+     "changes_to": "watch"
+    },
+    "triggers": {
+     "active": [
+      {
+       "event_date": "2026-06-19",
+       "age_days": 93,
+       "active": true,
+       "trigger": "market_registration",
+       "label": "Account registered a new ERCOT market role (LSE / QSE / TDSP / RE)",
+       "strength": "strong",
+       "title": "Registered as QSE",
+       "detail": "Fixture event",
+       "county_fips": null,
+       "county_name": null,
+       "exposure": 1.0,
+       "mapping": "name",
+       "source": "ercot_market_participants",
+       "source_ref": "FX-market_registration-FX008-4",
+       "offer": "wholesale set-up is changing; offer a QSE-ready VPP"
+      }
+     ],
+     "context_summary": [
+      {
+       "trigger": "rate_increase",
+       "label": "Residential average price up ≥ 10% (EIA-861)",
+       "count": 1,
+       "latest_date": "2026-08-10",
+       "counties": []
+      },
+      {
+       "trigger": "tsp_large_load",
+       "label": "The account's G&T / TSP reported large-load requests (PUCT 58777 RFI)",
+       "count": 3,
+       "latest_date": "2026-07-22",
+       "counties": []
+      }
+     ],
+     "history_count": 12
+    },
+    "territory": {
+     "facts": [
+      {
+       "key": "population",
+       "label": "Population (apportioned)",
+       "value": 105088.1,
+       "unit": "people",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": "PEP vintage 2025",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "pop_growth",
+       "label": "Population growth 2020→2025",
+       "value": -0.0046,
+       "unit": "share",
+       "source": "census_population_county",
+       "as_of": "2025-07-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "permits_per_1k",
+       "label": "Residential permits 2023–2025 per 1,000 residents",
+       "value": 20.3,
+       "unit": "units/1k",
+       "source": "census_permits_county",
+       "as_of": "2025-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_homes",
+       "label": "Owner-occupied single-family homes (apportioned)",
+       "value": 39654.1,
+       "unit": "homes",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "owner_sf_share",
+       "label": "Owner-occupied single-family share",
+       "value": 0.6197,
+       "unit": "share",
+       "source": "census_housing_county",
+       "as_of": "2024-12-31",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "dc_sites_expected",
+       "label": "New data-center sites since 2025 (expected, by county share)",
+       "value": 0.6069,
+       "unit": "sites",
+       "source": "tceq_data_center_sites",
+       "as_of": null,
+       "note": "no snapshot date in the table",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_raw_mw",
+       "label": "Generation queue, raw (context counties)",
+       "value": 1195.0,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": "home county: Nueces",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "queue_adj_2028",
+       "label": "Adjusted: expected COD by Dec 2028 (context counties)",
+       "value": 324.5,
+       "unit": "MW",
+       "source": "queue_adjusted",
+       "as_of": "2026-09-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "weather_zone",
+       "label": "Primary weather zone (by area)",
+       "value": "SOUTH",
+       "unit": null,
+       "source": "county_weather_zone",
+       "as_of": "2026-09-20",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_ltlf_cagr",
+       "label": "Zone summer peak outlook, LTLF CAGR",
+       "value": 0.0109,
+       "unit": "per year",
+       "source": "ltlf_forecasts",
+       "as_of": "2025-10-06",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_now",
+       "label": "Zone summer peak 2026 (15-min, actual)",
+       "value": 3647.8,
+       "unit": "MW",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": "3 of 4 months; not final-settled",
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_4cp_intensity",
+       "label": "4CP intensity (4CP share ÷ energy share)",
+       "value": 1.0323,
+       "unit": "ratio",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "zone_peak_hour",
+       "label": "Zone's own monthly peaks end (2021–2025 mean, local)",
+       "value": 17.993,
+       "unit": "hour",
+       "source": "ercot_monthly_peaks",
+       "as_of": "2026-08-01",
+       "note": null,
+       "simulated": false,
+       "verified": true
+      },
+      {
+       "key": "account_4cp_mw",
+       "label": "Account load at the 4CP",
+       "value": null,
+       "unit": "MW",
+       "source": "UtilityDataSource",
+       "as_of": null,
+       "note": "not public: needs the co-op's own meter data",
+       "simulated": false,
+       "verified": true
+      }
+     ],
+     "counties": [
+      {
+       "county_fips": "48355",
+       "county_name": "Nueces",
+       "overlap_km2": 78.3,
+       "county_share": 0.0471,
+       "weather_zone": "SOUTH",
+       "exposed": false,
+       "territory_share": 0.5856,
+       "context": true
+      },
+      {
+       "county_fips": "48323",
+       "county_name": "Maverick",
+       "overlap_km2": 55.4,
+       "county_share": 0.0299,
+       "weather_zone": "SOUTH",
+       "exposed": false,
+       "territory_share": 0.4144,
+       "context": false
+      }
+     ],
+     "context_rule": "home_county",
+     "context_label": "home county: Nueces",
+     "zones": [
+      {
+       "weather_zone": "SOUTH",
+       "area_share": 1.0
+      }
+     ],
+     "data_centers": [],
+     "queue": [
+      {
+       "stratum": "total",
+       "projects_context": 3,
+       "raw_mw_context": 1195.0,
+       "adj_mw_2027_context": 124.5,
+       "adj_mw_2028_context": 324.5,
+       "raw_mw_apportioned": 56.3,
+       "adj_mw_2027_apportioned": 5.9,
+       "adj_mw_2028_apportioned": 15.3
+      },
+      {
+       "stratum": "storage",
+       "projects_context": 1,
+       "raw_mw_context": 255.4,
+       "adj_mw_2027_context": 3.2,
+       "adj_mw_2028_context": 39.5,
+       "raw_mw_apportioned": 12.0,
+       "adj_mw_2027_apportioned": 0.2,
+       "adj_mw_2028_apportioned": 1.9
+      }
+     ],
+     "zone_outlook": {
+      "zone": "SOUTH",
+      "ltlf_start": 3629.9,
+      "ltlf_end": 3873.9,
+      "ltlf_now": 3669.5,
+      "ltlf_cagr": 0.0109,
+      "cp_year": 2025,
+      "cp_avg_mw": 3128.0,
+      "cf_summer": 0.8575,
+      "share_4cp": 0.0597,
+      "share_energy": 0.0578,
+      "intensity": 1.0323,
+      "ncp_summer_mw_full": 3538.4,
+      "ncp_end_hour": 17.993,
+      "hour_years": "2021–2025",
+      "ncp_now_mw": 3647.8,
+      "ncp_now_months": 3,
+      "now_vs_ltlf": -0.0059,
+      "peak_mismatch": null,
+      "q7_holdout_mape": null,
+      "line": "4CP (SOUTH, 2025): fixture talking point"
+     }
+    },
+    "eia_series": [
+     {
+      "data_year": 2019,
+      "early_release": false,
+      "form": "long",
+      "customers": 33642.3,
+      "delivery_customers": 0.0,
+      "meters": 33642.3,
+      "sales_mwh": 443854.7,
+      "revenue_kusd": 35809.3,
+      "price_usd_kwh": 0.0807,
+      "res_price_usd_kwh": 0.0904
+     },
+     {
+      "data_year": 2020,
+      "early_release": false,
+      "form": "long",
+      "customers": 34278.8,
+      "delivery_customers": 0.0,
+      "meters": 34278.8,
+      "sales_mwh": 549505.2,
+      "revenue_kusd": 46664.4,
+      "price_usd_kwh": 0.0849,
+      "res_price_usd_kwh": 0.0951
+     },
+     {
+      "data_year": 2021,
+      "early_release": false,
+      "form": "long",
+      "customers": 35589.6,
+      "delivery_customers": 0.0,
+      "meters": 35589.6,
+      "sales_mwh": 572957.9,
+      "revenue_kusd": 48516.8,
+      "price_usd_kwh": 0.0847,
+      "res_price_usd_kwh": 0.0948
+     },
+     {
+      "data_year": 2022,
+      "early_release": false,
+      "form": "long",
+      "customers": 37679.0,
+      "delivery_customers": 0.0,
+      "meters": 37679.0,
+      "sales_mwh": 573985.1,
+      "revenue_kusd": 49294.4,
+      "price_usd_kwh": 0.0859,
+      "res_price_usd_kwh": 0.0962
+     },
+     {
+      "data_year": 2023,
+      "early_release": false,
+      "form": "long",
+      "customers": 39840.2,
+      "delivery_customers": 0.0,
+      "meters": 39840.2,
+      "sales_mwh": 677116.8,
+      "revenue_kusd": 57449.5,
+      "price_usd_kwh": 0.0848,
+      "res_price_usd_kwh": 0.095
+     },
+     {
+      "data_year": 2024,
+      "early_release": false,
+      "form": "long",
+      "customers": 40977.4,
+      "delivery_customers": 0.0,
+      "meters": 40977.4,
+      "sales_mwh": 721026.6,
+      "revenue_kusd": 64740.7,
+      "price_usd_kwh": 0.0898,
+      "res_price_usd_kwh": 0.1006
+     },
+     {
+      "data_year": 2025,
+      "early_release": true,
+      "form": "long",
+      "customers": 41717.6,
+      "delivery_customers": 0.0,
+      "meters": 41717.6,
+      "sales_mwh": 729593.7,
+      "revenue_kusd": 66310.7,
+      "price_usd_kwh": 0.0909,
+      "res_price_usd_kwh": 0.1018
+     }
+    ],
+    "gaps": [
+     {
+      "key": "account_4cp_mw",
+      "kind": "missing",
+      "detail": "Account load at the 4CP: no value (UtilityDataSource)"
+     },
+     {
+      "key": "exposed_counties",
+      "kind": "structural",
+      "detail": "no county ≥ 20%: county triggers cannot fire; territory facts use the home county"
+     }
+    ],
+    "coverage": {
+     "public_data": true,
+     "utility_private_data": false,
+     "fleet_data": false,
+     "resolution": "zone"
+    }
+   }
+  }
+ ]
+}

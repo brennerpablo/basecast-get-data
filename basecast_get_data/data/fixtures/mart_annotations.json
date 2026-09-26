@@ -1,0 +1,19 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "date": "2026-04-15",
+   "title": "Fixture annotation: a batch study intake",
+   "detail": "Invented for the fixture",
+   "source_url": null,
+   "verified": false
+  },
+  {
+   "date": "2026-08-03",
+   "title": "Fixture annotation: large-load approvals paused",
+   "detail": "Invented for the fixture; the real annotation comes from mart_annotations",
+   "source_url": null,
+   "verified": false
+  }
+ ]
+}

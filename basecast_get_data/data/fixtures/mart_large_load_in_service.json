@@ -1,0 +1,605 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2026,
+   "status": "approved_to_energize",
+   "mw": 4200.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2026,
+   "status": "planning_studies_approved",
+   "mw": 3000.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2026,
+   "status": "under_ercot_review",
+   "mw": 5400.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2026,
+   "status": "no_studies_submitted",
+   "mw": 3600.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2027,
+   "status": "approved_to_energize",
+   "mw": 4740.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2027,
+   "status": "planning_studies_approved",
+   "mw": 5100.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2027,
+   "status": "under_ercot_review",
+   "mw": 12000.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2027,
+   "status": "no_studies_submitted",
+   "mw": 8400.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2028,
+   "status": "approved_to_energize",
+   "mw": 5280.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2028,
+   "status": "planning_studies_approved",
+   "mw": 7200.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2028,
+   "status": "under_ercot_review",
+   "mw": 18600.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2028,
+   "status": "no_studies_submitted",
+   "mw": 13200.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2029,
+   "status": "approved_to_energize",
+   "mw": 5820.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2029,
+   "status": "planning_studies_approved",
+   "mw": 9300.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2029,
+   "status": "under_ercot_review",
+   "mw": 25200.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2029,
+   "status": "no_studies_submitted",
+   "mw": 18000.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2030,
+   "status": "approved_to_energize",
+   "mw": 6360.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2030,
+   "status": "planning_studies_approved",
+   "mw": 11400.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2030,
+   "status": "under_ercot_review",
+   "mw": 31800.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2025-06-02",
+   "in_service_year": 2030,
+   "status": "no_studies_submitted",
+   "mw": 22800.0,
+   "document": "fixture-large-load-deck-2025-06.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2026,
+   "status": "approved_to_energize",
+   "mw": 6300.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2026,
+   "status": "planning_studies_approved",
+   "mw": 4500.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2026,
+   "status": "under_ercot_review",
+   "mw": 8100.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2026,
+   "status": "no_studies_submitted",
+   "mw": 5400.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2027,
+   "status": "approved_to_energize",
+   "mw": 7110.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2027,
+   "status": "planning_studies_approved",
+   "mw": 7650.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2027,
+   "status": "under_ercot_review",
+   "mw": 18000.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2027,
+   "status": "no_studies_submitted",
+   "mw": 12600.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2028,
+   "status": "approved_to_energize",
+   "mw": 7920.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2028,
+   "status": "planning_studies_approved",
+   "mw": 10800.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2028,
+   "status": "under_ercot_review",
+   "mw": 27900.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2028,
+   "status": "no_studies_submitted",
+   "mw": 19800.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2029,
+   "status": "approved_to_energize",
+   "mw": 8730.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2029,
+   "status": "planning_studies_approved",
+   "mw": 13950.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2029,
+   "status": "under_ercot_review",
+   "mw": 37800.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2029,
+   "status": "no_studies_submitted",
+   "mw": 27000.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2030,
+   "status": "approved_to_energize",
+   "mw": 9540.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2030,
+   "status": "planning_studies_approved",
+   "mw": 17100.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2030,
+   "status": "under_ercot_review",
+   "mw": 47700.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-03-02",
+   "in_service_year": 2030,
+   "status": "no_studies_submitted",
+   "mw": 34200.0,
+   "document": "fixture-large-load-deck-2026-03.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2026,
+   "status": "approved_to_energize",
+   "mw": 7000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2026,
+   "status": "planning_studies_approved",
+   "mw": 5000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2026,
+   "status": "under_ercot_review",
+   "mw": 9000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2026,
+   "status": "no_studies_submitted",
+   "mw": 6000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2027,
+   "status": "approved_to_energize",
+   "mw": 7900.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2027,
+   "status": "planning_studies_approved",
+   "mw": 8500.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2027,
+   "status": "under_ercot_review",
+   "mw": 20000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2027,
+   "status": "no_studies_submitted",
+   "mw": 14000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2028,
+   "status": "approved_to_energize",
+   "mw": 8800.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2028,
+   "status": "planning_studies_approved",
+   "mw": 12000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2028,
+   "status": "under_ercot_review",
+   "mw": 31000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2028,
+   "status": "no_studies_submitted",
+   "mw": 22000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2029,
+   "status": "approved_to_energize",
+   "mw": 9700.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2029,
+   "status": "planning_studies_approved",
+   "mw": 15500.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2029,
+   "status": "under_ercot_review",
+   "mw": 42000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2029,
+   "status": "no_studies_submitted",
+   "mw": 30000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2030,
+   "status": "approved_to_energize",
+   "mw": 10600.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2030,
+   "status": "planning_studies_approved",
+   "mw": 19000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2030,
+   "status": "under_ercot_review",
+   "mw": 53000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  },
+  {
+   "deck_vintage": "2026-09-01",
+   "in_service_year": 2030,
+   "status": "no_studies_submitted",
+   "mw": 38000.0,
+   "document": "fixture-large-load-deck-2026-09.pdf",
+   "page": 5,
+   "verified": false,
+   "model_version": "fixture-v2"
+  }
+ ]
+}

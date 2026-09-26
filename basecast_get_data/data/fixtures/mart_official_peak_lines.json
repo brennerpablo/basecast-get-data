@@ -1,0 +1,1085 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "ERCOT",
+   "target_year": 2027,
+   "mw": 97500.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "ERCOT",
+   "target_year": 2028,
+   "mw": 101500.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "ERCOT",
+   "target_year": 2029,
+   "mw": 105500.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "ERCOT",
+   "target_year": 2030,
+   "mw": 109500.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "COAST",
+   "target_year": 2027,
+   "mw": 26325.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "COAST",
+   "target_year": 2028,
+   "mw": 27405.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "COAST",
+   "target_year": 2029,
+   "mw": 28485.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "COAST",
+   "target_year": 2030,
+   "mw": 29565.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "EAST",
+   "target_year": 2027,
+   "mw": 3900.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "EAST",
+   "target_year": 2028,
+   "mw": 4060.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "EAST",
+   "target_year": 2029,
+   "mw": 4220.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "EAST",
+   "target_year": 2030,
+   "mw": 4380.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "FWEST",
+   "target_year": 2027,
+   "mw": 4875.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "FWEST",
+   "target_year": 2028,
+   "mw": 5075.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "FWEST",
+   "target_year": 2029,
+   "mw": 5275.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "FWEST",
+   "target_year": 2030,
+   "mw": 5475.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NCENT",
+   "target_year": 2027,
+   "mw": 30225.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NCENT",
+   "target_year": 2028,
+   "mw": 31465.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NCENT",
+   "target_year": 2029,
+   "mw": 32705.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NCENT",
+   "target_year": 2030,
+   "mw": 33945.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NORTH",
+   "target_year": 2027,
+   "mw": 1950.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NORTH",
+   "target_year": 2028,
+   "mw": 2030.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NORTH",
+   "target_year": 2029,
+   "mw": 2110.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "NORTH",
+   "target_year": 2030,
+   "mw": 2190.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SCENT",
+   "target_year": 2027,
+   "mw": 11700.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SCENT",
+   "target_year": 2028,
+   "mw": 12180.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SCENT",
+   "target_year": 2029,
+   "mw": 12660.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SCENT",
+   "target_year": 2030,
+   "mw": 13140.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SOUTH",
+   "target_year": 2027,
+   "mw": 12675.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SOUTH",
+   "target_year": 2028,
+   "mw": 13195.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SOUTH",
+   "target_year": 2029,
+   "mw": 13715.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "SOUTH",
+   "target_year": 2030,
+   "mw": 14235.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "WEST",
+   "target_year": 2027,
+   "mw": 5850.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "WEST",
+   "target_year": 2028,
+   "mw": 6090.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "WEST",
+   "target_year": 2029,
+   "mw": 6330.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "ercot_adjusted",
+   "label": "LTLF 2025 (ERCOT-adjusted)",
+   "region_id": "WEST",
+   "target_year": 2030,
+   "mw": 6570.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "ERCOT",
+   "target_year": 2027,
+   "mw": 118000.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "ERCOT",
+   "target_year": 2028,
+   "mw": 130000.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "ERCOT",
+   "target_year": 2029,
+   "mw": 142000.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "ERCOT",
+   "target_year": 2030,
+   "mw": 154000.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "COAST",
+   "target_year": 2027,
+   "mw": 31860.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "COAST",
+   "target_year": 2028,
+   "mw": 35100.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "COAST",
+   "target_year": 2029,
+   "mw": 38340.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "COAST",
+   "target_year": 2030,
+   "mw": 41580.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "EAST",
+   "target_year": 2027,
+   "mw": 4720.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "EAST",
+   "target_year": 2028,
+   "mw": 5200.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "EAST",
+   "target_year": 2029,
+   "mw": 5680.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "EAST",
+   "target_year": 2030,
+   "mw": 6160.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "FWEST",
+   "target_year": 2027,
+   "mw": 5900.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "FWEST",
+   "target_year": 2028,
+   "mw": 6500.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "FWEST",
+   "target_year": 2029,
+   "mw": 7100.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "FWEST",
+   "target_year": 2030,
+   "mw": 7700.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NCENT",
+   "target_year": 2027,
+   "mw": 36580.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NCENT",
+   "target_year": 2028,
+   "mw": 40300.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NCENT",
+   "target_year": 2029,
+   "mw": 44020.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NCENT",
+   "target_year": 2030,
+   "mw": 47740.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NORTH",
+   "target_year": 2027,
+   "mw": 2360.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NORTH",
+   "target_year": 2028,
+   "mw": 2600.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NORTH",
+   "target_year": 2029,
+   "mw": 2840.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "NORTH",
+   "target_year": 2030,
+   "mw": 3080.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SCENT",
+   "target_year": 2027,
+   "mw": 14160.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SCENT",
+   "target_year": 2028,
+   "mw": 15600.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SCENT",
+   "target_year": 2029,
+   "mw": 17040.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SCENT",
+   "target_year": 2030,
+   "mw": 18480.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SOUTH",
+   "target_year": 2027,
+   "mw": 15340.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SOUTH",
+   "target_year": 2028,
+   "mw": 16900.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SOUTH",
+   "target_year": 2029,
+   "mw": 18460.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "SOUTH",
+   "target_year": 2030,
+   "mw": 20020.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "WEST",
+   "target_year": 2027,
+   "mw": 7080.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "WEST",
+   "target_year": 2028,
+   "mw": 7800.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "WEST",
+   "target_year": 2029,
+   "mw": 8520.0
+  },
+  {
+   "product": "LTLF",
+   "vintage": "2025",
+   "vintage_date": "2025-04-10",
+   "series": "tsp_provided",
+   "label": "LTLF 2025 (TSP-provided)",
+   "region_id": "WEST",
+   "target_year": 2030,
+   "mw": 9240.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "ERCOT",
+   "target_year": 2027,
+   "mw": 99800.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "ERCOT",
+   "target_year": 2028,
+   "mw": 104800.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "ERCOT",
+   "target_year": 2029,
+   "mw": 109800.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "ERCOT",
+   "target_year": 2030,
+   "mw": 114800.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "COAST",
+   "target_year": 2027,
+   "mw": 26946.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "COAST",
+   "target_year": 2028,
+   "mw": 28296.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "COAST",
+   "target_year": 2029,
+   "mw": 29646.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "COAST",
+   "target_year": 2030,
+   "mw": 30996.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "EAST",
+   "target_year": 2027,
+   "mw": 3992.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "EAST",
+   "target_year": 2028,
+   "mw": 4192.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "EAST",
+   "target_year": 2029,
+   "mw": 4392.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "EAST",
+   "target_year": 2030,
+   "mw": 4592.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "FWEST",
+   "target_year": 2027,
+   "mw": 4990.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "FWEST",
+   "target_year": 2028,
+   "mw": 5240.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "FWEST",
+   "target_year": 2029,
+   "mw": 5490.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "FWEST",
+   "target_year": 2030,
+   "mw": 5740.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NCENT",
+   "target_year": 2027,
+   "mw": 30938.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NCENT",
+   "target_year": 2028,
+   "mw": 32488.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NCENT",
+   "target_year": 2029,
+   "mw": 34038.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NCENT",
+   "target_year": 2030,
+   "mw": 35588.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NORTH",
+   "target_year": 2027,
+   "mw": 1996.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NORTH",
+   "target_year": 2028,
+   "mw": 2096.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NORTH",
+   "target_year": 2029,
+   "mw": 2196.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "NORTH",
+   "target_year": 2030,
+   "mw": 2296.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SCENT",
+   "target_year": 2027,
+   "mw": 11976.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SCENT",
+   "target_year": 2028,
+   "mw": 12576.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SCENT",
+   "target_year": 2029,
+   "mw": 13176.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SCENT",
+   "target_year": 2030,
+   "mw": 13776.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SOUTH",
+   "target_year": 2027,
+   "mw": 12974.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SOUTH",
+   "target_year": 2028,
+   "mw": 13624.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SOUTH",
+   "target_year": 2029,
+   "mw": 14274.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "SOUTH",
+   "target_year": 2030,
+   "mw": 14924.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "WEST",
+   "target_year": 2027,
+   "mw": 5988.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "WEST",
+   "target_year": 2028,
+   "mw": 6288.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "WEST",
+   "target_year": 2029,
+   "mw": 6588.0
+  },
+  {
+   "product": "CDR",
+   "vintage": "Dec 2025",
+   "vintage_date": "2025-12-05",
+   "series": "cdr",
+   "label": "CDR Dec 2025",
+   "region_id": "WEST",
+   "target_year": 2030,
+   "mw": 6888.0
+  }
+ ]
+}

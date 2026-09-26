@@ -1,0 +1,147 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "marts": {
+  "accounts": {
+   "signals": [
+    {
+     "signal": "pop_growth",
+     "label": "Population growth 2020→2025",
+     "unit": "share",
+     "weight": 0.2
+    },
+    {
+     "signal": "permits_per_1k",
+     "label": "Permits 2023–2025 per 1,000 residents",
+     "unit": "units/1k",
+     "weight": 0.15
+    },
+    {
+     "signal": "owner_sf_homes",
+     "label": "Owner-occupied single-family homes",
+     "unit": "homes",
+     "weight": 0.2
+    },
+    {
+     "signal": "dc_sites",
+     "label": "New data-center sites since 2025 (expected)",
+     "unit": "sites",
+     "weight": 0.15
+    },
+    {
+     "signal": "owner_sf_share",
+     "label": "Owner-occupied single-family share",
+     "unit": "share",
+     "weight": 0.1
+    },
+    {
+     "signal": "zone_peak_cagr",
+     "label": "Zone summer peak CAGR (LTLF)",
+     "unit": "per year",
+     "weight": 0.2
+    }
+   ]
+  },
+  "county_acquisition": {
+   "legend_breaks": [
+    0.2957,
+    0.3759,
+    0.4409,
+    0.5175
+   ],
+   "grid_tilt": 0.35,
+   "signals": [
+    {
+     "signal": "addr_sf_homes",
+     "label": "Owner-occupied single-family homes × addressable share",
+     "block": "market",
+     "unit": "homes",
+     "weight": 0.4
+    },
+    {
+     "signal": "pop_growth",
+     "label": "Population growth 2020→2025",
+     "block": "market",
+     "unit": "share",
+     "weight": 0.25
+    },
+    {
+     "signal": "permits_per_1k",
+     "label": "Permits 2023–2025 per 1,000 residents",
+     "block": "market",
+     "unit": "units/1k",
+     "weight": 0.15
+    },
+    {
+     "signal": "owner_sf_share",
+     "label": "Owner-occupied single-family share",
+     "block": "market",
+     "unit": "share",
+     "weight": 0.2
+    },
+    {
+     "signal": "zone_peak_cagr",
+     "label": "Weather-normalized zone summer peak CAGR",
+     "block": "grid",
+     "unit": "per year",
+     "weight": 0.3
+    },
+    {
+     "signal": "ll_pressure",
+     "label": "Zone summer-peak excess over the pre-2020 fit",
+     "block": "grid",
+     "unit": "share",
+     "weight": 0.25
+    },
+    {
+     "signal": "lz_spread",
+     "label": "Load-zone daily 2-hour price spread",
+     "block": "grid",
+     "unit": "USD/MWh",
+     "weight": 0.25
+    },
+    {
+     "signal": "dc_sites",
+     "label": "New data-center sites since 2025",
+     "block": "grid",
+     "unit": "sites",
+     "weight": 0.2
+    }
+   ]
+  },
+  "peak_forecast": {
+   "default_variant": "deck_pre_batch_zero",
+   "variants": [
+    {
+     "variant": "deck_pre_batch_zero",
+     "label": "Before Batch Zero",
+     "has_band": true
+    },
+    {
+     "variant": "deck_latest",
+     "label": "Latest deck",
+     "has_band": true
+    },
+    {
+     "variant": "approvals_pace",
+     "label": "Approvals pace",
+     "has_band": false
+    }
+   ],
+   "ratio_definition": "Incremental realization ratio: approved MW added by December of the target year ÷ MW the deck promised beyond its own approved stock (horizons of 6 months or more)."
+  },
+  "peak_backtest": {
+   "eras": [
+    {
+     "era": "before_tsp_loads",
+     "label": "Before TSP large loads",
+     "description": "As-of dates before ERCOT's forecasts took in the TSPs' large loads."
+    },
+    {
+     "era": "with_tsp_loads",
+     "label": "With TSP large loads",
+     "description": "As-of dates after ERCOT's forecasts took in the TSPs' large loads."
+    }
+   ]
+  }
+ }
+}

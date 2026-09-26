@@ -1,0 +1,126 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "year": 2016,
+   "hourly_peak_mw": 71100.0,
+   "peak_ts_utc": "2016-08-08T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 71206.7,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2017,
+   "hourly_peak_mw": 69500.0,
+   "peak_ts_utc": "2017-08-23T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 69604.2,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2018,
+   "hourly_peak_mw": 73300.0,
+   "peak_ts_utc": "2018-08-27T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 73409.9,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2019,
+   "hourly_peak_mw": 74300.0,
+   "peak_ts_utc": "2019-08-16T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 74411.4,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2020,
+   "hourly_peak_mw": 73900.0,
+   "peak_ts_utc": "2020-08-26T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 74010.9,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2021,
+   "hourly_peak_mw": 72800.0,
+   "peak_ts_utc": "2021-08-05T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 72909.2,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2022,
+   "hourly_peak_mw": 79600.0,
+   "peak_ts_utc": "2022-08-20T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 79719.4,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2023,
+   "hourly_peak_mw": 83100.0,
+   "peak_ts_utc": "2023-08-07T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 83224.7,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2024,
+   "hourly_peak_mw": 84000.0,
+   "peak_ts_utc": "2024-08-25T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 84126.0,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2025,
+   "hourly_peak_mw": 83400.0,
+   "peak_ts_utc": "2025-08-09T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 83525.1,
+   "interval_end_local_15min": "16:45",
+   "final": true,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "year": 2026,
+   "hourly_peak_mw": 88700.0,
+   "peak_ts_utc": "2026-08-18T22:00:00Z",
+   "hour_ending_local": 17,
+   "peak_15min_mw": 88833.1,
+   "interval_end_local_15min": "16:45",
+   "final": false,
+   "data_as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  }
+ ]
+}

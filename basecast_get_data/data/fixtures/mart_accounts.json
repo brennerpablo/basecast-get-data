@@ -1,0 +1,488 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "account_id": "FX002",
+   "name": "Sample City Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "999002",
+   "gt": null,
+   "primary_weather_zone": "SCENT",
+   "meters": 20219.4,
+   "score": 0.7,
+   "rank": 1,
+   "rank_within_type": 1,
+   "tier": "A",
+   "signals": {
+    "pop_growth": {
+     "raw": 0.0651,
+     "pct": 0.4286
+    },
+    "permits_per_1k": {
+     "raw": 3.2,
+     "pct": 0.1429
+    },
+    "owner_sf_homes": {
+     "raw": 40182.1,
+     "pct": 1.0
+    },
+    "dc_sites": {
+     "raw": 1.3853,
+     "pct": 1.0
+    },
+    "owner_sf_share": {
+     "raw": 0.5947,
+     "pct": 0.4286
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0772,
+     "pct": 1.0
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2026-10-14",
+   "n_strong": 1,
+   "n_context": 0,
+   "latest_event_date": "2025-10-14",
+   "top_trigger": {
+    "trigger": "market_registration",
+    "title": "Registered as QSE",
+    "event_date": "2025-10-14",
+    "age_days": 341
+   },
+   "active_triggers": [
+    "market_registration"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "account_id": "FX001",
+   "name": "Fixture Valley Electric Cooperative",
+   "account_type": "coop",
+   "eia_utility_id": "999001",
+   "gt": "Sample G&T Cooperative",
+   "primary_weather_zone": "NCENT",
+   "meters": 49621.9,
+   "score": 0.6286,
+   "rank": 2,
+   "rank_within_type": 1,
+   "tier": "A",
+   "signals": {
+    "pop_growth": {
+     "raw": 0.2593,
+     "pct": 1.0
+    },
+    "permits_per_1k": {
+     "raw": 40.3,
+     "pct": 1.0
+    },
+    "owner_sf_homes": {
+     "raw": 16252.1,
+     "pct": 0.4286
+    },
+    "dc_sites": {
+     "raw": 0.7188,
+     "pct": 0.7143
+    },
+    "owner_sf_share": {
+     "raw": 0.6068,
+     "pct": 0.5714
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0329,
+     "pct": 0.1429
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-08-03",
+   "n_strong": 2,
+   "n_context": 0,
+   "latest_event_date": "2026-08-03",
+   "top_trigger": {
+    "trigger": "gen_storage_ia",
+    "title": "Fixture Storage 485",
+    "event_date": "2026-08-03",
+    "age_days": 48
+   },
+   "active_triggers": [
+    "gen_storage_ia"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "account_id": "FX003",
+   "name": "Example Plains Electric Cooperative",
+   "account_type": "coop",
+   "eia_utility_id": "999003",
+   "gt": "Sample G&T Cooperative",
+   "primary_weather_zone": "WEST",
+   "meters": 36553.5,
+   "score": 0.6,
+   "rank": 3,
+   "rank_within_type": 2,
+   "tier": "B",
+   "signals": {
+    "pop_growth": {
+     "raw": 0.2203,
+     "pct": 0.7143
+    },
+    "permits_per_1k": {
+     "raw": 11.2,
+     "pct": 0.4286
+    },
+    "owner_sf_homes": {
+     "raw": 31138.4,
+     "pct": 0.7143
+    },
+    "dc_sites": {
+     "raw": 0.0601,
+     "pct": 0.1429
+    },
+    "owner_sf_share": {
+     "raw": 0.7456,
+     "pct": 0.8571
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0527,
+     "pct": 0.7143
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-04-19",
+   "n_strong": 3,
+   "n_context": 1,
+   "latest_event_date": "2026-06-11",
+   "top_trigger": {
+    "trigger": "dc_permit",
+    "title": "FIXTURE DATA CAMPUS 95",
+    "event_date": "2026-04-19",
+    "age_days": 154
+   },
+   "active_triggers": [
+    "dc_permit",
+    "dev_agreement",
+    "rate_increase"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "account_id": "FX005",
+   "name": "Placeholder Ridge Electric Cooperative",
+   "account_type": "coop",
+   "eia_utility_id": "999005",
+   "gt": "Demo Power Supply Cooperative",
+   "primary_weather_zone": "FWEST",
+   "meters": 52409.3,
+   "score": 0.5428,
+   "rank": 4,
+   "rank_within_type": 3,
+   "tier": "B",
+   "signals": {
+    "pop_growth": {
+     "raw": 0.2369,
+     "pct": 0.8571
+    },
+    "permits_per_1k": {
+     "raw": 16.8,
+     "pct": 0.5714
+    },
+    "owner_sf_homes": {
+     "raw": 13296.5,
+     "pct": 0.2857
+    },
+    "dc_sites": {
+     "raw": 0.8274,
+     "pct": 0.8571
+    },
+    "owner_sf_share": {
+     "raw": 0.4491,
+     "pct": 0.1429
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0489,
+     "pct": 0.4286
+    }
+   },
+   "next_action": "call_now",
+   "action_changes_on": "2027-07-04",
+   "n_strong": 2,
+   "n_context": 2,
+   "latest_event_date": "2026-07-04",
+   "top_trigger": {
+    "trigger": "permit_surge",
+    "title": "Borden: permits up (12 months)",
+    "event_date": "2026-07-04",
+    "age_days": 78
+   },
+   "active_triggers": [
+    "gen_storage_ia",
+    "permit_surge",
+    "rate_increase"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "account_id": "FX008",
+   "name": "Stub Creek Municipal Power",
+   "account_type": "muni",
+   "eia_utility_id": "999008",
+   "gt": "Demo Power Supply Cooperative",
+   "primary_weather_zone": "SOUTH",
+   "meters": 40974.5,
+   "score": 0.4928,
+   "rank": 5,
+   "rank_within_type": 2,
+   "tier": "C",
+   "signals": {
+    "pop_growth": {
+     "raw": -0.0046,
+     "pct": 0.0
+    },
+    "permits_per_1k": {
+     "raw": 20.3,
+     "pct": 0.7143
+    },
+    "owner_sf_homes": {
+     "raw": 39654.1,
+     "pct": 0.8571
+    },
+    "dc_sites": {
+     "raw": 0.6069,
+     "pct": 0.5714
+    },
+    "owner_sf_share": {
+     "raw": 0.6197,
+     "pct": 0.7143
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0361,
+     "pct": 0.2857
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": "2027-06-19",
+   "n_strong": 1,
+   "n_context": 4,
+   "latest_event_date": "2026-08-10",
+   "top_trigger": {
+    "trigger": "market_registration",
+    "title": "Registered as QSE",
+    "event_date": "2026-06-19",
+    "age_days": 93
+   },
+   "active_triggers": [
+    "market_registration",
+    "rate_increase",
+    "tsp_large_load"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "account_id": "FX007",
+   "name": "Mock County Electric Cooperative",
+   "account_type": "coop",
+   "eia_utility_id": "999007",
+   "gt": "Sample G&T Cooperative",
+   "primary_weather_zone": "EAST",
+   "meters": 19035.4,
+   "score": 0.4571,
+   "rank": 6,
+   "rank_within_type": 4,
+   "tier": "C",
+   "signals": {
+    "pop_growth": {
+     "raw": 0.1454,
+     "pct": 0.5714
+    },
+    "permits_per_1k": {
+     "raw": 22.8,
+     "pct": 0.8571
+    },
+    "owner_sf_homes": {
+     "raw": 4493.2,
+     "pct": 0.0
+    },
+    "dc_sites": {
+     "raw": 0.3785,
+     "pct": 0.2857
+    },
+    "owner_sf_share": {
+     "raw": 0.434,
+     "pct": 0.0
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0559,
+     "pct": 0.8571
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-01-01",
+   "n_strong": 0,
+   "n_context": 3,
+   "latest_event_date": "2026-01-01",
+   "top_trigger": null,
+   "active_triggers": [
+    "tsp_large_load"
+   ],
+   "flags": [],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "account_id": "FX006",
+   "name": "Testing Bend Public Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "999006",
+   "gt": null,
+   "primary_weather_zone": "NORTH",
+   "meters": 14010.6,
+   "score": 0.3,
+   "rank": 7,
+   "rank_within_type": 3,
+   "tier": "C",
+   "signals": {
+    "pop_growth": {
+     "raw": 0.0394,
+     "pct": 0.2857
+    },
+    "permits_per_1k": {
+     "raw": 2.0,
+     "pct": 0.0
+    },
+    "owner_sf_homes": {
+     "raw": 10862.9,
+     "pct": 0.1429
+    },
+    "dc_sites": {
+     "raw": 0.0333,
+     "pct": 0.0
+    },
+    "owner_sf_share": {
+     "raw": 0.7709,
+     "pct": 1.0
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0518,
+     "pct": 0.5714
+    }
+   },
+   "next_action": "watch",
+   "action_changes_on": "2027-08-23",
+   "n_strong": 0,
+   "n_context": 2,
+   "latest_event_date": "2026-08-23",
+   "top_trigger": null,
+   "active_triggers": [
+    "rate_increase"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "account_id": "FX004",
+   "name": "Demo Springs Municipal Utilities",
+   "account_type": "muni",
+   "eia_utility_id": "999004",
+   "gt": "Demo Power Supply Cooperative",
+   "primary_weather_zone": "COAST",
+   "meters": 65309.8,
+   "score": 0.2786,
+   "rank": 8,
+   "rank_within_type": 4,
+   "tier": "C",
+   "signals": {
+    "pop_growth": {
+     "raw": 0.0243,
+     "pct": 0.1429
+    },
+    "permits_per_1k": {
+     "raw": 8.2,
+     "pct": 0.2857
+    },
+    "owner_sf_homes": {
+     "raw": 23868.5,
+     "pct": 0.5714
+    },
+    "dc_sites": {
+     "raw": 0.5054,
+     "pct": 0.4286
+    },
+    "owner_sf_share": {
+     "raw": 0.5874,
+     "pct": 0.2857
+    },
+    "zone_peak_cagr": {
+     "raw": 0.0171,
+     "pct": 0.0
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": "2027-06-08",
+   "n_strong": 3,
+   "n_context": 1,
+   "latest_event_date": "2026-06-08",
+   "top_trigger": {
+    "trigger": "market_registration",
+    "title": "Registered as QSE",
+    "event_date": "2026-06-08",
+    "age_days": 104
+   },
+   "active_triggers": [
+    "dev_agreement",
+    "market_registration",
+    "rate_increase"
+   ],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  }
+ ]
+}

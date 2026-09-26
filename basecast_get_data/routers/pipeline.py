@@ -20,7 +20,7 @@ COLUMNS = (
 @router.get("/runs", response_model=RunsResponse)
 def runs(
     source: str | None = Query(None),
-    stage: str | None = Query(None, description="raw or process"),
+    stage: str | None = Query(None, description="raw, process or model"),
     status: str | None = Query(None, description="running, success, partial, failed or abandoned"),
     offset: int = Query(0, ge=0),
     limit: int = Query(100, ge=1, le=1000),

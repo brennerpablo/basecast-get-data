@@ -9,13 +9,25 @@ import logging
 import threading
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.gzip import GZipMiddleware
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from basecast_get_data.config import get_settings
 from basecast_get_data.lake.service import get_lake
-from basecast_get_data.routers import lake, pipeline, tables
+from basecast_get_data.products.store import MartNotBuilt
+from basecast_get_data.routers import (
+    accounts,
+    backtest,
+    caveats,
+    forecasts,
+    geo,
+    lake,
+    pipeline,
+    queue,
+    tables,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s %(message)s")
 log = logging.getLogger("basecast_get_data")
@@ -43,15 +55,20 @@ class Health(BaseModel):
 def create_app() -> FastAPI:
     app = FastAPI(
         title="basecast-get-data",
-        version="0.1.0",
-        description="Serves the basecast lake, the processed tables and the pipeline runs to basecast-app. "
+        version="0.2.0",
+        description="Serves basecast-app: the accounts, Explorer, forecast and backtest resources "
+        "(contract v2), and the lake, the processed tables and the pipeline runs for /data. "
         "Every route but /health needs `Authorization: Bearer <API_TOKEN>`.",
         lifespan=lifespan,
     )
     app.add_middleware(GZipMiddleware, minimum_size=2048)
-    app.include_router(lake.router)
-    app.include_router(tables.router)
-    app.include_router(pipeline.router)
+    for module in (accounts, geo, queue, forecasts, backtest, caveats, lake, tables, pipeline):
+        app.include_router(module.router)
+
+    @app.exception_handler(MartNotBuilt)
+    def mart_not_built(_: Request, exc: MartNotBuilt) -> JSONResponse:
+        # The app shows this body as an empty state; keep it exactly (docs/data-contract.md, "Erros").
+        return JSONResponse(status_code=503, content={"detail": "mart_not_built", "mart": exc.mart})
 
     @app.get("/health", response_model=Health, tags=["health"])
     def health() -> Health:

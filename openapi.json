@@ -2,10 +2,1420 @@
   "openapi": "3.1.0",
   "info": {
     "title": "basecast-get-data",
-    "description": "Serves the basecast lake, the processed tables and the pipeline runs to basecast-app. Every route but /health needs `Authorization: Bearer <API_TOKEN>`.",
-    "version": "0.1.0"
+    "description": "Serves basecast-app: the accounts, Explorer, forecast and backtest resources (contract v2), and the lake, the processed tables and the pipeline runs for /data. Every route but /health needs `Authorization: Bearer <API_TOKEN>`.",
+    "version": "0.2.0"
   },
   "paths": {
+    "/accounts": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "List Accounts",
+        "operationId": "list_accounts_accounts_get",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "coop",
+                      "muni"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Type"
+            }
+          },
+          {
+            "name": "tier",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "A",
+                      "B",
+                      "C"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Tier"
+            }
+          },
+          {
+            "name": "next_action",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "call_now",
+                      "nurture",
+                      "watch",
+                      "hold"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Next Action"
+            }
+          },
+          {
+            "name": "trigger",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Accounts with any of these active triggers",
+              "title": "Trigger"
+            },
+            "description": "Accounts with any of these active triggers"
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Primary weather zone",
+              "title": "Zone"
+            },
+            "description": "Primary weather zone"
+          },
+          {
+            "name": "gt",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "G&T / wholesale supplier",
+              "title": "Gt"
+            },
+            "description": "G&T / wholesale supplier"
+          },
+          {
+            "name": "county",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^\\d{5}$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Accounts covering ≥ 1% of this county",
+              "title": "County"
+            },
+            "description": "Accounts covering ≥ 1% of this county"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Name contains",
+              "title": "Q"
+            },
+            "description": "Name contains"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "rank",
+                "score",
+                "name",
+                "meters",
+                "latest_event_date",
+                "action_changes_on"
+              ],
+              "type": "string",
+              "default": "rank",
+              "title": "Sort"
+            }
+          },
+          {
+            "name": "desc",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Desc"
+            }
+          },
+          {
+            "name": "rank_scope",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "all",
+                "within_type"
+              ],
+              "type": "string",
+              "description": "within_type: sort=rank orders by rank_within_type",
+              "default": "all",
+              "title": "Rank Scope"
+            },
+            "description": "within_type: sort=rank orders by rank_within_type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountsResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/export.csv": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Export Accounts",
+        "description": "The rows of `GET /accounts` with the same filters, one line per account, signals flattened.",
+        "operationId": "export_accounts_accounts_export_csv_get",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "coop",
+                      "muni"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Type"
+            }
+          },
+          {
+            "name": "tier",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "A",
+                      "B",
+                      "C"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Tier"
+            }
+          },
+          {
+            "name": "next_action",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "call_now",
+                      "nurture",
+                      "watch",
+                      "hold"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Next Action"
+            }
+          },
+          {
+            "name": "trigger",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Accounts with any of these active triggers",
+              "title": "Trigger"
+            },
+            "description": "Accounts with any of these active triggers"
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Primary weather zone",
+              "title": "Zone"
+            },
+            "description": "Primary weather zone"
+          },
+          {
+            "name": "gt",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "G&T / wholesale supplier",
+              "title": "Gt"
+            },
+            "description": "G&T / wholesale supplier"
+          },
+          {
+            "name": "county",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^\\d{5}$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Accounts covering ≥ 1% of this county",
+              "title": "County"
+            },
+            "description": "Accounts covering ≥ 1% of this county"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Name contains",
+              "title": "Q"
+            },
+            "description": "Name contains"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "rank",
+                "score",
+                "name",
+                "meters",
+                "latest_event_date",
+                "action_changes_on"
+              ],
+              "type": "string",
+              "default": "rank",
+              "title": "Sort"
+            }
+          },
+          {
+            "name": "desc",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Desc"
+            }
+          },
+          {
+            "name": "rank_scope",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "all",
+                "within_type"
+              ],
+              "type": "string",
+              "description": "within_type: sort=rank orders by rank_within_type",
+              "default": "all",
+              "title": "Rank Scope"
+            },
+            "description": "within_type: sort=rank orders by rank_within_type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/{account_id}": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Account Detail",
+        "description": "The diagnosis of one account: header facts, score breakdown, next action, triggers, territory, EIA\nseries and data gaps. Every scalar is a Fact with its source and as-of date.",
+        "operationId": "account_detail_accounts__account_id__get",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 32,
+              "description": "PUCT ccn_no",
+              "title": "Account Id"
+            },
+            "description": "PUCT ccn_no"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDetailResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "`not_found`: the same body for every unknown id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetail"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/{account_id}/events": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Account Events",
+        "description": "The account's full event history, newest first.",
+        "operationId": "account_events_accounts__account_id__events_get",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 32,
+              "description": "PUCT ccn_no",
+              "title": "Account Id"
+            },
+            "description": "PUCT ccn_no"
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Events on or after this date",
+              "title": "Since"
+            },
+            "description": "Events on or after this date"
+          },
+          {
+            "name": "trigger",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Trigger"
+            }
+          },
+          {
+            "name": "strength",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "strong",
+                    "context"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Strength"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 500,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "`not_found`: the same body for every unknown id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetail"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/geo/counties": {
+      "get": {
+        "tags": [
+          "explorer"
+        ],
+        "summary": "Counties",
+        "description": "All 254 Texas counties in one payload: acquisition priority (null outside ERCOT), the generation queue\nfor the horizon and stratum (null without an active project) and the new data-center sites.",
+        "operationId": "counties_geo_counties_get",
+        "parameters": [
+          {
+            "name": "horizon",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 2028,
+              "minimum": 2027,
+              "description": "Adjusted queue: expected MW reaching COD by December of this year",
+              "default": 2028,
+              "title": "Horizon"
+            },
+            "description": "Adjusted queue: expected MW reaching COD by December of this year"
+          },
+          {
+            "name": "stratum",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "all",
+                "solar",
+                "storage",
+                "wind",
+                "gas_other"
+              ],
+              "type": "string",
+              "default": "all",
+              "title": "Stratum"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountiesResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/geo/counties/{county_fips}": {
+      "get": {
+        "tags": [
+          "explorer"
+        ],
+        "summary": "County Detail",
+        "description": "One county: the priority's signals, drivers and drags, the queue by stratum and its largest projects,\nthe data-center sites and the co-ops and munis that cover at least 1% of it.",
+        "operationId": "county_detail_geo_counties__county_fips__get",
+        "parameters": [
+          {
+            "name": "county_fips",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{5}$",
+              "title": "County Fips"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountyDetailResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "`not_found`: the same body for every unknown id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetail"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue/projects": {
+      "get": {
+        "tags": [
+          "explorer"
+        ],
+        "summary": "Projects",
+        "description": "Active projects of the latest GIS report with their chance of reaching COD by December 2027 and\n2028.",
+        "operationId": "projects_queue_projects_get",
+        "parameters": [
+          {
+            "name": "county",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "County FIPS",
+              "title": "County"
+            },
+            "description": "County FIPS"
+          },
+          {
+            "name": "stratum",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "solar",
+                      "storage",
+                      "wind",
+                      "gas_other"
+                    ],
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Stratum"
+            }
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "entry",
+                    "ia"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Stage"
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Weather zone",
+              "title": "Zone"
+            },
+            "description": "Weather zone"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Project name or INR contains",
+              "title": "Q"
+            },
+            "description": "Project name or INR contains"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "mw_2028",
+                "mw_2027",
+                "capacity_mw",
+                "p_cod_2028",
+                "projected_cod",
+                "project_name"
+              ],
+              "type": "string",
+              "default": "mw_2028",
+              "title": "Sort"
+            }
+          },
+          {
+            "name": "desc",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "title": "Desc"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 500,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueueProjectsResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/forecasts/peak": {
+      "get": {
+        "tags": [
+          "forecast"
+        ],
+        "summary": "Peak",
+        "description": "Summer peak by year: the total with its P10–P90 band, the three layers (organic, large load,\nunattributed), ERCOT's official forecasts as lines and the inputs of the large-load layer.",
+        "operationId": "peak_forecasts_peak_get",
+        "parameters": [
+          {
+            "name": "region",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "ERCOT",
+                "COAST",
+                "EAST",
+                "FWEST",
+                "NCENT",
+                "NORTH",
+                "SCENT",
+                "SOUTH",
+                "WEST"
+              ],
+              "type": "string",
+              "description": "ERCOT, or a weather zone (its coincident contribution)",
+              "default": "ERCOT",
+              "title": "Region"
+            },
+            "description": "ERCOT, or a weather zone (its coincident contribution)"
+          },
+          {
+            "name": "variant",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "deck_pre_batch_zero",
+                    "deck_latest",
+                    "approvals_pace"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Which large-load input drives the layer; default in data",
+              "title": "Variant"
+            },
+            "description": "Which large-load input drives the layer; default in data"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeakForecastResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/forecasts/large-load": {
+      "get": {
+        "tags": [
+          "forecast"
+        ],
+        "summary": "Large Load",
+        "description": "What each ERCOT large-load deck promised against what got approved, the approved stock month by month,\nthe realization-ratio band and dated annotations (policy changes, batches).",
+        "operationId": "large_load_forecasts_large_load_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LargeLoadResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backtest/peak": {
+      "get": {
+        "tags": [
+          "backtest"
+        ],
+        "summary": "Peak",
+        "description": "Our model re-run at past dates against the official vintages of the same date and the actual summer\npeak: the cells of one date, the scores by era over every date, the paired comparison with each official\nsource, the organic-only ablation and the latest fan.",
+        "operationId": "peak_backtest_peak_get",
+        "parameters": [
+          {
+            "name": "as_of",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "One of data.as_of_dates; default the latest",
+              "title": "As Of"
+            },
+            "description": "One of data.as_of_dates; default the latest"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeakBacktestResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "`as_of` is not a backtest date",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvalidAsOf"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backtest/official-errors": {
+      "get": {
+        "tags": [
+          "backtest"
+        ],
+        "summary": "Official Errors",
+        "description": "Every official summer-peak forecast (product × vintage × target year) against the actual, and the mean\nerror by product and horizon.",
+        "operationId": "official_errors_backtest_official_errors_get",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "LTLF, CDR...",
+              "title": "Product"
+            },
+            "description": "LTLF, CDR..."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfficialErrorsResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backtest/queue": {
+      "get": {
+        "tags": [
+          "backtest"
+        ],
+        "summary": "Queue",
+        "description": "The generation-queue model re-run on past GIS reports, 24 months ahead: predicted vs built vs the\ndevelopers' own dates, statewide and by fuel, and how well each ranks the counties.",
+        "operationId": "queue_backtest_queue_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueueBacktestResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/caveats": {
+      "get": {
+        "tags": [
+          "caveats"
+        ],
+        "summary": "Caveats",
+        "description": "Every code that `meta.caveats` can carry, with the label and text the app shows.",
+        "operationId": "caveats_caveats_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CaveatsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/lake/sources": {
       "get": {
         "tags": [
@@ -829,10 +2239,10 @@
                   "type": "null"
                 }
               ],
-              "description": "raw or process",
+              "description": "raw, process or model",
               "title": "Stage"
             },
-            "description": "raw or process"
+            "description": "raw, process or model"
           },
           {
             "name": "status",
@@ -924,6 +2334,1943 @@
   },
   "components": {
     "schemas": {
+      "AccountCounty": {
+        "properties": {
+          "county_fips": {
+            "type": "string",
+            "title": "County Fips"
+          },
+          "county_name": {
+            "type": "string",
+            "title": "County Name"
+          },
+          "overlap_km2": {
+            "type": "number",
+            "title": "Overlap Km2"
+          },
+          "county_share": {
+            "type": "number",
+            "title": "County Share"
+          },
+          "territory_share": {
+            "type": "number",
+            "title": "Territory Share"
+          },
+          "weather_zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weather Zone"
+          },
+          "exposed": {
+            "type": "boolean",
+            "title": "Exposed",
+            "description": "The account covers ≥ 20% of the county"
+          },
+          "context": {
+            "type": "boolean",
+            "title": "Context",
+            "description": "Used for the territory facts (the exposed counties, or the home county)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "county_fips",
+          "county_name",
+          "overlap_km2",
+          "county_share",
+          "territory_share",
+          "exposed",
+          "context"
+        ],
+        "title": "AccountCounty"
+      },
+      "AccountDetail": {
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "title": "Account Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "account_type": {
+            "type": "string",
+            "enum": [
+              "coop",
+              "muni"
+            ],
+            "title": "Account Type"
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "As Of"
+          },
+          "simulated": {
+            "type": "boolean",
+            "title": "Simulated",
+            "default": false
+          },
+          "header": {
+            "items": {
+              "$ref": "#/components/schemas/Fact"
+            },
+            "type": "array",
+            "title": "Header"
+          },
+          "score": {
+            "$ref": "#/components/schemas/AccountScore"
+          },
+          "next_action": {
+            "$ref": "#/components/schemas/NextActionCard"
+          },
+          "triggers": {
+            "$ref": "#/components/schemas/AccountTriggers"
+          },
+          "territory": {
+            "$ref": "#/components/schemas/Territory"
+          },
+          "eia_series": {
+            "items": {
+              "$ref": "#/components/schemas/EiaYear"
+            },
+            "type": "array",
+            "title": "Eia Series"
+          },
+          "gaps": {
+            "items": {
+              "$ref": "#/components/schemas/Gap"
+            },
+            "type": "array",
+            "title": "Gaps"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_id",
+          "name",
+          "account_type",
+          "as_of",
+          "header",
+          "score",
+          "next_action",
+          "triggers",
+          "territory",
+          "eia_series"
+        ],
+        "title": "AccountDetail"
+      },
+      "AccountDetailResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/AccountDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "AccountDetailResponse"
+      },
+      "AccountScore": {
+        "properties": {
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "rank": {
+            "type": "integer",
+            "title": "Rank"
+          },
+          "rank_within_type": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rank Within Type"
+          },
+          "n_accounts": {
+            "type": "integer",
+            "title": "N Accounts"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ],
+            "title": "Tier"
+          },
+          "method": {
+            "type": "string",
+            "title": "Method"
+          },
+          "weights_set": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weights Set"
+          },
+          "weights_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weights Status"
+          },
+          "signals": {
+            "items": {
+              "$ref": "#/components/schemas/ScoreSignal"
+            },
+            "type": "array",
+            "title": "Signals"
+          }
+        },
+        "type": "object",
+        "required": [
+          "score",
+          "rank",
+          "n_accounts",
+          "tier",
+          "method",
+          "signals"
+        ],
+        "title": "AccountScore"
+      },
+      "AccountSummary": {
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "title": "Account Id",
+            "description": "PUCT ccn_no"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "account_type": {
+            "type": "string",
+            "enum": [
+              "coop",
+              "muni"
+            ],
+            "title": "Account Type"
+          },
+          "eia_utility_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Eia Utility Id"
+          },
+          "gt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gt",
+            "description": "G&T / wholesale supplier"
+          },
+          "primary_weather_zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Weather Zone"
+          },
+          "meters": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meters",
+            "description": "EIA latest final year, bundled + delivery-only"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "rank": {
+            "type": "integer",
+            "title": "Rank",
+            "description": "1 = best, over every account"
+          },
+          "rank_within_type": {
+            "type": "integer",
+            "title": "Rank Within Type",
+            "description": "1 = best among the accounts of the same type"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ],
+            "title": "Tier"
+          },
+          "signals": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/SignalValue"
+            },
+            "type": "object",
+            "title": "Signals"
+          },
+          "next_action": {
+            "type": "string",
+            "enum": [
+              "call_now",
+              "nurture",
+              "watch",
+              "hold"
+            ],
+            "title": "Next Action"
+          },
+          "action_changes_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Action Changes On",
+            "description": "The day the action lapses without a new event"
+          },
+          "n_strong": {
+            "type": "integer",
+            "title": "N Strong"
+          },
+          "n_context": {
+            "type": "integer",
+            "title": "N Context"
+          },
+          "latest_event_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Event Date"
+          },
+          "top_trigger": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TopTrigger"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "active_triggers": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Active Triggers"
+          },
+          "flags": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "no_exposed_county",
+                "apportionment_under",
+                "apportionment_over",
+                "short_form",
+                "eia_break"
+              ]
+            },
+            "type": "array",
+            "title": "Flags"
+          },
+          "simulated": {
+            "type": "boolean",
+            "title": "Simulated",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_id",
+          "name",
+          "account_type",
+          "score",
+          "rank",
+          "rank_within_type",
+          "tier",
+          "signals",
+          "next_action",
+          "n_strong",
+          "n_context",
+          "active_triggers",
+          "flags"
+        ],
+        "title": "AccountSummary"
+      },
+      "AccountTriggers": {
+        "properties": {
+          "active": {
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "type": "array",
+            "title": "Active",
+            "description": "Every active strong event"
+          },
+          "context_summary": {
+            "items": {
+              "$ref": "#/components/schemas/ContextSummary"
+            },
+            "type": "array",
+            "title": "Context Summary",
+            "description": "One line per context trigger"
+          },
+          "history_count": {
+            "type": "integer",
+            "title": "History Count",
+            "description": "Every event ever; the full list is /accounts/{id}/events"
+          }
+        },
+        "type": "object",
+        "required": [
+          "active",
+          "context_summary",
+          "history_count"
+        ],
+        "title": "AccountTriggers"
+      },
+      "AccountsData": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AccountSummary"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "rank_scope": {
+            "type": "string",
+            "enum": [
+              "all",
+              "within_type"
+            ],
+            "title": "Rank Scope"
+          },
+          "signals": {
+            "items": {
+              "$ref": "#/components/schemas/SignalDef"
+            },
+            "type": "array",
+            "title": "Signals"
+          },
+          "weights_set": {
+            "type": "string",
+            "title": "Weights Set"
+          },
+          "weights_status": {
+            "type": "string",
+            "title": "Weights Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "rank_scope",
+          "signals",
+          "weights_set",
+          "weights_status"
+        ],
+        "title": "AccountsData"
+      },
+      "AccountsResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/AccountsData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "AccountsResponse"
+      },
+      "AcquisitionWeights": {
+        "properties": {
+          "signals": {
+            "items": {
+              "$ref": "#/components/schemas/SignalWeight"
+            },
+            "type": "array",
+            "title": "Signals"
+          },
+          "grid_tilt": {
+            "type": "number",
+            "title": "Grid Tilt",
+            "description": "grid_factor = 1 − tilt + tilt × grid_score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "signals",
+          "grid_tilt"
+        ],
+        "title": "AcquisitionWeights"
+      },
+      "ActualPeak": {
+        "properties": {
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "hourly_peak_mw": {
+            "type": "number",
+            "title": "Hourly Peak Mw"
+          },
+          "peak_ts_utc": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak Ts Utc"
+          },
+          "hour_ending_local": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hour Ending Local"
+          },
+          "peak_15min_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak 15Min Mw"
+          },
+          "interval_end_local_15min": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interval End Local 15Min"
+          },
+          "final": {
+            "type": "boolean",
+            "title": "Final"
+          }
+        },
+        "type": "object",
+        "required": [
+          "year",
+          "hourly_peak_mw",
+          "final"
+        ],
+        "title": "ActualPeak"
+      },
+      "Annotation": {
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date",
+            "title": "Date"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Url",
+            "description": "Null = source not verified"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "date",
+          "title"
+        ],
+        "title": "Annotation"
+      },
+      "BacktestCell": {
+        "properties": {
+          "as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "As Of"
+          },
+          "target_year": {
+            "type": "integer",
+            "title": "Target Year"
+          },
+          "horizon": {
+            "type": "integer",
+            "title": "Horizon",
+            "description": "Summers ahead of the as-of date"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "basecast, basecast_organic_only (the ablation), LTLF, CDR or LTLF-prelim"
+          },
+          "product": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Product"
+          },
+          "vintage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vintage"
+          },
+          "vintage_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vintage Date"
+          },
+          "variant": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Variant",
+            "description": "basecast rows only"
+          },
+          "era": {
+            "type": "string",
+            "title": "Era",
+            "description": "See data.eras"
+          },
+          "p10_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P10 Mw",
+            "description": "Official rows fill p50_mw only"
+          },
+          "p50_mw": {
+            "type": "number",
+            "title": "P50 Mw"
+          },
+          "p90_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P90 Mw"
+          },
+          "actual_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actual Mw"
+          },
+          "actual_final": {
+            "type": "boolean",
+            "title": "Actual Final",
+            "default": true
+          },
+          "error_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Pct",
+            "description": "(forecast − actual) ÷ actual, in %"
+          },
+          "in_band": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "In Band"
+          },
+          "organic_p50": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organic P50"
+          },
+          "ll_p50": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ll P50"
+          },
+          "u_p50": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "U P50"
+          },
+          "ll_realized": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ll Realized"
+          },
+          "u_realized": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "U Realized"
+          },
+          "leak_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Leak Note",
+            "description": "Information from after the as-of date that the cell used"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "as_of",
+          "target_year",
+          "horizon",
+          "source",
+          "era",
+          "p50_mw"
+        ],
+        "title": "BacktestCell"
+      },
+      "BacktestScore": {
+        "properties": {
+          "era": {
+            "type": "string",
+            "title": "Era"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "mape": {
+            "type": "number",
+            "title": "Mape",
+            "description": "Mean absolute error_pct, in %"
+          },
+          "bias_pct": {
+            "type": "number",
+            "title": "Bias Pct",
+            "description": "Mean error_pct, in %"
+          },
+          "coverage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coverage",
+            "description": "Share of cells inside the P10–P90 band (basecast only)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "era",
+          "source",
+          "n",
+          "mape",
+          "bias_pct"
+        ],
+        "title": "BacktestScore",
+        "description": "Scores over the cells of one era and source: mean |error|, mean error and band coverage."
+      },
+      "Caveat": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "machine_read_unverified",
+              "preliminary_actuals",
+              "weights_pending_review",
+              "band_uncalibrated",
+              "beyond_backtested_window",
+              "allocated_statewide",
+              "by_county_not_point",
+              "by_area_not_homes",
+              "requests_not_forecasts",
+              "policy_pause_2026",
+              "optimistic_weather",
+              "simulated",
+              "fixture"
+            ],
+            "title": "Code"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "label",
+          "text"
+        ],
+        "title": "Caveat"
+      },
+      "CaveatsResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Caveat"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "CaveatsResponse",
+        "description": "Not an envelope: the static catalog of caveat codes and their standard text."
+      },
+      "ContextSummary": {
+        "properties": {
+          "trigger": {
+            "type": "string",
+            "title": "Trigger"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          },
+          "latest_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Latest Date"
+          },
+          "counties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Counties"
+          }
+        },
+        "type": "object",
+        "required": [
+          "trigger",
+          "label",
+          "count",
+          "latest_date"
+        ],
+        "title": "ContextSummary"
+      },
+      "CountiesData": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CountyRow"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "horizon": {
+            "type": "integer",
+            "enum": [
+              2027,
+              2028
+            ],
+            "title": "Horizon"
+          },
+          "stratum": {
+            "type": "string",
+            "enum": [
+              "all",
+              "solar",
+              "storage",
+              "wind",
+              "gas_other"
+            ],
+            "title": "Stratum"
+          },
+          "horizons": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Horizons"
+          },
+          "strata": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Strata"
+          },
+          "queue_as_of_month": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Queue As Of Month"
+          },
+          "legend": {
+            "$ref": "#/components/schemas/LegendClasses"
+          },
+          "weights": {
+            "$ref": "#/components/schemas/AcquisitionWeights"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "horizon",
+          "stratum",
+          "horizons",
+          "strata",
+          "legend",
+          "weights"
+        ],
+        "title": "CountiesData"
+      },
+      "CountiesResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CountiesData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "CountiesResponse"
+      },
+      "CountyAccount": {
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "title": "Account Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "account_type": {
+            "type": "string",
+            "enum": [
+              "coop",
+              "muni"
+            ],
+            "title": "Account Type"
+          },
+          "county_share": {
+            "type": "number",
+            "title": "County Share",
+            "description": "Share of the county's land the account covers (≥ 1%)"
+          },
+          "rank": {
+            "type": "integer",
+            "title": "Rank"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ],
+            "title": "Tier"
+          },
+          "next_action": {
+            "type": "string",
+            "enum": [
+              "call_now",
+              "nurture",
+              "watch",
+              "hold"
+            ],
+            "title": "Next Action"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_id",
+          "name",
+          "account_type",
+          "county_share",
+          "rank",
+          "tier",
+          "next_action"
+        ],
+        "title": "CountyAccount"
+      },
+      "CountyAcquisition": {
+        "properties": {
+          "priority": {
+            "type": "number",
+            "title": "Priority",
+            "description": "0–1: market_score × grid_factor"
+          },
+          "rank": {
+            "type": "integer",
+            "title": "Rank",
+            "description": "1 = best of the ERCOT counties"
+          },
+          "priority_class": {
+            "type": "integer",
+            "title": "Priority Class",
+            "description": "1–5 quintile class (5 = top); breaks in data.legend"
+          },
+          "market_score": {
+            "type": "number",
+            "title": "Market Score"
+          },
+          "grid_score": {
+            "type": "number",
+            "title": "Grid Score"
+          },
+          "grid_factor": {
+            "type": "number",
+            "title": "Grid Factor"
+          },
+          "channel": {
+            "type": "string",
+            "enum": [
+              "retail_direct",
+              "partnership",
+              "mixed"
+            ],
+            "title": "Channel"
+          },
+          "partner_type": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "coop",
+                  "muni"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partner Type",
+            "description": "The larger of co-op and muni land"
+          },
+          "retail_share": {
+            "type": "number",
+            "title": "Retail Share",
+            "description": "By land area"
+          },
+          "coop_share": {
+            "type": "number",
+            "title": "Coop Share"
+          },
+          "muni_share": {
+            "type": "number",
+            "title": "Muni Share"
+          },
+          "outside_share": {
+            "type": "number",
+            "title": "Outside Share"
+          },
+          "partner_share": {
+            "type": "number",
+            "title": "Partner Share"
+          },
+          "addressable_share": {
+            "type": "number",
+            "title": "Addressable Share"
+          },
+          "retail_rank": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retail Rank",
+            "description": "Null = not in the retail-direct list (share < 25%)"
+          },
+          "partner_rank": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partner Rank",
+            "description": "Null = not in the partnership list (share < 25%)"
+          },
+          "n_partners": {
+            "type": "integer",
+            "title": "N Partners"
+          },
+          "top_partner_share": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Partner Share"
+          },
+          "drivers": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Drivers",
+            "description": "Top signals pushing the priority up"
+          },
+          "drags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Drags",
+            "description": "Top signals pulling it down"
+          }
+        },
+        "type": "object",
+        "required": [
+          "priority",
+          "rank",
+          "priority_class",
+          "market_score",
+          "grid_score",
+          "grid_factor",
+          "channel",
+          "retail_share",
+          "coop_share",
+          "muni_share",
+          "outside_share",
+          "partner_share",
+          "addressable_share",
+          "n_partners",
+          "drivers",
+          "drags"
+        ],
+        "title": "CountyAcquisition"
+      },
+      "CountyDataCenters": {
+        "properties": {
+          "sites": {
+            "type": "integer",
+            "title": "Sites",
+            "description": "New data-center sites since 2025, every match"
+          },
+          "sites_naics_only": {
+            "type": "integer",
+            "title": "Sites Naics Only",
+            "description": "Of which matched on NAICS 518210 only"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sites",
+          "sites_naics_only"
+        ],
+        "title": "CountyDataCenters"
+      },
+      "CountyDetail": {
+        "properties": {
+          "county_fips": {
+            "type": "string",
+            "title": "County Fips"
+          },
+          "county_name": {
+            "type": "string",
+            "title": "County Name"
+          },
+          "weather_zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weather Zone"
+          },
+          "in_ercot": {
+            "type": "boolean",
+            "title": "In Ercot"
+          },
+          "acquisition": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CountyAcquisition"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "signals": {
+            "items": {
+              "$ref": "#/components/schemas/CountySignal"
+            },
+            "type": "array",
+            "title": "Signals"
+          },
+          "queue": {
+            "items": {
+              "$ref": "#/components/schemas/CountyQueueStratum"
+            },
+            "type": "array",
+            "title": "Queue"
+          },
+          "queue_as_of_month": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Queue As Of Month"
+          },
+          "top_projects": {
+            "items": {
+              "$ref": "#/components/schemas/QueueProject"
+            },
+            "type": "array",
+            "title": "Top Projects",
+            "description": "The county's 10 largest by expected MW in Dec 2028"
+          },
+          "data_centers": {
+            "items": {
+              "$ref": "#/components/schemas/DataCenterSite"
+            },
+            "type": "array",
+            "title": "Data Centers"
+          },
+          "accounts": {
+            "items": {
+              "$ref": "#/components/schemas/CountyAccount"
+            },
+            "type": "array",
+            "title": "Accounts",
+            "description": "Co-ops and munis covering ≥ 1% of the county"
+          }
+        },
+        "type": "object",
+        "required": [
+          "county_fips",
+          "county_name",
+          "in_ercot",
+          "signals",
+          "queue",
+          "top_projects",
+          "data_centers",
+          "accounts"
+        ],
+        "title": "CountyDetail"
+      },
+      "CountyDetailResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CountyDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "CountyDetailResponse"
+      },
+      "CountyQueue": {
+        "properties": {
+          "projects": {
+            "type": "integer",
+            "title": "Projects"
+          },
+          "projects_ia": {
+            "type": "integer",
+            "title": "Projects Ia"
+          },
+          "raw_mw": {
+            "type": "number",
+            "title": "Raw Mw"
+          },
+          "raw_mw_ia": {
+            "type": "number",
+            "title": "Raw Mw Ia"
+          },
+          "adj_mw": {
+            "type": "number",
+            "title": "Adj Mw",
+            "description": "Expected MW reaching COD by December of the horizon"
+          },
+          "ratio": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ratio",
+            "description": "adj_mw ÷ raw_mw"
+          },
+          "rank_raw": {
+            "type": "integer",
+            "title": "Rank Raw"
+          },
+          "rank_adj": {
+            "type": "integer",
+            "title": "Rank Adj"
+          },
+          "rank_change": {
+            "type": "integer",
+            "title": "Rank Change",
+            "description": "rank_raw − rank_adj: positive = moves up once adjusted"
+          },
+          "large_gas_mw_2028": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Large Gas Mw 2028",
+            "description": "Adjusted MW from gas/other projects ≥ 500 MW"
+          }
+        },
+        "type": "object",
+        "required": [
+          "projects",
+          "projects_ia",
+          "raw_mw",
+          "raw_mw_ia",
+          "adj_mw",
+          "rank_raw",
+          "rank_adj",
+          "rank_change"
+        ],
+        "title": "CountyQueue",
+        "description": "The generation queue of the county for the requested horizon and stratum."
+      },
+      "CountyQueueStratum": {
+        "properties": {
+          "stratum": {
+            "type": "string",
+            "enum": [
+              "all",
+              "solar",
+              "storage",
+              "wind",
+              "gas_other"
+            ],
+            "title": "Stratum"
+          },
+          "projects": {
+            "type": "integer",
+            "title": "Projects"
+          },
+          "projects_ia": {
+            "type": "integer",
+            "title": "Projects Ia"
+          },
+          "raw_mw": {
+            "type": "number",
+            "title": "Raw Mw"
+          },
+          "raw_mw_ia": {
+            "type": "number",
+            "title": "Raw Mw Ia"
+          },
+          "adj_mw_2027": {
+            "type": "number",
+            "title": "Adj Mw 2027"
+          },
+          "adj_mw_2028": {
+            "type": "number",
+            "title": "Adj Mw 2028"
+          },
+          "ratio_2027": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ratio 2027"
+          },
+          "ratio_2028": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ratio 2028"
+          },
+          "large_gas_mw_2028": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Large Gas Mw 2028"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stratum",
+          "projects",
+          "projects_ia",
+          "raw_mw",
+          "raw_mw_ia",
+          "adj_mw_2027",
+          "adj_mw_2028"
+        ],
+        "title": "CountyQueueStratum"
+      },
+      "CountyRankCheck": {
+        "properties": {
+          "report_month": {
+            "type": "string",
+            "format": "date",
+            "title": "Report Month"
+          },
+          "rho_adj": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rho Adj"
+          },
+          "rho_raw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rho Raw"
+          },
+          "rho_developer": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rho Developer"
+          }
+        },
+        "type": "object",
+        "required": [
+          "report_month"
+        ],
+        "title": "CountyRankCheck",
+        "description": "Spearman correlation across counties between each ranking and what was built."
+      },
+      "CountyRow": {
+        "properties": {
+          "county_fips": {
+            "type": "string",
+            "title": "County Fips"
+          },
+          "county_name": {
+            "type": "string",
+            "title": "County Name"
+          },
+          "weather_zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weather Zone"
+          },
+          "in_ercot": {
+            "type": "boolean",
+            "title": "In Ercot"
+          },
+          "acquisition": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CountyAcquisition"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "queue": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CountyQueue"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Null = no active project in the stratum"
+          },
+          "data_centers": {
+            "$ref": "#/components/schemas/CountyDataCenters"
+          }
+        },
+        "type": "object",
+        "required": [
+          "county_fips",
+          "county_name",
+          "in_ercot",
+          "data_centers"
+        ],
+        "title": "CountyRow"
+      },
+      "CountySignal": {
+        "properties": {
+          "signal": {
+            "type": "string",
+            "title": "Signal"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "block": {
+            "type": "string",
+            "enum": [
+              "market",
+              "grid"
+            ],
+            "title": "Block"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "raw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw"
+          },
+          "pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pct"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight"
+          }
+        },
+        "type": "object",
+        "required": [
+          "signal",
+          "label",
+          "block",
+          "weight"
+        ],
+        "title": "CountySignal"
+      },
+      "Coverage": {
+        "properties": {
+          "public_data": {
+            "type": "boolean",
+            "title": "Public Data",
+            "default": true
+          },
+          "utility_private_data": {
+            "type": "boolean",
+            "title": "Utility Private Data",
+            "default": false
+          },
+          "fleet_data": {
+            "type": "boolean",
+            "title": "Fleet Data",
+            "default": false
+          },
+          "resolution": {
+            "type": "string",
+            "enum": [
+              "zone",
+              "territory (simulated)"
+            ],
+            "title": "Resolution",
+            "default": "zone"
+          }
+        },
+        "type": "object",
+        "title": "Coverage"
+      },
+      "DataCenterSite": {
+        "properties": {
+          "tceq_rn": {
+            "type": "string",
+            "title": "Tceq Rn"
+          },
+          "site_name": {
+            "type": "string",
+            "title": "Site Name"
+          },
+          "county_fips": {
+            "type": "string",
+            "title": "County Fips"
+          },
+          "county_name": {
+            "type": "string",
+            "title": "County Name"
+          },
+          "city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City"
+          },
+          "first_permit_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Permit Date",
+            "description": "Earliest TCEQ affiliation date (meaning not verified)"
+          },
+          "matched_by": {
+            "type": "string",
+            "enum": [
+              "name",
+              "naics"
+            ],
+            "title": "Matched By"
+          },
+          "has_undated_affiliation": {
+            "type": "boolean",
+            "title": "Has Undated Affiliation",
+            "default": false
+          },
+          "largest_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Largest Type",
+            "description": "coop, muni or iou, by county (not by point)"
+          },
+          "coop_share_w": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coop Share W"
+          },
+          "iso_class": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Iso Class"
+          },
+          "density_per_km2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Density Per Km2"
+          },
+          "metro_legacy": {
+            "type": "boolean",
+            "title": "Metro Legacy",
+            "default": false
+          },
+          "metro_density": {
+            "type": "boolean",
+            "title": "Metro Density",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "tceq_rn",
+          "site_name",
+          "county_fips",
+          "county_name",
+          "matched_by"
+        ],
+        "title": "DataCenterSite"
+      },
       "DatasetRef": {
         "properties": {
           "name": {
@@ -972,6 +4319,523 @@
         ],
         "title": "DatasetRef"
       },
+      "EiaYear": {
+        "properties": {
+          "data_year": {
+            "type": "integer",
+            "title": "Data Year"
+          },
+          "early_release": {
+            "type": "boolean",
+            "title": "Early Release"
+          },
+          "form": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "long",
+                  "short"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Form"
+          },
+          "customers": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customers"
+          },
+          "delivery_customers": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Delivery Customers"
+          },
+          "meters": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meters"
+          },
+          "sales_mwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sales Mwh"
+          },
+          "revenue_kusd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revenue Kusd"
+          },
+          "price_usd_kwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Price Usd Kwh"
+          },
+          "res_price_usd_kwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Res Price Usd Kwh"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data_year",
+          "early_release"
+        ],
+        "title": "EiaYear"
+      },
+      "Era": {
+        "properties": {
+          "era": {
+            "type": "string",
+            "title": "Era"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          }
+        },
+        "type": "object",
+        "required": [
+          "era",
+          "label",
+          "description"
+        ],
+        "title": "Era"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "ErrorDetail"
+      },
+      "Event": {
+        "properties": {
+          "event_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Event Date"
+          },
+          "age_days": {
+            "type": "integer",
+            "title": "Age Days"
+          },
+          "active": {
+            "type": "boolean",
+            "title": "Active",
+            "description": "Inside the 12-month window"
+          },
+          "trigger": {
+            "type": "string",
+            "title": "Trigger",
+            "description": "Trigger code: dc_permit, gen_storage_ia, dev_agreement, dev_agreement_gen, market_registration, permit_surge, new_transmission, rate_increase, tsp_large_load (more may be added)."
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "strength": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "context"
+            ],
+            "title": "Strength"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail"
+          },
+          "county_fips": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "County Fips",
+            "description": "Null for a match by name"
+          },
+          "county_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "County Name"
+          },
+          "exposure": {
+            "type": "number",
+            "title": "Exposure",
+            "description": "The account's share of the county, or 1 for a match by name"
+          },
+          "mapping": {
+            "type": "string",
+            "title": "Mapping",
+            "description": "county or name"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "source_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Ref"
+          },
+          "offer": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Offer"
+          }
+        },
+        "type": "object",
+        "required": [
+          "event_date",
+          "age_days",
+          "active",
+          "trigger",
+          "label",
+          "strength",
+          "title",
+          "exposure",
+          "mapping",
+          "source"
+        ],
+        "title": "Event"
+      },
+      "EventsPage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "offset",
+          "limit"
+        ],
+        "title": "EventsPage"
+      },
+      "EventsResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventsPage"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "EventsResponse"
+      },
+      "Fact": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          },
+          "simulated": {
+            "type": "boolean",
+            "title": "Simulated",
+            "default": false
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "source"
+        ],
+        "title": "Fact",
+        "description": "One displayed value with where it comes from. `value = null` is a gap, never a zero."
+      },
+      "FanPoint": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "official_preliminary",
+              "official_range",
+              "official",
+              "actual",
+              "model"
+            ],
+            "title": "Kind"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "product": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Product"
+          },
+          "vintage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vintage"
+          },
+          "vintage_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vintage Date"
+          },
+          "value_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value Mw",
+            "description": "Null for a range"
+          },
+          "low_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Low Mw"
+          },
+          "high_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "High Mw"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "file",
+              "manual",
+              "model"
+            ],
+            "title": "Method"
+          },
+          "final": {
+            "type": "boolean",
+            "title": "Final",
+            "default": true
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "label",
+          "source",
+          "method"
+        ],
+        "title": "FanPoint",
+        "description": "One mark of the fan chart of the latest summer: every official figure, the actual and our model."
+      },
       "FormatCount": {
         "properties": {
           "extension": {
@@ -989,6 +4853,37 @@
           "files"
         ],
         "title": "FormatCount"
+      },
+      "Gap": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "missing",
+              "stale",
+              "no_as_of",
+              "structural",
+              "quality",
+              "coverage"
+            ],
+            "title": "Kind"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "key",
+          "kind",
+          "detail"
+        ],
+        "title": "Gap"
       },
       "GridColumn": {
         "properties": {
@@ -1062,6 +4957,126 @@
           "database"
         ],
         "title": "Health"
+      },
+      "HorizonSummary": {
+        "properties": {
+          "product": {
+            "type": "string",
+            "title": "Product"
+          },
+          "horizon": {
+            "type": "integer",
+            "title": "Horizon"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "mape": {
+            "type": "number",
+            "title": "Mape"
+          },
+          "bias_pct": {
+            "type": "number",
+            "title": "Bias Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "product",
+          "horizon",
+          "n",
+          "mape",
+          "bias_pct"
+        ],
+        "title": "HorizonSummary"
+      },
+      "InService": {
+        "properties": {
+          "deck_vintage": {
+            "type": "string",
+            "format": "date",
+            "title": "Deck Vintage"
+          },
+          "in_service_year": {
+            "type": "integer",
+            "title": "In Service Year"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "approved_to_energize",
+              "planning_studies_approved",
+              "under_ercot_review",
+              "no_studies_submitted"
+            ],
+            "title": "Status"
+          },
+          "mw": {
+            "type": "number",
+            "title": "Mw",
+            "description": "Cumulative MW in service by the end of the year"
+          },
+          "document": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Document"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "deck_vintage",
+          "in_service_year",
+          "status",
+          "mw"
+        ],
+        "title": "InService"
+      },
+      "InvalidAsOf": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "const": "invalid_as_of",
+            "title": "Detail"
+          },
+          "as_of_dates": {
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
+            "type": "array",
+            "title": "As Of Dates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail",
+          "as_of_dates"
+        ],
+        "title": "InvalidAsOf",
+        "description": "422 body when `as_of` is not one of the backtest dates."
       },
       "JsonNode": {
         "properties": {
@@ -1418,6 +5433,137 @@
         ],
         "title": "LakeTotals"
       },
+      "LargeLoadData": {
+        "properties": {
+          "realization": {
+            "items": {
+              "$ref": "#/components/schemas/Realization"
+            },
+            "type": "array",
+            "title": "Realization"
+          },
+          "ratio_band": {
+            "$ref": "#/components/schemas/RatioBand"
+          },
+          "in_service": {
+            "items": {
+              "$ref": "#/components/schemas/InService"
+            },
+            "type": "array",
+            "title": "In Service"
+          },
+          "monthly": {
+            "items": {
+              "$ref": "#/components/schemas/MonthlyStock"
+            },
+            "type": "array",
+            "title": "Monthly"
+          },
+          "annotations": {
+            "items": {
+              "$ref": "#/components/schemas/Annotation"
+            },
+            "type": "array",
+            "title": "Annotations"
+          },
+          "deck_vintages": {
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
+            "type": "array",
+            "title": "Deck Vintages"
+          }
+        },
+        "type": "object",
+        "required": [
+          "realization",
+          "ratio_band",
+          "in_service",
+          "monthly",
+          "annotations",
+          "deck_vintages"
+        ],
+        "title": "LargeLoadData"
+      },
+      "LargeLoadResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/LargeLoadData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "LargeLoadResponse"
+      },
+      "LeadTrigger": {
+        "properties": {
+          "trigger": {
+            "type": "string",
+            "title": "Trigger"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "event_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Event Date"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "source_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Ref"
+          }
+        },
+        "type": "object",
+        "required": [
+          "trigger",
+          "title",
+          "event_date",
+          "source"
+        ],
+        "title": "LeadTrigger"
+      },
+      "LegendClasses": {
+        "properties": {
+          "breaks": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Breaks",
+            "description": "The 4 priority breaks between the 5 classes"
+          },
+          "classes": {
+            "type": "integer",
+            "title": "Classes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "breaks",
+          "classes"
+        ],
+        "title": "LegendClasses"
+      },
       "LineagePage": {
         "properties": {
           "items": {
@@ -1521,6 +5667,26 @@
         ],
         "title": "ListingResponse"
       },
+      "MartNotBuilt": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "const": "mart_not_built",
+            "title": "Detail"
+          },
+          "mart": {
+            "type": "string",
+            "title": "Mart"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail",
+          "mart"
+        ],
+        "title": "MartNotBuilt",
+        "description": "503 body when a resource's mart does not exist yet. The app shows it as an empty state."
+      },
       "Meta": {
         "properties": {
           "generated_at": {
@@ -1539,7 +5705,7 @@
             ],
             "title": "Data As Of"
           },
-          "model_run_id": {
+          "model_version": {
             "anyOf": [
               {
                 "type": "string"
@@ -1548,12 +5714,17 @@
                 "type": "null"
               }
             ],
-            "title": "Model Run Id"
+            "title": "Model Version"
           },
           "simulated": {
             "type": "boolean",
             "title": "Simulated",
             "default": false
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
           },
           "sources": {
             "items": {
@@ -1561,6 +5732,13 @@
             },
             "type": "array",
             "title": "Sources"
+          },
+          "caveats": {
+            "items": {
+              "$ref": "#/components/schemas/Caveat"
+            },
+            "type": "array",
+            "title": "Caveats"
           }
         },
         "type": "object",
@@ -1568,6 +5746,262 @@
           "generated_at"
         ],
         "title": "Meta"
+      },
+      "MonthlyStock": {
+        "properties": {
+          "month": {
+            "type": "string",
+            "format": "date",
+            "title": "Month",
+            "description": "First of the month"
+          },
+          "a2e_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "A2E Mw",
+            "description": "Approved-to-energize stock; null = no reading that month"
+          },
+          "observed_simultaneous_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Simultaneous Mw"
+          },
+          "observed_nonsimultaneous_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Nonsimultaneous Mw"
+          },
+          "a2e_lz_west_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "A2E Lz West Mw"
+          },
+          "a2e_other_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "A2E Other Mw"
+          },
+          "read_from_vintage": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Read From Vintage"
+          },
+          "document": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Document"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "month"
+        ],
+        "title": "MonthlyStock"
+      },
+      "NearbyDataCenter": {
+        "properties": {
+          "first_permit_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Permit Date"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "tceq_rn": {
+            "type": "string",
+            "title": "Tceq Rn"
+          },
+          "county_name": {
+            "type": "string",
+            "title": "County Name"
+          },
+          "county_share": {
+            "type": "number",
+            "title": "County Share"
+          },
+          "exposed": {
+            "type": "boolean",
+            "title": "Exposed"
+          },
+          "context": {
+            "type": "boolean",
+            "title": "Context",
+            "default": false
+          },
+          "matched_by": {
+            "type": "string",
+            "enum": [
+              "name",
+              "naics"
+            ],
+            "title": "Matched By"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "tceq_rn",
+          "county_name",
+          "county_share",
+          "exposed",
+          "matched_by"
+        ],
+        "title": "NearbyDataCenter"
+      },
+      "NextActionCard": {
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "call_now",
+              "nurture",
+              "watch",
+              "hold"
+            ],
+            "title": "Action"
+          },
+          "action_label": {
+            "type": "string",
+            "title": "Action Label"
+          },
+          "rule": {
+            "type": "string",
+            "title": "Rule",
+            "description": "The rule that fired, in words"
+          },
+          "lead_trigger": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LeadTrigger"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "offer": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Offer"
+          },
+          "talking_points": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Talking Points"
+          },
+          "changes_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Changes On"
+          },
+          "changes_to": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "call_now",
+                  "nurture",
+                  "watch",
+                  "hold"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Changes To"
+          }
+        },
+        "type": "object",
+        "required": [
+          "action",
+          "action_label",
+          "rule"
+        ],
+        "title": "NextActionCard"
       },
       "ObjectDetail": {
         "properties": {
@@ -1801,6 +6235,691 @@
         ],
         "title": "ObjectText"
       },
+      "OfficialError": {
+        "properties": {
+          "product": {
+            "type": "string",
+            "title": "Product"
+          },
+          "vintage": {
+            "type": "string",
+            "title": "Vintage"
+          },
+          "vintage_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vintage Date"
+          },
+          "target_year": {
+            "type": "integer",
+            "title": "Target Year"
+          },
+          "horizon": {
+            "type": "integer",
+            "title": "Horizon"
+          },
+          "series": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series",
+            "description": "Which base series the value came from"
+          },
+          "forecast_mw": {
+            "type": "number",
+            "title": "Forecast Mw"
+          },
+          "actual_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actual Mw"
+          },
+          "actual_complete": {
+            "type": "boolean",
+            "title": "Actual Complete",
+            "default": true
+          },
+          "actual_peak_local": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actual Peak Local"
+          },
+          "error_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Mw"
+          },
+          "error_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "product",
+          "vintage",
+          "target_year",
+          "horizon",
+          "forecast_mw"
+        ],
+        "title": "OfficialError"
+      },
+      "OfficialErrorsData": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OfficialError"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "summary": {
+            "items": {
+              "$ref": "#/components/schemas/HorizonSummary"
+            },
+            "type": "array",
+            "title": "Summary"
+          },
+          "products": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Products"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "summary",
+          "products"
+        ],
+        "title": "OfficialErrorsData"
+      },
+      "OfficialErrorsResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/OfficialErrorsData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "OfficialErrorsResponse"
+      },
+      "OfficialLine": {
+        "properties": {
+          "product": {
+            "type": "string",
+            "title": "Product",
+            "description": "LTLF or CDR"
+          },
+          "vintage": {
+            "type": "string",
+            "title": "Vintage"
+          },
+          "vintage_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vintage Date"
+          },
+          "series": {
+            "type": "string",
+            "title": "Series",
+            "description": "ercot_adjusted, tsp_provided or cdr"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "target_year": {
+            "type": "integer",
+            "title": "Target Year"
+          },
+          "mw": {
+            "type": "number",
+            "title": "Mw"
+          }
+        },
+        "type": "object",
+        "required": [
+          "product",
+          "vintage",
+          "series",
+          "label",
+          "target_year",
+          "mw"
+        ],
+        "title": "OfficialLine"
+      },
+      "PeakBacktestData": {
+        "properties": {
+          "as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "As Of",
+            "description": "The selected as-of date"
+          },
+          "as_of_dates": {
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
+            "type": "array",
+            "title": "As Of Dates"
+          },
+          "cells": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestCell"
+            },
+            "type": "array",
+            "title": "Cells",
+            "description": "Every cell of the selected as-of date"
+          },
+          "scores": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestScore"
+            },
+            "type": "array",
+            "title": "Scores",
+            "description": "Over every as-of date, split by era (and era = all)"
+          },
+          "comparisons": {
+            "items": {
+              "$ref": "#/components/schemas/SourceComparison"
+            },
+            "type": "array",
+            "title": "Comparisons",
+            "description": "basecast vs each official source, paired cells"
+          },
+          "ablation": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestScore"
+            },
+            "type": "array",
+            "title": "Ablation",
+            "description": "basecast vs basecast_organic_only over every cell"
+          },
+          "eras": {
+            "items": {
+              "$ref": "#/components/schemas/Era"
+            },
+            "type": "array",
+            "title": "Eras"
+          },
+          "actuals": {
+            "items": {
+              "$ref": "#/components/schemas/ActualPeak"
+            },
+            "type": "array",
+            "title": "Actuals"
+          },
+          "fan_target_year": {
+            "type": "integer",
+            "title": "Fan Target Year"
+          },
+          "fan": {
+            "items": {
+              "$ref": "#/components/schemas/FanPoint"
+            },
+            "type": "array",
+            "title": "Fan"
+          }
+        },
+        "type": "object",
+        "required": [
+          "as_of",
+          "as_of_dates",
+          "cells",
+          "scores",
+          "comparisons",
+          "ablation",
+          "eras",
+          "actuals",
+          "fan_target_year",
+          "fan"
+        ],
+        "title": "PeakBacktestData"
+      },
+      "PeakBacktestResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PeakBacktestData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "PeakBacktestResponse"
+      },
+      "PeakForecastData": {
+        "properties": {
+          "region": {
+            "type": "string",
+            "enum": [
+              "ERCOT",
+              "COAST",
+              "EAST",
+              "FWEST",
+              "NCENT",
+              "NORTH",
+              "SCENT",
+              "SOUTH",
+              "WEST"
+            ],
+            "title": "Region"
+          },
+          "region_type": {
+            "type": "string",
+            "enum": [
+              "ercot",
+              "weather_zone"
+            ],
+            "title": "Region Type"
+          },
+          "variant": {
+            "type": "string",
+            "enum": [
+              "deck_pre_batch_zero",
+              "deck_latest",
+              "approvals_pace"
+            ],
+            "title": "Variant"
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available",
+            "description": "False when this variant is not built for the region: empty series"
+          },
+          "variants": {
+            "items": {
+              "$ref": "#/components/schemas/VariantOption"
+            },
+            "type": "array",
+            "title": "Variants"
+          },
+          "regions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "ERCOT",
+                "COAST",
+                "EAST",
+                "FWEST",
+                "NCENT",
+                "NORTH",
+                "SCENT",
+                "SOUTH",
+                "WEST"
+              ]
+            },
+            "type": "array",
+            "title": "Regions"
+          },
+          "run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Run Id"
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of"
+          },
+          "series": {
+            "items": {
+              "$ref": "#/components/schemas/PeakPoint"
+            },
+            "type": "array",
+            "title": "Series",
+            "description": "The total, with the P10–P90 band"
+          },
+          "layers": {
+            "items": {
+              "$ref": "#/components/schemas/PeakLayer"
+            },
+            "type": "array",
+            "title": "Layers",
+            "description": "organic, large_load and unattributed per year"
+          },
+          "official": {
+            "items": {
+              "$ref": "#/components/schemas/OfficialLine"
+            },
+            "type": "array",
+            "title": "Official",
+            "description": "ERCOT's own forecasts for the same region, as lines"
+          },
+          "inputs": {
+            "$ref": "#/components/schemas/PeakInputs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "region",
+          "region_type",
+          "variant",
+          "available",
+          "variants",
+          "regions",
+          "series",
+          "layers",
+          "official",
+          "inputs"
+        ],
+        "title": "PeakForecastData"
+      },
+      "PeakForecastResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PeakForecastData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "PeakForecastResponse"
+      },
+      "PeakInputs": {
+        "properties": {
+          "deck_vintage": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deck Vintage",
+            "description": "The large-load deck behind the layer"
+          },
+          "factor": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Factor",
+            "description": "Observed simultaneous peak ÷ approved stock"
+          },
+          "ratio_p10": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ratio P10",
+            "description": "Incremental realization ratio"
+          },
+          "ratio_p50": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ratio P50"
+          },
+          "ratio_p90": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ratio P90"
+          },
+          "approved_stock_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved Stock Mw"
+          },
+          "share_of_ll_u": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Share Of Ll U",
+            "description": "Zones only: the fixed share of large load + unattributed"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "PeakInputs",
+        "description": "How the large-load layer was built: the \"how we got here\" panel."
+      },
+      "PeakLayer": {
+        "properties": {
+          "target_year": {
+            "type": "integer",
+            "title": "Target Year"
+          },
+          "p10_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P10 Mw",
+            "description": "Null when the variant has no band (approvals_pace)"
+          },
+          "p50_mw": {
+            "type": "number",
+            "title": "P50 Mw"
+          },
+          "p90_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P90 Mw"
+          },
+          "band_kind": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "p10_p90",
+                  "allocation_range"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Band Kind",
+            "description": "p10_p90: a probabilistic band; allocation_range: low/high across the candidate zone shares, not a P10–P90; null: no band"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
+          },
+          "layer": {
+            "type": "string",
+            "enum": [
+              "organic",
+              "large_load",
+              "unattributed"
+            ],
+            "title": "Layer"
+          }
+        },
+        "type": "object",
+        "required": [
+          "target_year",
+          "p50_mw",
+          "layer"
+        ],
+        "title": "PeakLayer"
+      },
+      "PeakPoint": {
+        "properties": {
+          "target_year": {
+            "type": "integer",
+            "title": "Target Year"
+          },
+          "p10_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P10 Mw",
+            "description": "Null when the variant has no band (approvals_pace)"
+          },
+          "p50_mw": {
+            "type": "number",
+            "title": "P50 Mw"
+          },
+          "p90_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P90 Mw"
+          },
+          "band_kind": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "p10_p90",
+                  "allocation_range"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Band Kind",
+            "description": "p10_p90: a probabilistic band; allocation_range: low/high across the candidate zone shares, not a P10–P90; null: no band"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "target_year",
+          "p50_mw"
+        ],
+        "title": "PeakPoint"
+      },
       "ProcessedRef": {
         "properties": {
           "dataset": {
@@ -1840,6 +6959,577 @@
           "current"
         ],
         "title": "ProcessedRef"
+      },
+      "QueueBacktestData": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/QueueBacktestRow"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "county_rank": {
+            "items": {
+              "$ref": "#/components/schemas/CountyRankCheck"
+            },
+            "type": "array",
+            "title": "County Rank"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "county_rank"
+        ],
+        "title": "QueueBacktestData"
+      },
+      "QueueBacktestResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/QueueBacktestData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "QueueBacktestResponse"
+      },
+      "QueueBacktestRow": {
+        "properties": {
+          "report_month": {
+            "type": "string",
+            "format": "date",
+            "title": "Report Month"
+          },
+          "stratum": {
+            "type": "string",
+            "title": "Stratum"
+          },
+          "window_months": {
+            "type": "integer",
+            "title": "Window Months"
+          },
+          "raw_mw": {
+            "type": "number",
+            "title": "Raw Mw"
+          },
+          "pred_mw": {
+            "type": "number",
+            "title": "Pred Mw"
+          },
+          "actual_mw": {
+            "type": "number",
+            "title": "Actual Mw"
+          },
+          "developer_projected_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Developer Projected Mw"
+          },
+          "error_pct": {
+            "type": "number",
+            "title": "Error Pct"
+          },
+          "model_variant": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Variant"
+          }
+        },
+        "type": "object",
+        "required": [
+          "report_month",
+          "stratum",
+          "window_months",
+          "raw_mw",
+          "pred_mw",
+          "actual_mw",
+          "error_pct"
+        ],
+        "title": "QueueBacktestRow"
+      },
+      "QueueProject": {
+        "properties": {
+          "inr": {
+            "type": "string",
+            "title": "Inr"
+          },
+          "project_name": {
+            "type": "string",
+            "title": "Project Name"
+          },
+          "county_fips": {
+            "type": "string",
+            "title": "County Fips"
+          },
+          "county_name": {
+            "type": "string",
+            "title": "County Name"
+          },
+          "weather_zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weather Zone"
+          },
+          "cdr_reporting_zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cdr Reporting Zone"
+          },
+          "fuel_type": {
+            "type": "string",
+            "title": "Fuel Type"
+          },
+          "stratum": {
+            "type": "string",
+            "enum": [
+              "solar",
+              "storage",
+              "wind",
+              "gas_other"
+            ],
+            "title": "Stratum"
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "entry",
+              "ia"
+            ],
+            "title": "Stage",
+            "description": "entry (incl. FIS approved without an IA) or ia (IA signed, or synchronized)"
+          },
+          "stage_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Date"
+          },
+          "elapsed_months": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Elapsed Months",
+            "description": "Time spent at the stage"
+          },
+          "capacity_mw": {
+            "type": "number",
+            "title": "Capacity Mw"
+          },
+          "projected_cod": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Projected Cod",
+            "description": "The developer's date, the baseline the model beats"
+          },
+          "curve": {
+            "type": "string",
+            "title": "Curve",
+            "description": "The survival curve used: own stratum or pooled"
+          },
+          "p_cod_2027": {
+            "type": "number",
+            "title": "P Cod 2027",
+            "description": "P(COD by Dec 2027 | stage, elapsed time)"
+          },
+          "p_cod_2028": {
+            "type": "number",
+            "title": "P Cod 2028",
+            "description": "P(COD by Dec 2028 | stage, elapsed time)"
+          },
+          "mw_2027": {
+            "type": "number",
+            "title": "Mw 2027"
+          },
+          "mw_2028": {
+            "type": "number",
+            "title": "Mw 2028"
+          },
+          "clamped_2027": {
+            "type": "boolean",
+            "title": "Clamped 2027",
+            "description": "Clock clamped past the curve's support (fewer than 10 at risk)"
+          },
+          "clamped_2028": {
+            "type": "boolean",
+            "title": "Clamped 2028"
+          }
+        },
+        "type": "object",
+        "required": [
+          "inr",
+          "project_name",
+          "county_fips",
+          "county_name",
+          "fuel_type",
+          "stratum",
+          "stage",
+          "capacity_mw",
+          "curve",
+          "p_cod_2027",
+          "p_cod_2028",
+          "mw_2027",
+          "mw_2028",
+          "clamped_2027",
+          "clamped_2028"
+        ],
+        "title": "QueueProject"
+      },
+      "QueueProjectsData": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/QueueProject"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "as_of_month": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of Month",
+            "description": "The GIS report month"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "offset",
+          "limit"
+        ],
+        "title": "QueueProjectsData"
+      },
+      "QueueProjectsResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/QueueProjectsData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "QueueProjectsResponse"
+      },
+      "RatioBand": {
+        "properties": {
+          "p10": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P10"
+          },
+          "p50": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P50"
+          },
+          "p90": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P90"
+          },
+          "deck_vintage": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deck Vintage"
+          },
+          "definition": {
+            "type": "string",
+            "title": "Definition"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "definition"
+        ],
+        "title": "RatioBand",
+        "description": "The realization-ratio band the default forecast variant uses."
+      },
+      "Realization": {
+        "properties": {
+          "deck_vintage": {
+            "type": "string",
+            "format": "date",
+            "title": "Deck Vintage"
+          },
+          "report_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Date"
+          },
+          "target_year": {
+            "type": "integer",
+            "title": "Target Year"
+          },
+          "horizon_months": {
+            "type": "integer",
+            "title": "Horizon Months"
+          },
+          "promised_mw": {
+            "type": "number",
+            "title": "Promised Mw",
+            "description": "The deck's in-service bar for the year"
+          },
+          "promised_firm_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Promised Firm Mw",
+            "description": "Minus 'No Studies Submitted'"
+          },
+          "base_a2e_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Base A2E Mw",
+            "description": "The deck's own approved-to-energize stock"
+          },
+          "realized_a2e_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Realized A2E Mw",
+            "description": "Approved stock in December of the target year"
+          },
+          "realized_energized_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Realized Energized Mw"
+          },
+          "known_from": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Known From",
+            "description": "First deck that reports the December stock"
+          },
+          "gross_a2e": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gross A2E"
+          },
+          "gross_a2e_firm": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gross A2E Firm"
+          },
+          "incremental_a2e": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Incremental A2E"
+          },
+          "incremental_a2e_firm": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Incremental A2E Firm"
+          },
+          "gross_energized": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gross Energized"
+          },
+          "document": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Document"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "deck_vintage",
+          "target_year",
+          "horizon_months",
+          "promised_mw"
+        ],
+        "title": "Realization"
       },
       "RowsPage": {
         "properties": {
@@ -2144,6 +7834,91 @@
         ],
         "title": "RunsResponse"
       },
+      "ScoreSignal": {
+        "properties": {
+          "signal": {
+            "type": "string",
+            "title": "Signal"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "raw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pct"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight"
+          },
+          "weight_used": {
+            "type": "number",
+            "title": "Weight Used",
+            "description": "Renormalized when a signal is missing"
+          },
+          "contribution": {
+            "type": "number",
+            "title": "Contribution",
+            "description": "Contributions sum to the score"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of"
+          }
+        },
+        "type": "object",
+        "required": [
+          "signal",
+          "label",
+          "weight",
+          "weight_used",
+          "contribution",
+          "source"
+        ],
+        "title": "ScoreSignal"
+      },
       "SheetInfo": {
         "properties": {
           "name": {
@@ -2178,6 +7953,113 @@
           "name"
         ],
         "title": "SheetInfo"
+      },
+      "SignalDef": {
+        "properties": {
+          "signal": {
+            "type": "string",
+            "title": "Signal"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight"
+          }
+        },
+        "type": "object",
+        "required": [
+          "signal",
+          "label",
+          "weight"
+        ],
+        "title": "SignalDef"
+      },
+      "SignalValue": {
+        "properties": {
+          "raw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw"
+          },
+          "pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pct",
+            "description": "Percentile rank within the scored universe, 0–1"
+          }
+        },
+        "type": "object",
+        "title": "SignalValue"
+      },
+      "SignalWeight": {
+        "properties": {
+          "signal": {
+            "type": "string",
+            "title": "Signal"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "block": {
+            "type": "string",
+            "enum": [
+              "market",
+              "grid"
+            ],
+            "title": "Block"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight",
+            "description": "Weight within its block"
+          }
+        },
+        "type": "object",
+        "required": [
+          "signal",
+          "label",
+          "block",
+          "weight"
+        ],
+        "title": "SignalWeight"
       },
       "SignedUrl": {
         "properties": {
@@ -2254,6 +8136,50 @@
           "bytes"
         ],
         "title": "SnapshotRef"
+      },
+      "SourceComparison": {
+        "properties": {
+          "era": {
+            "type": "string",
+            "title": "Era"
+          },
+          "official_source": {
+            "type": "string",
+            "title": "Official Source"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "basecast_mape": {
+            "type": "number",
+            "title": "Basecast Mape"
+          },
+          "official_mape": {
+            "type": "number",
+            "title": "Official Mape"
+          },
+          "basecast_bias_pct": {
+            "type": "number",
+            "title": "Basecast Bias Pct"
+          },
+          "official_bias_pct": {
+            "type": "number",
+            "title": "Official Bias Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "era",
+          "official_source",
+          "n",
+          "basecast_mape",
+          "official_mape",
+          "basecast_bias_pct",
+          "official_bias_pct"
+        ],
+        "title": "SourceComparison",
+        "description": "basecast against one official source on the cells where both exist, paired by (as_of, target_year)."
       },
       "SourceRef": {
         "properties": {
@@ -2868,6 +8794,174 @@
         ],
         "title": "TablesResponse"
       },
+      "Territory": {
+        "properties": {
+          "facts": {
+            "items": {
+              "$ref": "#/components/schemas/Fact"
+            },
+            "type": "array",
+            "title": "Facts"
+          },
+          "counties": {
+            "items": {
+              "$ref": "#/components/schemas/AccountCounty"
+            },
+            "type": "array",
+            "title": "Counties"
+          },
+          "context_rule": {
+            "type": "string",
+            "enum": [
+              "exposed",
+              "home_county"
+            ],
+            "title": "Context Rule",
+            "default": "exposed"
+          },
+          "context_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context Label"
+          },
+          "zones": {
+            "items": {
+              "$ref": "#/components/schemas/ZoneShare"
+            },
+            "type": "array",
+            "title": "Zones"
+          },
+          "data_centers": {
+            "items": {
+              "$ref": "#/components/schemas/NearbyDataCenter"
+            },
+            "type": "array",
+            "title": "Data Centers"
+          },
+          "queue": {
+            "items": {
+              "$ref": "#/components/schemas/TerritoryQueue"
+            },
+            "type": "array",
+            "title": "Queue"
+          },
+          "zone_outlook": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ZoneOutlook"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "facts",
+          "counties",
+          "zones",
+          "data_centers",
+          "queue"
+        ],
+        "title": "Territory"
+      },
+      "TerritoryQueue": {
+        "properties": {
+          "stratum": {
+            "type": "string",
+            "title": "Stratum"
+          },
+          "projects_context": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Projects Context"
+          },
+          "raw_mw_context": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw Mw Context"
+          },
+          "adj_mw_2027_context": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Adj Mw 2027 Context"
+          },
+          "adj_mw_2028_context": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Adj Mw 2028 Context"
+          },
+          "raw_mw_apportioned": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw Mw Apportioned"
+          },
+          "adj_mw_2027_apportioned": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Adj Mw 2027 Apportioned"
+          },
+          "adj_mw_2028_apportioned": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Adj Mw 2028 Apportioned"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stratum"
+        ],
+        "title": "TerritoryQueue"
+      },
       "TextBlock": {
         "properties": {
           "title": {
@@ -2908,6 +9002,36 @@
         ],
         "title": "TextResponse"
       },
+      "TopTrigger": {
+        "properties": {
+          "trigger": {
+            "type": "string",
+            "title": "Trigger",
+            "description": "Trigger code: dc_permit, gen_storage_ia, dev_agreement, dev_agreement_gen, market_registration, permit_surge, new_transmission, rate_increase, tsp_large_load (more may be added)."
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "event_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Event Date"
+          },
+          "age_days": {
+            "type": "integer",
+            "title": "Age Days"
+          }
+        },
+        "type": "object",
+        "required": [
+          "trigger",
+          "title",
+          "event_date",
+          "age_days"
+        ],
+        "title": "TopTrigger"
+      },
       "ValidationError": {
         "properties": {
           "loc": {
@@ -2947,6 +9071,59 @@
           "type"
         ],
         "title": "ValidationError"
+      },
+      "VariantOption": {
+        "properties": {
+          "variant": {
+            "type": "string",
+            "enum": [
+              "deck_pre_batch_zero",
+              "deck_latest",
+              "approvals_pace"
+            ],
+            "title": "Variant"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "is_default": {
+            "type": "boolean",
+            "title": "Is Default"
+          },
+          "has_band": {
+            "type": "boolean",
+            "title": "Has Band"
+          },
+          "regions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "ERCOT",
+                "COAST",
+                "EAST",
+                "FWEST",
+                "NCENT",
+                "NORTH",
+                "SCENT",
+                "SOUTH",
+                "WEST"
+              ]
+            },
+            "type": "array",
+            "title": "Regions",
+            "description": "Regions built for this variant (zones: the default variant only)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "variant",
+          "label",
+          "is_default",
+          "has_band",
+          "regions"
+        ],
+        "title": "VariantOption"
       },
       "ZipMember": {
         "properties": {
@@ -2999,6 +9176,255 @@
           "compressed_bytes"
         ],
         "title": "ZipMember"
+      },
+      "ZoneOutlook": {
+        "properties": {
+          "zone": {
+            "type": "string",
+            "title": "Zone"
+          },
+          "ltlf_start": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ltlf Start",
+            "description": "LTLF summer peak, first year (MW)"
+          },
+          "ltlf_end": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ltlf End",
+            "description": "LTLF summer peak, last year (MW)"
+          },
+          "ltlf_now": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ltlf Now",
+            "description": "LTLF summer peak for the current year (MW)"
+          },
+          "ltlf_cagr": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ltlf Cagr"
+          },
+          "cp_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cp Year"
+          },
+          "cp_avg_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cp Avg Mw"
+          },
+          "cf_summer": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cf Summer"
+          },
+          "share_4cp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Share 4Cp"
+          },
+          "share_energy": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Share Energy"
+          },
+          "intensity": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Intensity"
+          },
+          "ncp_summer_mw_full": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ncp Summer Mw Full"
+          },
+          "ncp_end_hour": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ncp End Hour",
+            "description": "Local hour as a decimal (18.25 = 18:15)"
+          },
+          "hour_years": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hour Years"
+          },
+          "ncp_now_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ncp Now Mw"
+          },
+          "ncp_now_months": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ncp Now Months"
+          },
+          "now_vs_ltlf": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Now Vs Ltlf"
+          },
+          "peak_mismatch": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "early",
+                  "late"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak Mismatch"
+          },
+          "q7_holdout_mape": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q7 Holdout Mape"
+          },
+          "line": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line",
+            "description": "The zone's 4CP talking point"
+          }
+        },
+        "type": "object",
+        "required": [
+          "zone"
+        ],
+        "title": "ZoneOutlook"
+      },
+      "ZoneShare": {
+        "properties": {
+          "weather_zone": {
+            "type": "string",
+            "title": "Weather Zone"
+          },
+          "area_share": {
+            "type": "number",
+            "title": "Area Share"
+          }
+        },
+        "type": "object",
+        "required": [
+          "weather_zone",
+          "area_share"
+        ],
+        "title": "ZoneShare"
       }
     }
   }
