@@ -6,9 +6,9 @@ and generation) actually gets built, where and when, and turns that into peak-de
 It serves `basecast-app` through one typed endpoint per resource and owns the data contract between the
 pipelines and the frontend. The OpenAPI spec generates the app's TypeScript client.
 
-> **Status:** the /data browser's endpoints are live: the raw lake (`/lake/*`), the processed tables in
-> Postgres and BigQuery (`/tables/*`) and the pipeline runs (`/pipeline/runs`). The Explorer, forecast,
-> backtest and accounts resources of `docs/data-contract.md` are still to come (tasks C0 and C1).
+> **Status:** contract v2 is live. The accounts, Explorer, forecast and backtest resources serve invented
+> fixtures (`simulated: true`, caveat `fixture`) until the marts from basecast-airflow are wired in (task C-2).
+> The /data browser's endpoints read the real lake, tables and pipeline runs.
 
 ## Repos
 
@@ -35,6 +35,13 @@ Every route but `/health` needs `Authorization: Bearer $API_TOKEN`.
 
 | Route | What |
 |---|---|
+| `GET /accounts` · `/accounts/export.csv` | Ranked co-ops and munis, with filters; the same rows as CSV |
+| `GET /accounts/{id}` · `/accounts/{id}/events` | One account's diagnosis (facts with source and as-of); its event history |
+| `GET /geo/counties` · `/geo/counties/{fips}` | The 254 counties for the map (acquisition, generation queue, data centers); one county |
+| `GET /queue/projects` | Generation-queue projects with their chance of reaching COD |
+| `GET /forecasts/peak` · `/forecasts/large-load` | Peak forecast in three layers vs ERCOT's; the large-load flow |
+| `GET /backtest/peak` · `/official-errors` · `/queue` | Our model and ERCOT's forecasts against the actual; the queue model |
+| `GET /caveats` | The caveat codes and the text the app shows for each |
 | `GET /lake/sources` | Every raw source: files, snapshots, formats, datasets, last runs |
 | `GET /lake/list` | Folders and files under a prefix of the lake |
 | `GET /lake/object` | One file: manifest entry, lineage, the same file in other snapshots |
@@ -44,8 +51,8 @@ Every route but `/health` needs `Authorization: Bearer $API_TOKEN`.
 | `GET /tables/{name}/rows` · `/lineage` | Blocks of rows (sort, filters, totals) and the raw files behind them |
 | `GET /pipeline/runs` | `etl_run` history |
 
-`docs/data-contract.md` §6 has the rules (pagination, filters, what is browsable); `openapi.json` the
-exact shapes.
+`docs/data-contract.md` has the rules (envelope, caveats, errors, which mart feeds each resource, and for
+/data pagination, filters and what is browsable); `openapi.json` the exact shapes.
 
 ## Checks
 
@@ -53,6 +60,7 @@ exact shapes.
 uv run ruff check . && uv run ruff format --check .
 uv run pytest                            # against tests/fixtures/lake, trimmed from real files
 uv run python scripts/export_openapi.py  # after any change to a route or model; a test fails if stale
+uv run python scripts/make_contract_fixtures.py  # after a change to a mart's columns (data/fixtures)
 ```
 
 A push to `main` deploys to Cloud Run (`.github/workflows/deploy.yml`), so the checks pass first. After
@@ -61,5 +69,5 @@ exporting `openapi.json`, regenerate the app's client (`npm run api:generate` in
 ## Docs
 
 - `docs/KICKOFF.md`: project kickoff (Portuguese)
-- `docs/data-contract.md`: contract draft
+- `docs/data-contract.md`: the data contract (v2)
 - `CLAUDE.md`: working context for Claude Code

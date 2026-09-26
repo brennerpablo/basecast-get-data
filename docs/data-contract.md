@@ -1,83 +1,255 @@
-# Data contract — basecast (RASCUNHO)
+# Data contract — basecast (v2)
 
-> Rascunho inicial para a tarefa C0 do KICKOFF. Revise, ajuste e só então escreva os modelos Pydantic.
-> Este arquivo é a fonte da verdade entre `basecast-airflow` (produz os dados), `basecast-get-data`
-> (serve) e `basecast-app` (consome). Mudou aqui? Atualize os modelos, o `openapi.json` e regenere o
-> client do app no mesmo movimento.
+> Fonte da verdade entre `basecast-airflow` (produz os marts), `basecast-get-data` (serve) e `basecast-app`
+> (consome). Mudou aqui? Atualize no mesmo movimento os modelos Pydantic (`basecast_get_data/schemas/`), as
+> fixtures (`scripts/make_contract_fixtures.py`) e o `openapi.json`, e avise a sessão do app para regenerar o
+> client (`npm run api:generate`). O schema exato de cada resposta está no `openapi.json`; aqui ficam as regras,
+> os campos que importam e de que mart cada recurso sai.
+>
+> v2 (2026-09-26): §1–§5 reescritas para o build dos módulos (BUILD_C). §6 e §7 seguem como estavam.
 
 ## Convenções
 
 - **Chaves**
+  - `account_id`: o `ccn_no` da PUCT, como string. O `utility_id` do EIA vira o atributo `eia_utility_id`.
   - `county_fips`: string de 5 dígitos (ex.: `"48453"`).
-  - `weather_zone`: `COAST`, `EAST`, `FWEST`, `NORTH`, `NCENT`, `SOUTH`, `SCENT`, `WEST`.
+  - `weather_zone`: `COAST`, `EAST`, `FWEST`, `NCENT`, `NORTH`, `SCENT`, `SOUTH`, `WEST`; `ERCOT` é o sistema.
   - `load_zone`: códigos da ERCOT (ex.: `LZ_NORTH`, `LZ_HOUSTON`, `LZ_AEN`).
-  - `utility_id`: ID do EIA, como string.
   - `inr`: ID do projeto na fila de geração (ex.: `"20INR0290"`).
-- **Tipos:** MW como float; anos como int; datas e horários em ISO 8601 UTC.
-- **Envelope:** toda resposta traz `meta` e `data`.
+- **Tipos:** MW como float; anos como int; datas ISO 8601 (`YYYY-MM-DD`); instantes ISO 8601 em UTC.
+- **Proveniência por linha:** toda linha que tem valor lido por máquina e não conferido (decks de grandes
+  cargas) traz `verified: false`; todo valor de adapter privado traz `simulated: true`. O app põe o selo ao
+  lado do número, não só no topo da página.
+
+### Envelope
+
+Toda resposta de recurso traz `meta` e `data` (a exceção é o catálogo `GET /caveats`).
 
 ```json
 {
   "meta": {
     "generated_at": "2026-09-26T15:00:00Z",
-    "data_as_of": "2026-09-01",
-    "model_run_id": "string | null",
+    "data_as_of": "2026-09-26",
+    "model_version": "a1b2c3d-accounts.1",
     "simulated": false,
-    "sources": ["ercot_gis", "ercot_native_load"]
+    "verified": true,
+    "sources": ["mart_accounts"],
+    "caveats": [{"code": "weights_pending_review", "label": "Weights pending review", "text": "…"}]
   },
   "data": {}
 }
 ```
 
-`simulated: true` sempre que a resposta usar fixtures ou os adapters de dados privados simulados.
+- `data_as_of` e `model_version` saem das linhas do mart principal (`as_of`, `model_version`). `model_version`
+  substitui o antigo `model_run_id`.
+- `simulated`: verdadeiro quando algum valor vem de fixture ou de adapter privado simulado.
+- `verified`: falso quando algum valor da resposta foi lido por máquina e não conferido. O detalhe fica em cada
+  linha (`verified` por linha).
+- `sources`: os marts que a resposta leu.
+- `caveats`: as ressalvas que valem para a resposta, cada uma com o texto padrão (abaixo). O app mostra
+  `label` como selo e `text` como tooltip, e nunca escreve ressalva por conta própria.
+- Valores de uma tela que não são linhas (quebras da legenda, pesos, datas do backtest, variantes) vão em
+  `data`, não em `meta`, para `Meta` ser um tipo só.
+
+### Ressalvas (`CaveatCode`)
+
+Lista fechada. O texto vive em `basecast_get_data/schemas/caveats.py`; `GET /caveats` devolve o catálogo
+inteiro. Os textos não levam números que um rebuild possa mudar.
+
+| Código | Rótulo | Quando |
+|---|---|---|
+| `machine_read_unverified` | Machine-read, not verified | alguma linha com `verified = false` (grandes cargas, forecast, backtest) |
+| `preliminary_actuals` | Preliminary actuals | o real de 2026 ainda não liquidado (backtest) |
+| `weights_pending_review` | Weights pending review | contas, enquanto `weights_status = pending_review` |
+| `band_uncalibrated` | Band not calibrated | forecast com faixa `p10_p90`; backtest |
+| `beyond_backtested_window` | Beyond the backtested window | fila ajustada no horizonte dez/2028 (passa dos 24 meses testados) |
+| `allocated_statewide` | Allocated from a statewide forecast | forecast de uma zona |
+| `by_county_not_point` | By county, not by point | contas (gatilhos), data centers |
+| `by_area_not_homes` | By land area, not homes | mapa de aquisição |
+| `requests_not_forecasts` | Requests, not forecasts | card do G&T (P1) |
+| `policy_pause_2026` | Approvals paused on 2026-08-03 | grandes cargas |
+| `optimistic_weather` | Observed weather (optimistic) | curva de despacho do 4CP (P1) |
+| `simulated` | Simulated | dado de adapter privado (P2) |
+| `fixture` | Fixture | toda resposta servida das fixtures |
+
+### Erros
+
+- **503 `{"detail": "mart_not_built", "mart": "<nome>"}`** quando o mart do recurso não existe. O corpo é
+  exatamente esse (schema `MartNotBuilt`), e o app o mostra como estado vazio. A API nunca cai para fixture
+  em silêncio.
+- **404 `{"detail": "not_found"}`** para qualquer id desconhecido. Uma conta retida pela trava de validação
+  responde igual, sem dica de que existe.
+- **422** para parâmetro fora do domínio (o padrão do FastAPI); no `GET /backtest/peak`, um `as_of` inválido
+  responde `{"detail": "invalid_as_of", "as_of_dates": [...]}`.
+
+### Fixtures
+
+Até a C-2 ligar os marts, todo recurso de §1–§5 sai de `basecast_get_data/data/fixtures/<mart>.json`: cópias
+pequenas e inventadas dos marts, com os mesmos nomes e colunas, geradas por
+`scripts/make_contract_fixtures.py` (seed fixa). Só as chaves de condado são reais. As contas são fictícias
+(`FX001`…, nomes inventados), então nenhuma conta retida pode aparecer numa fixture. Toda resposta de fixture
+traz `simulated: true` e o caveat `fixture`. As fixtures também são a referência de formato de cada linha
+para a sessão A.
+
+Valores de build que não são linhas ficam no mart `mart_meta` (`mart`, `key`, `value` jsonb): `accounts.signals`,
+`county_acquisition.legend_breaks` / `grid_tilt` / `signals`, `peak_forecast.default_variant` / `variants` /
+`ratio_definition`, `peak_backtest.eras`.
+
+### Trava de validação
+
+Enquanto a A-M8 não rodar: nenhum schema tem `is_base_partner` (um teste lê o `openapi.json`); `/accounts`
+devolve exatamente as linhas do `mart_accounts` (107 contas); um `account_id` fora do mart responde o 404
+comum.
 
 ## Recursos
 
-### 1. Métricas por condado (Explorer)
-`GET /geo/counties/metrics?metric=<metric>&year=<int>`
+### 1. Explorer: condados e fila de geração
 
-- `metric`: `gen_queue_raw_mw`, `gen_queue_adjusted_mw`, `organic_peak_growth_mw`,
-  `permits_units`, `acquisition_score`.
-- Itens de `data.items`: `county_fips`, `county_name`, `weather_zone`, `value`, `p10`, `p90`, `unit`.
+`GET /geo/counties?horizon=2027|2028&stratum=all|solar|storage|wind|gas_other` (padrão 2028, `all`).
+Os 254 condados num payload só; o mapa troca de camada no cliente.
 
-### 2. Métricas por zona (grandes cargas só existem agregadas)
-`GET /geo/zones/metrics?zone_type=load_zone|weather_zone&metric=<metric>&year=<int>`
+- `data.items[]`: `county_fips`, `county_name`, `weather_zone`, `in_ercot` e três blocos:
+  - `acquisition` (X14; `null` fora da ERCOT): `priority`, `rank`, `priority_class` (1–5), `market_score`,
+    `grid_score`, `grid_factor`, `channel` (`retail_direct` | `partnership` | `mixed`), `partner_type`,
+    as participações por área (`retail_share`, `coop_share`, `muni_share`, `outside_share`, `partner_share`,
+    `addressable_share`), `retail_rank` e `partner_rank` (`null` = fora da lista do canal), `n_partners`,
+    `top_partner_share`, `drivers[]`, `drags[]`;
+  - `queue` (X2; `null` sem projeto ativo no estrato): `projects`, `projects_ia`, `raw_mw`, `raw_mw_ia`,
+    `adj_mw` (MW esperados em COD até dezembro do horizonte), `ratio`, `rank_raw`, `rank_adj`, `rank_change`
+    (= `rank_raw − rank_adj`, calculados pela API dentro do estrato e do horizonte), `large_gas_mw_2028`;
+  - `data_centers` (Q4): `sites`, `sites_naics_only` (para o toggle "include NAICS-only matches").
+- `data`: `horizon`, `stratum`, `horizons`, `strata`, `queue_as_of_month`, `legend` (`breaks[4]`, `classes`),
+  `weights` (`signals[]` com bloco e peso, `grid_tilt`).
+- Marts: `mart_county_acquisition`, `mart_queue_adjusted_county` (último `as_of_month`),
+  `mart_data_center_sites_new`, mais a tabela `county_weather_zone` para os 254 condados. A fila entra por join
+  em `county_fips`, nunca copiada para o mart de aquisição.
+- Caveats: `by_area_not_homes`, `by_county_not_point`; `beyond_backtested_window` com `horizon=2028`.
 
-- `metric`: `large_load_raw_mw`, `large_load_adjusted_mw`, `peak_forecast_mw`.
-- Itens: `zone_type`, `zone_id`, `value`, `p10`, `p90`, `unit`.
+`GET /geo/counties/{county_fips}`: o painel do condado. `acquisition`; `signals[]` (os 8 sinais com `raw`, `pct`,
+bloco e peso); `queue[]` por estrato com os dois horizontes; `top_projects[]` (10 maiores por MW esperados em
+dez/2028); `data_centers[]`; `accounts[]` (co-ops e munis que cobrem ≥ 1% do condado, com `county_share`,
+`rank`, `tier`, `next_action`; de `mart_account_counties`, só contas do universo pontuado). 404 para FIPS
+desconhecido.
 
-### 3. Previsões
-`GET /forecasts?region_type=weather_zone|county|utility&region_id=<id>&metric=peak_mw`
+`GET /queue/projects?county=&stratum=&stage=entry|ia&zone=&q=&sort=&desc=&offset=&limit=` (até 500): os projetos
+ativos do último relatório GIS (`mart_queue_project_scores`): `inr`, `project_name`, condado e zonas,
+`fuel_type`, `stratum`, `stage`, `stage_date`, `elapsed_months`, `capacity_mw`, `projected_cod` (a data do
+desenvolvedor), `curve`, `p_cod_2027`, `p_cod_2028`, `mw_2027`, `mw_2028`, `clamped_2027`, `clamped_2028`.
+Padrão: `sort=mw_2028`, decrescente.
 
-- `data.series[]`: `year`, `p10`, `p50`, `p90`.
-- `data.components[]` (decomposição do P50): `year`, `organic_mw`, `large_load_mw`,
-  `generation_added_mw`.
+Fora do contrato: `organic_peak_growth_mw` e `permits_units` por condado, P10/P90 no mapa (R10), fila além de
+dez/2028 (P2). P1: `GET /geo/zones?measure=` (`mart_zone_layers`).
+
+### 2. Grandes cargas por zona
+
+Não há recurso de grandes cargas por condado nem por zona com previsão própria: as grandes cargas são
+estaduais e alocadas (X7, X11). O que existe por zona está no forecast (§3, caveat `allocated_statewide`) e,
+no P1, em `GET /geo/zones`.
+
+### 3. Forecast
+
+`GET /forecasts/peak?region=ERCOT|<zona>&variant=deck_pre_batch_zero|deck_latest|approvals_pace`
+
+- `variant` omitido = o padrão do build (`mart_meta.peak_forecast.default_variant`, R13).
+- `data.series[]` (o total) e `data.layers[]` (`organic`, `large_load`, `unattributed`): `target_year`,
+  `p10_mw`, `p50_mw`, `p90_mw`, `band_kind`, `verified`.
+  - `band_kind`: `p10_p90` (faixa probabilística), `allocation_range` (o mínimo e o máximo entre as divisões
+    candidatas das zonas; **não** é P10–P90) ou `null` (sem faixa, como em `approvals_pace`).
+- `data.official[]`: as previsões oficiais da mesma região (`product`, `vintage`, `vintage_date`, `series` =
+  `ercot_adjusted` | `tsp_provided` | `cdr`, `label`, `target_year`, `mw`), de `mart_official_peak_lines`.
+- `data.inputs`: `deck_vintage`, `factor`, `ratio_p10/p50/p90`, `approved_stock_mw`, `share_of_ll_u` (zonas),
+  `verified`.
+- `data.variants[]`: `variant`, `label`, `is_default`, `has_band`, `regions[]` (onde a variante existe; no P0
+  as zonas só têm a variante padrão). `data.available = false` e séries vazias quando a combinação não existe.
+- Marts: `mart_peak_forecast` (o `as_of` mais recente é o run atual), `mart_official_peak_lines`.
+- Caveats: `machine_read_unverified` quando alguma linha tem `verified = false`; `band_uncalibrated` quando há
+  faixa `p10_p90`; `allocated_statewide` numa zona.
+
+`GET /forecasts/large-load`
+
+- `realization[]` (Q5/X7, `mart_large_load_realization`): safra do deck × ano-alvo com o prometido, o
+  aprovado e as razões; `document` e `page` para o link do slide.
+- `ratio_band`: a faixa da razão que a variante padrão da ERCOT usa (sai do `mart_peak_forecast`, para o gráfico
+  e o forecast nunca divergirem), com `definition`.
+- `in_service[]` (`mart_large_load_in_service`): safra × ano × status (`approved_to_energize`,
+  `planning_studies_approved`, `under_ercot_review`, `no_studies_submitted`), MW acumulados.
+- `monthly[]` (`mart_large_load_monthly`): estoque aprovado mês a mês e o pico observado; `null` = mês sem
+  leitura.
+- `annotations[]` (`mart_annotations`): eventos datados com `source_url` (`null` = fonte não verificada).
+- Todas as linhas trazem `verified`. Caveats: `machine_read_unverified`, `policy_pause_2026`.
+
+Fora do contrato: `generation_added_mw`, `region_type=county` e `region_type=utility` (volta só no P2, simulado).
+P1: `GET /forecasts/queue-curves`, `GET /load/normalized`, `GET /four-cp`.
 
 ### 4. Backtest
-`GET /backtest?target=summer_peak&year=<int>`
 
-- `data.series[]`: `label` (`official_preliminary`, `official_adjusted`, `actual`, `model`),
-  `value_mw`, `low_mw`, `high_mw` (faixas quando a fonte dá intervalo), `source`, `method`
-  (`file`, `manual`, `model`).
+`GET /backtest/peak?as_of=` (padrão: a data mais recente)
+
+- `as_of_dates[]` (as 8 datas) e `cells[]` da data escolhida (`mart_peak_backtest`): `as_of`, `target_year`,
+  `horizon`, `source` (`basecast`, `basecast_organic_only`, `LTLF`, `CDR`…), `product`, `vintage`, `variant`,
+  `era`, `p10/p50/p90_mw` (oficiais só `p50_mw`), `actual_mw`, `actual_final`, `error_pct`, `in_band`, as
+  camadas (`organic_p50`, `ll_p50`, `u_p50`, `ll_realized`, `u_realized`), `leak_note`, `verified`.
+- `scores[]`: por `era` (e `era = all`) e fonte, sobre todas as datas: `n`, `mape` (média de |`error_pct`|),
+  `bias_pct` (média de `error_pct`), `coverage` (parcela em `in_band`).
+- `comparisons[]`: para cada fonte oficial, o basecast e a fonte nas mesmas células, pareadas por
+  (`as_of`, `target_year`), por era e no total. É a tabela "3,3% × 5,1%" do X7.
+- `ablation[]`: `basecast` × `basecast_organic_only` em `era = all`.
+- `eras[]` (de `mart_meta`), `actuals[]` (`mart_actual_summer_peaks`), `fan_target_year` e `fan[]`
+  (`mart_backtest_fan`: as previsões oficiais do último verão, a faixa da própria ERCOT, o real e o nosso modelo
+  em cada data; `kind` = `official_preliminary` | `official_range` | `official` | `actual` | `model`).
+- Caveats: `band_uncalibrated`, `machine_read_unverified`, `preliminary_actuals` enquanto o último verão não
+  estiver liquidado.
+
+`GET /backtest/official-errors?product=`: a matriz safra × ano-alvo (`mart_official_forecast_errors`) e o resumo
+por produto e horizonte (`n`, `mape`, `bias_pct`), mais a lista de produtos.
+
+`GET /backtest/queue`: o modelo da fila refeito em relatórios passados, 24 meses à frente
+(`mart_queue_backtest`): `raw_mw`, `pred_mw`, `actual_mw`, `developer_projected_mw`, `error_pct` por data e
+estrato, e `county_rank[]` com o Spearman por condado (ajustada, bruta, datas dos desenvolvedores).
 
 ### 5. Contas (inteligência comercial)
-`GET /accounts?in_ercot=true&type=coop|muni|gt`
 
-- Itens: `utility_id`, `name`, `type`, `parent_utility_id` (cooperativa de geração e transmissão),
-  `in_ercot`, `is_base_partner`, `priority_score`, `first_deficit_year`, `deficit_mw_p50_next_3y`,
-  `top_trigger`.
+`GET /accounts?type=&tier=&next_action=&trigger=&zone=&gt=&county=&q=&sort=&desc=&rank_scope=all|within_type`
 
-`GET /accounts/{utility_id}`
+- Filtros de categoria aceitam vários valores (`tier=A&tier=B`). `trigger`: contas com algum desses gatilhos
+  ativos. `county`: contas que cobrem ≥ 1% do condado (`mart_account_counties`). `q`: nome contém.
+- `sort`: `rank` (padrão), `score`, `name`, `meters`, `latest_event_date`, `action_changes_on`; nulos por
+  último. Com `rank_scope=within_type`, `sort=rank` ordena por tipo e `rank_within_type`.
+- `data.items[]` (`mart_accounts`): `account_id`, `name`, `account_type` (`coop` | `muni`), `eia_utility_id`,
+  `gt` (G&T; substitui `parent_utility_id`), `primary_weather_zone`, `meters`, `score`, `rank`,
+  `rank_within_type`, `tier` (`A` | `B` | `C`), `signals` (`{signal: {raw, pct}}`), `next_action`
+  (`call_now` | `nurture` | `watch` | `hold`), `action_changes_on` (quando a ação expira sem evento novo),
+  `n_strong`, `n_context`, `latest_event_date`, `top_trigger` (`trigger`, `title`, `event_date`, `age_days`),
+  `active_triggers[]`, `flags[]`, `simulated`.
+- `data`: `total`, `rank_scope`, `signals[]` (rótulo, unidade e peso de cada sinal), `weights_set`,
+  `weights_status`.
+- Caveats: `weights_pending_review` (enquanto `weights_status = pending_review`), `by_county_not_point`.
 
-- `profile`: `name`, `type`, `counties[]` (com a fração de área), `load_zones[]`.
-- `forecast`: mesmo formato do recurso 3.
-- `deficit[]`: `year`, `p10_mw`, `p50_mw`, `p90_mw`.
-- `triggers[]`: `date`, `kind`, `description`, `evidence[]` (dataset + referência).
-- `next_action`: `code`, `title`, `rationale`, `evidence[]`.
-- `coverage`: `public_data: true`, `utility_private_data: bool`, `fleet_data: bool`, `resolution`
-  (`zone` ou `territory`).
+`GET /accounts/export.csv` (mesmos filtros): `text/csv` em streaming, anexo `basecast-accounts-<as_of>.csv`,
+as mesmas linhas da lista com `top_trigger` e `signals` achatados (`raw_<sinal>`, `pct_<sinal>`) e listas
+separadas por `; `.
 
-`GET /accounts/{utility_id}/export.csv`: a recomendação em CSV, para colar num CRM.
+`GET /accounts/{account_id}`: o diagnóstico do X9 §4, servido do `payload` de `mart_account_detail`.
+
+- `header[]` e `territory.facts[]` são Facts: `{key, label, value, unit, source, as_of, note, simulated,
+  verified}`; `value = null` é lacuna, nunca zero.
+- `score` (sinais com peso configurado, peso usado e contribuição; as contribuições somam o score),
+  `next_action` (`rule`, `lead_trigger`, `offer`, `talking_points`, `changes_on`, `changes_to`),
+  `triggers` (`active[]` com os eventos fortes ativos, `context_summary[]` com uma linha por gatilho de
+  contexto, `history_count`), `territory` (`counties[]`, `context_rule` = `exposed` | `home_county`,
+  `context_label`, `zones[]`, `data_centers[]`, `queue[]`, `zone_outlook`), `eia_series[]`, `gaps[]`,
+  `coverage` (`public_data`, `utility_private_data`, `fleet_data`, `resolution` = `zone` |
+  `territory (simulated)`).
+- P1 entram depois neste payload: card do G&T (X13), oferta de 4CP (X3 + X15) e fatos de cidade das munis (X10).
+
+`GET /accounts/{account_id}/events?since=&trigger=&strength=&offset=&limit=`: o histórico completo, do mais novo
+para o mais antigo (`mart_account_events`). Paginação por `offset`/`limit` (até 500), como em
+`/pipeline/runs`.
+
+Fora do contrato: `first_deficit_year`, `deficit_mw_p50_next_3y` (precisam da carga da conta: só no P2,
+simulado), `forecast`/`deficit[]` por conta, `load_zones[]` e `is_base_partner` (até a A-M8).
+
+P1: `GET /insights` (cards com valor, legenda, ressalva obrigatória e link; valores só dos marts).
 
 ### 6. Pipeline, lake e tabelas (página /data)
 Implementado (os primeiros routers do get-data). O schema exato de cada resposta está no `openapi.json`;
@@ -125,7 +297,7 @@ ordem das colunas), `offset`, `limit`, `total`, `total_estimated`. Datas saem em
 resumidas (`POLYGON · 1023 points`).
 
 **Execuções.** `GET /pipeline/runs?source=&stage=&status=&offset=&limit=`: `run_id`, `source`, `stage`
-(`raw` | `process`), `dag_id`, `task_id`, `started_at`, `finished_at`, `duration_s`, `status`, `rows`,
+(`raw` | `process` | `model`, este último para os builds dos marts), `dag_id`, `task_id`, `started_at`, `finished_at`, `duration_s`, `status`, `rows`,
 `files`, `files_skipped`, `bytes`, `error`, mais `total`.
 
 ### 7. Log operacional (`ops.log`, tela /ops do app)
