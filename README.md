@@ -6,9 +6,10 @@ and generation) actually gets built, where and when, and turns that into peak-de
 It serves `basecast-app` through one typed endpoint per resource and owns the data contract between the
 pipelines and the frontend. The OpenAPI spec generates the app's TypeScript client.
 
-> **Status:** contract v2 is live. The accounts, Explorer, forecast and backtest resources serve invented
-> fixtures (`simulated: true`, caveat `fixture`) until the marts from basecast-airflow are wired in (task C-2).
-> The /data browser's endpoints read the real lake, tables and pipeline runs.
+> **Status:** contract v2 is live. The accounts, Explorer, forecast and backtest resources read the marts
+> basecast-airflow writes to `public.mart_*`, group by group (`DATA_MODE`, `MARTS_LIVE`); a group not switched
+> yet serves invented fixtures (`simulated: true`, caveat `fixture`). The /data browser's endpoints read the
+> real lake, tables and pipeline runs.
 
 ## Repos
 
@@ -41,7 +42,7 @@ Every route but `/health` needs `Authorization: Bearer $API_TOKEN`.
 | `GET /queue/projects` | Generation-queue projects with their chance of reaching COD |
 | `GET /forecasts/peak` · `/forecasts/large-load` | Peak forecast in three layers vs ERCOT's; the large-load flow |
 | `GET /backtest/peak` · `/official-errors` · `/queue` | Our model and ERCOT's forecasts against the actual; the queue model |
-| `GET /caveats` | The caveat codes and the text the app shows for each |
+| `GET /caveats` · `/glossary` | The caveat texts; the labels of the trigger, flag and next-action codes |
 | `GET /lake/sources` | Every raw source: files, snapshots, formats, datasets, last runs |
 | `GET /lake/list` | Folders and files under a prefix of the lake |
 | `GET /lake/object` | One file: manifest entry, lineage, the same file in other snapshots |

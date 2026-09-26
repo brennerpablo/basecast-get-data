@@ -79,21 +79,42 @@ inteiro. Os textos não levam números que um rebuild possa mudar.
   em silêncio.
 - **404 `{"detail": "not_found"}`** para qualquer id desconhecido. Uma conta retida pela trava de validação
   responde igual, sem dica de que existe.
+- **503 `{"detail": "database unavailable"}`** quando o Postgres não responde (modo marts).
 - **422** para parâmetro fora do domínio (o padrão do FastAPI); no `GET /backtest/peak`, um `as_of` inválido
   responde `{"detail": "invalid_as_of", "as_of_dates": [...]}`.
 
-### Fixtures
+### Fixtures e marts
 
-Até a C-2 ligar os marts, todo recurso de §1–§5 sai de `basecast_get_data/data/fixtures/<mart>.json`: cópias
-pequenas e inventadas dos marts, com os mesmos nomes e colunas, geradas por
-`scripts/make_contract_fixtures.py` (seed fixa). Só as chaves de condado são reais. As contas são fictícias
+Cada recurso de §1–§5 lê frames no formato dos marts, de uma de duas origens:
+
+- **marts:** `public.mart_*` no Postgres (como `basecast_reader`), carregados inteiros na memória no primeiro
+  uso ou na subida, e conferidos a cada `MART_TTL_S` (10 min): o mart só é recarregado quando mudam o número
+  de linhas, `built_at`, `model_version` ou `as_of`. Cada carga escreve um evento `mart.load` (por enquanto
+  só no stdout, no formato do §7; o INSERT no `ops.log` espera o papel próprio da API). Um mart que não existe,
+  ou que não tem as colunas que a API lê, responde 503 `mart_not_built`; nunca cai para fixture.
+- **fixtures:** `basecast_get_data/data/fixtures/<mart>.json`, cópias pequenas e inventadas dos marts, com os
+  mesmos nomes e colunas, geradas por `scripts/make_contract_fixtures.py` (seed fixa).
+
+A origem é escolhida por grupo de recursos (`accounts`, `explorer`, `forecast`, `backtest`):
+`DATA_MODE=marts` põe todos nos marts; com `DATA_MODE=fixtures`, só os grupos de `MARTS_LIVE` (variável, ou
+o padrão em `config.py`) leem os marts. Produção troca grupo por grupo, à medida que a sessão A publica
+marts que passaram nos checks. `GET /health` diz `data_mode`, `marts_live` e os marts em memória.
+
+Sobre as fixtures: Só as chaves de condado são reais. As contas são fictícias
 (`FX001`…, nomes inventados), então nenhuma conta retida pode aparecer numa fixture. Toda resposta de fixture
 traz `simulated: true` e o caveat `fixture`. As fixtures também são a referência de formato de cada linha
 para a sessão A.
 
 Valores de build que não são linhas ficam no mart `mart_meta` (`mart`, `key`, `value` jsonb): `accounts.signals`,
 `county_acquisition.legend_breaks` / `grid_tilt` / `signals`, `peak_forecast.default_variant` / `variants` /
-`ratio_definition`, `peak_backtest.eras`.
+`ratio_definition`, `peak_backtest.eras`, `glossary.items`.
+
+### Glossário (`GET /glossary`)
+
+Sem envelope, como `/caveats`: `items[]` com `kind` (`trigger` | `flag` | `next_action`), `code`, `label`
+(curto, para chip e coluna), `text` (o significado, para tooltip) e `strength` (`strong` | `context`, só em
+gatilho). A fonte é o `mart_meta` (`glossary.items`), escrito pela sessão A a partir do config de gatilhos
+(X5), então uma mudança de força (R12) chega sozinha. O app mostra esses rótulos e não escreve os seus.
 
 ### Trava de validação
 
@@ -279,7 +300,8 @@ cada 10 min). Só `raw/`, `parquet/` e `derived/` são navegáveis; o resto do b
 **Tabelas tratadas.** Postgres `basecast.public` (como `basecast_reader`) e BigQuery `basecast`.
 
 - `GET /tables`: `dataset_registry` cruzado com o que existe; `kind` = `dataset` | `system` |
-  `unregistered`, `declared`, `loaded`, `rows` (no Postgres é a estimativa do `pg_class`,
+  `unregistered`, `declared`, `loaded`, `inputs` (as tabelas que um mart lê, para a linhagem de /data/flow;
+  `null` nos datasets dos parsers e enquanto o registry não tiver a coluna), `rows` (no Postgres é a estimativa do `pg_class`,
   `rows_estimated: true`), `bytes`.
 - `GET /tables/{name}`: o mesmo, mais `columns[]`, `key_columns`, `partition_field`, `cluster_fields`.
 - `GET /tables/{name}/rows?offset=&limit=&sort=&desc=&filter=&with_summary=`: um bloco. `limit` até 1.000 e

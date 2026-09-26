@@ -85,10 +85,11 @@ basecast-get-data/
 ├── pyproject.toml            # Python 3.12, uv, FastAPI
 ├── basecast_get_data/
 │   ├── main.py               # create_app(); config.py (env, production defaults), auth.py (Bearer)
-│   ├── routers/              # one router per resource: accounts, geo, queue, forecasts, backtest, caveats
-│   │                         #   (contract v2), lake, tables, pipeline (/data)
+│   ├── routers/              # one router per resource: accounts, geo, queue, forecasts, backtest, catalogs
+│   │                         #   (/caveats, /glossary) (contract v2), lake, tables, pipeline (/data)
 │   ├── schemas/              # Pydantic models = the contract; caveats.py is the caveat catalog
-│   ├── products/             # store.py (mart-shaped frames: fixtures now, marts in C-2), envelope.py (meta)
+│   ├── products/             # marts.py (registry: mart → group, required columns), store.py (frames from
+│   │                         #   fixtures or public.mart_*, DATA_MODE/MARTS_LIVE, refresh), envelope.py (meta)
 │   ├── lake/                 # storage (local | GCS), manifest index, file readers, parse cache
 │   ├── tables/               # dataset_registry, Postgres and BigQuery catalog and rows, filter grammar
 │   ├── db/                   # Postgres pool (basecast_reader) and BigQuery client
