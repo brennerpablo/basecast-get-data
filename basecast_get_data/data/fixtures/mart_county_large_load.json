@@ -1,0 +1,173 @@
+{
+ "note": "Fixture: invented values, not a model output (scripts/make_contract_fixtures.py).",
+ "rows": [
+  {
+   "county_fips": "48457",
+   "county_name": "Tyler",
+   "weather_zone": "COAST",
+   "allocated_a2e_mw": null,
+   "named_by_ercot": true,
+   "observed_base_mw": 4286.8,
+   "observed_base_studied_mw": 1358.9,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48391",
+   "county_name": "Refugio",
+   "weather_zone": "SOUTH",
+   "allocated_a2e_mw": 96.0,
+   "named_by_ercot": true,
+   "observed_base_mw": 706.4,
+   "observed_base_studied_mw": 950.7,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48105",
+   "county_name": "Crockett",
+   "weather_zone": "FWEST",
+   "allocated_a2e_mw": 574.8,
+   "named_by_ercot": true,
+   "observed_base_mw": 527.6,
+   "observed_base_studied_mw": 5453.5,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48159",
+   "county_name": "Franklin",
+   "weather_zone": "EAST",
+   "allocated_a2e_mw": 105.8,
+   "named_by_ercot": true,
+   "observed_base_mw": 959.0,
+   "observed_base_studied_mw": 1752.8,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48057",
+   "county_name": "Calhoun",
+   "weather_zone": "COAST",
+   "allocated_a2e_mw": 434.3,
+   "named_by_ercot": true,
+   "observed_base_mw": 3777.9,
+   "observed_base_studied_mw": 1736.3,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48479",
+   "county_name": "Webb",
+   "weather_zone": "SOUTH",
+   "allocated_a2e_mw": null,
+   "named_by_ercot": true,
+   "observed_base_mw": 3098.7,
+   "observed_base_studied_mw": 8988.8,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48505",
+   "county_name": "Zapata",
+   "weather_zone": "SOUTH",
+   "allocated_a2e_mw": 853.3,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48099",
+   "county_name": "Coryell",
+   "weather_zone": "NCENT",
+   "allocated_a2e_mw": 296.4,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48181",
+   "county_name": "Grayson",
+   "weather_zone": "NORTH",
+   "allocated_a2e_mw": 386.3,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48161",
+   "county_name": "Freestone",
+   "weather_zone": "EAST",
+   "allocated_a2e_mw": 649.3,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48235",
+   "county_name": "Irion",
+   "weather_zone": "WEST",
+   "allocated_a2e_mw": null,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48135",
+   "county_name": "Ector",
+   "weather_zone": "FWEST",
+   "allocated_a2e_mw": 446.1,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48313",
+   "county_name": "Madison",
+   "weather_zone": "EAST",
+   "allocated_a2e_mw": 578.3,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  },
+  {
+   "county_fips": "48013",
+   "county_name": "Atascosa",
+   "weather_zone": "SOUTH",
+   "allocated_a2e_mw": 862.9,
+   "named_by_ercot": false,
+   "observed_base_mw": null,
+   "observed_base_studied_mw": null,
+   "verified": false,
+   "as_of": "2026-09-20",
+   "model_version": "fixture-v2"
+  }
+ ]
+}

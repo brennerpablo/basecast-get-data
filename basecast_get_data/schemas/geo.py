@@ -177,3 +177,50 @@ class CountyDetail(BaseModel):
 class CountyDetailResponse(BaseModel):
     meta: Meta
     data: CountyDetail
+
+
+# --- zone layers (P1) ------------------------------------------------------------------------------------
+
+
+class ZoneValue(BaseModel):
+    weather_zone: str
+    central: float | None = None
+    low: float | None = Field(None, description="Low end of the allocation band, when there is one")
+    high: float | None = None
+    verified: bool = True
+
+
+class ZoneLayer(BaseModel):
+    measure: str = Field(
+        description="excess_share, min_max_ratio_2019, min_max_ratio_2026 (X1); a2e_stock, pipeline_2032, "
+        "u_share (X11)"
+    )
+    label: str
+    unit: str
+    method: str | None = Field(None, description="How the zone values were obtained (observed or allocated)")
+    zones: list[ZoneValue]
+
+
+class CountyLargeLoad(BaseModel):
+    """A county's large load: the approved stock allocated to it, and ERCOT's figures where it names it."""
+
+    county_fips: str
+    county_name: str
+    weather_zone: str | None = None
+    allocated_a2e_mw: float | None = Field(
+        None, description="Approved stock allocated by data-center signals"
+    )
+    named_by_ercot: bool = Field(description="ERCOT's deck names the county: draw it as an observed point")
+    observed_base_mw: float | None = None
+    observed_base_studied_mw: float | None = None
+    verified: bool = False
+
+
+class ZonesData(BaseModel):
+    layers: list[ZoneLayer]
+    counties: list[CountyLargeLoad]
+
+
+class ZonesResponse(BaseModel):
+    meta: Meta
+    data: ZonesData

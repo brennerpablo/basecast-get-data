@@ -351,3 +351,18 @@ def test_detail_p1_cards(client):
     coop = client.get("/accounts/FX001").json()
     assert coop["data"]["suppliers"][0]["verified"] is False and coop["data"]["city"] is None
     assert "requests_not_forecasts" in [c["code"] for c in coop["meta"]["caveats"]]
+
+
+def test_zone_layers_and_named_counties(client):
+    body = client.get("/geo/zones").json()
+    d = body["data"]
+    assert {layer["measure"] for layer in d["layers"]} >= {"excess_share", "a2e_stock", "pipeline_2032"}
+    assert all(len(layer["zones"]) == 8 for layer in d["layers"])
+    assert (
+        "allocated_statewide" in [c["code"] for c in body["meta"]["caveats"]]
+        and body["meta"]["verified"] is False
+    )
+    named = [c for c in d["counties"] if c["named_by_ercot"]]
+    assert named and all(c["observed_base_mw"] is not None for c in named)
+    only = client.get("/geo/zones", params={"measure": "u_share"}).json()["data"]["layers"]
+    assert [layer["measure"] for layer in only] == ["u_share"]

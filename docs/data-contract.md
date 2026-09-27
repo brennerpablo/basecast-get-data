@@ -160,7 +160,15 @@ desenvolvedor), `curve`, `p_cod_2027`, `p_cod_2028`, `mw_2027`, `mw_2028`, `clam
 Padrão: `sort=mw_2028`, decrescente.
 
 Fora do contrato: `organic_peak_growth_mw` e `permits_units` por condado, P10/P90 no mapa (R10), fila além de
-dez/2028 (P2). P1: `GET /geo/zones?measure=` (`mart_zone_layers`).
+dez/2028 (P2).
+
+`GET /geo/zones?measure=` (P1; `mart_zone_layers`, `mart_county_large_load`): camadas por weather zone, agrupadas
+por medida (`layers[]`: `measure`, `label`, `unit`, `method`, `zones[]` com `central`, `low`, `high`,
+`verified`). As medidas são `excess_share`, `min_max_ratio_2019` e `min_max_ratio_2026` (X1: onde a carga plana
+chegou), `a2e_stock`, `pipeline_2032` e `u_share` (X11; alocadas com faixa, lidas por máquina). `counties[]`:
+o estoque aprovado alocado por condado (`allocated_a2e_mw`) e os condados que a ERCOT nomeia
+(`named_by_ercot`, com os MW observados), que o mapa desenha como pontos. O pipeline nunca é espalhado pelos
+alvarás. Caveat `allocated_statewide`.
 
 ### 2. Grandes cargas por zona
 

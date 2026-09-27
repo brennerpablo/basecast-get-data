@@ -881,6 +881,71 @@
         }
       }
     },
+    "/geo/zones": {
+      "get": {
+        "tags": [
+          "explorer"
+        ],
+        "summary": "Zones",
+        "description": "Grid layers by weather zone: where flat load arrived (X1) and where the large loads are, approved and\nqueued (X11), plus the counties with large load: allocated approved stock and ERCOT's named counties.",
+        "operationId": "zones_geo_zones_get",
+        "parameters": [
+          {
+            "name": "measure",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Only these measures",
+              "title": "Measure"
+            },
+            "description": "Only these measures"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZonesResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The mart behind this resource is not built yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MartNotBuilt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/queue/projects": {
       "get": {
         "tags": [
@@ -4201,6 +4266,81 @@
           "data"
         ],
         "title": "CountyDetailResponse"
+      },
+      "CountyLargeLoad": {
+        "properties": {
+          "county_fips": {
+            "type": "string",
+            "title": "County Fips"
+          },
+          "county_name": {
+            "type": "string",
+            "title": "County Name"
+          },
+          "weather_zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weather Zone"
+          },
+          "allocated_a2e_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allocated A2E Mw",
+            "description": "Approved stock allocated by data-center signals"
+          },
+          "named_by_ercot": {
+            "type": "boolean",
+            "title": "Named By Ercot",
+            "description": "ERCOT's deck names the county: draw it as an observed point"
+          },
+          "observed_base_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Base Mw"
+          },
+          "observed_base_studied_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Base Studied Mw"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "county_fips",
+          "county_name",
+          "named_by_ercot"
+        ],
+        "title": "CountyLargeLoad",
+        "description": "A county's large load: the approved stock allocated to it, and ERCOT's figures where it names it."
       },
       "CountyQueue": {
         "properties": {
@@ -11094,6 +11234,50 @@
         ],
         "title": "ZipMember"
       },
+      "ZoneLayer": {
+        "properties": {
+          "measure": {
+            "type": "string",
+            "title": "Measure",
+            "description": "excess_share, min_max_ratio_2019, min_max_ratio_2026 (X1); a2e_stock, pipeline_2032, u_share (X11)"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Method",
+            "description": "How the zone values were obtained (observed or allocated)"
+          },
+          "zones": {
+            "items": {
+              "$ref": "#/components/schemas/ZoneValue"
+            },
+            "type": "array",
+            "title": "Zones"
+          }
+        },
+        "type": "object",
+        "required": [
+          "measure",
+          "label",
+          "unit",
+          "zones"
+        ],
+        "title": "ZoneLayer"
+      },
       "ZoneOutlook": {
         "properties": {
           "zone": {
@@ -11342,6 +11526,98 @@
           "area_share"
         ],
         "title": "ZoneShare"
+      },
+      "ZoneValue": {
+        "properties": {
+          "weather_zone": {
+            "type": "string",
+            "title": "Weather Zone"
+          },
+          "central": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Central"
+          },
+          "low": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Low",
+            "description": "Low end of the allocation band, when there is one"
+          },
+          "high": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "High"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "weather_zone"
+        ],
+        "title": "ZoneValue"
+      },
+      "ZonesData": {
+        "properties": {
+          "layers": {
+            "items": {
+              "$ref": "#/components/schemas/ZoneLayer"
+            },
+            "type": "array",
+            "title": "Layers"
+          },
+          "counties": {
+            "items": {
+              "$ref": "#/components/schemas/CountyLargeLoad"
+            },
+            "type": "array",
+            "title": "Counties"
+          }
+        },
+        "type": "object",
+        "required": [
+          "layers",
+          "counties"
+        ],
+        "title": "ZonesData"
+      },
+      "ZonesResponse": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ZonesData"
+          }
+        },
+        "type": "object",
+        "required": [
+          "meta",
+          "data"
+        ],
+        "title": "ZonesResponse"
       }
     }
   }

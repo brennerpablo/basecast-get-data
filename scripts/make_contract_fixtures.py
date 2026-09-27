@@ -2154,6 +2154,68 @@ def make_four_cp() -> dict[str, list[dict[str, Any]]]:
     }
 
 
+# --- P1: grid layers by zone (X1, X11) ---------------------------------------------------------------------
+
+ZONE_MEASURES = [
+    ("excess_share", "Share of the coincident peak excess, 2023–2026 (fixture)", "share", "observed"),
+    ("min_max_ratio_2019", "Average summer day min/max load, 2019 (fixture)", "ratio", "observed"),
+    ("min_max_ratio_2026", "Average summer day min/max load, 2026 (fixture)", "ratio", "observed"),
+    ("a2e_stock", "Approved large load, allocated (fixture)", "MW", "allocated"),
+    ("pipeline_2032", "Large-load pipeline 2032, by zone (fixture)", "MW", "observed by zone"),
+    ("u_share", "Share of the unattributed layer (fixture)", "share", "allocated"),
+]
+
+
+def make_zone_layers() -> list[dict[str, Any]]:
+    rows = []
+    for measure, label, unit, method in ZONE_MEASURES:
+        for zone in ZONES:
+            if unit == "MW":
+                central = rng.uniform(100, 3000) if measure == "a2e_stock" else rng.uniform(1000, 40000)
+            elif measure.startswith("min_max"):
+                central = rng.uniform(0.55, 0.9)
+            else:
+                central = LLU_SHARE[zone]
+            banded = method == "allocated"
+            rows.append(
+                {
+                    "weather_zone": zone,
+                    "measure": measure,
+                    "label": label,
+                    "unit": unit,
+                    "method": method,
+                    "central": r4(central) if unit != "MW" else r1(central),
+                    "low": (r4(central * 0.7) if unit != "MW" else r1(central * 0.7)) if banded else None,
+                    "high": (r4(central * 1.3) if unit != "MW" else r1(central * 1.3)) if banded else None,
+                    "verified": not measure.startswith(("a2e", "pipeline")),
+                    "as_of": iso(AS_OF),
+                    "model_version": MODEL_VERSION,
+                }
+            )
+    return rows
+
+
+def make_county_large_load() -> list[dict[str, Any]]:
+    rows = []
+    for i, c in enumerate(rng.sample(ERCOT, 14)):
+        named = i < 6
+        rows.append(
+            {
+                "county_fips": c["county_fips"],
+                "county_name": c["county_name"],
+                "weather_zone": c["weather_zone"],
+                "allocated_a2e_mw": r1(rng.uniform(50, 900)) if i % 5 else None,
+                "named_by_ercot": named,
+                "observed_base_mw": r1(rng.uniform(500, 5000)) if named else None,
+                "observed_base_studied_mw": r1(rng.uniform(800, 9000)) if named else None,
+                "verified": False,
+                "as_of": iso(AS_OF),
+                "model_version": MODEL_VERSION,
+            }
+        )
+    return rows
+
+
 def main() -> None:
     projects = make_projects()
     queue = county_queue(projects)
@@ -2196,6 +2258,8 @@ def main() -> None:
     write("mart_four_cp_dispatch_curve", four_cp["dispatch"])
     write("mart_four_cp_scarcity", four_cp["scarcity"])
     write("mart_four_cp_rates", four_cp["rates"])
+    write("mart_zone_layers", make_zone_layers())
+    write("mart_county_large_load", make_county_large_load())
     write(
         "mart_meta",
         {

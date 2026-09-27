@@ -26,6 +26,8 @@ MARTS: dict[str, str] = {
     "mart_queue_adjusted_county": "explorer",
     "mart_queue_project_scores": "explorer",
     "mart_data_center_sites_new": "explorer",
+    "mart_zone_layers": "explorer",
+    "mart_county_large_load": "explorer",
     "mart_peak_forecast": "forecast",
     "mart_official_peak_lines": "forecast",
     "mart_large_load_realization": "forecast",

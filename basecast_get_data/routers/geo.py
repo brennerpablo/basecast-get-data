@@ -21,6 +21,7 @@ from basecast_get_data.schemas.geo import (
     CountyDataCenters,
     CountyDetail,
     CountyDetailResponse,
+    CountyLargeLoad,
     CountyQueue,
     CountyQueueStratum,
     CountyRow,
@@ -28,6 +29,10 @@ from basecast_get_data.schemas.geo import (
     DataCenterSite,
     LegendClasses,
     SignalWeight,
+    ZoneLayer,
+    ZonesData,
+    ZonesResponse,
+    ZoneValue,
 )
 from basecast_get_data.schemas.queue import QueueProject, Stratum
 
@@ -206,4 +211,39 @@ def county_detail(county_fips: str = Path(..., pattern=r"^\d{5}$")) -> CountyDet
             data_centers=[DataCenterSite(**r) for r in sites.to_dicts()],
             accounts=[CountyAccount(**r) for r in accounts.to_dicts()],
         ),
+    )
+
+
+ZONE_LAYERS, COUNTY_LARGE_LOAD = "mart_zone_layers", "mart_county_large_load"
+
+
+@router.get("/zones", response_model=ZonesResponse, responses=PRODUCT_ERRORS)
+def zones(measure: list[str] | None = Query(None, description="Only these measures")) -> ZonesResponse:
+    """Grid layers by weather zone: where flat load arrived (X1) and where the large loads are, approved and
+    queued (X11), plus the counties with large load: allocated approved stock and ERCOT's named counties."""
+    layers = store.frame(ZONE_LAYERS)
+    if measure:
+        layers = layers.filter(pl.col("measure").is_in(measure))
+    counties = store.frame(COUNTY_LARGE_LOAD).sort("county_fips")
+    out = []
+    for (name,), block in layers.sort(["measure", "weather_zone"]).group_by(["measure"], maintain_order=True):
+        first = block.row(0, named=True)
+        out.append(
+            ZoneLayer(
+                measure=name,
+                label=first["label"],
+                unit=first["unit"],
+                method=first.get("method"),
+                zones=[ZoneValue(**r) for r in block.to_dicts()],
+            )
+        )
+    return ZonesResponse(
+        meta=product_meta(
+            ZONE_LAYERS,
+            COUNTY_LARGE_LOAD,
+            rows=layers,
+            verified=all_verified(layers, counties),
+            caveats=["allocated_statewide"],
+        ),
+        data=ZonesData(layers=out, counties=[CountyLargeLoad(**r) for r in counties.to_dicts()]),
     )
