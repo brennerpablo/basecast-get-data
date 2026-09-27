@@ -280,6 +280,67 @@ class Coverage(BaseModel):
     resolution: Literal["zone", "territory (simulated)"] = "zone"
 
 
+# --- P1 blocks of the detail -----------------------------------------------------------------------------
+
+
+class SupplierPoint(BaseModel):
+    year: int
+    mw: float
+
+
+class SupplierCard(BaseModel):
+    """The wholesale supplier's large-load requests (X13): requests, not forecasts, no location below it."""
+
+    gt: str = Field(description="The wholesale supplier (G&T)")
+    tsp: str | None = Field(None, description="Its row in the PUCT 58777 RFI")
+    via: str = Field(description="g&t (through the supplier) or self")
+    fact: str = Field(description="The sentence the card shows, built from the mart values")
+    path: list[SupplierPoint] = Field(description="Requested MW by year (2026, 2030, 2032)")
+    share_of_rfi: float | None = Field(
+        None, description="The supplier's share of the ERCOT-wide RFI (near year)"
+    )
+    n_accounts: int | None = Field(None, description="Analysed accounts with the same supplier")
+    filed_date: date | None = None
+    source_ref: str | None = None
+    fires_trigger: bool = Field(description="Whether it counts as the tsp_large_load context trigger")
+    verified: bool = False
+
+
+class FourCpRate(BaseModel):
+    charges_for_year: int
+    docket: str
+    usd_per_mw_yr: float
+    status: Literal["final", "pending"]
+    billed_year: int
+
+
+class FourCpOffer(BaseModel):
+    """What a 4CP discharge is worth to the co-op (X3 + X15): avoided cost for the co-op, not Base revenue."""
+
+    zone: str
+    zone_line: str | None = Field(None, description="The zone's 4CP talking point")
+    window_start_local: str
+    window_end_local: str
+    dispatch_days: float | None = Field(None, description="Dispatch days per summer a weather rule needs")
+    rates: list[FourCpRate]
+    note: str = Field(description="How to read the dollars: avoided cost, not revenue; fleet kW per home")
+    account_4cp: Fact = Field(description="The account's own load at the 4CP: private data, a gap for now")
+    verified: bool = True
+
+
+class CityFacts(BaseModel):
+    """Census place facts for a muni (X10), labelled as the city, not the territory."""
+
+    place_name: str
+    place_fips: str
+    fit: Literal["same", "city_larger", "territory_larger"] = Field(
+        description="How well the city describes the territory, by area"
+    )
+    place_in_territory: float | None = None
+    territory_in_place: float | None = None
+    facts: list[Fact]
+
+
 class AccountDetail(BaseModel):
     account_id: str
     name: str
@@ -294,6 +355,9 @@ class AccountDetail(BaseModel):
     eia_series: list[EiaYear]
     gaps: list[Gap] = Field(default_factory=list)
     coverage: Coverage = Field(default_factory=Coverage)
+    suppliers: list[SupplierCard] = Field(default_factory=list, description="P1: the wholesale supplier card")
+    four_cp_offer: FourCpOffer | None = Field(None, description="P1: the 4CP offer card")
+    city: CityFacts | None = Field(None, description="P1: city facts, munis only")
 
 
 class AccountDetailResponse(BaseModel):

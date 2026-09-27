@@ -3,7 +3,7 @@
  "rows": [
   {
    "year": 2012,
-   "load_peak_mean_he": 17.3,
+   "load_peak_mean_he": 17.1,
    "net_load_peak_mean_he": 17.5,
    "cp_net_load_rank_median": 1.0,
    "cp_price_rank_median": 5,
@@ -14,7 +14,7 @@
   },
   {
    "year": 2013,
-   "load_peak_mean_he": 17.2,
+   "load_peak_mean_he": 17.0,
    "net_load_peak_mean_he": 17.8,
    "cp_net_load_rank_median": 1.8,
    "cp_price_rank_median": 11,
@@ -25,7 +25,7 @@
   },
   {
    "year": 2014,
-   "load_peak_mean_he": 17.4,
+   "load_peak_mean_he": 17.2,
    "net_load_peak_mean_he": 18.0,
    "cp_net_load_rank_median": 2.6,
    "cp_price_rank_median": 17,
@@ -36,7 +36,7 @@
   },
   {
    "year": 2015,
-   "load_peak_mean_he": 16.9,
+   "load_peak_mean_he": 17.5,
    "net_load_peak_mean_he": 18.2,
    "cp_net_load_rank_median": 3.4,
    "cp_price_rank_median": 23,
@@ -58,7 +58,7 @@
   },
   {
    "year": 2017,
-   "load_peak_mean_he": 16.8,
+   "load_peak_mean_he": 17.5,
    "net_load_peak_mean_he": 18.8,
    "cp_net_load_rank_median": 5.0,
    "cp_price_rank_median": 35,
@@ -69,7 +69,7 @@
   },
   {
    "year": 2018,
-   "load_peak_mean_he": 17.3,
+   "load_peak_mean_he": 17.1,
    "net_load_peak_mean_he": 19.0,
    "cp_net_load_rank_median": 5.8,
    "cp_price_rank_median": 41,
@@ -80,7 +80,7 @@
   },
   {
    "year": 2019,
-   "load_peak_mean_he": 17.5,
+   "load_peak_mean_he": 16.9,
    "net_load_peak_mean_he": 19.2,
    "cp_net_load_rank_median": 6.6,
    "cp_price_rank_median": 47,
@@ -91,7 +91,7 @@
   },
   {
    "year": 2020,
-   "load_peak_mean_he": 17.3,
+   "load_peak_mean_he": 16.8,
    "net_load_peak_mean_he": 19.5,
    "cp_net_load_rank_median": 7.4,
    "cp_price_rank_median": 53,
@@ -102,7 +102,7 @@
   },
   {
    "year": 2021,
-   "load_peak_mean_he": 17.2,
+   "load_peak_mean_he": 17.0,
    "net_load_peak_mean_he": 19.8,
    "cp_net_load_rank_median": 8.2,
    "cp_price_rank_median": 59,
@@ -113,7 +113,7 @@
   },
   {
    "year": 2022,
-   "load_peak_mean_he": 17.5,
+   "load_peak_mean_he": 17.6,
    "net_load_peak_mean_he": 20.0,
    "cp_net_load_rank_median": 9.0,
    "cp_price_rank_median": 65,
@@ -124,7 +124,7 @@
   },
   {
    "year": 2023,
-   "load_peak_mean_he": 17.0,
+   "load_peak_mean_he": 17.4,
    "net_load_peak_mean_he": 20.2,
    "cp_net_load_rank_median": 9.8,
    "cp_price_rank_median": 71,
@@ -135,7 +135,7 @@
   },
   {
    "year": 2024,
-   "load_peak_mean_he": 16.7,
+   "load_peak_mean_he": 17.4,
    "net_load_peak_mean_he": 20.5,
    "cp_net_load_rank_median": 10.6,
    "cp_price_rank_median": 77,
@@ -146,7 +146,7 @@
   },
   {
    "year": 2025,
-   "load_peak_mean_he": 16.9,
+   "load_peak_mean_he": 17.1,
    "net_load_peak_mean_he": 20.8,
    "cp_net_load_rank_median": 11.4,
    "cp_price_rank_median": 83,

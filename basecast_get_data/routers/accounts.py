@@ -243,7 +243,11 @@ def account_detail(account_id: str = ACCOUNT_ID) -> AccountDetailResponse:
             DETAIL,
             rows=store.frame(ACCOUNTS).filter(pl.col("account_id") == account_id),
             verified=all(f.verified for f in facts),
-            caveats=_caveats(store.frame(ACCOUNTS)),
+            caveats=[
+                *_caveats(store.frame(ACCOUNTS)),
+                *(["requests_not_forecasts"] if detail.suppliers else []),
+                *(["optimistic_weather"] if detail.four_cp_offer else []),
+            ],
         ),
         data=detail,
     )

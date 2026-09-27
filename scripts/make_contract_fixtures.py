@@ -1129,7 +1129,110 @@ def detail_payload(
             "fleet_data": False,
             "resolution": "zone",
         },
+        **p1_blocks(b, outlook),
     }
+
+
+def p1_blocks(b: dict[str, Any], outlook: dict[str, Any]) -> dict[str, Any]:
+    """The P1 cards of the detail (X13 supplier, X3 + X15 4CP offer, X10 city facts), with invented values."""
+    near = rng.uniform(2000, 30000)
+    suppliers = (
+        [
+            {
+                "gt": b["gt"],
+                "tsp": f"{b['gt']} (fixture TSP)",
+                "via": "g&t",
+                "fact": f"Fixture: your wholesale supplier {b['gt']} reported large-load requests.",
+                "path": [
+                    {"year": 2026, "mw": r1(near * 0.02)},
+                    {"year": 2030, "mw": r1(near)},
+                    {"year": 2032, "mw": r1(near * 1.2)},
+                ],
+                "share_of_rfi": r4(rng.uniform(0.02, 0.15)),
+                "n_accounts": rng.randint(3, 40),
+                "filed_date": "2026-04-15",
+                "source_ref": "fixture:38",
+                "fires_trigger": b["kind"] == "coop",
+                "verified": False,
+            }
+        ]
+        if b["gt"]
+        else []
+    )
+    offer = {
+        "zone": b["zone"],
+        "zone_line": outlook["line"],
+        "window_start_local": "15:30",
+        "window_end_local": "17:30",
+        "dispatch_days": 51.0,
+        "rates": [
+            {
+                "charges_for_year": 2025,
+                "docket": "FIXTURE-A",
+                "usd_per_mw_yr": 70000.0,
+                "status": "final",
+                "billed_year": 2026,
+            },
+            {
+                "charges_for_year": 2026,
+                "docket": "FIXTURE-B",
+                "usd_per_mw_yr": 77000.0,
+                "status": "pending",
+                "billed_year": 2027,
+            },
+        ],
+        "note": "Fixture: avoided cost for the co-op, not Base revenue; fleet kW per home not verified.",
+        "account_4cp": fact(
+            "account_4cp_mw",
+            "Account load at the 4CP",
+            None,
+            "MW",
+            "UtilityDataSource",
+            None,
+            "not public: needs the co-op's own meter data",
+        ),
+        "verified": True,
+    }
+    city = None
+    if b["kind"] == "muni":
+        place = b["name"].split()[0]
+        city = {
+            "place_name": f"{place} city (fixture)",
+            "place_fips": f"48{rng.randint(10000, 99999)}",
+            "fit": rng.choice(["same", "city_larger", "territory_larger"]),
+            "place_in_territory": r4(rng.uniform(0.2, 1)),
+            "territory_in_place": r4(rng.uniform(0.2, 1)),
+            "facts": [
+                fact(
+                    "city_population",
+                    f"Population, {place} city (Census place)",
+                    r1(rng.uniform(5000, 90000)),
+                    "people",
+                    "census_pep_place",
+                    "2025-07-01",
+                    "city, not territory",
+                ),
+                fact(
+                    "city_pop_growth",
+                    "Population growth 2020→2025 (city)",
+                    r4(rng.uniform(-0.02, 0.25)),
+                    "share",
+                    "census_pep_place",
+                    "2025-07-01",
+                    "city, not territory",
+                ),
+                fact(
+                    "city_permits_per_1k",
+                    "Permits per 1,000 residents (city)",
+                    r1(rng.uniform(1, 40)),
+                    "units/1k",
+                    "census_bps_place",
+                    "2025-12-31",
+                    "city, not territory",
+                ),
+            ],
+        }
+    return {"suppliers": suppliers, "four_cp_offer": offer, "city": city}
 
 
 # --- forecast ---------------------------------------------------------------------------------------------
@@ -1874,7 +1977,8 @@ def make_queue_curves() -> list[dict[str, Any]]:
             ("gas_other", 0.9),
         ):
             for weighting in ("mw", "count"):
-                at_risk0 = rng.randint(120, 900) if stratum == "all" else rng.randint(25, 300)
+                # Fixed sizes: the smaller strata run below 10 at risk, so the tail is unsupported.
+                at_risk0 = {"all": 600, "solar": 250, "storage": 180, "wind": 60, "gas_other": 90}[stratum]
                 for month in range(0, 61, 3):
                     cod = min(0.95, cod_max * scale * (1 - math.exp(-speed * month)))
                     withdrawn = min(0.9 - cod, 0.6 * (1 - math.exp(-0.035 * month)))

@@ -335,3 +335,19 @@ def test_four_cp_caveats_and_rates(client):
     assert {r["status"] for r in d["rates"]} <= {"final", "pending"}
     assert d["intervals"] and d["zones"] and d["dispatch_curve"] and d["scarcity"]
     assert d["window_start_local"] and d["window_end_local"]
+
+
+def test_detail_p1_cards(client):
+    body = client.get("/accounts/FX002").json()  # a muni without a G&T
+    d, codes = body["data"], [c["code"] for c in body["meta"]["caveats"]]
+    assert d["suppliers"] == [] and "requests_not_forecasts" not in codes
+    assert d["city"]["fit"] in ("same", "city_larger", "territory_larger") and d["city"]["facts"]
+    offer = d["four_cp_offer"]
+    assert offer["account_4cp"]["value"] is None and {r["status"] for r in offer["rates"]} <= {
+        "final",
+        "pending",
+    }
+    assert "optimistic_weather" in codes
+    coop = client.get("/accounts/FX001").json()
+    assert coop["data"]["suppliers"][0]["verified"] is False and coop["data"]["city"] is None
+    assert "requests_not_forecasts" in [c["code"] for c in coop["meta"]["caveats"]]

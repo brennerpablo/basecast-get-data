@@ -275,7 +275,15 @@ separadas por `; `.
   `context_label`, `zones[]`, `data_centers[]`, `queue[]`, `zone_outlook`), `eia_series[]`, `gaps[]`,
   `coverage` (`public_data`, `utility_private_data`, `fleet_data`, `resolution` = `zone` |
   `territory (simulated)`).
-- P1 entram depois neste payload: card do G&T (X13), oferta de 4CP (X3 + X15) e fatos de cidade das munis (X10).
+- Blocos P1 no mesmo payload (vazios até o mart trazê-los):
+  - `suppliers[]` (X13): `gt`, `tsp`, `via`, `fact` (a frase), `path[]` (MW pedidos em 2026, 2030, 2032),
+    `share_of_rfi`, `n_accounts`, `filed_date`, `source_ref`, `fires_trigger`, `verified` (falso: lido do RFI).
+    Com fornecedor, a resposta leva o caveat `requests_not_forecasts`.
+  - `four_cp_offer` (X3 + X15): `zone`, `zone_line`, a janela, `dispatch_days`, `rates[]` (US$/MW-ano por ano de
+    cobrança, `docket`, `status` final | pending, `billed_year`), `note` (custo evitado pela co-op, não receita
+    da Base) e `account_4cp` (um Fact vazio: a carga da conta no 4CP é dado privado). Leva `optimistic_weather`.
+  - `city` (X10, só munis): `place_name`, `place_fips`, `fit` (`same` | `city_larger` | `territory_larger`),
+    as participações por área e `facts[]` rotulados como cidade, não território.
 
 `GET /accounts/{account_id}/events?since=&trigger=&strength=&offset=&limit=`: o histórico completo, do mais novo
 para o mais antigo (`mart_account_events`). Todo evento tem data e título (um projeto da TPIT sem nome usa o `detail`). Paginação por `offset`/`limit` (até 500), como em

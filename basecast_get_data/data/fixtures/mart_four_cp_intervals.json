@@ -4,9 +4,9 @@
   {
    "year": 2012,
    "month": 6,
-   "interval_end_local": "2012-06-16 17:45",
-   "interval_end_utc": "2012-06-16T22:45:00+00:00",
-   "mw": 62396.6,
+   "interval_end_local": "2012-06-05 17:00",
+   "interval_end_utc": "2012-06-05T22:00:00+00:00",
+   "mw": 62444.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -14,9 +14,9 @@
   {
    "year": 2012,
    "month": 7,
-   "interval_end_local": "2012-07-07 17:30",
-   "interval_end_utc": "2012-07-07T22:30:00+00:00",
-   "mw": 60857.2,
+   "interval_end_local": "2012-07-16 16:15",
+   "interval_end_utc": "2012-07-16T21:15:00+00:00",
+   "mw": 60954.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -24,9 +24,9 @@
   {
    "year": 2012,
    "month": 8,
-   "interval_end_local": "2012-08-25 17:15",
-   "interval_end_utc": "2012-08-25T22:15:00+00:00",
-   "mw": 62541.7,
+   "interval_end_local": "2012-08-19 17:15",
+   "interval_end_utc": "2012-08-19T22:15:00+00:00",
+   "mw": 60469.6,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -34,9 +34,9 @@
   {
    "year": 2012,
    "month": 9,
-   "interval_end_local": "2012-09-02 16:30",
-   "interval_end_utc": "2012-09-02T21:30:00+00:00",
-   "mw": 61423.1,
+   "interval_end_local": "2012-09-04 16:45",
+   "interval_end_utc": "2012-09-04T21:45:00+00:00",
+   "mw": 58912.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -44,9 +44,9 @@
   {
    "year": 2013,
    "month": 6,
-   "interval_end_local": "2013-06-10 17:45",
-   "interval_end_utc": "2013-06-10T22:45:00+00:00",
-   "mw": 61557.4,
+   "interval_end_local": "2013-06-28 16:15",
+   "interval_end_utc": "2013-06-28T21:15:00+00:00",
+   "mw": 58483.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -54,9 +54,9 @@
   {
    "year": 2013,
    "month": 7,
-   "interval_end_local": "2013-07-06 17:00",
-   "interval_end_utc": "2013-07-06T22:00:00+00:00",
-   "mw": 59042.5,
+   "interval_end_local": "2013-07-06 16:30",
+   "interval_end_utc": "2013-07-06T21:30:00+00:00",
+   "mw": 63229.5,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -64,9 +64,9 @@
   {
    "year": 2013,
    "month": 8,
-   "interval_end_local": "2013-08-10 17:30",
-   "interval_end_utc": "2013-08-10T22:30:00+00:00",
-   "mw": 58762.8,
+   "interval_end_local": "2013-08-01 17:15",
+   "interval_end_utc": "2013-08-01T22:15:00+00:00",
+   "mw": 59376.3,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -74,9 +74,9 @@
   {
    "year": 2013,
    "month": 9,
-   "interval_end_local": "2013-09-24 17:00",
-   "interval_end_utc": "2013-09-24T22:00:00+00:00",
-   "mw": 60885.1,
+   "interval_end_local": "2013-09-21 17:00",
+   "interval_end_utc": "2013-09-21T22:00:00+00:00",
+   "mw": 59114.7,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -84,9 +84,9 @@
   {
    "year": 2014,
    "month": 6,
-   "interval_end_local": "2014-06-17 16:30",
-   "interval_end_utc": "2014-06-17T21:30:00+00:00",
-   "mw": 62416.4,
+   "interval_end_local": "2014-06-06 17:00",
+   "interval_end_utc": "2014-06-06T22:00:00+00:00",
+   "mw": 59564.5,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -94,9 +94,9 @@
   {
    "year": 2014,
    "month": 7,
-   "interval_end_local": "2014-07-14 16:30",
-   "interval_end_utc": "2014-07-14T21:30:00+00:00",
-   "mw": 61672.8,
+   "interval_end_local": "2014-07-07 17:00",
+   "interval_end_utc": "2014-07-07T22:00:00+00:00",
+   "mw": 59785.0,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -104,9 +104,9 @@
   {
    "year": 2014,
    "month": 8,
-   "interval_end_local": "2014-08-11 16:45",
-   "interval_end_utc": "2014-08-11T21:45:00+00:00",
-   "mw": 59469.9,
+   "interval_end_local": "2014-08-02 17:00",
+   "interval_end_utc": "2014-08-02T22:00:00+00:00",
+   "mw": 61914.6,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -114,9 +114,9 @@
   {
    "year": 2014,
    "month": 9,
-   "interval_end_local": "2014-09-08 17:00",
-   "interval_end_utc": "2014-09-08T22:00:00+00:00",
-   "mw": 62349.3,
+   "interval_end_local": "2014-09-01 16:00",
+   "interval_end_utc": "2014-09-01T21:00:00+00:00",
+   "mw": 61847.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -124,9 +124,9 @@
   {
    "year": 2015,
    "month": 6,
-   "interval_end_local": "2015-06-06 16:45",
-   "interval_end_utc": "2015-06-06T21:45:00+00:00",
-   "mw": 59576.1,
+   "interval_end_local": "2015-06-02 16:45",
+   "interval_end_utc": "2015-06-02T21:45:00+00:00",
+   "mw": 59795.7,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -134,9 +134,9 @@
   {
    "year": 2015,
    "month": 7,
-   "interval_end_local": "2015-07-25 17:30",
-   "interval_end_utc": "2015-07-25T22:30:00+00:00",
-   "mw": 57689.4,
+   "interval_end_local": "2015-07-24 17:15",
+   "interval_end_utc": "2015-07-24T22:15:00+00:00",
+   "mw": 63510.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -144,9 +144,9 @@
   {
    "year": 2015,
    "month": 8,
-   "interval_end_local": "2015-08-27 17:30",
-   "interval_end_utc": "2015-08-27T22:30:00+00:00",
-   "mw": 58770.5,
+   "interval_end_local": "2015-08-20 17:30",
+   "interval_end_utc": "2015-08-20T22:30:00+00:00",
+   "mw": 60936.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -154,9 +154,9 @@
   {
    "year": 2015,
    "month": 9,
-   "interval_end_local": "2015-09-11 17:45",
-   "interval_end_utc": "2015-09-11T22:45:00+00:00",
-   "mw": 59398.7,
+   "interval_end_local": "2015-09-25 17:30",
+   "interval_end_utc": "2015-09-25T22:30:00+00:00",
+   "mw": 57715.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -164,9 +164,9 @@
   {
    "year": 2016,
    "month": 6,
-   "interval_end_local": "2016-06-24 17:30",
-   "interval_end_utc": "2016-06-24T22:30:00+00:00",
-   "mw": 70555.6,
+   "interval_end_local": "2016-06-04 17:15",
+   "interval_end_utc": "2016-06-04T22:15:00+00:00",
+   "mw": 69553.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -174,9 +174,9 @@
   {
    "year": 2016,
    "month": 7,
-   "interval_end_local": "2016-07-14 17:45",
-   "interval_end_utc": "2016-07-14T22:45:00+00:00",
-   "mw": 67321.2,
+   "interval_end_local": "2016-07-20 17:30",
+   "interval_end_utc": "2016-07-20T22:30:00+00:00",
+   "mw": 68576.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -184,9 +184,9 @@
   {
    "year": 2016,
    "month": 8,
-   "interval_end_local": "2016-08-01 17:15",
-   "interval_end_utc": "2016-08-01T22:15:00+00:00",
-   "mw": 65765.9,
+   "interval_end_local": "2016-08-24 17:15",
+   "interval_end_utc": "2016-08-24T22:15:00+00:00",
+   "mw": 65306.2,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -194,9 +194,9 @@
   {
    "year": 2016,
    "month": 9,
-   "interval_end_local": "2016-09-06 17:00",
-   "interval_end_utc": "2016-09-06T22:00:00+00:00",
-   "mw": 65782.3,
+   "interval_end_local": "2016-09-18 16:30",
+   "interval_end_utc": "2016-09-18T21:30:00+00:00",
+   "mw": 65840.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -204,9 +204,9 @@
   {
    "year": 2017,
    "month": 6,
-   "interval_end_local": "2017-06-01 17:30",
-   "interval_end_utc": "2017-06-01T22:30:00+00:00",
-   "mw": 63058.5,
+   "interval_end_local": "2017-06-11 16:15",
+   "interval_end_utc": "2017-06-11T21:15:00+00:00",
+   "mw": 66662.6,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -214,9 +214,9 @@
   {
    "year": 2017,
    "month": 7,
-   "interval_end_local": "2017-07-28 16:30",
-   "interval_end_utc": "2017-07-28T21:30:00+00:00",
-   "mw": 69057.1,
+   "interval_end_local": "2017-07-13 16:15",
+   "interval_end_utc": "2017-07-13T21:15:00+00:00",
+   "mw": 66090.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -224,9 +224,9 @@
   {
    "year": 2017,
    "month": 8,
-   "interval_end_local": "2017-08-11 17:15",
-   "interval_end_utc": "2017-08-11T22:15:00+00:00",
-   "mw": 68355.8,
+   "interval_end_local": "2017-08-26 17:00",
+   "interval_end_utc": "2017-08-26T22:00:00+00:00",
+   "mw": 67590.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -234,9 +234,9 @@
   {
    "year": 2017,
    "month": 9,
-   "interval_end_local": "2017-09-21 17:30",
-   "interval_end_utc": "2017-09-21T22:30:00+00:00",
-   "mw": 63257.7,
+   "interval_end_local": "2017-09-17 16:00",
+   "interval_end_utc": "2017-09-17T21:00:00+00:00",
+   "mw": 68196.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -244,9 +244,9 @@
   {
    "year": 2018,
    "month": 6,
-   "interval_end_local": "2018-06-23 17:00",
-   "interval_end_utc": "2018-06-23T22:00:00+00:00",
-   "mw": 72470.9,
+   "interval_end_local": "2018-06-12 16:15",
+   "interval_end_utc": "2018-06-12T21:15:00+00:00",
+   "mw": 72017.2,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -254,9 +254,9 @@
   {
    "year": 2018,
    "month": 7,
-   "interval_end_local": "2018-07-09 16:30",
-   "interval_end_utc": "2018-07-09T21:30:00+00:00",
-   "mw": 69423.7,
+   "interval_end_local": "2018-07-18 17:30",
+   "interval_end_utc": "2018-07-18T22:30:00+00:00",
+   "mw": 73179.0,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -264,9 +264,9 @@
   {
    "year": 2018,
    "month": 8,
-   "interval_end_local": "2018-08-16 17:30",
-   "interval_end_utc": "2018-08-16T22:30:00+00:00",
-   "mw": 69550.7,
+   "interval_end_local": "2018-08-16 16:30",
+   "interval_end_utc": "2018-08-16T21:30:00+00:00",
+   "mw": 72434.4,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -274,9 +274,9 @@
   {
    "year": 2018,
    "month": 9,
-   "interval_end_local": "2018-09-04 17:30",
-   "interval_end_utc": "2018-09-04T22:30:00+00:00",
-   "mw": 66482.2,
+   "interval_end_local": "2018-09-16 17:45",
+   "interval_end_utc": "2018-09-16T22:45:00+00:00",
+   "mw": 66330.3,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -284,9 +284,9 @@
   {
    "year": 2019,
    "month": 6,
-   "interval_end_local": "2019-06-23 17:15",
-   "interval_end_utc": "2019-06-23T22:15:00+00:00",
-   "mw": 72319.6,
+   "interval_end_local": "2019-06-05 17:15",
+   "interval_end_utc": "2019-06-05T22:15:00+00:00",
+   "mw": 67216.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -294,9 +294,9 @@
   {
    "year": 2019,
    "month": 7,
-   "interval_end_local": "2019-07-04 17:45",
-   "interval_end_utc": "2019-07-04T22:45:00+00:00",
-   "mw": 69175.2,
+   "interval_end_local": "2019-07-06 16:15",
+   "interval_end_utc": "2019-07-06T21:15:00+00:00",
+   "mw": 74241.2,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -304,9 +304,9 @@
   {
    "year": 2019,
    "month": 8,
-   "interval_end_local": "2019-08-14 17:15",
-   "interval_end_utc": "2019-08-14T22:15:00+00:00",
-   "mw": 73331.2,
+   "interval_end_local": "2019-08-28 17:00",
+   "interval_end_utc": "2019-08-28T22:00:00+00:00",
+   "mw": 67546.3,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -314,9 +314,9 @@
   {
    "year": 2019,
    "month": 9,
-   "interval_end_local": "2019-09-16 17:45",
-   "interval_end_utc": "2019-09-16T22:45:00+00:00",
-   "mw": 72429.2,
+   "interval_end_local": "2019-09-17 17:00",
+   "interval_end_utc": "2019-09-17T22:00:00+00:00",
+   "mw": 70214.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -324,9 +324,9 @@
   {
    "year": 2020,
    "month": 6,
-   "interval_end_local": "2020-06-24 17:15",
-   "interval_end_utc": "2020-06-24T22:15:00+00:00",
-   "mw": 73023.0,
+   "interval_end_local": "2020-06-13 16:15",
+   "interval_end_utc": "2020-06-13T21:15:00+00:00",
+   "mw": 71208.6,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -336,7 +336,7 @@
    "month": 7,
    "interval_end_local": "2020-07-20 17:45",
    "interval_end_utc": "2020-07-20T22:45:00+00:00",
-   "mw": 69124.6,
+   "mw": 70602.3,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -344,9 +344,9 @@
   {
    "year": 2020,
    "month": 8,
-   "interval_end_local": "2020-08-16 17:00",
-   "interval_end_utc": "2020-08-16T22:00:00+00:00",
-   "mw": 69190.8,
+   "interval_end_local": "2020-08-14 17:45",
+   "interval_end_utc": "2020-08-14T22:45:00+00:00",
+   "mw": 73453.3,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -354,9 +354,9 @@
   {
    "year": 2020,
    "month": 9,
-   "interval_end_local": "2020-09-20 17:15",
-   "interval_end_utc": "2020-09-20T22:15:00+00:00",
-   "mw": 68545.1,
+   "interval_end_local": "2020-09-03 17:30",
+   "interval_end_utc": "2020-09-03T22:30:00+00:00",
+   "mw": 67063.5,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -364,9 +364,9 @@
   {
    "year": 2021,
    "month": 6,
-   "interval_end_local": "2021-06-18 16:00",
-   "interval_end_utc": "2021-06-18T21:00:00+00:00",
-   "mw": 65777.7,
+   "interval_end_local": "2021-06-06 17:45",
+   "interval_end_utc": "2021-06-06T22:45:00+00:00",
+   "mw": 69422.5,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -374,9 +374,9 @@
   {
    "year": 2021,
    "month": 7,
-   "interval_end_local": "2021-07-18 17:15",
-   "interval_end_utc": "2021-07-18T22:15:00+00:00",
-   "mw": 70398.8,
+   "interval_end_local": "2021-07-14 17:15",
+   "interval_end_utc": "2021-07-14T22:15:00+00:00",
+   "mw": 70758.8,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -384,9 +384,9 @@
   {
    "year": 2021,
    "month": 8,
-   "interval_end_local": "2021-08-27 17:30",
-   "interval_end_utc": "2021-08-27T22:30:00+00:00",
-   "mw": 72743.9,
+   "interval_end_local": "2021-08-12 16:30",
+   "interval_end_utc": "2021-08-12T21:30:00+00:00",
+   "mw": 72173.4,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -394,9 +394,9 @@
   {
    "year": 2021,
    "month": 9,
-   "interval_end_local": "2021-09-28 17:30",
-   "interval_end_utc": "2021-09-28T22:30:00+00:00",
-   "mw": 65579.0,
+   "interval_end_local": "2021-09-01 17:45",
+   "interval_end_utc": "2021-09-01T22:45:00+00:00",
+   "mw": 72367.2,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -404,9 +404,9 @@
   {
    "year": 2022,
    "month": 6,
-   "interval_end_local": "2022-06-04 17:15",
-   "interval_end_utc": "2022-06-04T22:15:00+00:00",
-   "mw": 74610.7,
+   "interval_end_local": "2022-06-09 17:00",
+   "interval_end_utc": "2022-06-09T22:00:00+00:00",
+   "mw": 76789.4,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -414,9 +414,9 @@
   {
    "year": 2022,
    "month": 7,
-   "interval_end_local": "2022-07-28 17:15",
-   "interval_end_utc": "2022-07-28T22:15:00+00:00",
-   "mw": 74943.7,
+   "interval_end_local": "2022-07-12 17:15",
+   "interval_end_utc": "2022-07-12T22:15:00+00:00",
+   "mw": 73340.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -424,9 +424,9 @@
   {
    "year": 2022,
    "month": 8,
-   "interval_end_local": "2022-08-06 17:00",
-   "interval_end_utc": "2022-08-06T22:00:00+00:00",
-   "mw": 78413.8,
+   "interval_end_local": "2022-08-23 16:45",
+   "interval_end_utc": "2022-08-23T21:45:00+00:00",
+   "mw": 77239.8,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -434,9 +434,9 @@
   {
    "year": 2022,
    "month": 9,
-   "interval_end_local": "2022-09-08 17:30",
-   "interval_end_utc": "2022-09-08T22:30:00+00:00",
-   "mw": 73380.3,
+   "interval_end_local": "2022-09-14 17:00",
+   "interval_end_utc": "2022-09-14T22:00:00+00:00",
+   "mw": 73061.6,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -444,9 +444,9 @@
   {
    "year": 2023,
    "month": 6,
-   "interval_end_local": "2023-06-25 17:15",
-   "interval_end_utc": "2023-06-25T22:15:00+00:00",
-   "mw": 78240.9,
+   "interval_end_local": "2023-06-15 17:30",
+   "interval_end_utc": "2023-06-15T22:30:00+00:00",
+   "mw": 82401.4,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -454,9 +454,9 @@
   {
    "year": 2023,
    "month": 7,
-   "interval_end_local": "2023-07-09 16:15",
-   "interval_end_utc": "2023-07-09T21:15:00+00:00",
-   "mw": 82513.3,
+   "interval_end_local": "2023-07-19 17:00",
+   "interval_end_utc": "2023-07-19T22:00:00+00:00",
+   "mw": 77183.3,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -464,9 +464,9 @@
   {
    "year": 2023,
    "month": 8,
-   "interval_end_local": "2023-08-24 17:15",
-   "interval_end_utc": "2023-08-24T22:15:00+00:00",
-   "mw": 80382.4,
+   "interval_end_local": "2023-08-11 17:15",
+   "interval_end_utc": "2023-08-11T22:15:00+00:00",
+   "mw": 77192.7,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -474,9 +474,9 @@
   {
    "year": 2023,
    "month": 9,
-   "interval_end_local": "2023-09-26 16:30",
-   "interval_end_utc": "2023-09-26T21:30:00+00:00",
-   "mw": 81799.9,
+   "interval_end_local": "2023-09-17 17:15",
+   "interval_end_utc": "2023-09-17T22:15:00+00:00",
+   "mw": 76561.8,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -484,9 +484,9 @@
   {
    "year": 2024,
    "month": 6,
-   "interval_end_local": "2024-06-20 17:45",
-   "interval_end_utc": "2024-06-20T22:45:00+00:00",
-   "mw": 76455.7,
+   "interval_end_local": "2024-06-09 17:45",
+   "interval_end_utc": "2024-06-09T22:45:00+00:00",
+   "mw": 78993.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -494,9 +494,9 @@
   {
    "year": 2024,
    "month": 7,
-   "interval_end_local": "2024-07-18 17:15",
-   "interval_end_utc": "2024-07-18T22:15:00+00:00",
-   "mw": 83312.6,
+   "interval_end_local": "2024-07-13 17:00",
+   "interval_end_utc": "2024-07-13T22:00:00+00:00",
+   "mw": 82345.9,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -504,9 +504,9 @@
   {
    "year": 2024,
    "month": 8,
-   "interval_end_local": "2024-08-10 17:00",
-   "interval_end_utc": "2024-08-10T22:00:00+00:00",
-   "mw": 81336.0,
+   "interval_end_local": "2024-08-15 17:00",
+   "interval_end_utc": "2024-08-15T22:00:00+00:00",
+   "mw": 79917.1,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -514,9 +514,9 @@
   {
    "year": 2024,
    "month": 9,
-   "interval_end_local": "2024-09-12 17:00",
-   "interval_end_utc": "2024-09-12T22:00:00+00:00",
-   "mw": 81588.6,
+   "interval_end_local": "2024-09-08 17:30",
+   "interval_end_utc": "2024-09-08T22:30:00+00:00",
+   "mw": 76171.2,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -524,9 +524,9 @@
   {
    "year": 2025,
    "month": 6,
-   "interval_end_local": "2025-06-27 17:00",
-   "interval_end_utc": "2025-06-27T22:00:00+00:00",
-   "mw": 79717.4,
+   "interval_end_local": "2025-06-01 17:00",
+   "interval_end_utc": "2025-06-01T22:00:00+00:00",
+   "mw": 75883.2,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -534,9 +534,9 @@
   {
    "year": 2025,
    "month": 7,
-   "interval_end_local": "2025-07-25 17:30",
-   "interval_end_utc": "2025-07-25T22:30:00+00:00",
-   "mw": 75990.7,
+   "interval_end_local": "2025-07-14 17:15",
+   "interval_end_utc": "2025-07-14T22:15:00+00:00",
+   "mw": 76694.4,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -544,9 +544,9 @@
   {
    "year": 2025,
    "month": 8,
-   "interval_end_local": "2025-08-10 17:15",
-   "interval_end_utc": "2025-08-10T22:15:00+00:00",
-   "mw": 81532.8,
+   "interval_end_local": "2025-08-26 17:30",
+   "interval_end_utc": "2025-08-26T22:30:00+00:00",
+   "mw": 77466.8,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -554,9 +554,9 @@
   {
    "year": 2025,
    "month": 9,
-   "interval_end_local": "2025-09-14 17:30",
-   "interval_end_utc": "2025-09-14T22:30:00+00:00",
-   "mw": 83243.2,
+   "interval_end_local": "2025-09-13 17:30",
+   "interval_end_utc": "2025-09-13T22:30:00+00:00",
+   "mw": 75261.5,
    "source": "de_15min",
    "final": true,
    "model_version": "fixture-v2"
@@ -564,9 +564,9 @@
   {
    "year": 2026,
    "month": 6,
-   "interval_end_local": "2026-06-13 17:30",
-   "interval_end_utc": "2026-06-13T22:30:00+00:00",
-   "mw": 84002.9,
+   "interval_end_local": "2026-06-15 17:30",
+   "interval_end_utc": "2026-06-15T22:30:00+00:00",
+   "mw": 86844.8,
    "source": "de_15min",
    "final": false,
    "model_version": "fixture-v2"
@@ -574,9 +574,9 @@
   {
    "year": 2026,
    "month": 7,
-   "interval_end_local": "2026-07-02 17:00",
-   "interval_end_utc": "2026-07-02T22:00:00+00:00",
-   "mw": 83191.6,
+   "interval_end_local": "2026-07-21 17:15",
+   "interval_end_utc": "2026-07-21T22:15:00+00:00",
+   "mw": 81274.7,
    "source": "de_15min",
    "final": false,
    "model_version": "fixture-v2"
@@ -584,9 +584,9 @@
   {
    "year": 2026,
    "month": 8,
-   "interval_end_local": "2026-08-07 16:00",
-   "interval_end_utc": "2026-08-07T21:00:00+00:00",
-   "mw": 86251.6,
+   "interval_end_local": "2026-08-18 17:00",
+   "interval_end_utc": "2026-08-18T22:00:00+00:00",
+   "mw": 82411.9,
    "source": "hourly_provisional",
    "final": false,
    "model_version": "fixture-v2"
