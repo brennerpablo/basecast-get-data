@@ -53,7 +53,8 @@ jobs:
           ENV_YAML: ${{ secrets.ENV_YAML }}
         run: printf '%s\n' "$ENV_YAML" > env.yaml
 
-      # Minimum instances stay at 0 (docs/decisions.md): the API scales to zero between demos. It runs
+      # One minimum instance for the hackathon, so no request of the demo video waits for a cold start
+      # (~8 s): back to 0 after 2026-09-28 (docs/decisions.md, ~US$ 0.65/day). It runs
       # as get-data-run, which reads the lake and BigQuery; the API checks API_TOKEN itself, hence
       # --allow-unauthenticated. 2 GiB because spreadsheet previews parse whole sheets in memory.
       - name: Deploy Cloud Run service
@@ -69,6 +70,7 @@ jobs:
             --memory=2Gi \
             --execution-environment=gen2 \
             --concurrency=80 \
+            --min-instances=1 \
             --max-instances=4 \
             --env-vars-file=env.yaml \
             --set-secrets=PG_PASSWORD=pg-basecast-reader-password:latest \
