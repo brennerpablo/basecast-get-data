@@ -135,3 +135,40 @@ def test_official_errors_and_queue_backtest_match_q1_and_x2(real, client):
     statewide = [round(i["error_pct"], 1) for i in q["items"] if i["stratum"] == "all"]
     assert statewide == [-13.2, 9.3, 1.4]
     assert all(0.63 <= r["rho_adj"] <= 0.67 and 0.42 <= r["rho_raw"] <= 0.46 for r in q["county_rank"])
+
+
+# --- explorer (A-M4; golden numbers from X2, X14 and Q4) --------------------------------------------------
+
+
+def test_explorer_serves_x2_and_x14_numbers(real, client):
+    body = client.get("/geo/counties").json()
+    items = body["data"]["items"]
+    assert body["meta"]["simulated"] is False and len(items) == 254
+    with_queue = [i["queue"] for i in items if i["queue"]]
+    assert sum(q["raw_mw"] for q in with_queue) == pytest.approx(438_261.6, abs=0.5)
+    assert sum(q["adj_mw"] for q in with_queue) == pytest.approx(70_394.4, abs=0.5)
+    early = client.get("/geo/counties", params={"horizon": 2027}).json()["data"]["items"]
+    assert sum(i["queue"]["adj_mw"] for i in early if i["queue"]) == pytest.approx(38_689.3, abs=0.5)
+    acquisition = [i["acquisition"] for i in items if i["acquisition"]]
+    assert len(acquisition) == 204
+    channels = {
+        c: sum(1 for a in acquisition if a["channel"] == c) for c in ("partnership", "retail_direct", "mixed")
+    }
+    assert channels == {"partnership": 161, "retail_direct": 39, "mixed": 4}
+    first = next(i for i in items if i["acquisition"] and i["acquisition"]["rank"] == 1)
+    assert first["county_name"] == "Comal"
+
+
+def test_data_center_counts_keep_sites_outside_ercot_out(real, client):
+    """Q4 / R7: 38 new sites in 27 counties, of which 31 in ERCOT; the rest are flagged, not counted."""
+    items = client.get("/geo/counties").json()["data"]["items"]
+    counted = sum(i["data_centers"]["sites"] for i in items)
+    outside = sum(i["data_centers"]["sites_outside_ercot"] for i in items)
+    assert counted + outside == 38 and counted == 31
+
+
+def test_queue_projects_of_the_sampled_counties(real, client):
+    body = client.get("/queue/projects", params={"limit": 500}).json()["data"]
+    assert body["total"] == len(SAMPLES["mart_queue_project_scores"])
+    mw = [p["mw_2028"] for p in body["items"]]
+    assert mw == sorted(mw, reverse=True)

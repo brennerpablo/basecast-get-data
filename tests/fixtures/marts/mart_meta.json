@@ -373,6 +373,52 @@
    ]
   },
   {
+   "mart": "county_acquisition",
+   "key": "load_zone_spread_usd_mwh",
+   "value": {
+    "LZ_WEST": 170.2004265510949,
+    "LZ_NORTH": 134.182879790146,
+    "LZ_SOUTH": 123.53921190693431,
+    "LZ_HOUSTON": 130.5140134580292
+   }
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "weather_zone_to_load_zone",
+   "value": {
+    "EAST": {
+     "LZ_NORTH": 1.0
+    },
+    "WEST": {
+     "LZ_WEST": 1.0
+    },
+    "COAST": {
+     "LZ_HOUSTON": 1.0
+    },
+    "FWEST": {
+     "LZ_WEST": 1.0
+    },
+    "NCENT": {
+     "LZ_NORTH": 1.0
+    },
+    "NORTH": {
+     "LZ_WEST": 0.72,
+     "LZ_NORTH": 0.28
+    },
+    "SCENT": {
+     "LZ_SOUTH": 1.0
+    },
+    "SOUTH": {
+     "LZ_SOUTH": 1.0
+    }
+   }
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "x12_variant",
+   "value": "+ lag + dew point, level knots 6 mo"
+  },
+  {
    "mart": "peak_backtest",
    "key": "eras",
    "value": [
@@ -451,6 +497,319 @@
     "mart_actual_summer_peaks",
     "mart_peak_backtest"
    ]
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "caveats",
+   "value": [
+    "beyond_backtested_window"
+   ]
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "inputs",
+   "value": [
+    "gis_project_events",
+    "gis_snapshots",
+    "tx_counties",
+    "county_weather_zone"
+   ]
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "report_month",
+   "value": "2026-08-01"
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "queue_as_of",
+   "value": "2026-09-01"
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "horizons",
+   "value": {
+    "2027": "2027-12-31",
+    "2028": "2028-12-31"
+   }
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "horizon_months",
+   "value": {
+    "2027": 16.0,
+    "2028": 28.024640657084188
+   }
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "model",
+   "value": "entry_ia_sm"
+  },
+  {
+   "mart": "queue_project_scores",
+   "key": "large_gas_min_mw",
+   "value": 500.0
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "caveats",
+   "value": [
+    "beyond_backtested_window"
+   ]
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "inputs",
+   "value": [
+    "mart_queue_project_scores"
+   ]
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "report_month",
+   "value": "2026-08-01"
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "queue_as_of",
+   "value": "2026-09-01"
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "horizons",
+   "value": {
+    "2027": "2027-12-31",
+    "2028": "2028-12-31"
+   }
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "horizon_months",
+   "value": {
+    "2027": 16.0,
+    "2028": 28.024640657084188
+   }
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "model",
+   "value": "entry_ia_sm"
+  },
+  {
+   "mart": "queue_adjusted_county",
+   "key": "large_gas_min_mw",
+   "value": 500.0
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "caveats",
+   "value": [
+    "by_county_not_point"
+   ]
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "inputs",
+   "value": [
+    "tceq_data_center_sites",
+    "county_utility_overlap_puct",
+    "county_iso_share",
+    "tx_counties",
+    "census_population_county"
+   ]
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "since",
+   "value": "2025-01-01"
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "metro_rule",
+   "value": "county_list_13"
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "include_naics_only",
+   "value": true
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "density_threshold_per_km2",
+   "value": 100.0
+  },
+  {
+   "mart": "data_center_sites_new",
+   "key": "latest_permit_date",
+   "value": "2026-09-18"
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "caveats",
+   "value": [
+    "weights_pending_review",
+    "by_area_not_homes"
+   ]
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "inputs",
+   "value": [
+    "tx_counties",
+    "county_weather_zone",
+    "county_utility_overlap_puct",
+    "census_population_county",
+    "census_permits_county",
+    "census_housing_county",
+    "tceq_data_center_sites",
+    "ercot_load_hourly_wz",
+    "weather_hourly_wz",
+    "prices_rtm_hub_lz"
+   ]
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "legend_breaks",
+   "value": [
+    0.25810020990845806,
+    0.341193633623723,
+    0.4292517805333786,
+    0.5299111487296465
+   ]
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "grid_tilt",
+   "value": 0.4
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "signals",
+   "value": [
+    {
+     "unit": "homes",
+     "block": "market",
+     "label": "Owner-occupied single-family homes × addressable (ERCOT) share",
+     "signal": "addr_sf_homes",
+     "weight": 0.35
+    },
+    {
+     "unit": "share",
+     "block": "market",
+     "label": "Population growth 2020→2025",
+     "signal": "pop_growth",
+     "weight": 0.3
+    },
+    {
+     "unit": "units/1k",
+     "block": "market",
+     "label": "Permits 2023–2025 per 1,000 residents",
+     "signal": "permits_per_1k",
+     "weight": 0.15
+    },
+    {
+     "unit": "share",
+     "block": "market",
+     "label": "Owner-occupied single-family share",
+     "signal": "owner_sf_share",
+     "weight": 0.2
+    },
+    {
+     "unit": "per year",
+     "block": "grid",
+     "label": "Weather-normalized zone summer peak CAGR 2021→2026",
+     "signal": "zone_peak_cagr",
+     "weight": 0.3
+    },
+    {
+     "unit": "%",
+     "block": "grid",
+     "label": "Zone summer-peak excess over the pre-2020 fit, mean 2023–2026",
+     "signal": "ll_pressure",
+     "weight": 0.2
+    },
+    {
+     "unit": "USD/MWh",
+     "block": "grid",
+     "label": "Load-zone daily 2-hour RTM price spread, mean 2023–2025",
+     "signal": "lz_spread",
+     "weight": 0.25
+    },
+    {
+     "unit": "sites",
+     "block": "grid",
+     "label": "New data-center sites since 2025",
+     "signal": "dc_sites",
+     "weight": 0.25
+    }
+   ]
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "channel_min_share",
+   "value": 0.25
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "dominant_share",
+   "value": 0.5
+  },
+  {
+   "mart": "county_acquisition",
+   "key": "zone_inputs",
+   "value": {
+    "lz_spread": {
+     "EAST": 134.182879790146,
+     "WEST": 170.2004265510949,
+     "COAST": 130.5140134580292,
+     "FWEST": 170.2004265510949,
+     "NCENT": 134.182879790146,
+     "NORTH": 160.1155134580292,
+     "SCENT": 123.53921190693431,
+     "SOUTH": 123.53921190693431
+    },
+    "ll_pressure": {
+     "EAST": 22.806920541898585,
+     "WEST": 7.785174431404634,
+     "COAST": 5.793472104561841,
+     "FWEST": 88.08942498373469,
+     "NCENT": 3.311557578700375,
+     "NORTH": 157.8886732814752,
+     "SCENT": 13.22661568948308,
+     "SOUTH": 1.9934622474125308
+    },
+    "zone_peak_cagr": {
+     "EAST": 0.025793255984595254,
+     "WEST": 0.07581323612550572,
+     "COAST": 0.01877481390226765,
+     "FWEST": 0.11020649613071365,
+     "NCENT": 0.023682825089287984,
+     "NORTH": 0.12019627588665838,
+     "SCENT": 0.03658915773584437,
+     "SOUTH": 0.035979906293611696
+    }
+   }
   }
  ]
 }

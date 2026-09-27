@@ -139,7 +139,9 @@ Os 254 condados num payload só; o mapa troca de camada no cliente.
   - `queue` (X2; `null` sem projeto ativo no estrato): `projects`, `projects_ia`, `raw_mw`, `raw_mw_ia`,
     `adj_mw` (MW esperados em COD até dezembro do horizonte), `ratio`, `rank_raw`, `rank_adj`, `rank_change`
     (= `rank_raw − rank_adj`, calculados pela API dentro do estrato e do horizonte), `large_gas_mw_2028`;
-  - `data_centers` (Q4): `sites`, `sites_naics_only` (para o toggle "include NAICS-only matches").
+  - `data_centers` (Q4): `sites` (só os da ERCOT), `sites_naics_only` (para o toggle "include NAICS-only
+    matches") e `sites_outside_ercot` (os que o Q4 põe fora da ERCOT: marcados e fora das contagens, R7). Cada
+    site do detalhe traz `in_ercot`.
 - `data`: `horizon`, `stratum`, `horizons`, `strata`, `queue_as_of_month`, `legend` (`breaks[4]`, `classes`),
   `weights` (`signals[]` com bloco e peso, `grid_tilt`).
 - Marts: `mart_county_acquisition`, `mart_queue_adjusted_county` (último `as_of_month`),

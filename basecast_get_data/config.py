@@ -20,7 +20,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 # code, once its marts are built and passed their checks.
 # accounts: A-M3 (f85bb1f), golden checks passed, all 107 diagnoses served clean on 2026-09-26.
 # backtest: A-M6 (568eb48), the API serves X7's paired scores, Q1's 354 errors and X2's queue backtest.
-MARTS_LIVE = "accounts,backtest"
+# explorer: A-M4 (ed39af0), the API serves X2's queue, X14's acquisition and Q4's sites.
+MARTS_LIVE = "accounts,backtest,explorer"
 
 
 @dataclass(frozen=True)

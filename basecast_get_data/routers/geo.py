@@ -70,13 +70,13 @@ def _queue_layer(horizon: int, stratum: str) -> pl.DataFrame:
 
 
 def _site_counts() -> pl.DataFrame:
-    return (
-        store.frame(SITES)
-        .group_by("county_fips")
-        .agg(
-            sites=pl.len().cast(pl.Int64),
-            sites_naics_only=(pl.col("matched_by") == "naics").sum().cast(pl.Int64),
-        )
+    """Sites per county; the ones Q4 places outside ERCOT are flagged and kept out of the counts (R7)."""
+    sites = store.frame(SITES)
+    ercot = pl.col("in_ercot").fill_null(True) if "in_ercot" in sites.columns else pl.lit(True)
+    return sites.group_by("county_fips").agg(
+        sites=ercot.sum().cast(pl.Int64),
+        sites_naics_only=(ercot & (pl.col("matched_by") == "naics")).sum().cast(pl.Int64),
+        sites_outside_ercot=(~ercot).sum().cast(pl.Int64),
     )
 
 
@@ -120,7 +120,7 @@ def counties(
     for c in store.frame(COUNTIES).sort("county_fips").to_dicts():
         fips = c["county_fips"]
         q = queue_rows.get(fips)
-        s = sites.get(fips, {"sites": 0, "sites_naics_only": 0})
+        s = sites.get(fips, {"sites": 0, "sites_naics_only": 0, "sites_outside_ercot": 0})
         items.append(
             CountyRow(
                 county_fips=fips,
@@ -129,7 +129,7 @@ def counties(
                 in_ercot=bool(c.get("in_ercot")),
                 acquisition=_acquisition(acquisition.get(fips)),
                 queue=CountyQueue(**q) if q else None,
-                data_centers=CountyDataCenters(sites=s["sites"], sites_naics_only=s["sites_naics_only"]),
+                data_centers=CountyDataCenters(**s),
             )
         )
     legend, weights = _weights()

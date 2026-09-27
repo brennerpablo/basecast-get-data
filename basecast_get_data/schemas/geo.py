@@ -57,8 +57,11 @@ class CountyQueue(BaseModel):
 
 
 class CountyDataCenters(BaseModel):
-    sites: int = Field(description="New data-center sites since 2025, every match")
+    sites: int = Field(description="New data-center sites since 2025 in ERCOT, every match")
     sites_naics_only: int = Field(description="Of which matched on NAICS 518210 only")
+    sites_outside_ercot: int = Field(
+        0, description="Sites Q4 places outside ERCOT: flagged, not counted (R7)"
+    )
 
 
 class CountyRow(BaseModel):
@@ -145,6 +148,7 @@ class DataCenterSite(BaseModel):
     largest_type: str | None = Field(None, description="coop, muni or iou, by county (not by point)")
     coop_share_w: float | None = None
     iso_class: str | None = None
+    in_ercot: bool | None = Field(None, description="False for sites outside ERCOT, kept out of the counts")
     density_per_km2: float | None = None
     metro_legacy: bool = False
     metro_density: bool = False
