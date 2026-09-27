@@ -49,7 +49,7 @@ async def lifespan(_: FastAPI):
             log.exception("could not build the lake index at startup")
 
     threading.Thread(target=warm, daemon=True).start()
-    # Load the marts the product resources read from Postgres, and keep them fresh.
+    # Load the marts the product resources read from Postgres before taking traffic, and keep them fresh.
     store.start()
     yield
 

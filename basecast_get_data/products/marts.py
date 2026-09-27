@@ -50,6 +50,9 @@ MARTS: dict[str, str] = {
     "mart_insights": "insights",
 }
 
+# Marts read as records, never as a frame (the detail's payload mixes value types).
+RECORDS_ONLY = frozenset({"mart_account_detail"})
+
 # `mart_meta` rows (mart, key, value) belong to the group of the mart they describe.
 META = "mart_meta"
 META_GROUPS: dict[str, str] = {

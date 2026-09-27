@@ -196,6 +196,8 @@ def refresh() -> list[str]:
             if _version(name, columns) == current.version:
                 continue
             fresh = _load(name)
+            if name not in marts.RECORDS_ONLY and name != marts.META:
+                fresh.frame()
             with _lock:
                 _loaded[name] = fresh
         except MartNotBuilt:
@@ -209,25 +211,42 @@ def refresh() -> list[str]:
 
 
 _started = False
+# Startup loads the live marts before the instance takes traffic, for at most this long; the rest load on use.
+WARM_BUDGET_S = 60
+
+
+def warm(names: list[str]) -> None:
+    """Load the marts and build their frames now. Cloud Run gives an instance CPU outside requests only while
+    it starts, so this runs before the port opens, not in a background thread."""
+    started = time.monotonic()
+    for name in names:
+        if time.monotonic() - started > WARM_BUDGET_S:
+            log.warning("mart warm-up over budget; %s and the rest load on first use", name)
+            return
+        try:
+            loaded = _get(name)
+            if name not in marts.RECORDS_ONLY and name != marts.META:
+                loaded.frame()
+        except MartNotBuilt:
+            pass
+        except Exception:
+            log.exception("could not load %s at startup", name)
 
 
 def start() -> None:
-    """Load the live marts in the background and keep checking them for new builds."""
+    """Load the live marts (blocking, at startup), then keep checking them for new builds in the
+    background."""
     global _started
     live_marts = [m for m in marts.MARTS if live(m)]
     if _started or not live_marts:
         return
     _started = True
+    started = time.perf_counter()
+    warm([*live_marts, marts.META])
+    event("marts.warm", f"live marts loaded in {round(time.perf_counter() - started, 1)} s", marts=loaded())
     ttl = get_settings().mart_ttl_s
 
     def run() -> None:
-        for name in [*live_marts, marts.META]:
-            try:
-                _get(name)
-            except MartNotBuilt:
-                pass
-            except Exception:
-                log.exception("could not load %s at startup", name)
         while True:
             time.sleep(ttl)
             refresh()
