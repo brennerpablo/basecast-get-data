@@ -164,6 +164,82 @@
    ]
   },
   {
+   "mart": "account_detail",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "account_detail",
+   "key": "caveats",
+   "value": [
+    "weights_pending_review",
+    "requests_not_forecasts",
+    "optimistic_weather"
+   ]
+  },
+  {
+   "mart": "account_detail",
+   "key": "inputs",
+   "value": [
+    "mart_accounts",
+    "mart_account_events",
+    "mart_account_counties"
+   ]
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "caveats",
+   "value": [
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "inputs",
+   "value": [
+    "ercot_load_hourly_wz",
+    "weather_hourly_wz"
+   ]
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "normal_period",
+   "value": "2003-2022"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "weather_source",
+   "value": "ERA5 (Open-Meteo)"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "model",
+   "value": "x12-v1"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "variants",
+   "value": {
+    "dmax": "+ lag + dew point, level knots 6 mo",
+    "dmean": "+ lag + dew point, level knots 6 mo"
+   }
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "variant_choice",
+   "value": "lowest mean re-leveled MAPE of the nine series, trained 2020-2022, validated on 2023"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "window_years",
+   "value": 3
+  },
+  {
    "mart": "peak_backtest",
    "key": "eras",
    "value": [
@@ -817,27 +893,6 @@
    ]
   },
   {
-   "mart": "account_detail",
-   "key": "as_of",
-   "value": "2026-09-26"
-  },
-  {
-   "mart": "account_detail",
-   "key": "caveats",
-   "value": [
-    "weights_pending_review"
-   ]
-  },
-  {
-   "mart": "account_detail",
-   "key": "inputs",
-   "value": [
-    "mart_accounts",
-    "mart_account_events",
-    "mart_account_counties"
-   ]
-  },
-  {
    "mart": "glossary",
    "key": "as_of",
    "value": "2026-09-26"
@@ -1032,6 +1087,821 @@
    "mart": "insights",
    "key": "as_of",
    "value": "2026-09-26"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "excluded_days",
+   "value": [
+    "2021-02-14",
+    "2021-02-20"
+   ]
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "complete_through",
+   "value": "2026-09-19"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "first_day",
+   "value": "2003-01-01"
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "summer_months",
+   "value": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "mart": "load_normalized_monthly",
+   "key": "peak_norm_mw",
+   "value": "weather-adjusted daily peak, not an expected peak"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "caveats",
+   "value": [
+    "preliminary_actuals",
+    "band_uncalibrated"
+   ]
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "inputs",
+   "value": [
+    "ercot_load_hourly_wz",
+    "weather_hourly_wz"
+   ]
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "normal_period",
+   "value": "2003-2022"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "weather_source",
+   "value": "ERA5 (Open-Meteo)"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "model",
+   "value": "x12-v1"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "variants",
+   "value": {
+    "dmax": "+ lag + dew point, level knots 6 mo",
+    "dmean": "+ lag + dew point, level knots 6 mo"
+   }
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "variant_choice",
+   "value": "lowest mean re-leveled MAPE of the nine series, trained 2020-2022, validated on 2023"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "window_years",
+   "value": 3
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "excluded_days",
+   "value": [
+    "2021-02-14",
+    "2021-02-20"
+   ]
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "complete_through",
+   "value": "2026-09-19"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "first_day",
+   "value": "2003-01-01"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "summer_months",
+   "value": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "peak_norm_mw",
+   "value": "weather-adjusted daily peak, not an expected peak"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "yoy_reference",
+   "value": {
+    "years": "2010-2021",
+    "by_zone": {
+     "EAST": {
+      "sd_pct": 2.791314925732825,
+      "mean_pct": 1.7860432048746349
+     },
+     "WEST": {
+      "sd_pct": 2.759578899277329,
+      "mean_pct": 1.5620963713948777
+     },
+     "COAST": {
+      "sd_pct": 1.3056824747607039,
+      "mean_pct": 2.2230239499146247
+     },
+     "ERCOT": {
+      "sd_pct": 0.5708259765817421,
+      "mean_pct": 2.1555989668592974
+     },
+     "FWEST": {
+      "sd_pct": 5.545468752229555,
+      "mean_pct": 10.796911305349026
+     },
+     "NCENT": {
+      "sd_pct": 0.6525166368449528,
+      "mean_pct": 1.1233643379864156
+     },
+     "NORTH": {
+      "sd_pct": 2.476164144378392,
+      "mean_pct": 0.043518598068564875
+     },
+     "SCENT": {
+      "sd_pct": 1.0935253571926433,
+      "mean_pct": 1.6391458382564708
+     },
+     "SOUTH": {
+      "sd_pct": 1.55264685636378,
+      "mean_pct": 2.3369797302996744
+     }
+    }
+   }
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "yoy_basis",
+   "value": {
+    "calendar_year": "calendar year vs the year before (full years only)",
+    "same_days_ytd": "the running year from Jan 1 through complete_through vs the same days a year before"
+   }
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "summer_peak_band",
+   "value": "P10 / P50 / P90 of the June-September maximum over the normal weather years, each day keeping its residual; uncorrected"
+  },
+  {
+   "mart": "load_normalized_annual",
+   "key": "p50_bias_pct",
+   "value": {
+    "years": "2003-2022",
+    "by_zone": {
+     "EAST": 0.8731585680819942,
+     "WEST": 0.9743496690631848,
+     "COAST": 2.2344266527232386,
+     "ERCOT": 0.8548550060359161,
+     "FWEST": 0.9293202431669367,
+     "NCENT": 0.49126389479956345,
+     "NORTH": 0.6368051819344328,
+     "SCENT": 1.3503879989980887,
+     "SOUTH": 0.8444214751885598
+    }
+   }
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "caveats",
+   "value": [
+    "beyond_backtested_window"
+   ]
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "inputs",
+   "value": [
+    "gis_project_events"
+   ]
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "report_month",
+   "value": "2026-08-01"
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "queue_as_of",
+   "value": "2026-09-01"
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "model",
+   "value": "entry_ia_sm"
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "cohort_first_listed_from",
+   "value": "2018-08-01"
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "min_at_risk",
+   "value": 10
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "supported",
+   "value": "at least 10 projects at risk and within the fit's support end (the last event time with 10 at risk), as a cut; entry also needs the IA curve's support, since its value at month t reads the IA curve up to t. at_risk is in projects for both weightings"
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "strata_rule",
+   "value": "a stratum with n < 30 or < 10 events at a stage takes the pooled curve"
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "stages",
+   "value": {
+    "ia": "months since the IA was signed: Aalen-Johansen CIF of COD and of withdrawal (delayed entry at the first listed month)",
+    "entry": "months since queue entry, semi-Markov: time to the IA (competing with COD and withdrawal) convolved with the IA-stage curve; cif_ia is the entry -> IA step"
+   }
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "weightings",
+   "value": {
+    "mw": "capacity_mw (X2's primary variant)",
+    "count": "projects (X2's count variant)"
+   }
+  },
+  {
+   "mart": "queue_stage_curves",
+   "key": "event",
+   "value": "ERCOT commercial operation approval; competing event: cancellation, or vanishing from the report"
+  },
+  {
+   "mart": "annotations",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "annotations",
+   "key": "caveats",
+   "value": [
+    "policy_pause_2026",
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "annotations",
+   "key": "inputs",
+   "value": []
+  },
+  {
+   "mart": "annotations",
+   "key": "source",
+   "value": "config/annotations.yaml"
+  },
+  {
+   "mart": "annotations",
+   "key": "rule",
+   "value": "source_url is a URL written in the repo doc named in doc_ref; null = not verified"
+  },
+  {
+   "mart": "annotations",
+   "key": "unverified",
+   "value": [
+    "batch_zero_intake"
+   ]
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "caveats",
+   "value": [
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "inputs",
+   "value": [
+    "ercot_monthly_peaks",
+    "ercot_load_hourly_wz",
+    "ercot_fuel_mix_15min",
+    "prices_rtm_hub_lz"
+   ]
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "window_start_local",
+   "value": "15:45"
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "window_end_local",
+   "value": "17:45"
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "window_label",
+   "value": "15:45–17:45 CPT"
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "window_coverage",
+   "value": {
+    "2010–2025": [
+     63,
+     64
+    ],
+    "2021–2026": [
+     23,
+     23
+    ]
+   }
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "window_chosen",
+   "value": "in-sample (X3): picked on the same summers it is scored on"
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "interval_label",
+   "value": "interval ending: ERCOT's D&E workbook labels the 15-minute peak time 'Interval ending' (X15), so 17:00 is 16:45–17:00 CPT"
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "settlement_match",
+   "value": "X15: ERCOT's settlement 4CP (NP9-83-M) matches the D&E 15-minute peak in 66 of 68 months 2008–2025 (all of 2022–2025); NP9-83-M is not in the lake, so not checked here"
+  },
+  {
+   "mart": "four_cp_intervals",
+   "key": "price_point",
+   "value": "HB_HUBAVG"
+  },
+  {
+   "mart": "four_cp_zone",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "four_cp_zone",
+   "key": "caveats",
+   "value": [
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "four_cp_zone",
+   "key": "inputs",
+   "value": [
+    "ercot_monthly_peaks"
+   ]
+  },
+  {
+   "mart": "four_cp_zone",
+   "key": "cf_summer",
+   "value": "mean zone load at the four ERCOT 15-minute CPs ÷ the zone's own highest 15-minute load of the summer"
+  },
+  {
+   "mart": "four_cp_zone",
+   "key": "intensity",
+   "value": "the zone's share of ERCOT's 4CP load ÷ its share of summer energy (above 1: more transmission per MWh)"
+  },
+  {
+   "mart": "four_cp_zone",
+   "key": "ncp_end_hour",
+   "value": "mean local clock hour at which the zone's own monthly peaks end (decimal)"
+  },
+  {
+   "mart": "four_cp_zone",
+   "key": "complete",
+   "value": "all four CP months published; the current summer is partial until September's D&E report"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "caveats",
+   "value": [
+    "optimistic_weather"
+   ]
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "inputs",
+   "value": [
+    "ercot_monthly_peaks",
+    "ercot_load_hourly_wz",
+    "weather_hourly_wz"
+   ]
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "headline",
+   "value": {
+    "param": 0.96,
+    "window": "2h 15:45–17:45",
+    "forecast": "weather (ERA5 observed)",
+    "all4_rate": 0.9375,
+    "month_rate": 0.984375,
+    "dispatch_days": 55.75
+   }
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "label",
+   "value": "optimistic: observed ERA5 weather"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "summers",
+   "value": "2010–2025"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "noise",
+   "value": {
+    "draws": 100,
+    "seeds": "0–99",
+    "sigmas": [
+     0.0,
+     0.02,
+     0.03,
+     0.05
+    ]
+   }
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "weather_model",
+   "value": "log(peak) ~ year effects + t_max + t_max² + t_mean(d−1) + weekend on the ERCOT-weighted ERA5 weather, fit on the three previous summers, level from the previous 7 days' residuals"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "rule_a",
+   "value": "dispatch day d when the forecast peak ≥ X × the month-to-date max through d−1; the first day of each month always dispatches"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "rule_b",
+   "value": "the top N days of each month by a score: needs the whole month up front (a benchmark)"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "window_chosen",
+   "value": "in-sample (X3)"
+  },
+  {
+   "mart": "four_cp_dispatch_curve",
+   "key": "fleet_limits",
+   "value": "Base's battery duration, reserve and cycling limits are not verified (X3 review item 3)"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "caveats",
+   "value": [
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "inputs",
+   "value": [
+    "ercot_monthly_peaks",
+    "ercot_load_hourly_wz",
+    "ercot_fuel_mix_15min",
+    "prices_rtm_hub_lz"
+   ]
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "price_point",
+   "value": "HB_HUBAVG"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "price_market",
+   "value": "RTM 15-minute settlement point prices (energy only; ancillary services are out of the MVP)"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "price_rank",
+   "value": "rank('min') within the local month: ties (price-cap intervals) share a rank, so a month can have more than 20 intervals at rank ≤ 20 (top20_price_intervals)"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "net_load",
+   "value": "ERCOT hourly load − wind − solar (fuel mix, MWh per 15 minutes summed to the hour)"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "late",
+   "value": "top20_price_after_18h_share: intervals in hour ending 19 or later (starting 18:00 CPT or later)"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "prices_through",
+   "value": "2026-09-20 04:45:00+00:00"
+  },
+  {
+   "mart": "four_cp_scarcity",
+   "key": "fuel_mix_through",
+   "value": "2026-09-01 04:45:00+00:00"
+  },
+  {
+   "mart": "four_cp_rates",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "four_cp_rates",
+   "key": "caveats",
+   "value": []
+  },
+  {
+   "mart": "four_cp_rates",
+   "key": "inputs",
+   "value": []
+  },
+  {
+   "mart": "four_cp_rates",
+   "key": "rule",
+   "value": "16 TAC 25.192: each DSP pays the monthly rate × its previous year's average 4CP demand; ERCOT files the current year's 4CP by December 1 and it bills the next year"
+  },
+  {
+   "mart": "four_cp_rates",
+   "key": "rate",
+   "value": "ERCOT postage stamp (sum of the TSPs' TCOS ÷ ERCOT's average 4CP), quoted verbatim from the PUCT matrix (X15); TCOS ÷ average 4CP from the same table gives 2–10% less, not checked"
+  },
+  {
+   "mart": "four_cp_rates",
+   "key": "reading",
+   "value": "avoided cost for the co-op, not Base revenue; fleet kW per home not verified"
+  },
+  {
+   "mart": "four_cp_rates",
+   "key": "config_status",
+   "value": "reviewed"
+  },
+  {
+   "mart": "zone_layers",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "zone_layers",
+   "key": "caveats",
+   "value": [
+    "allocated_statewide",
+    "machine_read_unverified"
+   ]
+  },
+  {
+   "mart": "zone_layers",
+   "key": "inputs",
+   "value": [
+    "ercot_load_hourly_wz",
+    "weather_hourly_wz",
+    "large_load_chart_values",
+    "large_load_headlines"
+   ]
+  },
+  {
+   "mart": "zone_layers",
+   "key": "measures",
+   "value": {
+    "u_share": {
+     "unit": "share",
+     "label": "Share of the unattributed flat load (zone excess left after the allocated large load)",
+     "method": "allocated",
+     "source": "X11 §3"
+    },
+    "a2e_stock": {
+     "unit": "MW",
+     "label": "Approved-to-energize large load, allocated by zone",
+     "method": "allocated",
+     "source": "X11 §2a"
+    },
+    "excess_share": {
+     "unit": "share",
+     "label": "Share of the summer-peak excess over weather + trend, at the ERCOT peak hour, mean 2023–2026",
+     "method": "observed",
+     "source": "X1 §1"
+    },
+    "pipeline_2032": {
+     "unit": "MW",
+     "label": "Large-load pipeline in 2032 (Batch Zero base + studied), by zone",
+     "method": "observed by zone",
+     "source": "X11 §2b"
+    },
+    "min_max_ratio_2019": {
+     "unit": "ratio",
+     "label": "Average summer day's minimum ÷ maximum load, 2019 (Jun 1–Sep 20)",
+     "method": "observed",
+     "source": "X1 §2"
+    },
+    "min_max_ratio_2026": {
+     "unit": "ratio",
+     "label": "Average summer day's minimum ÷ maximum load, 2026 (Jun 1–Sep 20)",
+     "method": "observed",
+     "source": "X1 §2"
+    }
+   }
+  },
+  {
+   "mart": "zone_layers",
+   "key": "excess_years",
+   "value": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "mart": "zone_layers",
+   "key": "excess_mw_mean",
+   "value": {
+    "EAST": 507.13284574152124,
+    "WEST": -32.10927177702797,
+    "COAST": 1428.9546902644306,
+    "FWEST": 2550.200218316073,
+    "NCENT": 711.6460546629805,
+    "NORTH": 1087.358871273105,
+    "SCENT": 2123.569555132672,
+    "SOUTH": -60.46321605123421
+   }
+  },
+  {
+   "mart": "zone_layers",
+   "key": "ercot_coincident_excess_mw",
+   "value": {
+    "2023": 6933.179453755976,
+    "2024": 8104.756971470473,
+    "2025": 7054.238704695701,
+    "2026": 11172.983864431459
+   }
+  },
+  {
+   "mart": "zone_layers",
+   "key": "ercot_min_max_ratio",
+   "value": {
+    "2019": 0.6141637923770765,
+    "2026": 0.6813535340672766
+   }
+  },
+  {
+   "mart": "zone_layers",
+   "key": "shape_window",
+   "value": "Jun 1 - Sep 20"
+  },
+  {
+   "mart": "zone_layers",
+   "key": "load_through",
+   "value": "2026-09-25"
+  },
+  {
+   "mart": "zone_layers",
+   "key": "approved_stock",
+   "value": {
+    "mw": 8926.0,
+    "src": "chart",
+    "other_mw": 3876.0,
+    "lz_west_mw": 5050.0,
+    "report_date": "2026-06-19",
+    "lz_west_share": 0.5657629397266413
+   }
+  },
+  {
+   "mart": "zone_layers",
+   "key": "f_north",
+   "value": 0.7214652014652014
+  },
+  {
+   "mart": "zone_layers",
+   "key": "stock_candidates",
+   "value": [
+    "raked_f_est",
+    "raked_f1_x1",
+    "raked_f0",
+    "bz_base_unraked"
+   ]
+  },
+  {
+   "mart": "zone_layers",
+   "key": "stock_central",
+   "value": "raked_f_est"
+  },
+  {
+   "mart": "zone_layers",
+   "key": "pipeline",
+   "value": {
+    "page": 7,
+    "base_mw": 66359.0,
+    "document": "14-Batch-Zero-Update.pdf",
+    "studied_mw": 125391.0,
+    "report_date": "2026-09-14"
+   }
+  },
+  {
+   "mart": "zone_layers",
+   "key": "u_years",
+   "value": [
+    2023,
+    2026
+   ]
+  },
+  {
+   "mart": "county_large_load",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "county_large_load",
+   "key": "caveats",
+   "value": [
+    "allocated_statewide",
+    "machine_read_unverified",
+    "by_county_not_point"
+   ]
+  },
+  {
+   "mart": "county_large_load",
+   "key": "inputs",
+   "value": [
+    "large_load_chart_values",
+    "large_load_headlines",
+    "county_weather_zone",
+    "tceq_data_center_sites",
+    "cpa_local_dev_agreements",
+    "cpa_data_centers"
+   ]
+  },
+  {
+   "mart": "county_large_load",
+   "key": "approved_stock",
+   "value": {
+    "mw": 8926.0,
+    "src": "chart",
+    "other_mw": 3876.0,
+    "lz_west_mw": 5050.0,
+    "report_date": "2026-06-19",
+    "lz_west_share": 0.5657629397266413
+   }
+  },
+  {
+   "mart": "county_large_load",
+   "key": "signals",
+   "value": "TCEQ data-center sites + Comptroller agreements naming a data center + Comptroller data-center registrations with a county, each weighing 1"
+  },
+  {
+   "mart": "county_large_load",
+   "key": "named_source",
+   "value": {
+    "page": 7,
+    "document": "14-Batch-Zero-Update.pdf",
+    "report_date": "2026-09-14"
+   }
+  },
+  {
+   "mart": "county_large_load",
+   "key": "pipeline_spread",
+   "value": false
   }
  ]
 }

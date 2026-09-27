@@ -23,7 +23,11 @@ from basecast_get_data.products import marts
 OUT = Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "marts"
 MAX_ROWS = 400
 # Marts kept whole past MAX_ROWS because their golden numbers are statewide sums.
-KEEP_WHOLE = {"mart_queue_adjusted_county": 800, "mart_large_load_in_service": 900}
+KEEP_WHOLE = {
+    "mart_queue_adjusted_county": 800,
+    "mart_large_load_in_service": 900,
+    "mart_four_cp_dispatch_curve": 500,
+}
 # mart → SQL WHERE clause that trims it (fixed values, never user input).
 # The three accounts of X9's worked diagnoses: #1 (a muni), the median co-op and a short-form muni.
 X9_ACCOUNTS = "account_id IN ('30123', '30120', '30012')"
@@ -31,6 +35,8 @@ TRIM: dict[str, str] = {
     "mart_account_detail": X9_ACCOUNTS,
     "mart_account_events": X9_ACCOUNTS,
     "mart_account_counties": X9_ACCOUNTS,
+    "mart_load_normalized_monthly": "weather_zone IN ('ERCOT', 'WEST') AND month >= '2019-01-01'",
+    "mart_queue_stage_curves": "stratum IN ('all', 'storage') AND month % 6 = 0",
     # The five counties with the most raw queue.
     "mart_queue_project_scores": "county_fips IN (SELECT county_fips FROM public.mart_queue_adjusted_county"
     " WHERE stratum = 'all' ORDER BY raw_mw DESC LIMIT 5)",

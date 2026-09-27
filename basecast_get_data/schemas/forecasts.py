@@ -162,6 +162,10 @@ class RatioBand(BaseModel):
 
 class Annotation(BaseModel):
     date: date
+    date_precision: Literal["day", "month"] = Field("day", description="month: show the month, not the day")
+    kind: str | None = Field(
+        None, description="grid_event, demand_record, official_forecast, large_load_policy…"
+    )
     title: str
     detail: str | None = None
     source_url: str | None = Field(None, description="Null = source not verified")

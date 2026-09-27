@@ -1,0 +1,31 @@
+{
+ "note": "public.mart_four_cp_rates, trimmed by scripts/sample_marts.py",
+ "rows": [
+  {
+   "charges_for_year": 2025,
+   "docket": "57491",
+   "postage_stamp_usd_per_kw_yr": 68.547,
+   "usd_per_mw_yr": 68547.0,
+   "status": "final",
+   "billed_year": 2026,
+   "set_on_4cp_summer": 2024,
+   "source_url": "https://interchange.puc.texas.gov/Documents/57491_58_1505349.PDF",
+   "model_version": "1542ab3.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:38:54.003939+00:00"
+  },
+  {
+   "charges_for_year": 2026,
+   "docket": "59080",
+   "postage_stamp_usd_per_kw_yr": 75.527,
+   "usd_per_mw_yr": 75527.0,
+   "status": "pending",
+   "billed_year": 2027,
+   "set_on_4cp_summer": 2025,
+   "source_url": "https://interchange.puc.texas.gov/Documents/59080_50_1603607.ZIP",
+   "model_version": "1542ab3.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:38:54.003939+00:00"
+  }
+ ]
+}

@@ -3368,6 +3368,28 @@
             "format": "date",
             "title": "Date"
           },
+          "date_precision": {
+            "type": "string",
+            "enum": [
+              "day",
+              "month"
+            ],
+            "title": "Date Precision",
+            "description": "month: show the month, not the day",
+            "default": "day"
+          },
+          "kind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kind",
+            "description": "grid_event, demand_record, official_forecast, large_load_policy…"
+          },
           "title": {
             "type": "string",
             "title": "Title"

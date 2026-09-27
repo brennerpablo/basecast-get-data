@@ -239,3 +239,54 @@ def test_real_queue_cards_name_their_queue(real, client):
     assert cards["B3"]["queue"] == "generation"
     assert all(cards[i]["queue"] == "large_load" for i in ("A1", "B6", "B7", "B8"))
     assert all(c["caveat"] for c in cards.values())
+
+
+# --- P1: forecast tabs, zone layers, the 4CP offer --------------------------------------------------------
+
+
+def test_queue_curves_serve_x2_and_q6_milestones(real, client):
+    d = client.get("/forecasts/queue-curves").json()["data"]
+    m = {(x["stage"], x["stratum"], x["weighting"], x["month"]): x["cif_cod"] for x in d["milestones"]}
+    assert (m[("entry", "all", "count", 36)], m[("entry", "all", "mw", 36)]) == pytest.approx(
+        (0.050, 0.023), abs=0.001
+    )
+    assert (m[("ia", "all", "count", 36)], m[("ia", "all", "mw", 36)]) == pytest.approx(
+        (0.440, 0.304), abs=0.001
+    )
+
+
+def test_four_cp_rates_and_window_match_x15(real, client):
+    d = client.get("/four-cp").json()["data"]
+    assert (d["window_start_local"], d["window_end_local"]) == ("15:45", "17:45")
+    rates = {r["charges_for_year"]: r for r in d["rates"]}
+    assert (rates[2025]["docket"], rates[2025]["status"]) == ("57491", "final")
+    assert rates[2025]["postage_stamp_usd_per_kw_yr"] == pytest.approx(68.547, abs=0.001)
+    assert (rates[2026]["docket"], rates[2026]["status"]) == ("59080", "pending")
+
+
+def test_zone_layers_and_named_counties_are_real(real, client):
+    d = client.get("/geo/zones").json()["data"]
+    assert {layer["measure"] for layer in d["layers"]} == {
+        "excess_share",
+        "min_max_ratio_2019",
+        "min_max_ratio_2026",
+        "a2e_stock",
+        "pipeline_2032",
+        "u_share",
+    }
+    assert len(d["counties"]) == 204 and sum(c["named_by_ercot"] for c in d["counties"]) == 8
+
+
+def test_annotations_carry_their_date_precision(real, client):
+    notes = client.get("/forecasts/large-load").json()["data"]["annotations"]
+    assert len(notes) == 8
+    intake = next(n for n in notes if n["date_precision"] == "month")
+    assert intake["source_url"] is None and intake["verified"] is False
+
+
+def test_nbu_4cp_offer(real, client):
+    body = client.get("/accounts/30123").json()
+    offer = body["data"]["four_cp_offer"]
+    assert (offer["window_start_local"], offer["window_end_local"]) == ("15:45", "17:45")
+    assert offer["account_4cp"]["value"] is None and offer["verified"] is False
+    assert "optimistic_weather" in [c["code"] for c in body["meta"]["caveats"]]
