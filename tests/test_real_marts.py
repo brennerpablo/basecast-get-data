@@ -99,3 +99,39 @@ def test_no_partner_field_in_the_account_marts(real):
     for name in ("mart_accounts", "mart_account_detail", "mart_account_events", "mart_account_counties"):
         assert all("is_base_partner" not in row for row in SAMPLES[name])
     assert "is_base_partner" not in str(SAMPLES["mart_account_detail"])
+
+
+# --- backtest (A-M6; golden numbers from X7, Q1 and X2) ---------------------------------------------------
+
+
+def test_backtest_serves_x7_paired_scores(real, client):
+    body = client.get("/backtest/peak").json()
+    d = body["data"]
+    assert body["meta"]["simulated"] is False and len(d["as_of_dates"]) == 8
+    pairs = {c["official_source"]: c for c in d["comparisons"] if c["era"] == "all"}
+    assert pairs["LTLF"]["n"] == 18 and pairs["LTLF"]["basecast_mape"] == pytest.approx(3.30, abs=0.01)
+    assert pairs["LTLF"]["official_mape"] == pytest.approx(5.06, abs=0.01)
+    assert pairs["CDR"]["n"] == 15 and pairs["CDR"]["basecast_mape"] == pytest.approx(3.24, abs=0.01)
+    assert pairs["CDR"]["official_mape"] == pytest.approx(4.81, abs=0.01)
+    ablation = {s["source"]: s for s in d["ablation"]}
+    assert ablation["basecast_organic_only"]["mape"] == pytest.approx(10.46, abs=0.01)
+    assert ablation["basecast"]["coverage"] == pytest.approx(10 / 18)
+
+
+def test_backtest_latest_cell_and_fan(real, client):
+    d = client.get("/backtest/peak", params={"as_of": "2026-05-31"}).json()["data"]
+    ours = next(c for c in d["cells"] if c["source"] == "basecast" and c["target_year"] == 2026)
+    assert ours["p50_mw"] == pytest.approx(89_037, abs=1)
+    kinds = [f["kind"] for f in d["fan"]]
+    assert kinds.count("official_preliminary") == 1 and kinds.count("model") == 8
+    prelim = next(f for f in d["fan"] if f["kind"] == "official_preliminary")
+    band = next(f for f in d["fan"] if f["kind"] == "official_range")
+    assert prelim["value_mw"] == 112_000 and (band["low_mw"], band["high_mw"]) == (90_500, 98_000)
+
+
+def test_official_errors_and_queue_backtest_match_q1_and_x2(real, client):
+    assert len(client.get("/backtest/official-errors").json()["data"]["items"]) == 354
+    q = client.get("/backtest/queue").json()["data"]
+    statewide = [round(i["error_pct"], 1) for i in q["items"] if i["stratum"] == "all"]
+    assert statewide == [-13.2, 9.3, 1.4]
+    assert all(0.63 <= r["rho_adj"] <= 0.67 and 0.42 <= r["rho_raw"] <= 0.46 for r in q["county_rank"])

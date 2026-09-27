@@ -2,25 +2,6 @@
  "note": "public.mart_meta rows of the sampled marts",
  "rows": [
   {
-   "mart": "actual_summer_peaks",
-   "key": "as_of",
-   "value": "2026-09-26"
-  },
-  {
-   "mart": "actual_summer_peaks",
-   "key": "caveats",
-   "value": [
-    "preliminary_actuals"
-   ]
-  },
-  {
-   "mart": "actual_summer_peaks",
-   "key": "inputs",
-   "value": [
-    "ercot_monthly_peaks"
-   ]
-  },
-  {
    "mart": "accounts",
    "key": "as_of",
    "value": "2026-09-26"
@@ -343,6 +324,132 @@
      "strength": null,
      "model_version": "978eee9.v1"
     }
+   ]
+  },
+  {
+   "mart": "actual_summer_peaks",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "actual_summer_peaks",
+   "key": "caveats",
+   "value": [
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "actual_summer_peaks",
+   "key": "inputs",
+   "value": [
+    "ercot_monthly_peaks"
+   ]
+  },
+  {
+   "mart": "peak_backtest",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "peak_backtest",
+   "key": "caveats",
+   "value": [
+    "machine_read_unverified",
+    "band_uncalibrated",
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "peak_backtest",
+   "key": "inputs",
+   "value": [
+    "ercot_load_hourly_wz",
+    "weather_hourly_wz",
+    "large_load_chart_values",
+    "large_load_headlines",
+    "ercot_monthly_peaks",
+    "official_forecasts",
+    "manual_official_figures"
+   ]
+  },
+  {
+   "mart": "peak_backtest",
+   "key": "eras",
+   "value": [
+    {
+     "era": "before_tsp_loads",
+     "label": "Before TSP large loads",
+     "description": "As-of dates before 2024-07-31: ERCOT's latest forecasts (LTLF 2023, CDR through May 2024) did not yet take the TSPs' large-load submissions in."
+    },
+    {
+     "era": "with_tsp_loads",
+     "label": "With TSP large loads",
+     "description": "As-of dates from 2024-07-31 on: LTLF 2024 (published 2024-07-18) and later forecasts carry the TSPs' large-load submissions."
+    }
+   ]
+  },
+  {
+   "mart": "official_forecast_errors",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "official_forecast_errors",
+   "key": "caveats",
+   "value": [
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "official_forecast_errors",
+   "key": "inputs",
+   "value": [
+    "official_forecasts",
+    "ercot_monthly_peaks"
+   ]
+  },
+  {
+   "mart": "queue_backtest",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "queue_backtest",
+   "key": "caveats",
+   "value": []
+  },
+  {
+   "mart": "queue_backtest",
+   "key": "inputs",
+   "value": [
+    "gis_project_events",
+    "gis_snapshots",
+    "tx_counties",
+    "county_weather_zone"
+   ]
+  },
+  {
+   "mart": "backtest_fan",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "backtest_fan",
+   "key": "caveats",
+   "value": [
+    "machine_read_unverified",
+    "band_uncalibrated",
+    "preliminary_actuals"
+   ]
+  },
+  {
+   "mart": "backtest_fan",
+   "key": "inputs",
+   "value": [
+    "official_forecasts",
+    "manual_official_figures",
+    "mart_actual_summer_peaks",
+    "mart_peak_backtest"
    ]
   }
  ]

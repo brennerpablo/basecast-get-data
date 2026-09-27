@@ -14,9 +14,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2008-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2009,
@@ -31,9 +31,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2009-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2010,
@@ -48,9 +48,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2010-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2011,
@@ -65,9 +65,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2011-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2012,
@@ -82,9 +82,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2012-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2013,
@@ -99,9 +99,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2013-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2014,
@@ -116,9 +116,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2014-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2015,
@@ -133,9 +133,9 @@
    "settlement_flagged": false,
    "months_published": 4,
    "data_as_of": "2015-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2016,
@@ -150,9 +150,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2016-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2017,
@@ -167,9 +167,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2017-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2018,
@@ -184,9 +184,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2018-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2019,
@@ -201,9 +201,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2019-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2020,
@@ -218,9 +218,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2020-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2021,
@@ -235,9 +235,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2021-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2022,
@@ -252,9 +252,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2022-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2023,
@@ -269,9 +269,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2023-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2024,
@@ -286,9 +286,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2024-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2025,
@@ -303,9 +303,9 @@
    "settlement_flagged": true,
    "months_published": 4,
    "data_as_of": "2025-09-30",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   },
   {
    "year": 2026,
@@ -320,9 +320,9 @@
    "settlement_flagged": false,
    "months_published": 3,
    "data_as_of": "2026-08-31",
-   "model_version": "f85bb1f.v2",
+   "model_version": "568eb48.v2",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:51:18.875562+00:00"
+   "built_at": "2026-09-27T00:07:02.944941+00:00"
   }
  ]
 }
