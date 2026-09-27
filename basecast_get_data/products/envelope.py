@@ -35,10 +35,12 @@ def product_meta(
     rows: pl.DataFrame | None = None,
     verified: bool = True,
     caveats: Iterable[str] = (),
+    drop: Iterable[str] = (),
 ) -> Meta:
     """`marts` are the ones the response read; `rows` is its main frame, whose `as_of` and `model_version` go
     to the envelope. A response that read any fixture says `simulated` and carries the `fixture` caveat."""
-    codes = list(caveats) + [c for m in marts for c in store.mart_caveats(m)]
+    dropped = set(drop)
+    codes = [c for c in [*caveats, *(c for m in marts for c in store.mart_caveats(m))] if c not in dropped]
     if not verified:
         codes.insert(0, "machine_read_unverified")
     fixture = any(not store.live(m) for m in marts)

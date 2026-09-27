@@ -113,7 +113,15 @@ def peak(
         caveats.append("allocated_statewide")
     first = rows.row(0, named=True) if rows.height else {}
     return PeakForecastResponse(
-        meta=product_meta(PEAK, OFFICIAL, rows=rows, verified=verified, caveats=caveats),
+        # The mart declares allocated_statewide for its zone rows; it does not apply to ERCOT.
+        meta=product_meta(
+            PEAK,
+            OFFICIAL,
+            rows=rows,
+            verified=verified,
+            caveats=caveats,
+            drop=["allocated_statewide"] if region == "ERCOT" else [],
+        ),
         data=PeakForecastData(
             region=region,
             region_type="ercot" if region == "ERCOT" else "weather_zone",
@@ -127,6 +135,7 @@ def peak(
             layers=[PeakLayer(**r) for r in layers.to_dicts()],
             official=[OfficialLine(**r) for r in official.to_dicts()],
             inputs=_inputs(rows),
+            band_basis=store.mart_meta("peak_forecast").get("band_basis", {}),
         ),
     )
 
@@ -156,7 +165,11 @@ def large_load() -> LargeLoadResponse:
     realization = store.frame(REALIZATION).sort(["deck_vintage", "target_year"])
     in_service = store.frame(IN_SERVICE).sort(["deck_vintage", "in_service_year", "status"])
     monthly = store.frame(MONTHLY).sort("month")
-    annotations = store.frame(ANNOTATIONS).sort("date")
+    try:
+        annotations = store.frame(ANNOTATIONS).sort("date")
+    except store.MartNotBuilt:
+        # P1: the dated annotations are an extra on this tab, not a reason to blank it.
+        annotations = pl.DataFrame()
     vintages: set[date] = set(realization["deck_vintage"].to_list()) | set(
         in_service["deck_vintage"].to_list()
     )
@@ -165,7 +178,7 @@ def large_load() -> LargeLoadResponse:
             REALIZATION,
             IN_SERVICE,
             MONTHLY,
-            ANNOTATIONS,
+            *([ANNOTATIONS] if annotations.height else []),
             rows=monthly,
             verified=all_verified(realization, in_service, monthly),
             caveats=["policy_pause_2026"],

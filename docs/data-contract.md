@@ -187,6 +187,8 @@ no P1, em `GET /geo/zones`.
   `p10_mw`, `p50_mw`, `p90_mw`, `band_kind`, `verified`.
   - `band_kind`: `p10_p90` (faixa probabilística), `allocation_range` (o mínimo e o máximo entre as divisões
     candidatas das zonas; **não** é P10–P90) ou `null` (sem faixa, como em `approvals_pace`).
+  - `band_basis`: de que a faixa é feita (`rolling_rmse`, `ratio_draws`, `u_draws`, `independent_layers`,
+    `in_sample_weather`, `allocation_variants`); o texto de cada código vem em `data.band_basis`, para o tooltip.
 - `data.official[]`: as previsões oficiais da mesma região (`product`, `vintage`, `vintage_date`, `series` =
   `ercot_adjusted` | `tsp_provided` | `cdr`, `label`, `target_year`, `mw`), de `mart_official_peak_lines`.
 - `data.inputs`: `deck_vintage`, `factor`, `ratio_p10/p50/p90`, `approved_stock_mw`, `share_of_ll_u` (zonas),
@@ -200,14 +202,16 @@ no P1, em `GET /geo/zones`.
 `GET /forecasts/large-load`
 
 - `realization[]` (Q5/X7, `mart_large_load_realization`): safra do deck × ano-alvo com o prometido, o
-  aprovado e as razões; `document` e `page` para o link do slide.
+  aprovado e as razões; `document` e `page` para o link do slide; `realized_partial` (o ano-alvo ainda não
+  acabou: o estoque é o do `realized_month`).
 - `ratio_band`: a faixa da razão que a variante padrão da ERCOT usa (sai do `mart_peak_forecast`, para o gráfico
   e o forecast nunca divergirem), com `definition`.
 - `in_service[]` (`mart_large_load_in_service`): safra × ano × status (`approved_to_energize`,
   `planning_studies_approved`, `under_ercot_review`, `no_studies_submitted`), MW acumulados.
 - `monthly[]` (`mart_large_load_monthly`): estoque aprovado mês a mês e o pico observado; `null` = mês sem
   leitura.
-- `annotations[]` (`mart_annotations`): eventos datados com `source_url` (`null` = fonte não verificada).
+- `annotations[]` (`mart_annotations`, P1): eventos datados com `source_url` (`null` = fonte não verificada);
+  vazio enquanto o mart não existe, sem derrubar o resto da aba.
 - Todas as linhas trazem `verified`. Caveats: `machine_read_unverified`, `policy_pause_2026`.
 
 Fora do contrato: `generation_added_mw`, `region_type=county` e `region_type=utility` (volta só no P2, simulado).

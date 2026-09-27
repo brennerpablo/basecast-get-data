@@ -127,6 +127,12 @@
      "has_band": false
     }
    ],
+   "band_basis": {
+    "rolling_rmse": "Fixture: organic band from the one-year-ahead errors.",
+    "ratio_draws": "Fixture: large-load band from resampled realization ratios.",
+    "independent_layers": "Fixture: total band from the layers' draws.",
+    "allocation_variants": "Fixture: low/high across the candidate zone shares."
+   },
    "ratio_definition": "Incremental realization ratio: approved MW added by December of the target year ÷ MW the deck promised beyond its own approved stock (horizons of 6 months or more)."
   },
   "glossary": {

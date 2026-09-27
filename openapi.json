@@ -6834,7 +6834,8 @@
               "$ref": "#/components/schemas/Annotation"
             },
             "type": "array",
-            "title": "Annotations"
+            "title": "Annotations",
+            "description": "Empty until mart_annotations is built"
           },
           "deck_vintages": {
             "items": {
@@ -8348,6 +8349,14 @@
           },
           "inputs": {
             "$ref": "#/components/schemas/PeakInputs"
+          },
+          "band_basis": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Band Basis",
+            "description": "band_basis code → its description"
           }
         },
         "type": "object",
@@ -8524,6 +8533,18 @@
             "title": "Band Kind",
             "description": "p10_p90: a probabilistic band; allocation_range: low/high across the candidate zone shares, not a P10–P90; null: no band"
           },
+          "band_basis": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Band Basis",
+            "description": "What the band is made of; its text is in data.band_basis"
+          },
           "verified": {
             "type": "boolean",
             "title": "Verified",
@@ -8595,6 +8616,18 @@
             ],
             "title": "Band Kind",
             "description": "p10_p90: a probabilistic band; allocation_range: low/high across the candidate zone shares, not a P10–P90; null: no band"
+          },
+          "band_basis": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Band Basis",
+            "description": "What the band is made of; its text is in data.band_basis"
           },
           "verified": {
             "type": "boolean",
@@ -9166,6 +9199,25 @@
               }
             ],
             "title": "Realized Energized Mw"
+          },
+          "realized_month": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Realized Month",
+            "description": "The month the realized stock was read"
+          },
+          "realized_partial": {
+            "type": "boolean",
+            "title": "Realized Partial",
+            "description": "The target year is not over: the realized stock is partial",
+            "default": false
           },
           "known_from": {
             "anyOf": [

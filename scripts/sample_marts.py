@@ -23,7 +23,7 @@ from basecast_get_data.products import marts
 OUT = Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "marts"
 MAX_ROWS = 400
 # Marts kept whole past MAX_ROWS because their golden numbers are statewide sums.
-KEEP_WHOLE = {"mart_queue_adjusted_county": 800}
+KEEP_WHOLE = {"mart_queue_adjusted_county": 800, "mart_large_load_in_service": 900}
 # mart → SQL WHERE clause that trims it (fixed values, never user input).
 # The three accounts of X9's worked diagnoses: #1 (a muni), the median co-op and a short-form muni.
 X9_ACCOUNTS = "account_id IN ('30123', '30120', '30012')"

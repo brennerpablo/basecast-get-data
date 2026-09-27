@@ -32,6 +32,9 @@ class PeakPoint(BaseModel):
         description="p10_p90: a probabilistic band; allocation_range: low/high across the candidate zone "
         "shares, not a P10–P90; null: no band",
     )
+    band_basis: str | None = Field(
+        None, description="What the band is made of; its text is in data.band_basis"
+    )
     verified: bool = True
 
 
@@ -87,6 +90,7 @@ class PeakForecastData(BaseModel):
     layers: list[PeakLayer] = Field(description="organic, large_load and unattributed per year")
     official: list[OfficialLine] = Field(description="ERCOT's own forecasts for the same region, as lines")
     inputs: PeakInputs
+    band_basis: dict[str, str] = Field(default_factory=dict, description="band_basis code → its description")
 
 
 class PeakForecastResponse(BaseModel):
@@ -107,6 +111,10 @@ class Realization(BaseModel):
     base_a2e_mw: float | None = Field(None, description="The deck's own approved-to-energize stock")
     realized_a2e_mw: float | None = Field(None, description="Approved stock in December of the target year")
     realized_energized_mw: float | None = None
+    realized_month: date | None = Field(None, description="The month the realized stock was read")
+    realized_partial: bool = Field(
+        False, description="The target year is not over: the realized stock is partial"
+    )
     known_from: date | None = Field(None, description="First deck that reports the December stock")
     gross_a2e: float | None = None
     gross_a2e_firm: float | None = None
@@ -165,7 +173,7 @@ class LargeLoadData(BaseModel):
     ratio_band: RatioBand
     in_service: list[InService]
     monthly: list[MonthlyStock]
-    annotations: list[Annotation]
+    annotations: list[Annotation] = Field(description="Empty until mart_annotations is built")
     deck_vintages: list[date]
 
 

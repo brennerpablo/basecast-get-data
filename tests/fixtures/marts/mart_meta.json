@@ -2,81 +2,6 @@
  "note": "public.mart_meta rows of the sampled marts",
  "rows": [
   {
-   "mart": "accounts",
-   "key": "as_of",
-   "value": "2026-09-26"
-  },
-  {
-   "mart": "accounts",
-   "key": "caveats",
-   "value": [
-    "weights_pending_review",
-    "by_county_not_point"
-   ]
-  },
-  {
-   "mart": "accounts",
-   "key": "inputs",
-   "value": [
-    "puct_ccn_territories",
-    "county_utility_overlap_puct",
-    "eia861_sales",
-    "census_population_county",
-    "census_permits_county",
-    "census_housing_county",
-    "tceq_data_center_sites",
-    "ltlf_forecasts",
-    "county_weather_zone",
-    "cpa_local_dev_agreements",
-    "ercot_market_participants",
-    "gis_project_events",
-    "tpit_projects",
-    "puct_tsp_large_load_requests"
-   ]
-  },
-  {
-   "mart": "accounts",
-   "key": "signals",
-   "value": [
-    {
-     "unit": "share",
-     "label": "Population growth 2020→2025",
-     "signal": "pop_growth",
-     "weight": 0.25
-    },
-    {
-     "unit": "units/1k",
-     "label": "Permits 2023–2025 per 1,000 residents",
-     "signal": "permits_per_1k",
-     "weight": 0.15
-    },
-    {
-     "unit": "homes",
-     "label": "Owner-occupied single-family homes",
-     "signal": "owner_sf_homes",
-     "weight": 0.2
-    },
-    {
-     "unit": "share",
-     "label": "Owner-occupied single-family share",
-     "signal": "owner_sf_share",
-     "weight": 0.1
-    },
-    {
-     "unit": "sites",
-     "label": "New data-center sites since 2025 (expected)",
-     "signal": "dc_sites",
-     "weight": 0.15
-    },
-    {
-     "unit": "per year",
-     "label": "Zone summer peak CAGR 2025→2031 (LTLF)",
-     "signal": "zone_peak_cagr",
-     "weight": 0.15
-    }
-   ]
-  },
-  {
    "mart": "account_events",
    "key": "as_of",
    "value": "2026-09-26"
@@ -417,6 +342,62 @@
    "mart": "county_acquisition",
    "key": "x12_variant",
    "value": "+ lag + dew point, level knots 6 mo"
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "caveats",
+   "value": [
+    "band_uncalibrated",
+    "machine_read_unverified",
+    "allocated_statewide",
+    "policy_pause_2026",
+    "beyond_backtested_window"
+   ]
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "inputs",
+   "value": [
+    "ercot_load_hourly_wz",
+    "weather_hourly_wz",
+    "large_load_chart_values",
+    "large_load_headlines",
+    "puct_tsp_large_load_requests",
+    "county_weather_zone",
+    "county_utility_overlap_puct",
+    "census_population_county"
+   ]
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "default_variant",
+   "value": "deck_pre_batch_zero"
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "variants",
+   "value": [
+    {
+     "label": "Before Batch Zero",
+     "variant": "deck_pre_batch_zero",
+     "has_band": true
+    },
+    {
+     "label": "Latest deck",
+     "variant": "deck_latest",
+     "has_band": true
+    },
+    {
+     "label": "Approvals pace",
+     "variant": "approvals_pace",
+     "has_band": false
+    }
+   ]
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "ratio_definition",
+   "value": "Incremental realization ratio: (approved-to-energize stock in December of the target year − the deck's own approved stock) ÷ (MW the deck promised in service by that December − its approved stock), over every (deck, target year) pair published and realized by the as-of date with a horizon of 6 months or more (Q5, X7). One ratio is drawn per simulation and applied to every year."
   },
   {
    "mart": "peak_backtest",
@@ -810,6 +791,223 @@
      "SOUTH": 0.035979906293611696
     }
    }
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "band_basis",
+   "value": {
+    "u_draws": "Unattributed: resampled from the flat excess of the summers since 2022.",
+    "ratio_draws": "Large load: one realization ratio resampled per draw from the known (deck, year) ratios.",
+    "rolling_rmse": "Organic: coefficient uncertainty plus a residual with the RMSE of the one-year-ahead errors at median weather over 2011-2019 (X7 §2).",
+    "in_sample_weather": "Zone organic: coefficient uncertainty, weather resampled from 2003-2019 and the in-sample residual SD (X7 §1): narrower than the ERCOT organic band.",
+    "independent_layers": "Total: the three layers drawn independently and summed (no correlation).",
+    "allocation_variants": "Zone large load, unattributed and total: low and high P50 when the stock split or the pipeline split is swapped for each candidate split (X11 §2, §4); not a P10-P90."
+   }
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "simulation",
+   "value": {
+    "seed": 7,
+    "draws": 10000,
+    "summers": [
+     2027,
+     2028,
+     2029,
+     2030,
+     2031
+    ]
+   }
+  },
+  {
+   "mart": "peak_forecast",
+   "key": "zone_allocation",
+   "value": "x11"
+  },
+  {
+   "mart": "official_peak_lines",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "official_peak_lines",
+   "key": "caveats",
+   "value": []
+  },
+  {
+   "mart": "official_peak_lines",
+   "key": "inputs",
+   "value": [
+    "official_forecasts"
+   ]
+  },
+  {
+   "mart": "large_load_realization",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "large_load_realization",
+   "key": "caveats",
+   "value": [
+    "machine_read_unverified",
+    "policy_pause_2026"
+   ]
+  },
+  {
+   "mart": "large_load_realization",
+   "key": "inputs",
+   "value": [
+    "large_load_chart_values",
+    "large_load_headlines"
+   ]
+  },
+  {
+   "mart": "large_load_realization",
+   "key": "ratio_definition",
+   "value": "Incremental realization ratio: (approved-to-energize stock in December of the target year − the deck's own approved stock) ÷ (MW the deck promised in service by that December − its approved stock), over every (deck, target year) pair published and realized by the as-of date with a horizon of 6 months or more (Q5, X7). One ratio is drawn per simulation and applied to every year."
+  },
+  {
+   "mart": "large_load_realization",
+   "key": "min_horizon_months",
+   "value": 6
+  },
+  {
+   "mart": "large_load_in_service",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "large_load_in_service",
+   "key": "caveats",
+   "value": [
+    "machine_read_unverified"
+   ]
+  },
+  {
+   "mart": "large_load_in_service",
+   "key": "inputs",
+   "value": [
+    "large_load_chart_values",
+    "large_load_headlines"
+   ]
+  },
+  {
+   "mart": "large_load_monthly",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "large_load_monthly",
+   "key": "caveats",
+   "value": [
+    "machine_read_unverified",
+    "policy_pause_2026"
+   ]
+  },
+  {
+   "mart": "large_load_monthly",
+   "key": "inputs",
+   "value": [
+    "large_load_chart_values",
+    "large_load_headlines"
+   ]
+  },
+  {
+   "mart": "large_load_monthly",
+   "key": "headline_redates",
+   "value": [
+    {
+     "month": "2026-01",
+     "report_date": "2026-01-21",
+     "printed_month": "2025-01"
+    },
+    {
+     "month": "2026-02",
+     "report_date": "2026-02-19",
+     "printed_month": "2025-02"
+    }
+   ]
+  },
+  {
+   "mart": "accounts",
+   "key": "as_of",
+   "value": "2026-09-26"
+  },
+  {
+   "mart": "accounts",
+   "key": "caveats",
+   "value": [
+    "weights_pending_review",
+    "by_county_not_point"
+   ]
+  },
+  {
+   "mart": "accounts",
+   "key": "inputs",
+   "value": [
+    "puct_ccn_territories",
+    "county_utility_overlap_puct",
+    "eia861_sales",
+    "census_population_county",
+    "census_permits_county",
+    "census_housing_county",
+    "tceq_data_center_sites",
+    "ltlf_forecasts",
+    "county_weather_zone",
+    "cpa_local_dev_agreements",
+    "ercot_market_participants",
+    "gis_project_events",
+    "tpit_projects",
+    "puct_tsp_large_load_requests"
+   ]
+  },
+  {
+   "mart": "accounts",
+   "key": "signals",
+   "value": [
+    {
+     "unit": "share",
+     "label": "Population growth 2020→2025",
+     "signal": "pop_growth",
+     "weight": 0.25
+    },
+    {
+     "unit": "units/1k",
+     "label": "Permits 2023–2025 per 1,000 residents",
+     "signal": "permits_per_1k",
+     "weight": 0.15
+    },
+    {
+     "unit": "homes",
+     "label": "Owner-occupied single-family homes",
+     "signal": "owner_sf_homes",
+     "weight": 0.2
+    },
+    {
+     "unit": "share",
+     "label": "Owner-occupied single-family share",
+     "signal": "owner_sf_share",
+     "weight": 0.1
+    },
+    {
+     "unit": "sites",
+     "label": "New data-center sites since 2025 (expected)",
+     "signal": "dc_sites",
+     "weight": 0.15
+    },
+    {
+     "unit": "per year",
+     "label": "Zone summer peak CAGR 2025→2031 (LTLF)",
+     "signal": "zone_peak_cagr",
+     "weight": 0.15
+    }
+   ]
   }
  ]
 }

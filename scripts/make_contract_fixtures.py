@@ -1301,6 +1301,17 @@ def make_forecast() -> list[dict[str, Any]]:
                                 if region == "ERCOT" or layer == "organic"
                                 else "allocation_range"
                             ),
+                            "band_basis": (
+                                None
+                                if not band
+                                else "rolling_rmse"
+                                if layer == "organic"
+                                else "allocation_variants"
+                                if region != "ERCOT"
+                                else "independent_layers"
+                                if layer == "total"
+                                else "ratio_draws"
+                            ),
                             "deck_vintage": iso(deck),
                             "factor": 0.47,
                             "ratio_p10": 0.12,
@@ -1364,6 +1375,8 @@ def make_large_load() -> tuple[list, list, list, list]:
                 "realized_a2e_mw": realized,
                 "realized_energized_mw": energized,
                 "known_from": "2026-01-05" if realized else None,
+                "realized_month": "2025-12-01" if realized else "2026-06-01",
+                "realized_partial": realized is None,
                 "document": f"fixture-large-load-deck-{vintage:%Y-%m}.pdf",
                 "page": 7,
                 "verified": False,
@@ -2284,6 +2297,12 @@ def main() -> None:
                     {"variant": v, "label": label, "has_band": band}
                     for v, (label, band, _, _) in VARIANTS.items()
                 ],
+                "band_basis": {
+                    "rolling_rmse": "Fixture: organic band from the one-year-ahead errors.",
+                    "ratio_draws": "Fixture: large-load band from resampled realization ratios.",
+                    "independent_layers": "Fixture: total band from the layers' draws.",
+                    "allocation_variants": "Fixture: low/high across the candidate zone shares.",
+                },
                 "ratio_definition": "Incremental realization ratio: approved MW added by December of the "
                 "target year "
                 "÷ MW the deck promised beyond its own approved stock (horizons of 6 months or more).",

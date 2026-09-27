@@ -172,3 +172,41 @@ def test_queue_projects_of_the_sampled_counties(real, client):
     assert body["total"] == len(SAMPLES["mart_queue_project_scores"])
     mw = [p["mw_2028"] for p in body["items"]]
     assert mw == sorted(mw, reverse=True)
+
+
+# --- forecast (A-M5; golden numbers from X7) --------------------------------------------------------------
+
+
+def _series(client, **params):
+    d = client.get("/forecasts/peak", params=params).json()["data"]
+    return {p["target_year"]: p for p in d["series"]}, d
+
+
+def test_peak_forecast_serves_x7_numbers(real, client):
+    series, d = _series(client)
+    assert d["variant"] == "deck_pre_batch_zero"
+    assert (series[2027]["p50_mw"], series[2027]["p10_mw"], series[2027]["p90_mw"]) == pytest.approx(
+        (92_819, 89_282, 96_418), abs=1
+    )
+    assert (series[2030]["p50_mw"], series[2030]["p10_mw"], series[2030]["p90_mw"]) == pytest.approx(
+        (111_323, 104_031, 123_286), abs=1
+    )
+    latest, _ = _series(client, variant="deck_latest")
+    assert (latest[2027]["p50_mw"], latest[2030]["p50_mw"]) == pytest.approx((101_800, 132_799), abs=1)
+    pace, _ = _series(client, variant="approvals_pace")
+    assert pace[2030]["p50_mw"] == pytest.approx(96_318, abs=1) and pace[2030]["p10_mw"] is None
+
+
+def test_zone_bands_are_allocation_ranges_and_ercot_is_not_allocated(real, client):
+    body = client.get("/forecasts/peak", params={"region": "FWEST"}).json()
+    assert {p["band_kind"] for p in body["data"]["series"]} == {"allocation_range"}
+    assert "allocated_statewide" in [c["code"] for c in body["meta"]["caveats"]]
+    ercot = client.get("/forecasts/peak").json()["meta"]["caveats"]
+    assert "allocated_statewide" not in [c["code"] for c in ercot]
+
+
+def test_large_load_ratio_band_matches_x7(real, client):
+    d = client.get("/forecasts/large-load").json()["data"]
+    band = d["ratio_band"]
+    assert (band["p10"], band["p50"], band["p90"]) == pytest.approx((0.131, 0.187, 0.289), abs=0.001)
+    assert len(d["realization"]) == 63 and any(r["realized_partial"] for r in d["realization"])
