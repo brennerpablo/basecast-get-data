@@ -210,3 +210,32 @@ def test_large_load_ratio_band_matches_x7(real, client):
     band = d["ratio_band"]
     assert (band["p10"], band["p50"], band["p90"]) == pytest.approx((0.131, 0.187, 0.289), abs=0.001)
     assert len(d["realization"]) == 63 and any(r["realized_partial"] for r in d["realization"])
+
+
+# --- insights (P1; golden numbers from video-candidates.md) -----------------------------------------------
+
+
+def test_insights_serve_the_video_numbers(real, client):
+    body = client.get("/insights").json()
+    cards = {c["id"]: c for c in body["data"]["cards"]}
+    expected = {
+        "A1": 26_836,
+        "A2": 20_866,
+        "B1": 89_037,
+        "B3": 38_689,
+        "B4": 109_031,
+        "B7": 13_400,
+        "B8": 201_000,
+    }
+    for card_id, value in expected.items():
+        assert cards[card_id]["value"] == pytest.approx(value, abs=1), card_id
+    assert cards["B6"]["value"] == pytest.approx(0.20, abs=0.005)
+    assert cards["B13"]["value"] == pytest.approx(3.3, abs=0.05)
+    assert body["meta"]["simulated"] is False
+
+
+def test_real_queue_cards_name_their_queue(real, client):
+    cards = {c["id"]: c for c in client.get("/insights").json()["data"]["cards"]}
+    assert cards["B3"]["queue"] == "generation"
+    assert all(cards[i]["queue"] == "large_load" for i in ("A1", "B6", "B7", "B8"))
+    assert all(c["caveat"] for c in cards.values())

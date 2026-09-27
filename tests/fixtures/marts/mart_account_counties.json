@@ -11,9 +11,9 @@
    "weather_zone": "SCENT",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30123",
@@ -25,9 +25,9 @@
    "weather_zone": "SCENT",
    "exposed": false,
    "context": false,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30012",
@@ -39,9 +39,9 @@
    "weather_zone": "SCENT",
    "exposed": false,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -53,9 +53,9 @@
    "weather_zone": "WEST",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -67,9 +67,9 @@
    "weather_zone": "WEST",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -81,9 +81,9 @@
    "weather_zone": "WEST",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -95,9 +95,9 @@
    "weather_zone": "NORTH",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -109,9 +109,9 @@
    "weather_zone": "NCENT",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -123,9 +123,9 @@
    "weather_zone": "NORTH",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -137,9 +137,9 @@
    "weather_zone": "FWEST",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -151,9 +151,9 @@
    "weather_zone": "NORTH",
    "exposed": true,
    "context": true,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -165,9 +165,9 @@
    "weather_zone": "NORTH",
    "exposed": false,
    "context": false,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -179,9 +179,9 @@
    "weather_zone": "NCENT",
    "exposed": false,
    "context": false,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -193,9 +193,9 @@
    "weather_zone": "WEST",
    "exposed": false,
    "context": false,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   }
  ]
 }

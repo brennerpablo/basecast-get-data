@@ -42,7 +42,7 @@
    "action_changes_on": "2026-10-22",
    "action_changes_to": "nurture",
    "n_strong": 1,
-   "n_context": 2,
+   "n_context": 1,
    "latest_event_date": "2026-07-13",
    "top_trigger": {
     "title": "CLOUDBURST DATA CENTERS",
@@ -52,8 +52,7 @@
    },
    "active_triggers": [
     "dc_permit",
-    "new_transmission",
-    "tsp_large_load"
+    "new_transmission"
    ],
    "flags": [
     "apportionment_under"
@@ -62,9 +61,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 1,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30053",
@@ -121,9 +120,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 1,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30128",
@@ -186,9 +185,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 2,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30071",
@@ -251,9 +250,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 3,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30162",
@@ -318,9 +317,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 4,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30065",
@@ -363,8 +362,8 @@
    "action_changes_on": "2026-12-15",
    "action_changes_to": "nurture",
    "n_strong": 1,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2025-12-15",
    "top_trigger": {
     "title": "Compal USA Technology, Inc.",
     "trigger": "dev_agreement",
@@ -372,8 +371,7 @@
     "event_date": "2025-12-15"
    },
    "active_triggers": [
-    "dev_agreement",
-    "tsp_large_load"
+    "dev_agreement"
    ],
    "flags": [
     "no_exposed_county",
@@ -383,9 +381,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 2,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30122",
@@ -431,7 +429,7 @@
    "n_context": 2,
    "latest_event_date": "2026-08-12",
    "top_trigger": {
-    "title": "Owens Corning  Insulating Systems LLC",
+    "title": "Owens Corning Insulation Systems LLC",
     "trigger": "dev_agreement",
     "age_days": 45,
     "event_date": "2026-08-12"
@@ -449,9 +447,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 5,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30007",
@@ -516,9 +514,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 6,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30052",
@@ -579,9 +577,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 7,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30134",
@@ -641,9 +639,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 8,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30011",
@@ -689,7 +687,7 @@
    "n_context": 2,
    "latest_event_date": "2026-07-13",
    "top_trigger": {
-    "title": "Lost Pines Power Park",
+    "title": "LOST PINES GAS RECIP PHASE 2",
     "trigger": "gen_storage_ia",
     "age_days": 274,
     "event_date": "2025-12-26"
@@ -705,9 +703,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 9,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30145",
@@ -770,9 +768,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 10,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30094",
@@ -833,9 +831,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 11,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30175",
@@ -889,9 +887,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 12,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30031",
@@ -952,9 +950,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 3,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30184",
@@ -997,12 +995,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2025-08-13",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under"
@@ -1011,69 +1007,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 4,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
-  },
-  {
-   "account_id": "30173",
-   "name": "Whitesboro Electric Utility",
-   "account_type": "muni",
-   "eia_utility_id": "20588",
-   "gt": "LCRA",
-   "primary_weather_zone": "NORTH",
-   "meters": 2298.0,
-   "score": 0.6150134770889487,
-   "rank": 26,
-   "tier": "A",
-   "signals": {
-    "dc_sites": {
-     "pct": 0.3443396226415094,
-     "raw": 0.0
-    },
-    "pop_growth": {
-     "pct": 0.6981132075471698,
-     "raw": 0.12820493988557335
-    },
-    "owner_sf_homes": {
-     "pct": 0.32075471698113206,
-     "raw": 129.47088612947718
-    },
-    "owner_sf_share": {
-     "pct": 0.36792452830188677,
-     "raw": 0.5965102809151462
-    },
-    "permits_per_1k": {
-     "pct": 0.942857142857143,
-     "raw": 42.11883108851464
-    },
-    "zone_peak_cagr": {
-     "pct": 0.9764150943396226,
-     "raw": 0.2633106956015856
-    }
-   },
-   "next_action": "nurture",
-   "action_changes_on": null,
-   "action_changes_to": null,
-   "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
-   "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
-   "flags": [
-    "no_exposed_county",
-    "apportionment_under",
-    "short_form"
-   ],
-   "simulated": false,
-   "weights_set": "q3",
-   "weights_status": "pending_review",
-   "rank_within_type": 8,
-   "model_version": "978eee9.v1",
-   "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30083",
@@ -1137,9 +1073,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 13,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30073",
@@ -1196,9 +1132,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 5,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30029",
@@ -1260,9 +1196,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 14,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30040",
@@ -1318,9 +1254,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 15,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30046",
@@ -1374,9 +1310,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 6,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30012",
@@ -1419,8 +1355,8 @@
    "action_changes_on": "2027-02-12",
    "action_changes_to": "nurture",
    "n_strong": 1,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2026-02-12",
    "top_trigger": {
     "title": "Buc-ee's Ltd.",
     "trigger": "dev_agreement",
@@ -1428,8 +1364,7 @@
     "event_date": "2026-02-12"
    },
    "active_triggers": [
-    "dev_agreement",
-    "tsp_large_load"
+    "dev_agreement"
    ],
    "flags": [
     "no_exposed_county",
@@ -1440,9 +1375,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 7,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30156",
@@ -1507,9 +1442,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 16,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30119",
@@ -1572,9 +1507,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 17,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30118",
@@ -1637,9 +1572,67 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 18,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
+  },
+  {
+   "account_id": "30173",
+   "name": "Whitesboro Electric Utility",
+   "account_type": "muni",
+   "eia_utility_id": "20588",
+   "gt": "LCRA",
+   "primary_weather_zone": "NORTH",
+   "meters": 2298.0,
+   "score": 0.6150134770889487,
+   "rank": 26,
+   "tier": "A",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.6981132075471698,
+     "raw": 0.12820493988557335
+    },
+    "owner_sf_homes": {
+     "pct": 0.32075471698113206,
+     "raw": 129.47088612947718
+    },
+    "owner_sf_share": {
+     "pct": 0.36792452830188677,
+     "raw": 0.5965102809151462
+    },
+    "permits_per_1k": {
+     "pct": 0.942857142857143,
+     "raw": 42.11883108851464
+    },
+    "zone_peak_cagr": {
+     "pct": 0.9764150943396226,
+     "raw": 0.2633106956015856
+    }
+   },
+   "next_action": "nurture",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 8,
+   "model_version": "b3a85c6.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30056",
@@ -1695,9 +1688,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 9,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30140",
@@ -1740,12 +1733,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2017-03-23",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under"
@@ -1754,9 +1745,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 10,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30006",
@@ -1799,12 +1790,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -1814,9 +1803,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 11,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30009",
@@ -1881,9 +1870,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 19,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30008",
@@ -1926,12 +1915,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2025-04-22",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -1941,9 +1928,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 12,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30136",
@@ -1989,7 +1976,7 @@
    "n_context": 2,
    "latest_event_date": "2026-07-13",
    "top_trigger": {
-    "title": "CLAY PARTNERS-TWINWOOD DISTRIBUTION #5 LP",
+    "title": "CLAY PARTNERS-TWINWOOD DIRSTRBUTION  #4LP",
     "trigger": "dev_agreement",
     "age_days": 108,
     "event_date": "2026-06-10"
@@ -2005,9 +1992,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 20,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30108",
@@ -2050,12 +2037,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -2065,9 +2050,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 13,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30112",
@@ -2110,12 +2095,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -2125,9 +2108,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 14,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30116",
@@ -2187,9 +2170,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 21,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30144",
@@ -2232,12 +2215,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2020-10-30",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -2247,9 +2228,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 15,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30168",
@@ -2304,9 +2285,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 16,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30093",
@@ -2360,9 +2341,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 22,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30129",
@@ -2426,9 +2407,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 23,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30138",
@@ -2471,12 +2452,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2024-10-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "short_form"
@@ -2485,9 +2464,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 17,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30023",
@@ -2530,12 +2509,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -2545,9 +2522,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 18,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30107",
@@ -2590,12 +2567,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -2605,9 +2580,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 19,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30111",
@@ -2662,9 +2637,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 20,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30019",
@@ -2707,12 +2682,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2021-12-02",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -2722,9 +2695,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 21,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30039",
@@ -2787,9 +2760,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 24,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30088",
@@ -2851,9 +2824,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 25,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30100",
@@ -2896,12 +2869,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -2911,9 +2882,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 22,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30079",
@@ -2974,9 +2945,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 26,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30014",
@@ -3032,9 +3003,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 23,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30131",
@@ -3098,9 +3069,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 27,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30059",
@@ -3154,9 +3125,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 24,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30137",
@@ -3218,9 +3189,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 28,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30084",
@@ -3276,9 +3247,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 25,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30120",
@@ -3341,9 +3312,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 29,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30036",
@@ -3405,9 +3376,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 30,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30176",
@@ -3461,9 +3432,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 31,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30072",
@@ -3524,9 +3495,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 32,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30034",
@@ -3583,9 +3554,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 33,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30082",
@@ -3628,12 +3599,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2024-04-23",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -3643,9 +3612,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 26,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30070",
@@ -3708,9 +3677,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 27,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30098",
@@ -3770,9 +3739,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 34,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30149",
@@ -3833,9 +3802,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 35,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30022",
@@ -3895,9 +3864,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 28,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30089",
@@ -3951,9 +3920,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 36,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30027",
@@ -4009,9 +3978,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 29,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30104",
@@ -4075,9 +4044,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 37,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30062",
@@ -4120,12 +4089,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -4135,9 +4102,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 30,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30010",
@@ -4180,12 +4147,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -4195,9 +4160,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 31,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30061",
@@ -4254,9 +4219,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 38,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30057",
@@ -4311,9 +4276,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 39,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30021",
@@ -4375,9 +4340,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 32,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30187",
@@ -4420,12 +4385,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2024-05-20",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under"
@@ -4434,9 +4397,67 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 33,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
+  },
+  {
+   "account_id": "30121",
+   "name": "Moulton Electric Department",
+   "account_type": "muni",
+   "eia_utility_id": "13025",
+   "gt": "LCRA",
+   "primary_weather_zone": "SCENT",
+   "meters": 625.0,
+   "score": 0.27132749326145555,
+   "rank": 102,
+   "tier": "C",
+   "signals": {
+    "dc_sites": {
+     "pct": 0.3443396226415094,
+     "raw": 0.0
+    },
+    "pop_growth": {
+     "pct": 0.1792452830188679,
+     "raw": 0.014541881601572104
+    },
+    "owner_sf_homes": {
+     "pct": 0.05660377358490566,
+     "raw": 15.768522200577591
+    },
+    "owner_sf_share": {
+     "pct": 0.820754716981132,
+     "raw": 0.6605710240679566
+    },
+    "permits_per_1k": {
+     "pct": 0.07142857142857144,
+     "raw": 1.5011379594208512
+    },
+    "zone_peak_cagr": {
+     "pct": 0.4716981132075472,
+     "raw": 0.10751805902096878
+    }
+   },
+   "next_action": "hold",
+   "action_changes_on": null,
+   "action_changes_to": null,
+   "n_strong": 0,
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
+   "top_trigger": null,
+   "active_triggers": [],
+   "flags": [
+    "no_exposed_county",
+    "apportionment_under",
+    "short_form"
+   ],
+   "simulated": false,
+   "weights_set": "q3",
+   "weights_status": "pending_review",
+   "rank_within_type": 56,
+   "model_version": "b3a85c6.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30024",
@@ -4499,9 +4520,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 34,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30063",
@@ -4547,7 +4568,7 @@
    "n_context": 0,
    "latest_event_date": "2026-05-21",
    "top_trigger": {
-    "title": "H-E-B, LP",
+    "title": "H-E-B,LP",
     "trigger": "dev_agreement",
     "age_days": 128,
     "event_date": "2026-05-21"
@@ -4563,9 +4584,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 35,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30018",
@@ -4608,12 +4629,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2023-10-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under"
@@ -4622,9 +4641,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 36,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30126",
@@ -4684,9 +4703,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 40,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30030",
@@ -4742,9 +4761,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 41,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30066",
@@ -4787,12 +4806,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -4802,9 +4819,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 37,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30067",
@@ -4860,9 +4877,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 38,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30172",
@@ -4924,9 +4941,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 42,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30035",
@@ -4988,9 +5005,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 39,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30113",
@@ -5052,9 +5069,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 43,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30033",
@@ -5110,9 +5127,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 40,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30139",
@@ -5155,12 +5172,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5170,9 +5185,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 41,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30058",
@@ -5215,12 +5230,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5230,9 +5243,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 42,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30097",
@@ -5275,12 +5288,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5290,9 +5301,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 43,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30166",
@@ -5346,9 +5357,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 44,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30102",
@@ -5391,12 +5402,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5406,9 +5415,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 44,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30132",
@@ -5451,12 +5460,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5466,9 +5473,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 45,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30169",
@@ -5511,12 +5518,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5526,9 +5531,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 46,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30117",
@@ -5571,12 +5576,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5586,9 +5589,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 47,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30133",
@@ -5648,9 +5651,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 45,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30186",
@@ -5693,12 +5696,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5708,9 +5709,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 48,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30068",
@@ -5753,12 +5754,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5768,9 +5767,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 49,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30085",
@@ -5816,7 +5815,7 @@
    "n_context": 1,
    "latest_event_date": "2026-07-31",
    "top_trigger": {
-    "title": "Pham BESS",
+    "title": "Dionysus Storage",
     "trigger": "gen_storage_ia",
     "age_days": 57,
     "event_date": "2026-07-31"
@@ -5830,9 +5829,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 46,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30081",
@@ -5888,9 +5887,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 50,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30177",
@@ -5933,12 +5932,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -5948,9 +5945,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 51,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30142",
@@ -5993,12 +5990,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -6008,9 +6003,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 52,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30078",
@@ -6053,12 +6048,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -6068,9 +6061,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 53,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30143",
@@ -6113,12 +6106,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -6128,9 +6119,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 54,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30042",
@@ -6173,12 +6164,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -6188,69 +6177,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 55,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
-  },
-  {
-   "account_id": "30121",
-   "name": "Moulton Electric Department",
-   "account_type": "muni",
-   "eia_utility_id": "13025",
-   "gt": "LCRA",
-   "primary_weather_zone": "SCENT",
-   "meters": 625.0,
-   "score": 0.27132749326145555,
-   "rank": 102,
-   "tier": "C",
-   "signals": {
-    "dc_sites": {
-     "pct": 0.3443396226415094,
-     "raw": 0.0
-    },
-    "pop_growth": {
-     "pct": 0.1792452830188679,
-     "raw": 0.014541881601572104
-    },
-    "owner_sf_homes": {
-     "pct": 0.05660377358490566,
-     "raw": 15.768522200577591
-    },
-    "owner_sf_share": {
-     "pct": 0.820754716981132,
-     "raw": 0.6605710240679566
-    },
-    "permits_per_1k": {
-     "pct": 0.07142857142857144,
-     "raw": 1.5011379594208512
-    },
-    "zone_peak_cagr": {
-     "pct": 0.4716981132075472,
-     "raw": 0.10751805902096878
-    }
-   },
-   "next_action": "hold",
-   "action_changes_on": null,
-   "action_changes_to": null,
-   "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
-   "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
-   "flags": [
-    "no_exposed_county",
-    "apportionment_under",
-    "short_form"
-   ],
-   "simulated": false,
-   "weights_set": "q3",
-   "weights_status": "pending_review",
-   "rank_within_type": 56,
-   "model_version": "978eee9.v1",
-   "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30015",
@@ -6293,12 +6222,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -6308,9 +6235,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 57,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30091",
@@ -6362,9 +6289,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 47,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30045",
@@ -6424,9 +6351,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 48,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30069",
@@ -6469,12 +6396,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-11-23",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "apportionment_under",
@@ -6484,9 +6409,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 58,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   },
   {
    "account_id": "30167",
@@ -6529,12 +6454,10 @@
    "action_changes_on": null,
    "action_changes_to": null,
    "n_strong": 0,
-   "n_context": 1,
-   "latest_event_date": "2026-04-15",
+   "n_context": 0,
+   "latest_event_date": "2015-04-01",
    "top_trigger": null,
-   "active_triggers": [
-    "tsp_large_load"
-   ],
+   "active_triggers": [],
    "flags": [
     "no_exposed_county",
     "short_form"
@@ -6543,9 +6466,9 @@
    "weights_set": "q3",
    "weights_status": "pending_review",
    "rank_within_type": 59,
-   "model_version": "978eee9.v1",
+   "model_version": "b3a85c6.v1",
    "as_of": "2026-09-26",
-   "built_at": "2026-09-26T23:57:27.997511+00:00"
+   "built_at": "2026-09-27T00:18:53.139316+00:00"
   }
  ]
 }

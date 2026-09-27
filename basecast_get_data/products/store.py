@@ -83,7 +83,7 @@ def _dates(df: pl.DataFrame) -> pl.DataFrame:
 
 @cache
 def _fixture_frame(name: str) -> pl.DataFrame:
-    return _dates(pl.DataFrame(_fixture(name)["rows"], infer_schema_length=None))
+    return _dates(pl.DataFrame(_fixture(name)["rows"], infer_schema_length=None, strict=False))
 
 
 # --- marts in Postgres ------------------------------------------------------------------------------------
@@ -101,7 +101,9 @@ class Loaded:
     def frame(self) -> pl.DataFrame:
         if self._frame is None:
             if self.rows:
-                self._frame = pl.DataFrame(self.rows, infer_schema_length=None)
+                # jsonb numbers mix ints and floats (figures, signals): let Polars widen them; the response
+                # models still validate every value on the way out.
+                self._frame = pl.DataFrame(self.rows, infer_schema_length=None, strict=False)
             else:
                 self._frame = pl.DataFrame({c: [] for c in self.columns})
         return self._frame

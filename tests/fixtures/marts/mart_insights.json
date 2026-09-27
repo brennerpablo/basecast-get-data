@@ -1,0 +1,448 @@
+{
+ "note": "public.mart_insights, trimmed by scripts/sample_marts.py",
+ "rows": [
+  {
+   "id": "A1",
+   "grade": "A",
+   "rank": 1,
+   "title": "Large loads promised vs approved",
+   "caption": "In October 2024, ERCOT's large-load queue showed 26.8 GW in service by the end of 2025; by December 2025, 8.8 GW had approval to energize, 33% of it.",
+   "value": 26836.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "unit": "MW",
+     "label": "Approved to energize, Dec 2025",
+     "value": 8786.0
+    },
+    {
+     "unit": "ratio",
+     "label": "Approved ÷ promised",
+     "value": 0.3273960351766284
+    }
+   ],
+   "caveat": "Stock-to-stock from ERCOT's chart labels, not project-level tracking. Approval to energize is not energized: 65% of the approved stock was energized at that date. One deck only.",
+   "caveat_codes": [
+    "machine_read_unverified"
+   ],
+   "queue": "large_load",
+   "verified": true,
+   "depends_on": [
+    "R3"
+   ],
+   "source_doc": "docs/analysis/q5_large_load.md §3",
+   "link": "/forecast?tab=large-loads",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "A2",
+   "grade": "A",
+   "rank": 2,
+   "title": "ERCOT's preliminary forecast vs the 2026 peak",
+   "caption": "ERCOT's preliminary long-term forecast, built from utilities' large-load requests, put summer 2026 near 112 GW; the grid peaked at 91.1 GW, about 21 GW lower and inside the 90.5–98 GW range ERCOT gave in the same filing.",
+   "value": 20866.272304,
+   "unit": "MW",
+   "figures": [
+    {
+     "unit": "MW",
+     "label": "Preliminary forecast",
+     "value": 112000.0
+    },
+    {
+     "unit": "MW",
+     "label": "Actual peak (hourly)",
+     "value": 91133.727696
+    },
+    {
+     "unit": "%",
+     "label": "Miss",
+     "value": 22.896322614614007
+    },
+    {
+     "unit": "MW",
+     "label": "ERCOT range low",
+     "value": 90500.0
+    },
+    {
+     "unit": "MW",
+     "label": "ERCOT range high",
+     "value": 98000.0
+    }
+   ],
+   "caveat": "Say \"preliminary long-term forecast\": ERCOT raised concerns about it in the same letter, and its own range held the actual. Only 866 MW of the margin sits above \"20 GW\" (737 MW on the 15-min peak), and July is not final-settled: an upward revision of about 0.95% breaks \"more than 20 GW\". Say \"about 21 GW\".",
+   "caveat_codes": [
+    "preliminary_actuals"
+   ],
+   "queue": null,
+   "verified": true,
+   "depends_on": [
+    "R6"
+   ],
+   "source_doc": "docs/analysis/q1_backtest.md §4",
+   "link": "/backtest",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B1",
+   "grade": "B",
+   "rank": 3,
+   "title": "Our model, rebuilt as of May 31, 2026",
+   "caption": "Rebuilt with only what was public on May 31, 2026, our model put this summer's peak at 89.0 GW (range 86.0–91.9); the grid peaked at 91.1, while ERCOT's preliminary forecast six weeks earlier said 112.",
+   "value": 89037.12594127194,
+   "unit": "MW",
+   "figures": [
+    {
+     "unit": "MW",
+     "label": "P10",
+     "value": 86035.44207217259
+    },
+    {
+     "unit": "MW",
+     "label": "P90",
+     "value": 91937.1192857531
+    },
+    {
+     "unit": "MW",
+     "label": "Actual",
+     "value": 91133.727696
+    },
+    {
+     "unit": "%",
+     "label": "Error",
+     "value": -2.3005771932448793
+    },
+    {
+     "unit": "MW",
+     "label": "ERCOT preliminary",
+     "value": 112000.0
+    }
+   ],
+   "caveat": "2026 actual is preliminary. The method was designed in Sep 2026 with 2023–2026 in view (X7's leak list). The band covered 56% of the backtest cells, not 80%: don't call it an 80% interval.",
+   "caveat_codes": [
+    "preliminary_actuals",
+    "band_uncalibrated",
+    "machine_read_unverified"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R13",
+    "R3",
+    "R6"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §3",
+   "link": "/backtest",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B3",
+   "grade": "B",
+   "rank": 4,
+   "title": "The generation queue, adjusted",
+   "caption": "ERCOT's generation queue lists 438 GW, but our model expects about 39 GW of it to reach commercial operation by the end of 2027 and 70 GW by the end of 2028; run from past queue snapshots, the same method landed within about 13% of what was built over the next two years.",
+   "value": 38689.29050854049,
+   "unit": "MW",
+   "figures": [
+    {
+     "unit": "projects",
+     "label": "Projects",
+     "value": 1810
+    },
+    {
+     "unit": "MW",
+     "label": "Raw generation queue",
+     "value": 438261.6200000001
+    },
+    {
+     "unit": "MW",
+     "label": "Expected by Dec 2028",
+     "value": 70394.40619038566
+    },
+    {
+     "unit": "%",
+     "label": "Backtest error, Jun 2022 queue",
+     "value": -13.220248368686939
+    },
+    {
+     "unit": "%",
+     "label": "Backtest error, Jan 2023 queue",
+     "value": 9.289628775099267
+    },
+    {
+     "unit": "%",
+     "label": "Backtest error, Aug 2024 queue",
+     "value": 1.3517311918249453
+    }
+   ],
+   "caveat": "Always say \"generation queue\": ERCOT's large-load queue also came to ~438 GW in 2026. The backtest covers 3 snapshots, which also picked the model, and its windows overlap. Dec 2028 is beyond the 24-month window tested. 9.1 GW of the Dec 2027 number is gas and other, mostly large projects beyond the fit history.",
+   "caveat_codes": [
+    "beyond_backtested_window"
+   ],
+   "queue": "generation",
+   "verified": false,
+   "depends_on": [
+    "R4",
+    "R10"
+   ],
+   "source_doc": "docs/analysis/x2_adjusted_queue.md §1–3",
+   "link": "/explorer?layer=queue",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B4",
+   "grade": "B",
+   "rank": 5,
+   "title": "Utilities' filings vs ERCOT's adjustment",
+   "caption": "In April 2025, ERCOT's long-term forecast put summer 2026 at 109 GW with utilities' large-load filings taken as submitted, and at 94.7 GW after ERCOT's own adjustment; the grid peaked at 91.1 GW.",
+   "value": 109031.492,
+   "unit": "MW",
+   "figures": [
+    {
+     "unit": "%",
+     "label": "TSP-provided vs actual",
+     "value": 19.639012642720587
+    },
+    {
+     "unit": "MW",
+     "label": "ERCOT-adjusted",
+     "value": 94650.257
+    },
+    {
+     "unit": "%",
+     "label": "ERCOT-adjusted vs actual",
+     "value": 3.8586474984654284
+    },
+    {
+     "unit": "MW",
+     "label": "Actual",
+     "value": 91133.727696
+    }
+   ],
+   "caveat": "\"TSP-provided\" is a sensitivity ERCOT published, not its adopted forecast. Both are normal-weather numbers, and 2026 is preliminary.",
+   "caveat_codes": [
+    "preliminary_actuals"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R6"
+   ],
+   "source_doc": "docs/analysis/q1_backtest.md §4",
+   "link": "/backtest",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B5",
+   "grade": "B",
+   "rank": 6,
+   "title": "Scored date by date against ERCOT",
+   "caption": "Rebuilt date by date since mid-2024, our forecasts missed summer peaks by 3.1% on average, against 8.0% for ERCOT's long-term forecast on the same cases; before ERCOT started taking the large-load filings in, ERCOT was slightly better (2.7% vs 3.5%).",
+   "value": 3.059340209286744,
+   "unit": "%",
+   "figures": [
+    {
+     "unit": "%",
+     "label": "LTLF, same 8 cells",
+     "value": 7.963154952378032
+    },
+    {
+     "unit": "%",
+     "label": "Ours vs CDR, 7 cells",
+     "value": 3.081196384577583
+    },
+    {
+     "unit": "%",
+     "label": "CDR, same 7 cells",
+     "value": 7.0835983616300116
+    },
+    {
+     "unit": "%",
+     "label": "Earlier: ours, 10 cells",
+     "value": 3.4910098501924347
+    },
+    {
+     "unit": "%",
+     "label": "Earlier: LTLF, 10 cells",
+     "value": 2.7443281250558846
+    },
+    {
+     "unit": "%",
+     "label": "Overall ours, 18 cells",
+     "value": 3.2991566764565725
+    },
+    {
+     "unit": "%",
+     "label": "Overall LTLF, 18 cells",
+     "value": 5.063806714976839
+    }
+   ],
+   "caveat": "Only 4 distinct summers are scored, and 8 of the 18 cells target 2026, which is preliminary. The cells overlap. The method was designed in 2026 (X7's leakage list). Keep the \"ERCOT was better before\" half: it is what makes the claim credible.",
+   "caveat_codes": [
+    "preliminary_actuals"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R13",
+    "R3"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §3",
+   "link": "/backtest",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B6",
+   "grade": "B",
+   "rank": 7,
+   "title": "How much of the promised large load gets approved",
+   "caption": "Of the new large-load megawatts ERCOT's decks promised a year or more ahead, only 15%–20% had approval to energize by that year's end.",
+   "value": 0.20294142878559665,
+   "unit": "ratio",
+   "figures": [
+    {
+     "unit": "ratio",
+     "label": "Median incremental ratio 2024 (10 decks)",
+     "value": 0.1535088741147605
+    },
+    {
+     "unit": "ratio",
+     "label": "Gross ratio 2024",
+     "value": 0.3225123245092786
+    },
+    {
+     "unit": "ratio",
+     "label": "Gross ratio 2025",
+     "value": 0.3466222786588604
+    }
+   ],
+   "caveat": "Stock-to-stock with no project ids, so new entrants push the incremental ratio up. Approval, not energization. Machine-read chart values.",
+   "caveat_codes": [
+    "machine_read_unverified"
+   ],
+   "queue": "large_load",
+   "verified": false,
+   "depends_on": [
+    "R3"
+   ],
+   "source_doc": "docs/analysis/q5_large_load.md §3",
+   "link": "/forecast?tab=large-loads",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B7",
+   "grade": "B",
+   "rank": 8,
+   "title": "The large-load queue slides",
+   "caption": "ERCOT's large-load queue mostly slides rather than fails: the MW promised for 2025 fell from 26.8 GW in the October 2024 deck to 13.4 GW in November 2025, while the later years' bars grew.",
+   "value": 13400.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "unit": "MW",
+     "label": "Promised for 2025, Oct 2024 deck",
+     "value": 26836.0
+    }
+   ],
+   "caveat": "This is why a by-year realization ratio understates eventual realization. Machine-read.",
+   "caveat_codes": [
+    "machine_read_unverified"
+   ],
+   "queue": "large_load",
+   "verified": false,
+   "depends_on": [
+    "R3"
+   ],
+   "source_doc": "docs/analysis/q5_large_load.md §3",
+   "link": "/forecast?tab=large-loads",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B8",
+   "grade": "B",
+   "rank": 9,
+   "title": "After ERCOT's April 2026 intake",
+   "caption": "After ERCOT's April 2026 intake, the large-load megawatts promised by 2027 went from 67 GW to 201 GW, while the stock approved to energize stayed near 9 GW.",
+   "value": 201000.0,
+   "unit": "MW",
+   "figures": [
+    {
+     "unit": "MW",
+     "label": "Promised by 2027, Mar 2026 deck",
+     "value": 66679.0
+    },
+    {
+     "unit": "MW",
+     "label": "Approved, Mar 2026",
+     "value": 9020.0
+    },
+    {
+     "unit": "MW",
+     "label": "Approved, Jun 2026",
+     "value": 8900.0
+    }
+   ],
+   "caveat": "Machine-read. Most of the jump is \"No Studies Submitted\" (20.3 → 102.4 GW), plus planning studies approved for 2027 going from 9 to 37 GW. ERCOT paused approvals for data centers and crypto ≥ 75 MW on 2026-08-03.",
+   "caveat_codes": [
+    "machine_read_unverified",
+    "policy_pause_2026"
+   ],
+   "queue": "large_load",
+   "verified": false,
+   "depends_on": [
+    "R3",
+    "R13"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §1–2",
+   "link": "/forecast?tab=large-loads",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  },
+  {
+   "id": "B13",
+   "grade": "B",
+   "rank": 10,
+   "title": "What the large-load layer adds",
+   "caption": "Without a large-load layer, our own model would have missed recent summer peaks by 10.5% on average; with it, by 3.3%.",
+   "value": 3.2991566764565725,
+   "unit": "%",
+   "figures": [
+    {
+     "unit": "%",
+     "label": "Organic only, 18 cells",
+     "value": 10.46345419390893
+    }
+   ],
+   "caveat": "Same leakage caveats as the date-by-date score. \"Organic only\" is our own trend + weather model, not ERCOT's.",
+   "caveat_codes": [
+    "preliminary_actuals"
+   ],
+   "queue": null,
+   "verified": false,
+   "depends_on": [
+    "R13"
+   ],
+   "source_doc": "docs/analysis/x7_peak_forecast.md §3",
+   "link": "/backtest",
+   "model_version": "13932a7.v1",
+   "as_of": "2026-09-26",
+   "built_at": "2026-09-27T00:27:06.856948+00:00"
+  }
+ ]
+}
