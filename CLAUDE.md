@@ -1,8 +1,14 @@
 # CLAUDE.md — basecast-get-data
 
-**basecast** is being built for the Base Power × AITX Hackathon (Austin, Sep 25–27, 2026). This repo is
+**basecast** was built for the Base Power × AITX Hackathon (Austin, Sep 25–27, 2026). This repo is
 **front C: the API skeleton and the data contract**. It is small on purpose: a FastAPI service with one
 typed endpoint per resource, serving labeled fixtures now and the marts later.
+
+**Since 2026-09-29 the services are gone.** To bring the GCP bill to zero, project `basecast-509812` was deleted
+(Cloud Run, Cloud SQL, the Airflow VM, the lake's bucket, BigQuery) and the deploy workflows of this repo and its
+sibling are disabled, so a push to `main` no longer deploys. basecast-app is a static public demo that answers
+from a recorded snapshot of get-data. Local backups of the bucket and both databases are in
+`~/Documents/repos/basecast/backups/2026-09-29/` (see its README). Read what follows about GCP as history.
 
 This file carries the stable parts of `docs/KICKOFF.md` (in Portuguese): sections 1, 2 and 7, this repo's
 part of section 3, the working rules from section 0 and the front C conventions from section 6. The tasks

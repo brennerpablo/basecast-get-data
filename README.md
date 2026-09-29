@@ -9,7 +9,6 @@
 
 **The API behind BaseCast: one typed endpoint per resource, and every answer says where it came from.**
 
-[![Deploy](https://img.shields.io/github/actions/workflow/status/brennerpablo/basecast-get-data/deploy.yml?branch=main&style=flat-square&label=Cloud%20Run&labelColor=102a17&color=b2dd79)](https://github.com/brennerpablo/basecast-get-data/actions/workflows/deploy.yml)
 ![Contract](https://img.shields.io/badge/contract-v2-b2dd79?style=flat-square&labelColor=102a17)
 ![Endpoints](https://img.shields.io/badge/endpoints-33-b2dd79?style=flat-square&labelColor=102a17)
 <br>
@@ -20,6 +19,12 @@
 ![OpenAPI](https://img.shields.io/badge/OpenAPI_3.1-102a17?style=flat-square&logo=openapiinitiative&logoColor=b2dd79)
 
 </div>
+
+> [!NOTE]
+> **Shut down on 2026-09-29.** After the hackathon the GCP project (Cloud Run, Cloud SQL, the lake's bucket,
+> BigQuery) was deleted to bring the bill to zero, and the deploy workflow is disabled. The live demo at
+> [basecast.pbrenner.com](https://basecast.pbrenner.com) serves a snapshot of this API's answers recorded that
+> day (basecast-app `snapshot/`). The code still runs locally against a local lake and Postgres.
 
 ## How it fits
 
